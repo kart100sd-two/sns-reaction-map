@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SNS反応ヒートマップ</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fa;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9dee7;
+      --panel: #ffffff;
+      --accent: #1769d1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      line-height: 1.65;
+    }
+    header {
+      padding: 32px min(5vw, 56px) 20px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+    h1 { margin: 0 0 8px; font-size: clamp(26px, 4vw, 42px); letter-spacing: 0; }
+    h2 { margin: 0 0 16px; font-size: 20px; }
+    h3 { margin: 0 0 12px; font-size: 16px; }
+    .lead { margin: 0; color: var(--muted); max-width: 920px; }
+    main { padding: 22px min(5vw, 56px) 48px; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .stat span { display: block; color: var(--muted); font-size: 13px; }
+    .stat strong { display: block; font-size: 24px; margin-top: 4px; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-top: 18px;
+    }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 900px; }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    th:first-child { text-align: left; position: sticky; left: 0; background: #fff; z-index: 1; }
+    thead th { background: #eef2f7; font-size: 13px; }
+    td { font-weight: 700; }
+    .total { background: #f2f4f7; color: var(--ink); }
+    .legend {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 12px;
+    }
+    .chip { width: 30px; height: 14px; border-radius: 3px; border: 1px solid rgba(0,0,0,.08); }
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .sample-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fbfcfe;
+    }
+    .sample { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 10px; }
+    .meta { color: var(--accent); font-size: 12px; font-weight: 700; }
+    blockquote {
+      margin: 8px 0;
+      padding-left: 10px;
+      border-left: 3px solid var(--line);
+      color: #344054;
+      font-size: 13px;
+    }
+    a { color: var(--accent); font-size: 13px; }
+    .note { color: var(--muted); font-size: 13px; margin-top: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SNS反応ヒートマップ</h1>
+    <p class="lead">Yahooリアルタイム検索で取得した投稿サンプルを、論点カテゴリ・検索クエリ・立場で可視化したものです。世論調査ではなく、反応の偏りと論点の広がりを見るための編集用ビューです。</p>
+  </header>
+  <main>
+    <section class="stats">
+      <div class="stat"><span>総サンプル</span><strong>183</strong></div>
+      <div class="stat"><span>最多カテゴリ</span><strong>高市氏批判・責任追及 70</strong></div>
+      <div class="stat"><span>最多スタンス</span><strong>批判 76</strong></div>
+    </section>
+    <section class="panel"><h2>カテゴリ × 検索クエリ</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>分類</th><th>サナエトークン -rt</th><th>高市 中傷動画 -rt</th><th>高市 文春 中傷動画 -rt</th><th>高市 松井健 -rt</th><th>高市 玉木 松井健 -rt</th><th>合計</th></tr></thead>
+<tbody>
+<tr><th>高市氏批判・責任追及</th>
+<td style="background:#9fd0ff;color:#172033" title="高市氏批判・責任追及 / サナエトークン -rt: 10件">10</td>
+<td style="background:#1769d1;color:#ffffff" title="高市氏批判・責任追及 / 高市 中傷動画 -rt: 20件">20</td>
+<td style="background:#dceeff;color:#172033" title="高市氏批判・責任追及 / 高市 文春 中傷動画 -rt: 6件">6</td>
+<td style="background:#1769d1;color:#ffffff" title="高市氏批判・責任追及 / 高市 松井健 -rt: 26件">26</td>
+<td style="background:#9fd0ff;color:#172033" title="高市氏批判・責任追及 / 高市 玉木 松井健 -rt: 8件">8</td>
+<td class="total">70</td></tr>
+<tr><th>高市氏擁護・報道批判</th>
+<td style="background:#f5f6f8;color:#172033" title="高市氏擁護・報道批判 / サナエトークン -rt: 0件">0</td>
+<td style="background:#4da3ff;color:#172033" title="高市氏擁護・報道批判 / 高市 中傷動画 -rt: 14件">14</td>
+<td style="background:#0a3d91;color:#ffffff" title="高市氏擁護・報道批判 / 高市 文春 中傷動画 -rt: 33件">33</td>
+<td style="background:#dceeff;color:#172033" title="高市氏擁護・報道批判 / 高市 松井健 -rt: 6件">6</td>
+<td style="background:#dceeff;color:#172033" title="高市氏擁護・報道批判 / 高市 玉木 松井健 -rt: 2件">2</td>
+<td class="total">55</td></tr>
+<tr><th>サナエトークン関連</th>
+<td style="background:#1769d1;color:#ffffff" title="サナエトークン関連 / サナエトークン -rt: 23件">23</td>
+<td style="background:#dceeff;color:#172033" title="サナエトークン関連 / 高市 中傷動画 -rt: 1件">1</td>
+<td style="background:#f5f6f8;color:#172033" title="サナエトークン関連 / 高市 文春 中傷動画 -rt: 0件">0</td>
+<td style="background:#dceeff;color:#172033" title="サナエトークン関連 / 高市 松井健 -rt: 5件">5</td>
+<td style="background:#dceeff;color:#172033" title="サナエトークン関連 / 高市 玉木 松井健 -rt: 4件">4</td>
+<td class="total">33</td></tr>
+<tr><th>松井健氏を軸にした拡張</th>
+<td style="background:#f5f6f8;color:#172033" title="松井健氏を軸にした拡張 / サナエトークン -rt: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="松井健氏を軸にした拡張 / 高市 中傷動画 -rt: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="松井健氏を軸にした拡張 / 高市 文春 中傷動画 -rt: 0件">0</td>
+<td style="background:#dceeff;color:#172033" title="松井健氏を軸にした拡張 / 高市 松井健 -rt: 2件">2</td>
+<td style="background:#9fd0ff;color:#172033" title="松井健氏を軸にした拡張 / 高市 玉木 松井健 -rt: 7件">7</td>
+<td class="total">9</td></tr>
+<tr><th>玉木氏比較・説明責任</th>
+<td style="background:#f5f6f8;color:#172033" title="玉木氏比較・説明責任 / サナエトークン -rt: 0件">0</td>
+<td style="background:#dceeff;color:#172033" title="玉木氏比較・説明責任 / 高市 中傷動画 -rt: 3件">3</td>
+<td style="background:#f5f6f8;color:#172033" title="玉木氏比較・説明責任 / 高市 文春 中傷動画 -rt: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="玉木氏比較・説明責任 / 高市 松井健 -rt: 0件">0</td>
+<td style="background:#dceeff;color:#172033" title="玉木氏比較・説明責任 / 高市 玉木 松井健 -rt: 2件">2</td>
+<td class="total">5</td></tr>
+<tr><th>ネット選挙・透明性問題</th>
+<td style="background:#dceeff;color:#172033" title="ネット選挙・透明性問題 / サナエトークン -rt: 2件">2</td>
+<td style="background:#dceeff;color:#172033" title="ネット選挙・透明性問題 / 高市 中傷動画 -rt: 1件">1</td>
+<td style="background:#f5f6f8;color:#172033" title="ネット選挙・透明性問題 / 高市 文春 中傷動画 -rt: 0件">0</td>
+<td style="background:#dceeff;color:#172033" title="ネット選挙・透明性問題 / 高市 松井健 -rt: 1件">1</td>
+<td style="background:#f5f6f8;color:#172033" title="ネット選挙・透明性問題 / 高市 玉木 松井健 -rt: 0件">0</td>
+<td class="total">4</td></tr>
+<tr><th>未確認・陰謀寄り</th>
+<td style="background:#dceeff;color:#172033" title="未確認・陰謀寄り / サナエトークン -rt: 2件">2</td>
+<td style="background:#dceeff;color:#172033" title="未確認・陰謀寄り / 高市 中傷動画 -rt: 1件">1</td>
+<td style="background:#dceeff;color:#172033" title="未確認・陰謀寄り / 高市 文春 中傷動画 -rt: 1件">1</td>
+<td style="background:#f5f6f8;color:#172033" title="未確認・陰謀寄り / 高市 松井健 -rt: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="未確認・陰謀寄り / 高市 玉木 松井健 -rt: 0件">0</td>
+<td class="total">4</td></tr>
+<tr><th>その他・分類保留</th>
+<td style="background:#dceeff;color:#172033" title="その他・分類保留 / サナエトークン -rt: 3件">3</td>
+<td style="background:#f5f6f8;color:#172033" title="その他・分類保留 / 高市 中傷動画 -rt: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="その他・分類保留 / 高市 文春 中傷動画 -rt: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="その他・分類保留 / 高市 松井健 -rt: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="その他・分類保留 / 高市 玉木 松井健 -rt: 0件">0</td>
+<td class="total">3</td></tr>
+</tbody></table></div></section>
+    <div class="legend">
+      <span>少</span>
+      <span class="chip" style="background:#f5f6f8"></span>
+      <span class="chip" style="background:#dceeff"></span>
+      <span class="chip" style="background:#9fd0ff"></span>
+      <span class="chip" style="background:#4da3ff"></span>
+      <span class="chip" style="background:#1769d1"></span>
+      <span class="chip" style="background:#0a3d91"></span>
+      <span>多</span>
+    </div>
+    <section class="panel"><h2>カテゴリ × スタンス</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>分類</th><th>批判</th><th>擁護</th><th>比較</th><th>未確認</th><th>保留</th><th>合計</th></tr></thead>
+<tbody>
+<tr><th>高市氏批判・責任追及</th>
+<td style="background:#0a3d91;color:#ffffff" title="高市氏批判・責任追及 / 批判: 70件">70</td>
+<td style="background:#f5f6f8;color:#172033" title="高市氏批判・責任追及 / 擁護: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="高市氏批判・責任追及 / 比較: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="高市氏批判・責任追及 / 未確認: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="高市氏批判・責任追及 / 保留: 0件">0</td>
+<td class="total">70</td></tr>
+<tr><th>高市氏擁護・報道批判</th>
+<td style="background:#f5f6f8;color:#172033" title="高市氏擁護・報道批判 / 批判: 0件">0</td>
+<td style="background:#1769d1;color:#ffffff" title="高市氏擁護・報道批判 / 擁護: 55件">55</td>
+<td style="background:#f5f6f8;color:#172033" title="高市氏擁護・報道批判 / 比較: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="高市氏擁護・報道批判 / 未確認: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="高市氏擁護・報道批判 / 保留: 0件">0</td>
+<td class="total">55</td></tr>
+<tr><th>サナエトークン関連</th>
+<td style="background:#dceeff;color:#172033" title="サナエトークン関連 / 批判: 4件">4</td>
+<td style="background:#dceeff;color:#172033" title="サナエトークン関連 / 擁護: 9件">9</td>
+<td style="background:#f5f6f8;color:#172033" title="サナエトークン関連 / 比較: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="サナエトークン関連 / 未確認: 0件">0</td>
+<td style="background:#9fd0ff;color:#172033" title="サナエトークン関連 / 保留: 20件">20</td>
+<td class="total">33</td></tr>
+<tr><th>松井健氏を軸にした拡張</th>
+<td style="background:#dceeff;color:#172033" title="松井健氏を軸にした拡張 / 批判: 1件">1</td>
+<td style="background:#f5f6f8;color:#172033" title="松井健氏を軸にした拡張 / 擁護: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="松井健氏を軸にした拡張 / 比較: 0件">0</td>
+<td style="background:#dceeff;color:#172033" title="松井健氏を軸にした拡張 / 未確認: 1件">1</td>
+<td style="background:#dceeff;color:#172033" title="松井健氏を軸にした拡張 / 保留: 7件">7</td>
+<td class="total">9</td></tr>
+<tr><th>玉木氏比較・説明責任</th>
+<td style="background:#f5f6f8;color:#172033" title="玉木氏比較・説明責任 / 批判: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="玉木氏比較・説明責任 / 擁護: 0件">0</td>
+<td style="background:#dceeff;color:#172033" title="玉木氏比較・説明責任 / 比較: 5件">5</td>
+<td style="background:#f5f6f8;color:#172033" title="玉木氏比較・説明責任 / 未確認: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="玉木氏比較・説明責任 / 保留: 0件">0</td>
+<td class="total">5</td></tr>
+<tr><th>ネット選挙・透明性問題</th>
+<td style="background:#dceeff;color:#172033" title="ネット選挙・透明性問題 / 批判: 1件">1</td>
+<td style="background:#f5f6f8;color:#172033" title="ネット選挙・透明性問題 / 擁護: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="ネット選挙・透明性問題 / 比較: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="ネット選挙・透明性問題 / 未確認: 0件">0</td>
+<td style="background:#dceeff;color:#172033" title="ネット選挙・透明性問題 / 保留: 3件">3</td>
+<td class="total">4</td></tr>
+<tr><th>未確認・陰謀寄り</th>
+<td style="background:#f5f6f8;color:#172033" title="未確認・陰謀寄り / 批判: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="未確認・陰謀寄り / 擁護: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="未確認・陰謀寄り / 比較: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="未確認・陰謀寄り / 未確認: 0件">0</td>
+<td style="background:#dceeff;color:#172033" title="未確認・陰謀寄り / 保留: 4件">4</td>
+<td class="total">4</td></tr>
+<tr><th>その他・分類保留</th>
+<td style="background:#f5f6f8;color:#172033" title="その他・分類保留 / 批判: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="その他・分類保留 / 擁護: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="その他・分類保留 / 比較: 0件">0</td>
+<td style="background:#f5f6f8;color:#172033" title="その他・分類保留 / 未確認: 0件">0</td>
+<td style="background:#dceeff;color:#172033" title="その他・分類保留 / 保留: 3件">3</td>
+<td class="total">3</td></tr>
+</tbody></table></div></section>
+    <section class="panel"><h2>代表サンプル</h2>
+<div class="sample-grid">
+<article class="sample-card"><h3>高市氏批判・責任追及</h3>
+<div class="sample"><div class="meta">批判 / 信頼度 0.90</div><p>高市総理が中傷動画の指示を出したと批判。</p><blockquote>#NHKは政権の広報をやめてください #高市やめろ #愛子内親王を皇太子に 高市、麻生のやりたい放題は許さない。 憲法にも皇室にも犯罪者が手を触れるんじゃないよ！誹謗中傷動画のことをちゃんと説明して、すぐ辞めろ！ https://t.co/WAyDsOtQUV</blockquote><a href="https://x.com/Norisuke_Occhan/status/2065815241515303281">投稿URL</a></div>
+<div class="sample"><div class="meta">批判 / 信頼度 0.90</div><p>中道は高市陣営の動画作成依頼を支持者にウケさせるための手段と見做している。</p><blockquote>中道にとってはもはや高市陣営が中傷動画作成を依頼したかどうかなんてどうでもいいんですよ。 少しでも今の支持者にウケることをして、少しでも延命したいだけ。</blockquote><a href="https://x.com/jun_wakasa/status/2065812730108600708">投稿URL</a></div>
+<div class="sample"><div class="meta">批判 / 信頼度 0.80</div><p>高市総理は排除される可能性が高いと論じる。</p><blockquote>③客観的現実思考  1B. 高市総理の命運：【確率70%以上で退陣】自民党の冷徹な生存本能による排除  ② 「比例45削減」と「中傷動画疑惑」が招く党内クーデター（政治的力学）  2026年9月の総裁選において高市総理は排除（退陣）されるという結末が論理的に導き出されます https://t.co/dTkIDj18sS</blockquote><a href="https://x.com/OKz16opaTZCKnTA/status/2065811600188314004">投稿URL</a></div>
+</article>
+<article class="sample-card"><h3>高市氏擁護・報道批判</h3>
+<div class="sample"><div class="meta">擁護 / 信頼度 0.85</div><p>文春の捏造記事を批判し、高市総理は無関係と主張。</p><blockquote>今回の問題は、高市総理が他党の中傷動画作成の指示を出したという文春の記事 その記事が捏造だとわかった瞬間、会議に同席したのが虚偽答弁だと問題のすり替えを行ったのがお前だよ お前は卑怯な人間だよ  松井氏自身が高市総理は無関係と証言した時点で終わってるんだよ https://t.co/oSOdYkUzQc</blockquote><a href="https://x.com/LongYan87485/status/2065815233697067148">投稿URL</a></div>
+<div class="sample"><div class="meta">擁護 / 信頼度 0.90</div><p>文春の捏造記事を指摘し、共同通信も関与したと主張。</p><blockquote>文春はもっと深刻な嘘つき？ 文春報道がきっかけで松井健氏が高市の秘書の木下に頼まれて誹謗中傷動画をネット流してたのが判明。高市はトボケるも、共同通信が松井健氏の証言を報道。高市の嘘がバレている。ちゃんと理解しないと笑われるだけ。https://t.co/iZpRtcsahU</blockquote><a href="https://x.com/ROCKUJAPAN3/status/2065815213568630943">投稿URL</a></div>
+<div class="sample"><div class="meta">擁護 / 信頼度 0.85</div><p>立憲の菅野が個人企業に1億円支払って動画作成、高市中傷動画も残っていると批判。</p><blockquote>立憲は今別の件で渦中の菅野の個人企業に1億円以上支払って動画作成、高市中傷動画は実際に残ってる事実もあるし、この脇の甘い状態で、文春のあやふや証拠スキャンダルを鼻息荒く何故追求できる？高市政権追い詰める前に自分らが追い詰められる状態。単なる阿保🤭これが代表の中道ですから無理もないw</blockquote><a href="https://x.com/ters53/status/2065813874784493728">投稿URL</a></div>
+</article>
+<article class="sample-card"><h3>サナエトークン関連</h3>
+<div class="sample"><div class="meta">保留 / 信頼度 0.80</div><p>高市総理とサナエトークンの関連性について疑問視。</p><blockquote>まるで高市さんサナエトークン、中傷動画の暴露と被りますね。</blockquote><a href="https://x.com/8bhNgDhdZ1q9W0T/status/2065809769773068348">投稿URL</a></div>
+<div class="sample"><div class="meta">保留 / 信頼度 0.90</div><p>サナエトークンの登録と高市総理の関与について指摘。</p><blockquote>資金決済法「暗号資産交換業は総理の登録が必須」 総理「私も事務所も知らない」 サナエトークンは高市総理が登録するか、認めていないなら処罰が必要。法治国家なら。  松井健「誹謗中傷しました」 動画「無能でネットで炎上！」 公選法刑法「違法行為です」 利害関係者「ネットの声を投稿しただけw」 https://t.co/ohRJV1Sibh https://...</blockquote><a href="https://x.com/otumamidarkside/status/2065743938036859266">投稿URL</a></div>
+<div class="sample"><div class="meta">擁護 / 信頼度 0.90</div><p>高市早苗を擁護し、誹謗中傷動画について言及。</p><blockquote>【高市早苗】よろける高市早苗 松井健氏は株式会社麻生出身 隔日で進捗連絡 高市擁護誹謗中傷動画蔓延中 #サナエトークン #消費税 #食料品の消費税ゼロ #高市早苗 #財務省 #ザイム真理教 https://t.co/2NnnqoSHQt</blockquote><a href="https://x.com/h_echizenya/status/2065686345344074158">投稿URL</a></div>
+</article>
+<article class="sample-card"><h3>松井健氏を軸にした拡張</h3>
+<div class="sample"><div class="meta">批判 / 信頼度 0.70</div><p>松井健と高市陣営の関与否定を疑問視。</p><blockquote>サナエトークンや衆院選等における誹謗中傷動画投入において、実行側の松井健氏と依頼側の高市陣営（木下秘書）の間にお互いに関与を否定する対立があるようだ。 松井健陣営と高市早苗陣営にはそれぞれヤメ検の若手弁護士がついていて、 あろうことか、あの黒川弘務氏が両者の調整をしていると言う❗️ https://t.co/dsmyqg19Dg</blockquote><a href="https://x.com/d3qsUVhX0c60620/status/2065683452796797173">投稿URL</a></div>
+<div class="sample"><div class="meta">未確認 / 信頼度 0.72</div><p>複数政党と松井氏の関係を推測する反応。</p><blockquote>とりあえず青の多い政党は今回松井健に依頼していた可能性が高い。 参政党のビミョーに赤が多いのはデマ政党なんで正常。気になるのは維新の会の赤が与党に協力している割には赤い。 本来高市と一緒で青一色になってもおかしくない。 これについてどこか関係のある政党が気になります。 https://t.co/HkG2J0sqry</blockquote><a href="https://x.com/TruthReportJP/status/2065681586339934432">投稿URL</a></div>
+<div class="sample"><div class="meta">保留 / 信頼度 0.70</div><p>高市・誹謗中傷動画問題に関連人物が登場しています。</p><blockquote>衝撃！　高市・誹謗中傷動画問題に、石丸伸二や玉木雄一郎が登場！　高市のような悪質な中傷動画ではなかったが、松井健が多数の動画を作成・拡散。石丸・玉木のかつての躍進ぶりを思い出してみよう。一体、誰が世論を作るのか？　ＡＩが作るのか？「一月万冊」22時公開！ https://t.co/WZbFU5NnYP</blockquote><a href="https://x.com/bSM2TC2coIKWrlM/status/2065758461896597510">投稿URL</a></div>
+</article>
+<article class="sample-card"><h3>玉木氏比較・説明責任</h3>
+<div class="sample"><div class="meta">比較 / 信頼度 0.70</div><p>高市総理と玉木雄一郎が誹謗中傷動画問題に関連している。</p><blockquote>衝撃！高市・誹謗中傷動画問題に、石丸伸二や玉木雄一郎が登場！元朝日新聞・記者佐藤章さんと一月万冊 https://t.co/qjIKmLD3TG @YouTubeより ###</blockquote><a href="https://x.com/y0626t/status/2065797203797721312">投稿URL</a></div>
+<div class="sample"><div class="meta">比較 / 信頼度 0.70</div><p>高市総理と玉木雄一郎が誹謗中傷動画問題に関連している。</p><blockquote>衝撃！高市・誹謗中傷動画問題に、石丸伸二や玉木雄一郎が登場！元朝日新聞・記者佐藤章さんと一月万冊 https://t.co/qjIKmLD3TG @YouTubeより ##</blockquote><a href="https://x.com/y0626t/status/2065795859208667482">投稿URL</a></div>
+<div class="sample"><div class="meta">比較 / 信頼度 0.70</div><p>高市総理と玉木雄一郎が誹謗中傷動画問題に関連している。</p><blockquote>衝撃！高市・誹謗中傷動画問題に、石丸伸二や玉木雄一郎が登場！元朝日新聞・記者佐藤章さんと一月万冊 https://t.co/qjIKmLD3TG @YouTubeより #</blockquote><a href="https://x.com/y0626t/status/2065794554088038743">投稿URL</a></div>
+</article>
+<article class="sample-card"><h3>ネット選挙・透明性問題</h3>
+<div class="sample"><div class="meta">保留 / 信頼度 0.70</div><p>衆議院選挙中、高市陣営が中傷動画を流した疑いがある。</p><blockquote>衆議院選挙中、野党つぶしの中傷動画が大量に流された他、極めてしつこく流された政党広告の名を借りた高市動画広告💢高市動画単発の他、各地方では、高市動画＋小選挙区候補の小選挙区支部長広告動画のパターンで間違い無く流されてます！ これは公正な選挙ではありません💢 #サナエトークン #見返り https://t.co/BYHIQX25hV</blockquote><a href="https://x.com/itsupansalary2/status/2065811805432328646">投稿URL</a></div>
+<div class="sample"><div class="meta">保留 / 信頼度 0.80</div><p>自民党や維新が選挙制度を歪めていると批判。</p><blockquote>都知事選での石丸信二現象、国民民主党玉木雄一郎ブーム、斉藤元彦出直し兵庫知事選の立花孝志二馬力応援選挙、自民党総裁選や衆院選での高市事務所による中傷動画拡散  松井健氏などによるAIネット戦略を駆使した情報工作により歪められた民意による選挙制度の破壊が進行  １月万冊佐藤章氏による指摘 https://t.co/cOWojb3IBp</blockquote><a href="https://x.com/isistarou1/status/2065792414628106577">投稿URL</a></div>
+<div class="sample"><div class="meta">批判 / 信頼度 0.80</div><p>衆議院選挙中に高市氏に関連した不正な広告が流されたと主張しています。</p><blockquote>衆議院選挙中、野党つぶしの中傷動画が大量に流された他、極めてしつこく流された政党広告の名を借りた高市動画広告💢高市動画単発の他、各地方では、高市動画＋小選挙区候補の小選挙区支部長広告動画のパターンで間違い無く流されてます！ これは公正な選挙ではありません💢 #サナエトークン #見返り https://t.co/BYHIQX25hV</blockquote><a href="https://x.com/itsupansalary2/status/2065811805432328646">投稿URL</a></div>
+</article>
+<article class="sample-card"><h3>未確認・陰謀寄り</h3>
+<div class="sample"><div class="meta">保留 / 信頼度 0.60</div><p>皇位継承の話題から高市総理の中傷動画ネタを避けるよう求めている。</p><blockquote>みんな急に皇位継承の話題になってます(笑 高市総理の中傷動画ネタから離れるなら今かと</blockquote><a href="https://x.com/travelerDreami1/status/2065803286528377015">投稿URL</a></div>
+<div class="sample"><div class="meta">保留 / 信頼度 0.50</div><p>高市総理と文春記事の虚偽性について議論しているが、明確な立場は示していない。</p><blockquote>何時もユーチューブ拝見させてもらってますが、話題の左翼は高市総理が虚偽答弁したと言い、高市ファンは文春の記事が捏造で、時系列が無茶苦茶、中傷動画も出てこないとお互い全く正反対で騒いでますが、 どうなるのですか？</blockquote><a href="https://x.com/mhabuchi/status/2065765053408964816">投稿URL</a></div>
+<div class="sample"><div class="meta">保留 / 信頼度 0.70</div><p>高市総理がパージされた可能性があるという想像。</p><blockquote>もちろん陰謀論ではあると思うけれど、この件やサナエトークンへの金融庁調査など、高市さんが「上のほうからパージされたんじゃ」と想像する理由が増えていく… https://t.co/Uj7Rz5vqLw</blockquote><a href="https://x.com/Kaw082_0831/status/2065814749175275821">投稿URL</a></div>
+</article>
+<article class="sample-card"><h3>その他・分類保留</h3>
+<div class="sample"><div class="meta">保留 / 信頼度 0.20</div><p>サナエトークン詐欺の被害経験を共有。</p><blockquote>うっ… 今話題ダゾーン詐欺に引っ掛かってしまった…  まだ登録して3日目やからクーリングオフ効くかな… 年間契約とかエグいて… Xはやっぱり見とかなあかんなぁ… #サナエトークン #ワールドカップ #Worldcup #DAZN https://t.co/o9amXV3RfF</blockquote><a href="https://x.com/on02103/status/2065806959404781820">投稿URL</a></div>
+<div class="sample"><div class="meta">保留 / 信頼度 0.20</div><p>サナエトークン詐欺の被害経験を共有。</p><blockquote>うっ… 今話題ダゾーン詐欺に引っ掛かってしまった…  まだ登録して3日目やからクーリングオフ効くかな… 年間契約とかエグいて… Xはやっぱり見とかなあかんなぁ… #サナエトークン #ワールドカップ #Worldcup #DAZN https://t.co/V83mjet8oY</blockquote><a href="https://x.com/on02103/status/2065806572312481871">投稿URL</a></div>
+<div class="sample"><div class="meta">保留 / 信頼度 0.40</div><p>複数の話題を含むが、明確な立場は不明。</p><blockquote>誹謗中傷と思ったらしい  伊藤忠商やった♪  サナエトークンやと思ったら  早苗とトーク♪やった  統一教会やと思ったら  糖質学会やった♪  （・∀・）ねっ！</blockquote><a href="https://x.com/by8FVkuWkO49886/status/2065802602672238789">投稿URL</a></div>
+</article>
+</div></section>
+    <p class="note">注意: 投稿本文の転載は最小限にし、公開記事では要約中心にしてください。代表投稿は公開前に人間が確認する前提です。</p>
+  </main>
+</body>
+</html>
