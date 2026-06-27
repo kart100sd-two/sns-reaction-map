@@ -106,7 +106,6 @@ async function main() {
     totals[query] = total;
     allRows.push(...rows);
   }
-  await browser.close();
 
   let rows = allRows;
   if (args.dedupe) {
@@ -127,6 +126,7 @@ async function main() {
     writeMarkdown(resolveProject(args.markdown), rows, totals);
   }
   console.log(`saved=${output} rows=${rows.length}`);
+  await browser.close();
 }
 
 main().catch((error) => {

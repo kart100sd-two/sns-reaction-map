@@ -136,6 +136,17 @@
         "共存模索",
         "利用者モラル"
       ]
+    },
+    {
+      "id": "bukatsu-chiiki",
+      "title": "部活動の地域移行の是非",
+      "subtitle": "TODO: 部活動の地域移行の是非に関するSNS反応の概要",
+      "status": "収集中",
+      "topic_type": "TODO: ジャンル",
+      "source_label": "Yahooリアルタイム検索",
+      "data_path": "social-samples/bukatsu-chiiki_classified.json",
+      "reaction_map_url": "bukatsu-chiiki-reaction-map.html",
+      "primary_axes": []
     }
   ]
 }

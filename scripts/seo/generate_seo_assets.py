@@ -81,12 +81,26 @@ def robots_txt(base_url: str) -> str:
     )
 
 
+def validate_adsense_client(client_id: str) -> str:
+    cleaned = client_id.strip()
+    if cleaned.startswith("ca-"):
+        cleaned = cleaned[3:]
+    if not cleaned.startswith("pub-") or not cleaned[4:].isdigit():
+        raise ValueError("AdSense client ID must look like ca-pub-XXXXXXXXXXXXXXXX or pub-XXXXXXXXXXXXXXXX")
+    return cleaned
+
+
+def ads_txt(pub_id: str) -> str:
+    return f"google.com, {pub_id}, DIRECT, f08c47fec0942fa0\n"
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Generate SEO assets into docs/")
     parser.add_argument("--site-url", required=True, help="Published site URL, e.g. https://example.github.io/repo/")
     parser.add_argument("--config", default="configs/site-cases.json")
     parser.add_argument("--output-dir", default="docs")
     parser.add_argument("--lastmod", default=date.today().isoformat())
+    parser.add_argument("--adsense-client", help="Google AdSense client ID (e.g. ca-pub-XXXXXXXXXXXXXXXX) to generate ads.txt")
     args = parser.parse_args()
 
     base_url = normalize_base_url(args.site_url)
@@ -100,6 +114,12 @@ def main() -> int:
 
     print(f"Generated {output_dir / 'sitemap.xml'} ({len(pages)} pages)")
     print(f"Generated {output_dir / 'robots.txt'}")
+
+    if args.adsense_client:
+        pub_id = validate_adsense_client(args.adsense_client)
+        (output_dir / "ads.txt").write_text(ads_txt(pub_id), encoding="utf-8")
+        print(f"Generated {output_dir / 'ads.txt'}")
+
     return 0
 
 
