@@ -1159,6 +1159,15 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
   "dateModified": "2026-06-25"
 }
   </script>
+<!-- GA_TAG_START -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K10S4YCZFH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K10S4YCZFH');
+  </script>
+<!-- GA_TAG_END -->
 </head>
 <body>
   <section class="hero">
@@ -1181,7 +1190,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
     </section>
     <section class="panel" id="vote-section" style="background:#fff;">
 <div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span> この話題、あなたはどう感じる？</h2><span>SNSの声を見る前に</span></div>
-<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">自衛隊明記や緊急事態条項の追加など、憲法改正の発議に向けた議論が国会で活発化しています。改正すべきか、現行憲法を守るべきか、あるいは手続きの公正さが先か — SNS上でも意見が分かれています。</p>
+<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">時代に合わせた「憲法改正」か、平和を守る「護憲」か？変化する国際情勢の中で、私たちの国のルールはどうあるべき？</p>
 <div style="font-size:12px;color:var(--muted);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:0 0 16px;line-height:1.65;"><span style="font-weight:700;">データの集め方:</span> 「憲法改正」「9条」「緊急事態条項」「国民投票法」などのキーワードで、Yahooリアルタイム検索からSNS投稿を取得し、AIが自動分類しました。</div>
 <p style="font-size:13px;color:var(--ink);font-weight:700;margin:0 0 14px;">結果を見る前に — あなたの感覚に近いのは？</p>
 <div id="vote-buttons" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;"></div>
@@ -1209,7 +1218,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <script>
 (function(){
   var TOPIC="憲法改正論議_SNS反応まっぷ";
-  var axes=[{"kicker": "改憲推進", "label": "改正を進めるべきだと思う", "origLabel": "憲法を現実に合わせる", "tone": "positive", "color": "#4a90d9"}, {"kicker": "改憲慎重・反対", "label": "改正には慎重・反対", "origLabel": "平和主義と権力制限を守る", "tone": "negative", "color": "#e07040"}, {"kicker": "手続き重視", "label": "まず手続きの公正さが大事", "origLabel": "国民投票の公平性を問う", "tone": "derived", "color": "#0f7490"}, {"kicker": "ノイズ・注意領域", "label": "よくわからない・関心が薄い", "origLabel": "未確認・過激化した反応", "tone": "warning", "color": "#7a4cc2"}];
+  var axes=[{"kicker": "改憲推進", "label": "国の守りや現実のルールに合わせたい", "origLabel": "憲法を現実に合わせる", "tone": "positive", "color": "#4a90d9"}, {"kicker": "改憲慎重・反対", "label": "平和主義の崩壊や権力暴走に不安がある", "origLabel": "平和主義と権力制限を守る", "tone": "negative", "color": "#e07040"}, {"kicker": "手続き重視", "label": "十分な説明や公平な国民投票が先決だ", "origLabel": "国民投票の公平性を問う", "tone": "derived", "color": "#0f7490"}, {"kicker": "判断保留", "label": "日常生活から遠く、ピンとこない", "origLabel": "未確認・過激化した反応", "tone": "warning", "color": "#7a4cc2"}];
   var TITLE="憲法改正論議 SNS反応まっぷ";
   var KEY="sns_vote_"+TOPIC;
 

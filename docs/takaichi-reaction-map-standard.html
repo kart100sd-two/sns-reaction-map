@@ -1143,6 +1143,15 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
   "dateModified": "2026-06-25"
 }
   </script>
+<!-- GA_TAG_START -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K10S4YCZFH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K10S4YCZFH');
+  </script>
+<!-- GA_TAG_END -->
 </head>
 <body>
   <section class="hero">
@@ -1165,7 +1174,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
     </section>
     <section class="panel" id="vote-section" style="background:#fff;">
 <div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span> この話題、あなたはどう感じる？</h2><span>SNSの声を見る前に</span></div>
-<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">2025年、週刊文春が「高市早苗氏の陣営が、対立候補への中傷動画をネット業者に依頼していた」と報道。高市氏側は関与を否定しましたが、秘書や外部制作者との関係が焦点になっています。</p>
+<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">高市陣営のネット中傷疑惑と関与否定。卑劣な世論誘導を許さない追及か、それとも証拠なきバッシングか？</p>
 <div style="font-size:12px;color:var(--muted);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:0 0 16px;line-height:1.65;"><span style="font-weight:700;">データの集め方:</span> 「高市 文春」「高市 中傷動画」などのキーワードで、Yahooリアルタイム検索からSNS投稿183件を取得し、AIが自動分類しました。</div>
 <p style="font-size:13px;color:var(--ink);font-weight:700;margin:0 0 14px;">結果を見る前に — あなたの感覚に近いのは？</p>
 <div id="vote-buttons" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;"></div>
@@ -1193,7 +1202,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <script>
 (function(){
   var TOPIC="高市文春問題_SNS反応まっぷ";
-  var axes=[{"kicker": "責任追及", "label": "説明責任があると思う", "origLabel": "高市氏側の説明責任を問う", "tone": "negative", "color": "#e07040"}, {"kicker": "報道への疑義", "label": "報道が先走っていると思う", "origLabel": "本人関与の断定を避ける", "tone": "positive", "color": "#4a90d9"}, {"kicker": "派生論点", "label": "別の論点が気になる", "origLabel": "松井健氏・玉木氏比較へ広がる", "tone": "derived", "color": "#0f7490"}, {"kicker": "別論点接続", "label": "まだ判断できない", "origLabel": "サナエトークンへ接続", "tone": "warning", "color": "#7a4cc2"}];
+  var axes=[{"kicker": "責任追及", "label": "関係者の関与があるなら本人が説明すべき", "origLabel": "高市氏側の説明責任を問う", "tone": "negative", "color": "#e07040"}, {"kicker": "報道疑問", "label": "本人の関与を示す物証が出るまで静観する", "origLabel": "本人関与の断定を避ける", "tone": "positive", "color": "#4a90d9"}, {"kicker": "公平性重視", "label": "他陣営の疑惑との公平性が一番気になる", "origLabel": "松井健氏・玉木氏比較へ広がる", "tone": "derived", "color": "#0f7490"}, {"kicker": "判断保留", "label": "政治の裏側の暴露話ばかりでうんざりだ", "origLabel": "サナエトークンへ接続", "tone": "warning", "color": "#7a4cc2"}];
   var TITLE="高市文春問題 SNS反応まっぷ";
   var KEY="sns_vote_"+TOPIC;
 

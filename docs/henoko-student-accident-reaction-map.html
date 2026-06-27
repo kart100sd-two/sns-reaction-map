@@ -1159,6 +1159,15 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
   "dateModified": "2026-06-25"
 }
   </script>
+<!-- GA_TAG_START -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K10S4YCZFH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K10S4YCZFH');
+  </script>
+<!-- GA_TAG_END -->
 </head>
 <body>
   <section class="hero">
@@ -1181,7 +1190,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
     </section>
     <section class="panel" id="vote-section" style="background:#fff;">
 <div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span> この話題、あなたはどう感じる？</h2><span>SNSの声を見る前に</span></div>
-<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">沖縄・辺野古での修学旅行中に高校生が死亡した事故をめぐり、文科省が「教育基本法違反」と認定。平和教育の萎縮を懸念する声と、政治的中立性の問題を指摘する声が対立しています。</p>
+<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">修学旅行中の悲劇と国の「政治的違反」認定。最も重視すべきは、現場の安全管理か、教育の自由か、それとも中立性か？</p>
 <div style="font-size:12px;color:var(--muted);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:0 0 16px;line-height:1.65;"><span style="font-weight:700;">データの集め方:</span> 「辺野古」「高校生」「死亡事故」「教育基本法」などのキーワードで、Yahooリアルタイム検索からSNS投稿311件を取得し、AIが自動分類しました。</div>
 <p style="font-size:13px;color:var(--ink);font-weight:700;margin:0 0 14px;">結果を見る前に — あなたの感覚に近いのは？</p>
 <div id="vote-buttons" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;"></div>
@@ -1209,7 +1218,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <script>
 (function(){
   var TOPIC="辺野古高校生死亡事故_SNS反応まっぷ";
-  var axes=[{"kicker": "事故本体", "label": "安全管理の問題が一番大きい", "origLabel": "安全管理を問う", "tone": "safety", "color": "#16885a"}, {"kicker": "文科省判断を評価", "label": "文科省の判断は妥当だと思う", "origLabel": "政治的中立性違反を指摘", "tone": "positive", "color": "#4a90d9"}, {"kicker": "文科省判断を疑問視", "label": "平和教育が萎縮しないか心配", "origLabel": "平和教育の萎縮を懸念", "tone": "negative", "color": "#e07040"}, {"kicker": "ノイズ・注意領域", "label": "よくわからない・情報不足", "origLabel": "未確認・過激化した反応", "tone": "warning", "color": "#7a4cc2"}];
+  var axes=[{"kicker": "安全重視", "label": "政治論争より子供の安全管理を問うべき", "origLabel": "安全管理を問う", "tone": "safety", "color": "#16885a"}, {"kicker": "中立重視", "label": "特定の政治活動に生徒を関わらせるな", "origLabel": "政治的中立性違反を指摘", "tone": "positive", "color": "#4a90d9"}, {"kicker": "自由重視", "label": "教育現場への過度な政治介入が心配だ", "origLabel": "平和教育の萎縮を懸念", "tone": "negative", "color": "#e07040"}, {"kicker": "判断保留", "label": "事実関係が錯綜しており判断できない", "origLabel": "未確認・過激化した反応", "tone": "warning", "color": "#7a4cc2"}];
   var TITLE="辺野古高校生死亡事故 SNS反応まっぷ";
   var KEY="sns_vote_"+TOPIC;
 

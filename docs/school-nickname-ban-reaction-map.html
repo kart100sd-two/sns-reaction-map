@@ -1135,6 +1135,15 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
   "dateModified": "2026-06-25"
 }
   </script>
+<!-- GA_TAG_START -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K10S4YCZFH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K10S4YCZFH');
+  </script>
+<!-- GA_TAG_END -->
 </head>
 <body>
   <section class="hero">
@@ -1157,7 +1166,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
     </section>
     <section class="panel" id="vote-section" style="background:#fff;">
 <div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span> この話題、あなたはどう感じる？</h2><span>SNSの声を見る前に</span></div>
-<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">いじめ防止やジェンダー平等の推進を目的として、小中学校などで「あだ名禁止」や「さん付け」を指導する動きが広がっています。からかいを防ぎ心理的安全性を高めると肯定する意見と、親しみが薄れることやいじめの根本解決にならないと懸念する意見が対立しています。</p>
+<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">学校の「あだ名禁止・さん付け」ルール。いじめを防ぐための優しさか、それとも人間関係を縛る行き過ぎた規制か？</p>
 <div style="font-size:12px;color:var(--muted);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:0 0 16px;line-height:1.65;"><span style="font-weight:700;">データの集め方:</span> 「学校 あだ名」「あだ名禁止」「さん付け」などのキーワードで、Yahooリアルタイム検索からSNS投稿を取得し、AIが自動分類しました。</div>
 <p style="font-size:13px;color:var(--ink);font-weight:700;margin:0 0 14px;">結果を見る前に — あなたの感覚に近いのは？</p>
 <div id="vote-buttons" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;"></div>
@@ -1185,7 +1194,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <script>
 (function(){
   var TOPIC="学校でのあだ名禁止の是非_SNS反応まっ";
-  var axes=[{"kicker": "禁止支持", "label": "いじめ防止のためにあだ名禁止やさん付けを支持する", "origLabel": "あだ名禁止やさん付けを支持する", "tone": "positive", "color": "#4a90d9"}, {"kicker": "禁止反対", "label": "親しみが薄れるのであだ名禁止やさん付けに反対する", "origLabel": "一律のあだ名禁止に反対する", "tone": "negative", "color": "#e07040"}, {"kicker": "ルール運用", "label": "嫌なあだ名だけ禁止するなど柔軟に対応すべき", "origLabel": "嫌なあだ名のみ規制など柔軟な運用を求める", "tone": "derived", "color": "#0f7490"}];
+  var axes=[{"kicker": "ルール支持", "label": "いじめを防ぐためにルールは必要だ", "origLabel": "あだ名禁止やさん付けを支持する", "tone": "positive", "color": "#4a90d9"}, {"kicker": "ルール反対", "label": "関係がギスギスする一律の規制は反対", "origLabel": "一律のあだ名禁止に反対する", "tone": "negative", "color": "#e07040"}, {"kicker": "柔軟運用", "label": "嫌がる呼び方だけダメにする柔軟さが良い", "origLabel": "嫌なあだ名のみ規制など柔軟な運用を求める", "tone": "derived", "color": "#0f7490"}, {"kicker": "判断保留", "label": "どちらの主張も納得できて選べない", "origLabel": "どちらの主張も納得できて選べない", "tone": "warning", "color": "#7a4cc2"}];
   var TITLE="学校でのあだ名禁止の是非 SNS反応まっぷ";
   var KEY="sns_vote_"+TOPIC;
 

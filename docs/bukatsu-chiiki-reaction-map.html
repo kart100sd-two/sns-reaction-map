@@ -1099,6 +1099,15 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <!-- ADSENSE_TAG_START -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2542211932832864" crossorigin="anonymous"></script>
 <!-- ADSENSE_TAG_END -->
+<!-- GA_TAG_START -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K10S4YCZFH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K10S4YCZFH');
+  </script>
+<!-- GA_TAG_END -->
 </head>
 <body>
   <section class="hero">
@@ -1121,7 +1130,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
     </section>
     <section class="panel" id="vote-section" style="background:#fff;">
 <div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span> この話題、あなたはどう感じる？</h2><span>SNSの声を見る前に</span></div>
-<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">文部科学省が推進する「部活動の地域移行」。教員の働き方改革や少子化対策として期待される一方、費用負担や指導者不足、部活文化の喪失を懸念する声もあります。</p>
+<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">教員の過酷な労働を減らすべきか、親の負担増を防ぐべきか？岐路に立つ部活動、子供たちの放課後はどうあるべき？</p>
 <div style="font-size:12px;color:var(--muted);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:0 0 16px;line-height:1.65;"><span style="font-weight:700;">データの集め方:</span> Yahooリアルタイム検索からSNS投稿を取得し、AIが自動分類しました。</div>
 <p style="font-size:13px;color:var(--ink);font-weight:700;margin:0 0 14px;">結果を見る前に — あなたの感覚に近いのは？</p>
 <div id="vote-buttons" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;"></div>
@@ -1149,7 +1158,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <script>
 (function(){
   var TOPIC="部活動の地域移行の是非_SNS反応まっぷ";
-  var axes=[{"kicker": "", "label": "地域移行に賛成", "origLabel": "", "tone": "neutral", "color": "#94a3b8"}, {"kicker": "", "label": "地域移行に反対", "origLabel": "", "tone": "neutral", "color": "#94a3b8"}];
+  var axes=[{"kicker": "移行賛成", "label": "先生の負担を減らすために地域へ移そう", "origLabel": "地域移行に賛成", "tone": "positive", "color": "#4a90d9"}, {"kicker": "移行反対", "label": "親の金銭・送迎負担が増えるなら反対だ", "origLabel": "地域移行に反対", "tone": "negative", "color": "#e07040"}, {"kicker": "柔軟運用", "label": "指導員の質や安全が確保できるなら良い", "origLabel": "条件付きで賛成", "tone": "derived", "color": "#0f7490"}, {"kicker": "判断保留", "label": "当事者（学校や親）でなく判断に迷う", "origLabel": "まだ判断できない", "tone": "warning", "color": "#7a4cc2"}];
   var TITLE="部活動の地域移行の是非 SNS反応まっぷ";
   var KEY="sns_vote_"+TOPIC;
 
