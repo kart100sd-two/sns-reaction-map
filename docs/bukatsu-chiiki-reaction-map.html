@@ -2,48 +2,26 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="m7TnCK7r49LynKemf0lmuJkzY4MoTTHDFgL3fW2bPlc" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- SEO_META_START -->
-  <meta name="description" content="AI学習による著作物の無断利用をめぐり、クリエイター保護と技術推進の間で意見が対立。">
-  <link rel="canonical" href="https://issue-stance-lab.github.io/sns-reaction-map/ai-copyright-reaction-map.html">
-  <meta property="og:site_name" content="SNS反応まっぷ">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="生成AIと著作権問題 | SNS反応まっぷ">
-  <meta property="og:description" content="AI学習による著作物の無断利用をめぐり、クリエイター保護と技術推進の間で意見が対立。">
-  <meta property="og:url" content="https://issue-stance-lab.github.io/sns-reaction-map/ai-copyright-reaction-map.html">
-  <meta property="og:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="生成AIと著作権問題 | SNS反応まっぷ">
-  <meta name="twitter:description" content="AI学習による著作物の無断利用をめぐり、クリエイター保護と技術推進の間で意見が対立。">
-  <meta name="twitter:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta property="article:section" content="テック・著作権">
-<!-- SEO_META_END -->
-  <meta name="description" content="Yahooリアルタイム検索で収集したSNS投稿をAIが自動分類。生成AIと著作権問題であなたはどっち？">
-  <link rel="icon" href="favicon.ico">
-  <meta property="og:title" content="生成AIと著作権問題 SNS反応まっぷ">
-  <meta property="og:description" content="Yahooリアルタイム検索で収集したSNS投稿をAIが自動分類。生成AIと著作権問題であなたはどっち？">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>生成AIと著作権問題 SNS反応まっぷ</title>
+  <title>部活動の地域移行の是非 SNS反応まっぷ</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
 
     :root {
       color-scheme: light;
-      --bg: #faf5ff;
+      --bg: #fffbeb;
       --ink: #1c1917;
       --muted: #374151;
       --line: #e2e8f0;
       --panel: #ffffff;
-      --accent: #7c3aed;
-      --accent-soft: #f5f3ff;
-      --grad-1: #7c3aed;
-      --grad-2: #4c1d95;
+      --accent: #d97706;
+      --accent-soft: #fffbeb;
+      --grad-1: #d97706;
+      --grad-2: #92400e;
       --shadow: 0 4px 20px rgba(0,0,0,.08);
-      --section-bg1: #f5f3ff;
-      --section-bg2: #fdf2f8;
-      --section-bg3: #eff6ff;
+      --section-bg1: #fffbeb;
+      --section-bg2: #fef2f2;
+      --section-bg3: #ecfdf5;
     }
     * { box-sizing: border-box; }
     body {
@@ -77,7 +55,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: url('images/ai-copyright-hero.webp');
+      background-image: url('images/bukatsu-hero.webp');
       background-size: cover;
       background-position: center;
       opacity: .28;
@@ -264,30 +242,26 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
       gap: 6px;
       margin-top: auto;
     }
-[data-category="著作権厳格保護・クリエイターの権利回復を最優先"] th { border-left: 5px solid #b54708; }
-[data-category="著作権厳格保護・クリエイターの権利回復を最優先"] .row-dot { background: #b54708; }
-[data-category="著作権厳格保護・クリエイターの権利回復を最優先"] .bar-fill { background: linear-gradient(90deg, #fff1e8, #b54708); }
-[data-category="著作権厳格保護・クリエイターの権利回復を最優先"] .bar-meta span { color: #8a3206; font-weight: 700; }
-[data-category="AI技術推進・過度な規制は競争力を損なう"] th { border-left: 5px solid #1769d1; }
-[data-category="AI技術推進・過度な規制は競争力を損なう"] .row-dot { background: #1769d1; }
-[data-category="AI技術推進・過度な規制は競争力を損なう"] .bar-fill { background: linear-gradient(90deg, #e7f1ff, #1769d1); }
-[data-category="AI技術推進・過度な規制は競争力を損なう"] .bar-meta span { color: #0f4e9d; font-weight: 700; }
-[data-category="法規制強化・ライセンス制度や許諾要件の整備を求める"] th { border-left: 5px solid #b54708; }
-[data-category="法規制強化・ライセンス制度や許諾要件の整備を求める"] .row-dot { background: #b54708; }
-[data-category="法規制強化・ライセンス制度や許諾要件の整備を求める"] .bar-fill { background: linear-gradient(90deg, #fff1e8, #b54708); }
-[data-category="法規制強化・ライセンス制度や許諾要件の整備を求める"] .bar-meta span { color: #8a3206; font-weight: 700; }
-[data-category="利用者モラル・クレジット表記や配慮の欠如を問題視"] th { border-left: 5px solid #0f7490; }
-[data-category="利用者モラル・クレジット表記や配慮の欠如を問題視"] .row-dot { background: #0f7490; }
-[data-category="利用者モラル・クレジット表記や配慮の欠如を問題視"] .bar-fill { background: linear-gradient(90deg, #e5f7fb, #0f7490); }
-[data-category="利用者モラル・クレジット表記や配慮の欠如を問題視"] .bar-meta span { color: #0b586d; font-weight: 700; }
-[data-category="条件付き容認・オプトアウトや対価支払いで共存"] th { border-left: 5px solid #0f7490; }
-[data-category="条件付き容認・オプトアウトや対価支払いで共存"] .row-dot { background: #0f7490; }
-[data-category="条件付き容認・オプトアウトや対価支払いで共存"] .bar-fill { background: linear-gradient(90deg, #e5f7fb, #0f7490); }
-[data-category="条件付き容認・オプトアウトや対価支払いで共存"] .bar-meta span { color: #0b586d; font-weight: 700; }
-[data-category="実用主義・利便性重視で問題に深入りしない"] th { border-left: 5px solid #1769d1; }
-[data-category="実用主義・利便性重視で問題に深入りしない"] .row-dot { background: #1769d1; }
-[data-category="実用主義・利便性重視で問題に深入りしない"] .bar-fill { background: linear-gradient(90deg, #e7f1ff, #1769d1); }
-[data-category="実用主義・利便性重視で問題に深入りしない"] .bar-meta span { color: #0f4e9d; font-weight: 700; }
+[data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"] th { border-left: 5px solid #1769d1; }
+[data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"] .row-dot { background: #1769d1; }
+[data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"] .bar-fill { background: linear-gradient(90deg, #e7f1ff, #1769d1); }
+[data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"] .bar-meta span { color: #0f4e9d; font-weight: 700; }
+[data-category="少子化による部活動の維持困難を理由に地域移行を支持"] th { border-left: 5px solid #1769d1; }
+[data-category="少子化による部活動の維持困難を理由に地域移行を支持"] .row-dot { background: #1769d1; }
+[data-category="少子化による部活動の維持困難を理由に地域移行を支持"] .bar-fill { background: linear-gradient(90deg, #e7f1ff, #1769d1); }
+[data-category="少子化による部活動の維持困難を理由に地域移行を支持"] .bar-meta span { color: #0f4e9d; font-weight: 700; }
+[data-category="保護者の費用負担増や受け皿不足を懸念し地域移行に反対"] th { border-left: 5px solid #b54708; }
+[data-category="保護者の費用負担増や受け皿不足を懸念し地域移行に反対"] .row-dot { background: #b54708; }
+[data-category="保護者の費用負担増や受け皿不足を懸念し地域移行に反対"] .bar-fill { background: linear-gradient(90deg, #fff1e8, #b54708); }
+[data-category="保護者の費用負担増や受け皿不足を懸念し地域移行に反対"] .bar-meta span { color: #8a3206; font-weight: 700; }
+[data-category="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対"] th { border-left: 5px solid #b54708; }
+[data-category="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対"] .row-dot { background: #b54708; }
+[data-category="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対"] .bar-fill { background: linear-gradient(90deg, #fff1e8, #b54708); }
+[data-category="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対"] .bar-meta span { color: #8a3206; font-weight: 700; }
+[data-category="段階的導入や条件整備を前提に地域移行を条件付きで支持"] th { border-left: 5px solid #667085; }
+[data-category="段階的導入や条件整備を前提に地域移行を条件付きで支持"] .row-dot { background: #667085; }
+[data-category="段階的導入や条件整備を前提に地域移行を条件付きで支持"] .bar-fill { background: linear-gradient(90deg, #f2f4f7, #667085); }
+[data-category="段階的導入や条件整備を前提に地域移行を条件付きで支持"] .bar-meta span { color: #344054; font-weight: 700; }
 [data-category="その他・分類保留"] th { border-left: 5px solid #667085; }
 [data-category="その他・分類保留"] .row-dot { background: #667085; }
 [data-category="その他・分類保留"] .bar-fill { background: linear-gradient(90deg, #f2f4f7, #667085); }
@@ -1122,31 +1096,14 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
     }
 
   </style>
-  <!-- AdSense: 審査通過後にここにスクリプトを挿入 -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "生成AIと著作権問題 SNS反応まっぷ",
-  "description": "生成AIと著作権問題についてSNSの意見分布を可視化。投票参加型で今の世論を確認。",
-  "url": "https://issue-stance-lab.github.io/sns-reaction-map/ai-copyright-reaction-map.html",
-  "image": "https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SNS反応まっぷ"
-  },
-  "datePublished": "2026-06-24",
-  "dateModified": "2026-06-25"
-}
-  </script>
 </head>
 <body>
   <section class="hero">
     <div class="hero-inner">
       <nav class="top-nav"><a href="index.html">← トップへ戻る</a></nav>
-      <div class="hero-badge">テック・著作権</div>
-      <h1>生成AIと著作権問題 SNS反応まっぷ</h1>
-      <p class="lead">Yahooリアルタイム検索で取得したSNS投稿を、クリエイター権利保護、AI技術推進、法規制、利用者モラルなどの論点で整理したビューです。世論調査ではありません。</p>
+      <div class="hero-badge">教育・スポーツ</div>
+      <h1>部活動の地域移行の是非 SNS反応まっぷ</h1>
+      <p class="lead">中学校の部活動を地域団体・民間クラブに移行する政策について、SNS上の賛否を可視化したビューです。世論調査ではありません。</p>
     </div>
   </section>
   <svg class="wave-divider" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="var(--bg)">
@@ -1154,18 +1111,18 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
   </svg>
   <main>
     <section class="stats">
-      <div class="stat"><span>総サンプル</span><strong>475</strong></div>
+      <div class="stat"><span>総サンプル</span><strong>180</strong></div>
       <div class="stat"><span>ソース</span><strong>Yahooリアルタイム検索</strong></div>
-      <div class="stat"><span>最多カテゴリ</span><strong>著作権厳格保護・クリエイターの権利回復を最優先 168</strong></div>
-      <div class="stat"><span>最多スタンス</span><strong>規制反対 164</strong></div>
+      <div class="stat"><span>最多カテゴリ</span><strong>その他・分類保留 119</strong></div>
+      <div class="stat"><span>最多スタンス</span><strong>保留 110</strong></div>
     </section>
     <section class="panel" id="vote-section" style="background:#fff;">
 <div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span> この話題、あなたはどう感じる？</h2><span>SNSの声を見る前に</span></div>
-<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">生成AIの急速な普及により、著作物を無断で学習・模倣する仕組みへの賛否がSNSで激しく対立しています。クリエイターの生活基盤を脅かすツールなのか、表現の未来を拓く技術なのか。</p>
-<div style="font-size:12px;color:var(--muted);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:0 0 16px;line-height:1.65;"><span style="font-weight:700;">データの集め方:</span> Yahooリアルタイム検索から「AI著作権侵害」「生成AI 反対」「生成AI 便利」「AI 規制」など両側のキーワードでSNS投稿475件を取得し、AIが自動分類しました。</div>
+<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">文部科学省が推進する「部活動の地域移行」。教員の働き方改革や少子化対策として期待される一方、費用負担や指導者不足、部活文化の喪失を懸念する声もあります。</p>
+<div style="font-size:12px;color:var(--muted);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:0 0 16px;line-height:1.65;"><span style="font-weight:700;">データの集め方:</span> Yahooリアルタイム検索からSNS投稿を取得し、AIが自動分類しました。</div>
 <p style="font-size:13px;color:var(--ink);font-weight:700;margin:0 0 14px;">結果を見る前に — あなたの感覚に近いのは？</p>
 <div id="vote-buttons" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;"></div>
-<p style="font-size:11px;color:var(--muted);margin:0;">※ 世論調査ではありません。投票はブラウザに保存されます。</p>
+<p style="font-size:11px;color:var(--muted);margin:0;">※ 世論調査ではありません。投票は集計されサーバーに保存されます。</p>
 <div id="vote-result" style="display:none;margin-top:20px;">
   <div style="background:var(--accent-soft);border-radius:10px;padding:16px;margin-bottom:16px;">
     <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px;" id="vote-position-label"></div>
@@ -1188,15 +1145,21 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 </section>
 <script>
 (function(){
-  var TOPIC="生成AIと著作権問題_SNS反応まっぷ";
-  var axes=[{"kicker": "権利保護", "label": "クリエイターを守るためAI規制を強化すべき", "origLabel": "クリエイターの著作権を最優先に守る", "tone": "negative", "color": "#e07040"}, {"kicker": "技術推進", "label": "技術革新を止めないよう規制は最小限に", "origLabel": "AI技術の発展と表現の自由を守る", "tone": "positive", "color": "#4a90d9"}, {"kicker": "共存模索", "label": "オプトアウトや対価支払いなど条件付きで共存", "origLabel": "条件付きで共存の仕組みを作る", "tone": "derived", "color": "#0f7490"}, {"kicker": "ノイズ・注意領域", "label": "よくわからない・まだ判断できない", "origLabel": "未確認・過激化した反応", "tone": "warning", "color": "#7a4cc2"}];
-  var TITLE="生成AIと著作権問題 SNS反応まっぷ";
+  var TOPIC="部活動の地域移行の是非_SNS反応まっぷ";
+  var axes=[{"kicker": "", "label": "地域移行に賛成", "origLabel": "", "tone": "neutral", "color": "#94a3b8"}, {"kicker": "", "label": "地域移行に反対", "origLabel": "", "tone": "neutral", "color": "#94a3b8"}];
+  var TITLE="部活動の地域移行の是非 SNS反応まっぷ";
   var KEY="sns_vote_"+TOPIC;
 
-  // Supabase設定（本番ビルド・デプロイ時に値を設定）
-  var supabaseUrl="https://qslrlprzoucrlptnhsmi.supabase.co";
-  var supabaseAnonKey="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzbHJscHJ6b3VjcmxwdG5oc21pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzOTIxNDYsImV4cCI6MjA5Nzk2ODE0Nn0.kKubYfLww_hr2fgL0r7xK6dnuemIOlQIkQpoOV20ybY";
+  var supabaseUrl="";
+  var supabaseAnonKey="";
   var supabaseClient=null;
+
+  if(supabaseUrl && supabaseAnonKey && typeof supabase!=="undefined"){
+    supabaseClient=supabase.createClient(supabaseUrl, supabaseAnonKey);
+    // Supabase mode: hide the redo button to prevent abuse and desync
+    var redoBtn=document.getElementById("vote-redo-btn");
+    if(redoBtn) redoBtn.style.display="none";
+  }
 
   var stored={};
   var myVote=localStorage.getItem(KEY+"_my");
@@ -1218,7 +1181,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
       }
     }
   }
-
+  
   async function fetchVotes(){
     if(supabaseClient){
       try{
@@ -1244,39 +1207,10 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
     }
   }
 
-  // Supabase CDNの動的読み込みと初期化
-  function initVoting(){
-    applyBlur();
-
-    if(supabaseUrl && supabaseAnonKey){
-      // Supabase mode: hide the redo button to prevent abuse and desync
-      var redoBtn=document.getElementById("vote-redo-btn");
-      if(redoBtn) redoBtn.style.display="none";
-
-      // Dynamically load Supabase script
-      var script=document.createElement("script");
-      script.src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2";
-      script.onload=function(){
-        if(typeof supabase!=="undefined"){
-          supabaseClient=supabase.createClient(supabaseUrl, supabaseAnonKey);
-        }
-        fetchVotes();
-      };
-      script.onerror=function(){
-        console.error("Failed to load Supabase SDK, falling back to localStorage");
-        fetchVotes();
-      };
-      document.head.appendChild(script);
-    }else{
-      // localStorageフォールバック
-      fetchVotes();
-    }
-  }
-
   if(document.readyState==="loading"){
-    document.addEventListener("DOMContentLoaded", initVoting);
+    document.addEventListener("DOMContentLoaded", function(){ applyBlur(); fetchVotes(); });
   }else{
-    setTimeout(initVoting,0);
+    setTimeout(function(){ applyBlur(); fetchVotes(); },0);
   }
 
   var btnWrap=document.getElementById("vote-buttons");
@@ -1404,17 +1338,12 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 
     document.getElementById("vote-result").style.display="block";
     document.getElementById("vote-result").scrollIntoView({behavior:"smooth",block:"nearest"});
-
-    // アニメーショントリガー
     setTimeout(function(){
       barsEl.querySelectorAll(".result-bar-fill").forEach(function(bar){bar.classList.add("visible");});
     },80);
-
-    // 巡回導線表示
     showCrossVote();
   }
 
-  // 他トピック巡回導線
   function showCrossVote(){
     var topics=[
       {slug:"ai-copyright-reaction-map.html",title:"生成AIと著作権問題",desc:"AI学習による著作物の無断利用をめぐる話題",key:"生成AIと著作権問題_SNS反応まっぷ"},
@@ -1427,11 +1356,9 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
     var unvoted=topics.filter(function(t){return t.key!==currentKey && !localStorage.getItem("sns_vote_"+t.key+"_my");});
     var allCount=topics.length;
     var votedCount=allCount-unvoted.length-(localStorage.getItem(currentKey+"_my")?0:1);
-
     var section=document.getElementById("cross-vote-section");
     if(!section) return;
     section.style.display="block";
-
     var html='<h2>📊 他のトピックにも投票しよう！</h2>';
     if(unvoted.length===0){
       html+='<p style="color:var(--muted);margin:0 0 12px;">🎉 全トピックの投票をコンプリートしました！</p>';
@@ -1455,25 +1382,25 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
     <section class="panel">
 <div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M11 2v20c-5.07-.5-9-4.79-9-10s3.93-9.5 9-10zm2 0v9h9c-.47-4.68-4.32-8.53-9-9zm0 11v9c4.68-.47 8.53-4.32 9-9h-9z"/></svg></span> 反応の勢力図</h2><span>対立軸ごとの比率</span></div>
 <div style="display:flex;justify-content:space-between;align-items:flex-end;max-width:660px;margin:0 auto 8px;padding:0 10px;">
-  <div style="text-align:center;padding:8px 16px;border-radius:10px;background:#e0704012;border:2px solid #e07040;"><div style="font-size:12px;font-weight:700;color:#e07040">クリエイターの著作権を最優先に守る</div><div style="font-size:32px;font-weight:800;color:#e07040;line-height:1.2">181</div></div>
+  <div style="text-align:center;padding:8px 16px;border-radius:10px;background:#cbd5e112;border:2px solid #cbd5e1;"><div style="font-size:12px;font-weight:700;color:#cbd5e1">その他</div><div style="font-size:32px;font-weight:800;color:#cbd5e1;line-height:1.2">180</div></div>
   <div style="text-align:center;color:var(--muted);font-size:12px;">
     <div style="font-size:11px;">過半数</div>
-    <div style="font-weight:800;font-size:16px;color:var(--ink);">238</div>
+    <div style="font-weight:800;font-size:16px;color:var(--ink);">91</div>
     <div style="font-size:18px;">▼</div>
   </div>
-  <div style="text-align:center;padding:8px 16px;border-radius:10px;background:#4a90d912;border:2px solid #4a90d9;"><div style="font-size:12px;font-weight:700;color:#4a90d9">AI技術の発展と表現の自由を守る</div><div style="font-size:32px;font-weight:800;color:#4a90d9;line-height:1.2">122</div></div>
+  
 </div>
 <div style="position:relative;max-width:660px;margin:0 auto;">
   <svg viewBox="0 0 660 350" id="semicircle-chart" style="font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans',sans-serif;"></svg>
   <div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);text-align:center;">
-    <div style="font-size:42px;font-weight:800;color:var(--ink);line-height:1;">475</div>
+    <div style="font-size:42px;font-weight:800;color:var(--ink);line-height:1;">180</div>
     <div style="font-size:14px;color:var(--muted);">サンプル</div>
   </div>
 </div>
 <div id="semicircle-legend" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 20px;margin-top:16px;"></div>
 <script>
 (function(){
-  var data=[{"label": "クリエイターの著作権を最優先に守る", "count": 181, "color": "#e07040", "cats": "著作権厳格保護・クリエイターの権利回復を最優先, 法規制強化・ライセンス制度や許諾要件の整備を求める"}, {"label": "条件付きで共存の仕組みを作る", "count": 36, "color": "#0f7490", "cats": "条件付き容認・オプトアウトや対価支払いで共存, 利用者モラル・クレジット表記や配慮の欠如を問題視"}, {"label": "未確認・過激化した反応", "count": 136, "color": "#7a4cc2", "cats": "その他・分類保留"}, {"label": "AI技術の発展と表現の自由を守る", "count": 122, "color": "#4a90d9", "cats": "AI技術推進・過度な規制は競争力を損なう, 実用主義・利便性重視で問題に深入りしない"}];
+  var data=[{"label": "その他", "count": 180, "color": "#cbd5e1", "cats": "段階的導入や条件整備を前提に地域移行を条件付きで支持, 保護者の費用負担増や受け皿不足を懸念し地域移行に反対, 少子化による部活動の維持困難を理由に地域移行を支持, 部活動の教育的価値や学校文化の喪失を理由に地域移行に反対, その他・分類保留, 教員の長時間労働解消や持続可能性の観点から地域移行に賛成"}];
   var total=data.reduce(function(s,d){return s+d.count},0);
   var cx=330,cy=310,outerR=290,innerR=160,gap=0.008;
   var svg=document.getElementById("semicircle-chart");
@@ -1548,126 +1475,74 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 })();
 </script>
 </section>
-    <section class="panel conflict-panel"><div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></span> 対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="negative"><div class="axis-kicker">権利保護</div><h3>クリエイターの著作権を最優先に守る</h3><div class="axis-count">181<span>件</span></div><p>AI学習による無断利用は著作権侵害であり、クリエイターの権利回復と保護を最優先すべきとする立場。</p><div class="axis-tags"><span>著作権厳格保護・クリエイターの権利回復を最優先</span><span>法規制強化・ライセンス制度や許諾要件の整備を求める</span></div></article><article class="axis-card" data-tone="positive"><div class="axis-kicker">技術推進</div><h3>AI技術の発展と表現の自由を守る</h3><div class="axis-count">122<span>件</span></div><p>過度な規制は日本の国際競争力を損ない、技術革新と表現の自由を制約するとする立場。</p><div class="axis-tags"><span>AI技術推進・過度な規制は競争力を損なう</span><span>実用主義・利便性重視で問題に深入りしない</span></div></article><article class="axis-card" data-tone="derived"><div class="axis-kicker">共存模索</div><h3>条件付きで共存の仕組みを作る</h3><div class="axis-count">36<span>件</span></div><p>オプトアウト、対価支払い、クレジット表記など、ルール整備で両立を目指す立場。</p><div class="axis-tags"><span>条件付き容認・オプトアウトや対価支払いで共存</span><span>利用者モラル・クレジット表記や配慮の欠如を問題視</span></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">ノイズ・注意領域</div><h3>未確認・過激化した反応</h3><div class="axis-count">136<span>件</span></div><p>断定、罵倒、文脈不足など、そのままでは記事化に注意が必要な反応。</p><div class="axis-tags"><span>その他・分類保留</span></div></article></div></section>
+    <section class="panel conflict-panel"><div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></span> 対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="neutral"><div class="axis-kicker">対立軸</div><h3></h3><div class="axis-count">0<span>件</span></div><p></p><div class="axis-tags"></div></article><article class="axis-card" data-tone="neutral"><div class="axis-kicker">対立軸</div><h3></h3><div class="axis-count">0<span>件</span></div><p></p><div class="axis-tags"></div></article></div></section>
     <section class="panel"><div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z"/></svg></span> 分類別件数</h2><span>論点の量感</span></div>
 <div class="bar-list">
-<div class="bar-row" data-category="著作権厳格保護・クリエイターの権利回復を最優先"><div class="bar-meta"><span>著作権厳格保護・クリエイターの権利回復を最優先</span><strong>168</strong></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
-<div class="bar-row" data-category="AI技術推進・過度な規制は競争力を損なう"><div class="bar-meta"><span>AI技術推進・過度な規制は競争力を損なう</span><strong>34</strong></div><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div></div>
-<div class="bar-row" data-category="法規制強化・ライセンス制度や許諾要件の整備を求める"><div class="bar-meta"><span>法規制強化・ライセンス制度や許諾要件の整備を求める</span><strong>13</strong></div><div class="bar-track"><div class="bar-fill" style="width:8%"></div></div></div>
-<div class="bar-row" data-category="利用者モラル・クレジット表記や配慮の欠如を問題視"><div class="bar-meta"><span>利用者モラル・クレジット表記や配慮の欠如を問題視</span><strong>27</strong></div><div class="bar-track"><div class="bar-fill" style="width:16%"></div></div></div>
-<div class="bar-row" data-category="条件付き容認・オプトアウトや対価支払いで共存"><div class="bar-meta"><span>条件付き容認・オプトアウトや対価支払いで共存</span><strong>9</strong></div><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div></div>
-<div class="bar-row" data-category="実用主義・利便性重視で問題に深入りしない"><div class="bar-meta"><span>実用主義・利便性重視で問題に深入りしない</span><strong>88</strong></div><div class="bar-track"><div class="bar-fill" style="width:52%"></div></div></div>
-<div class="bar-row" data-category="その他・分類保留"><div class="bar-meta"><span>その他・分類保留</span><strong>136</strong></div><div class="bar-track"><div class="bar-fill" style="width:81%"></div></div></div>
+<div class="bar-row" data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"><div class="bar-meta"><span>教員の長時間労働解消や持続可能性の観点から地域移行に賛成</span><strong>34</strong></div><div class="bar-track"><div class="bar-fill" style="width:29%"></div></div></div>
+<div class="bar-row" data-category="少子化による部活動の維持困難を理由に地域移行を支持"><div class="bar-meta"><span>少子化による部活動の維持困難を理由に地域移行を支持</span><strong>4</strong></div><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div></div>
+<div class="bar-row" data-category="保護者の費用負担増や受け皿不足を懸念し地域移行に反対"><div class="bar-meta"><span>保護者の費用負担増や受け皿不足を懸念し地域移行に反対</span><strong>17</strong></div><div class="bar-track"><div class="bar-fill" style="width:14%"></div></div></div>
+<div class="bar-row" data-category="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対"><div class="bar-meta"><span>部活動の教育的価値や学校文化の喪失を理由に地域移行に反対</span><strong>5</strong></div><div class="bar-track"><div class="bar-fill" style="width:4%"></div></div></div>
+<div class="bar-row" data-category="段階的導入や条件整備を前提に地域移行を条件付きで支持"><div class="bar-meta"><span>段階的導入や条件整備を前提に地域移行を条件付きで支持</span><strong>1</strong></div><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div></div>
+<div class="bar-row" data-category="その他・分類保留"><div class="bar-meta"><span>その他・分類保留</span><strong>119</strong></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
 </div></section>
     <section class="panel heat-panel"><div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg></span> カテゴリ × 検索クエリ</h2><span>色が濃いほど件数が多い</span></div>
 <div class="table-wrap"><table class="heat-table">
-<thead><tr><th>分類</th><th>AI イラスト 問題</th><th>AI イラスト 良い OR 便利 OR 助かる</th><th>AI 活用 メリット</th><th>AI 著作権侵害</th><th>AI 規制 やりすぎ OR 反対</th><th>AI学習 無断</th><th>AI絵 パクリ</th><th>生成AI クリエイター</th><th>生成AI 便利</th><th>生成AI 反対</th><th>生成AI 著作権</th><th>生成AI 規制</th><th>生成AI 賛成</th><th>合計</th></tr></thead>
+<thead><tr><th>分類</th><th>部活 外部委託</th><th>部活 廃止</th><th>部活動 地域移行</th><th>部活動 地域移行 反対</th><th>部活動 地域移行 問題</th><th>部活動 地域移行 賛成</th><th>部活動 教員 負担</th><th>合計</th></tr></thead>
 <tbody>
-<tr data-category="著作権厳格保護・クリエイターの権利回復を最優先"><th><span class="row-dot"></span>著作権厳格保護・クリエイターの権利回復を最優先</th>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI イラスト 問題: 9件"><span>9</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI イラスト 良い OR 便利 OR 助かる: 6件"><span>6</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI 活用 メリット: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI 著作権侵害: 31件"><span>31</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI 規制 やりすぎ OR 反対: 5件"><span>5</span></td>
-<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI学習 無断: 27件"><span>27</span></td>
-<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI絵 パクリ: 25件"><span>25</span></td>
-<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI クリエイター: 26件"><span>26</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 便利: 3件"><span>3</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 反対: 6件"><span>6</span></td>
-<td class="heat-cell" style="background:#4da3ff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 著作権: 17件"><span>17</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 規制: 4件"><span>4</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 賛成: 9件"><span>9</span></td>
-<td class="total">168</td></tr>
-<tr data-category="AI技術推進・過度な規制は競争力を損なう"><th><span class="row-dot"></span>AI技術推進・過度な規制は競争力を損なう</th>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI イラスト 問題: 1件"><span>1</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI イラスト 良い OR 便利 OR 助かる: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI 活用 メリット: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI 著作権侵害: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI 規制 やりすぎ OR 反対: 10件"><span>10</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI学習 無断: 1件"><span>1</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI絵 パクリ: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI クリエイター: 1件"><span>1</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 便利: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 反対: 3件"><span>3</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 著作権: 5件"><span>5</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 規制: 10件"><span>10</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 賛成: 3件"><span>3</span></td>
+<tr data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"><th><span class="row-dot"></span>教員の長時間労働解消や持続可能性の観点から地域移行に賛成</th>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活 外部委託: 6件"><span>6</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活 廃止: 6件"><span>6</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活動 地域移行: 2件"><span>2</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活動 地域移行 反対: 3件"><span>3</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活動 地域移行 問題: 2件"><span>2</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活動 地域移行 賛成: 0件"><span>0</span></td>
+<td class="heat-cell" style="background:#4da3ff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活動 教員 負担: 15件"><span>15</span></td>
 <td class="total">34</td></tr>
-<tr data-category="法規制強化・ライセンス制度や許諾要件の整備を求める"><th><span class="row-dot"></span>法規制強化・ライセンス制度や許諾要件の整備を求める</th>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / AI イラスト 問題: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / AI イラスト 良い OR 便利 OR 助かる: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / AI 活用 メリット: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / AI 著作権侵害: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / AI 規制 やりすぎ OR 反対: 4件"><span>4</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / AI学習 無断: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / AI絵 パクリ: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI クリエイター: 1件"><span>1</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI 便利: 1件"><span>1</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI 反対: 2件"><span>2</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI 著作権: 1件"><span>1</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI 規制: 4件"><span>4</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI 賛成: 0件"><span>0</span></td>
-<td class="total">13</td></tr>
-<tr data-category="利用者モラル・クレジット表記や配慮の欠如を問題視"><th><span class="row-dot"></span>利用者モラル・クレジット表記や配慮の欠如を問題視</th>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI イラスト 問題: 5件"><span>5</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI イラスト 良い OR 便利 OR 助かる: 3件"><span>3</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI 活用 メリット: 1件"><span>1</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI 著作権侵害: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI 規制 やりすぎ OR 反対: 1件"><span>1</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI学習 無断: 1件"><span>1</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI絵 パクリ: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 生成AI クリエイター: 2件"><span>2</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 生成AI 便利: 5件"><span>5</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 生成AI 反対: 2件"><span>2</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 生成AI 著作権: 4件"><span>4</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 生成AI 規制: 2件"><span>2</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 生成AI 賛成: 1件"><span>1</span></td>
-<td class="total">27</td></tr>
-<tr data-category="条件付き容認・オプトアウトや対価支払いで共存"><th><span class="row-dot"></span>条件付き容認・オプトアウトや対価支払いで共存</th>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / AI イラスト 問題: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / AI イラスト 良い OR 便利 OR 助かる: 2件"><span>2</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / AI 活用 メリット: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / AI 著作権侵害: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / AI 規制 やりすぎ OR 反対: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / AI学習 無断: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / AI絵 パクリ: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI クリエイター: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI 便利: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI 反対: 2件"><span>2</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI 著作権: 1件"><span>1</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI 規制: 1件"><span>1</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI 賛成: 3件"><span>3</span></td>
-<td class="total">9</td></tr>
-<tr data-category="実用主義・利便性重視で問題に深入りしない"><th><span class="row-dot"></span>実用主義・利便性重視で問題に深入りしない</th>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI イラスト 問題: 8件"><span>8</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI イラスト 良い OR 便利 OR 助かる: 11件"><span>11</span></td>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="実用主義・利便性重視で問題に深入りしない / AI 活用 メリット: 23件"><span>23</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI 著作権侵害: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI 規制 やりすぎ OR 反対: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI学習 無断: 1件"><span>1</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI絵 パクリ: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI クリエイター: 4件"><span>4</span></td>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="実用主義・利便性重視で問題に深入りしない / 生成AI 便利: 22件"><span>22</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI 反対: 3件"><span>3</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI 著作権: 2件"><span>2</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI 規制: 4件"><span>4</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI 賛成: 10件"><span>10</span></td>
-<td class="total">88</td></tr>
+<tr data-category="少子化による部活動の維持困難を理由に地域移行を支持"><th><span class="row-dot"></span>少子化による部活動の維持困難を理由に地域移行を支持</th>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 部活 外部委託: 0件"><span>0</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 部活 廃止: 1件"><span>1</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 部活動 地域移行: 3件"><span>3</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 部活動 地域移行 反対: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 部活動 地域移行 問題: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 部活動 地域移行 賛成: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 部活動 教員 負担: 0件"><span>0</span></td>
+<td class="total">4</td></tr>
+<tr data-category="保護者の費用負担増や受け皿不足を懸念し地域移行に反対"><th><span class="row-dot"></span>保護者の費用負担増や受け皿不足を懸念し地域移行に反対</th>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活 外部委託: 2件"><span>2</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活 廃止: 1件"><span>1</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活動 地域移行: 4件"><span>4</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活動 地域移行 反対: 3件"><span>3</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活動 地域移行 問題: 2件"><span>2</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活動 地域移行 賛成: 1件"><span>1</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活動 教員 負担: 4件"><span>4</span></td>
+<td class="total">17</td></tr>
+<tr data-category="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対"><th><span class="row-dot"></span>部活動の教育的価値や学校文化の喪失を理由に地域移行に反対</th>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活 外部委託: 0件"><span>0</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活 廃止: 1件"><span>1</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活動 地域移行: 0件"><span>0</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活動 地域移行 反対: 1件"><span>1</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活動 地域移行 問題: 0件"><span>0</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活動 地域移行 賛成: 1件"><span>1</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活動 教員 負担: 2件"><span>2</span></td>
+<td class="total">5</td></tr>
+<tr data-category="段階的導入や条件整備を前提に地域移行を条件付きで支持"><th><span class="row-dot"></span>段階的導入や条件整備を前提に地域移行を条件付きで支持</th>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 部活 外部委託: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 部活 廃止: 0件"><span>0</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 部活動 地域移行: 1件"><span>1</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 部活動 地域移行 反対: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 部活動 地域移行 問題: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 部活動 地域移行 賛成: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 部活動 教員 負担: 0件"><span>0</span></td>
+<td class="total">1</td></tr>
 <tr data-category="その他・分類保留"><th><span class="row-dot"></span>その他・分類保留</th>
-<td class="heat-cell" style="background:#4da3ff;color:#172033" title="その他・分類保留 / AI イラスト 問題: 13件"><span>13</span></td>
-<td class="heat-cell" style="background:#4da3ff;color:#172033" title="その他・分類保留 / AI イラスト 良い OR 便利 OR 助かる: 17件"><span>17</span></td>
-<td class="heat-cell" style="background:#4da3ff;color:#172033" title="その他・分類保留 / AI 活用 メリット: 15件"><span>15</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="その他・分類保留 / AI 著作権侵害: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#4da3ff;color:#ffffff" title="その他・分類保留 / AI 規制 やりすぎ OR 反対: 18件"><span>18</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / AI学習 無断: 9件"><span>9</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="その他・分類保留 / AI絵 パクリ: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / 生成AI クリエイター: 6件"><span>6</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 生成AI 便利: 8件"><span>8</span></td>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / 生成AI 反対: 20件"><span>20</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 生成AI 著作権: 9件"><span>9</span></td>
-<td class="heat-cell" style="background:#4da3ff;color:#172033" title="その他・分類保留 / 生成AI 規制: 13件"><span>13</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 生成AI 賛成: 8件"><span>8</span></td>
-<td class="total">136</td></tr>
+<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / 部活 外部委託: 22件"><span>22</span></td>
+<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="その他・分類保留 / 部活 廃止: 30件"><span>30</span></td>
+<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="その他・分類保留 / 部活動 地域移行: 29件"><span>29</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 部活動 地域移行 反対: 7件"><span>7</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 部活動 地域移行 問題: 11件"><span>11</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / 部活動 地域移行 賛成: 2件"><span>2</span></td>
+<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / 部活動 教員 負担: 18件"><span>18</span></td>
+<td class="total">119</td></tr>
 </tbody></table></div></section>
     <div class="legend">
       <span>少</span>
@@ -1681,155 +1556,132 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
     </div>
     <section class="panel heat-panel"><div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M10 10.02h5V21h-5zM17 21h3c1.1 0 2-.9 2-2v-9h-5v11zm3-18H5c-1.1 0-2 .9-2 2v3h19V5c0-1.1-.9-2-2-2zM3 19c0 1.1.9 2 2 2h3V10H3v9z"/></svg></span> カテゴリ × スタンス</h2><span>色が濃いほど件数が多い</span></div>
 <div class="table-wrap"><table class="heat-table">
-<thead><tr><th>分類</th><th>規制賛成</th><th>規制反対</th><th>モラル重視</th><th>保留</th><th>合計</th></tr></thead>
+<thead><tr><th>分類</th><th>賛成</th><th>反対</th><th>条件付き</th><th>保留</th><th>その他</th><th>合計</th></tr></thead>
 <tbody>
-<tr data-category="著作権厳格保護・クリエイターの権利回復を最優先"><th><span class="row-dot"></span>著作権厳格保護・クリエイターの権利回復を最優先</th>
-<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / 規制賛成: 144件"><span>144</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 規制反対: 24件"><span>24</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / モラル重視: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 保留: 0件"><span>0</span></td>
-<td class="total">168</td></tr>
-<tr data-category="AI技術推進・過度な規制は競争力を損なう"><th><span class="row-dot"></span>AI技術推進・過度な規制は競争力を損なう</th>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 規制賛成: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 規制反対: 34件"><span>34</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / モラル重視: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 保留: 0件"><span>0</span></td>
+<tr data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"><th><span class="row-dot"></span>教員の長時間労働解消や持続可能性の観点から地域移行に賛成</th>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 賛成: 34件"><span>34</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 反対: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 条件付き: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 保留: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / その他: 0件"><span>0</span></td>
 <td class="total">34</td></tr>
-<tr data-category="法規制強化・ライセンス制度や許諾要件の整備を求める"><th><span class="row-dot"></span>法規制強化・ライセンス制度や許諾要件の整備を求める</th>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 規制賛成: 6件"><span>6</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 規制反対: 7件"><span>7</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / モラル重視: 0件"><span>0</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 保留: 0件"><span>0</span></td>
-<td class="total">13</td></tr>
-<tr data-category="利用者モラル・クレジット表記や配慮の欠如を問題視"><th><span class="row-dot"></span>利用者モラル・クレジット表記や配慮の欠如を問題視</th>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 規制賛成: 6件"><span>6</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 規制反対: 20件"><span>20</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / モラル重視: 1件"><span>1</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 保留: 0件"><span>0</span></td>
-<td class="total">27</td></tr>
-<tr data-category="条件付き容認・オプトアウトや対価支払いで共存"><th><span class="row-dot"></span>条件付き容認・オプトアウトや対価支払いで共存</th>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 規制賛成: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 規制反対: 8件"><span>8</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / モラル重視: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 保留: 1件"><span>1</span></td>
-<td class="total">9</td></tr>
-<tr data-category="実用主義・利便性重視で問題に深入りしない"><th><span class="row-dot"></span>実用主義・利便性重視で問題に深入りしない</th>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 規制賛成: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 規制反対: 53件"><span>53</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="実用主義・利便性重視で問題に深入りしない / モラル重視: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 保留: 35件"><span>35</span></td>
-<td class="total">88</td></tr>
+<tr data-category="少子化による部活動の維持困難を理由に地域移行を支持"><th><span class="row-dot"></span>少子化による部活動の維持困難を理由に地域移行を支持</th>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 賛成: 4件"><span>4</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 反対: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 条件付き: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 保留: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / その他: 0件"><span>0</span></td>
+<td class="total">4</td></tr>
+<tr data-category="保護者の費用負担増や受け皿不足を懸念し地域移行に反対"><th><span class="row-dot"></span>保護者の費用負担増や受け皿不足を懸念し地域移行に反対</th>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 賛成: 0件"><span>0</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 反対: 17件"><span>17</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 条件付き: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 保留: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / その他: 0件"><span>0</span></td>
+<td class="total">17</td></tr>
+<tr data-category="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対"><th><span class="row-dot"></span>部活動の教育的価値や学校文化の喪失を理由に地域移行に反対</th>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 賛成: 0件"><span>0</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 反対: 5件"><span>5</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 条件付き: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 保留: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / その他: 0件"><span>0</span></td>
+<td class="total">5</td></tr>
+<tr data-category="段階的導入や条件整備を前提に地域移行を条件付きで支持"><th><span class="row-dot"></span>段階的導入や条件整備を前提に地域移行を条件付きで支持</th>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 賛成: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 反対: 0件"><span>0</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 条件付き: 1件"><span>1</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 保留: 0件"><span>0</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / その他: 0件"><span>0</span></td>
+<td class="total">1</td></tr>
 <tr data-category="その他・分類保留"><th><span class="row-dot"></span>その他・分類保留</th>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / 規制賛成: 7件"><span>7</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / 規制反対: 18件"><span>18</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="その他・分類保留 / モラル重視: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / 保留: 111件"><span>111</span></td>
-<td class="total">136</td></tr>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="その他・分類保留 / 賛成: 0件"><span>0</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / 反対: 5件"><span>5</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="その他・分類保留 / 条件付き: 0件"><span>0</span></td>
+<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="その他・分類保留 / 保留: 110件"><span>110</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / その他: 4件"><span>4</span></td>
+<td class="total">119</td></tr>
 </tbody></table></div></section>
     <section class="panel"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></span> 代表サンプル</h2>
 <div class="sample-grid">
-<article class="sample-card"><h3>著作権厳格保護・クリエイターの権利回復を最優先</h3>
-<div class="sample"><div class="meta">規制賛成 / 信頼度 1.00</div><p>生成AIによる著作権侵害を批判し、対策を求めている。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/koshian_2002/status/2069048301702480182"></a></blockquote>
-<div class="reason">理由: 著作権侵害に対する批判が明確に含まれている。</div>
+<article class="sample-card"><h3>教員の長時間労働解消や持続可能性の観点から地域移行に賛成</h3>
+<div class="sample"><div class="meta">賛成 / 信頼度 1.00</div><p>教員の過重労働や無償の部活指導の問題を指摘し、地域移行の必要性を主張。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/yoshiki20260530/status/2068442038786547725"></a></blockquote>
+<div class="reason">理由: 教員の働き方改革を主張し、地域移行を肯定的に述べている。</div>
 </div>
-<div class="sample"><div class="meta">規制賛成 / 信頼度 1.00</div><p>AIによる改変は著作権侵害であり、作者に不快感を与える。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/orenoryoteha_IH/status/2068969230968782938"></a></blockquote>
-<div class="reason">理由: 明確な規制推進の立場あり</div>
+<div class="sample"><div class="meta">賛成 / 信頼度 0.90</div><p>教員の過重労働や無償の部活指導の問題を指摘し、地域移行の必要性を主張。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/shirassh/status/2069006288777052163"></a></blockquote>
+<div class="reason">理由: 教員の長時間労働解消を理由に賛成</div>
 </div>
-<div class="sample"><div class="meta">規制賛成 / 信頼度 1.00</div><p>AIによる曲カバー動画が著作権侵害であると主張している。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/tteuneseut42300/status/2068712397431513250"></a></blockquote>
-<div class="reason">理由: 直接的に著作権侵害行為を指摘し、クリエイターの権利保護を求める。</div>
-</div>
-</article>
-<article class="sample-card"><h3>AI技術推進・過度な規制は競争力を損なう</h3>
-<div class="sample"><div class="meta">規制反対 / 信頼度 1.00</div><p>生成AIの廃止を主張し、著作権問題も含めて批判している。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/G32Jk/status/2069047015934464314"></a></blockquote>
-<div class="reason">理由: 生成AIの利点と問題点を全面的に否定しており、過度な規制に懸念を持っている。</div>
-</div>
-<div class="sample"><div class="meta">規制反対 / 信頼度 1.00</div><p>AI学習は犯罪ではなく、自衛が重要。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/SakazukiShine/status/2068981480135729165"></a></blockquote>
-<div class="reason">理由: AI学習を規制する必要性を否定している。</div>
-</div>
-<div class="sample"><div class="meta">規制反対 / 信頼度 1.00</div><p>政府の即時アクセス遮断は強引で、業界全体の新展開が止まる可能性がある。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/MKBKCOM/status/2068446318012297656"></a></blockquote>
-<div class="reason">理由: 投稿者が政府による規制を批判的視点から述べている。</div>
+<div class="sample"><div class="meta">賛成 / 信頼度 0.90</div><p>教員の過重労働や無償の部活指導の問題を指摘し、地域移行の必要性を主張。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/mathmathsan/status/1888223251400438207"></a></blockquote>
+<div class="reason">理由: 教員の負担軽減を理由に外部委託賛成</div>
 </div>
 </article>
-<article class="sample-card"><h3>法規制強化・ライセンス制度や許諾要件の整備を求める</h3>
-<div class="sample"><div class="meta">規制賛成 / 信頼度 0.90</div><p>権利問題が解決すればAI生成イラストは容認されるべき。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/YUGAYUG01511120/status/2069369977229152612"></a></blockquote>
-<div class="reason">理由: 規制支持の明確な意見</div>
+<article class="sample-card"><h3>少子化による部活動の維持困難を理由に地域移行を支持</h3>
+<div class="sample"><div class="meta">賛成 / 信頼度 1.00</div><p>月額8000円の地域移行は家計に大きな負担。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/TheMirageof0/status/2070621781757726855"></a></blockquote>
+<div class="reason">理由: 高額な費用と少子化への懸念が明確。</div>
 </div>
-<div class="sample"><div class="meta">規制反対 / 信頼度 0.80</div><p>生成AIの学習データ利用やリバースエンジニアリングは著作権違反と主張。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/n0o8BTzbdrUxMSi/status/2069011965599748245"></a></blockquote>
-<div class="reason">理由: 投稿者が生成AIによる学習データ利用やリバースエンジニアリングについて著作権違反であると指摘している。</div>
+<div class="sample"><div class="meta">賛成 / 信頼度 0.85</div><p>中体連の大会へのクラブチーム参加が増えることから、部活動の活躍場所が減ると予想。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/Miyabi14_Miyabi/status/2070276591167639853"></a></blockquote>
+<div class="reason">理由: 少子化による部活動の維持困難を理由に支持</div>
 </div>
-<div class="sample"><div class="meta">規制反対 / 信頼度 0.80</div><p>内閣府の生成AIパブコメに反対し、慎重な取り扱いを求めている。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/yitsuki615/status/2069034793472577540"></a></blockquote>
-<div class="reason">理由: 個人情報提供の本人同意不要案に反対しているため</div>
-</div>
-</article>
-<article class="sample-card"><h3>利用者モラル・クレジット表記や配慮の欠如を問題視</h3>
-<div class="sample"><div class="meta">規制反対 / 信頼度 1.00</div><p>AIイラストがクリエイターへの尊重不足であると批判。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/sikyosyounin/status/2069225117599805465"></a></blockquote>
-<div class="reason">理由: クリエイターへの敬意欠如</div>
-</div>
-<div class="sample"><div class="meta">規制反対 / 信頼度 0.90</div><p>生成AI利用者の行動が社会的マナーに違反していると批判。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/pt8mf/status/2068882072392057246"></a></blockquote>
-<div class="reason">理由: 投稿者がトランスジェンダーが女湯に入ろうとする比喩を使って、生成AI利用者の行動を非難している。</div>
-</div>
-<div class="sample"><div class="meta">モラル重視 / 信頼度 0.90</div><p>生成AIの使用時に適切なクレジット表記が重要</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/animmaccha_rio/status/2068994320116703564"></a></blockquote>
-<div class="reason">理由: 投稿者が生成AIの使用時のモラルとクレジット表記について言及</div>
+<div class="sample"><div class="meta">賛成 / 信頼度 0.85</div><p>少子化で学校単位の部活維持が困難になっている現実を踏まえ、地域移行を支持する主張。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/774nyannyan/status/2070058879938084997"></a></blockquote>
+<div class="reason">理由: 少子化により部活動が維持困難になるため地域移行を推奨</div>
 </div>
 </article>
-<article class="sample-card"><h3>条件付き容認・オプトアウトや対価支払いで共存</h3>
-<div class="sample"><div class="meta">規制反対 / 信頼度 0.90</div><p>生成AIは限定分野での活用には賛成だが、一般人への開放には反対。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/shigurezuki1008/status/2067850388817002949"></a></blockquote>
-<div class="reason">理由: 反論を促す立場から規制が必要と主張。</div>
+<article class="sample-card"><h3>保護者の費用負担増や受け皿不足を懸念し地域移行に反対</h3>
+<div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>保護者と地域住民の反発が地域移行の主な理由。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/774nyannyan/status/2063204420297617773"></a></blockquote>
+<div class="reason">理由: 投稿者が保護者の費用負担や受け皿の問題を指摘している。</div>
 </div>
-<div class="sample"><div class="meta">規制反対 / 信頼度 0.80</div><p>生成AIの利用は企業版でオプトアウトしている。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/nek0n0tem0/status/2068998478592938008"></a></blockquote>
-<div class="reason">理由: 投稿者が企業版を使用しており、個人版での使用を避ける姿勢がある。</div>
+<div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>スクールバス利用による通学時間の問題から部活動の地域移行が頓挫する可能性について述べている。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/774nyannyan/status/2060890475503157752"></a></blockquote>
+<div class="reason">理由: 文中で「部活動 の 地域移行 は 反対」と明記されているため。</div>
 </div>
-<div class="sample"><div class="meta">規制反対 / 信頼度 0.80</div><p>生成AIの利用を容認しつつ、反対派の理解不足を批判。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/Cero_0727/status/2068927271013089563"></a></blockquote>
-<div class="reason">理由: 投稿者が生成AIの利用を容認しながら、反対派の理由が不明瞭であると指摘している。</div>
+<div class="sample"><div class="meta">反対 / 信頼度 0.90</div><p>地域移行に伴う保護者の費用負担増や受け皿不足を懸念し、反対する主張。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/crypticsa/status/2070077324008341725"></a></blockquote>
+<div class="reason">理由: 月謝が高いと保護者への負担が増すため</div>
 </div>
 </article>
-<article class="sample-card"><h3>実用主義・利便性重視で問題に深入りしない</h3>
-<div class="sample"><div class="meta">規制反対 / 信頼度 0.90</div><p>自分で撮った写真は著作権に問題がないと主張。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/Emily146365811/status/2068657242417529218"></a></blockquote>
-<div class="reason">理由: 利便性重視の立場から規制を否定的</div>
+<article class="sample-card"><h3>部活動の教育的価値や学校文化の喪失を理由に地域移行に反対</h3>
+<div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>教員採用試験の低倍率問題と部活動地域移行の関連性を述べつつ、反対意見を示す。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/yamako_10/status/2061588627088634365"></a></blockquote>
+<div class="reason">理由: 「部活動地域移行 には 反対」と明言</div>
 </div>
-<div class="sample"><div class="meta">規制反対 / 信頼度 0.90</div><p>自分で撮った写真は著作権に問題がないと主張。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/Emily146365811/status/2068657053317374068"></a></blockquote>
-<div class="reason">理由: 利便性重視の立場から規制を否定的</div>
+<div class="sample"><div class="meta">反対 / 信頼度 0.85</div><p>甲子園の存続が懸念され、地域移行に反対。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/lumIFSHUWs6GO2n/status/2063976964898332701"></a></blockquote>
+<div class="reason">理由: 甲子園の存在意義から反対。</div>
 </div>
-<div class="sample"><div class="meta">規制反対 / 信頼度 0.90</div><p>生成AIの便利さを強調し、批判的ではない。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/toroumapasta/status/2069358027787141556"></a></blockquote>
-<div class="reason">理由: 生成AIの利便性を肯定</div>
+<div class="sample"><div class="meta">反対 / 信頼度 0.85</div><p>教員の負担について述べているが、明確な立場は示されていない。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/1007_nagi/status/2068954974714052941"></a></blockquote>
+<div class="reason">理由: 主観的な意見がないため</div>
+</div>
+</article>
+<article class="sample-card"><h3>段階的導入や条件整備を前提に地域移行を条件付きで支持</h3>
+<div class="sample"><div class="meta">条件付き / 信頼度 0.80</div><p>月会費設定とNPO法人補助案を提案。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/TheMirageof0/status/2070624074506863002"></a></blockquote>
+<div class="reason">理由: 具体的な提案あり、条件付き賛成の意図が読み取れる。</div>
 </div>
 </article>
 <article class="sample-card"><h3>その他・分類保留</h3>
-<div class="sample"><div class="meta">規制賛成 / 信頼度 1.00</div><p>生成AIが無断でデータを使用しているため、クリエイターは困っている。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/nipponbare0v0/status/2069003711515668492"></a></blockquote>
-<div class="reason">理由: 投稿者が生成AIによる無断学習を批判し、著作権保護を求めている。</div>
+<div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>部活動改革にブレーキをかけているのは過激派だ。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/JlMqc1bALnVe9gS/status/2063598518305218910"></a></blockquote>
+<div class="reason">理由: 投稿者の言動から明確な反対立場が読み取れる。</div>
 </div>
-<div class="sample"><div class="meta">規制賛成 / 信頼度 1.00</div><p>AI編集と無断転用禁止を呼びかけている。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/yoshinonouenda/status/2069029582364434743"></a></blockquote>
-<div class="reason">理由: クリエイター保護を最優先する意見。</div>
+<div class="sample"><div class="meta">反対 / 信頼度 0.90</div><p>部活動の地域移行に反対している。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/774nyannyan/status/2067883582647849464"></a></blockquote>
+<div class="reason">理由: 明確な反対表明あり</div>
 </div>
-<div class="sample"><div class="meta">規制賛成 / 信頼度 1.00</div><p>AI学習禁止と無断転載禁止を強調</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/yun_from2016/status/2069022140511490139"></a></blockquote>
-<div class="reason">理由: クリエイターの権利保護を主張</div>
+<div class="sample"><div class="meta">反対 / 信頼度 0.80</div><p>部活動の地域移行に反対する理由として、子供たちのために残すべきだという意見がある。</p>
+<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/774nyannyan/status/2070117159511130290"></a></blockquote>
+<div class="reason">理由: 反対立場を示唆</div>
 </div>
 </article>
 </div></section>
     <section class="note-panel"><h2><span class="section-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706);"><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg></span> 意</h2><ul>
 <li>これは世論調査ではなく、Yahooリアルタイム検索で取得した投稿サンプルの反応整理です。</li>
-<li>検索語にはAI批判寄りのキーワードが含まれるため、規制賛成の反応が多く出やすい傾向があります。</li>
 <li>投稿本文の転載は最小限にし、要約中心にしてください。</li>
 <li>代表投稿は公開前に人間が確認する前提です。</li>
 </ul></section>
@@ -1875,7 +1727,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
     </div>
     <div style="margin-top:8px;font-size:11px;">Powered by Yahooリアルタイム検索 + AI分類</div>
   </footer>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script>
 (function(){
 var num = parseInt(txt);
