@@ -1141,7 +1141,25 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
       margin-bottom: 16px;
     }
 
-  </style>
+  
+    /* ===== SHARED RESPONSIVE (header/footer/next-topics) ===== */
+    @media (max-width: 768px) {
+      .sns-footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+      .sns-next-topics-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .sns-site-header-inner {
+        height: 48px !important;
+      }
+      .sns-site-header-inner .sns-x-btn {
+        padding: 4px 10px !important;
+        font-size: 11px !important;
+      }
+    }
+</style>
   <!-- AdSense: 審査通過後にここにスクリプトを挿入 -->
   <script type="application/ld+json">
 {
@@ -1170,6 +1188,22 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <!-- GA_TAG_END -->
 </head>
 <body>
+<!-- ===== SITE HEADER ===== -->
+  <header style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.08);padding:0 20px;">
+    <div class="sns-site-header-inner" style="max-width:1100px;margin:0 auto;height:52px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1a1a1a;">
+        <div style="width:28px;height:28px;background:linear-gradient(135deg,#e85d2b,#f59e0b);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/></svg>
+        </div>
+        <span style="font-size:14px;font-weight:900;letter-spacing:-0.02em;font-family:'Noto Sans JP',-apple-system,sans-serif;">SNS反応まっぷ</span>
+      </a>
+      <a href="https://x.com/sns_hannou_ma" target="_blank" rel="noopener" class="sns-x-btn" style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:#1a1a1a;color:#fff;text-decoration:none;font-size:12px;font-weight:700;font-family:'Noto Sans JP',-apple-system,sans-serif;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        @sns_hannou_ma
+      </a>
+    </div>
+  </header>
+
   <section class="hero">
     <div class="hero-inner">
       <nav class="top-nav"><a href="index.html">← トップへ戻る</a></nav>
@@ -1908,43 +1942,71 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
   <!-- 巡回導線: 投票後に表示 -->
   <div id="cross-vote-section" class="cross-vote-section" style="display:none;"></div>
 
-  <!-- 次に読む -->
-  <section style="max-width:none;margin:0;padding:0;">
-    <div style="background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,.06);">
-      <h2 style="font-size:18px;margin:0 0 14px;">次に読む</h2>
-      <div class="topic-grid">
-        <div class="topic-card">
-          <div class="tc-title">高市文春・中傷動画問題</div>
-          <div class="tc-desc">文春報道、ネット選挙の透明性をめぐる話題</div>
-          <a class="tc-link" href="takaichi-reaction-map-standard.html">反応マップを見る →</a>
-        </div>
-        <div class="topic-card">
-          <div class="tc-title">辺野古高校生死亡事故</div>
-          <div class="tc-desc">安全管理・平和教育をめぐる話題</div>
-          <a class="tc-link" href="henoko-student-accident-reaction-map.html">反応マップを見る →</a>
-        </div>
-        <div class="topic-card">
-          <div class="tc-title">学校でのあだ名禁止の是非</div>
-          <div class="tc-desc">いじめ防止・ジェンダー配慮の指導の是非</div>
-          <a class="tc-link" href="school-nickname-ban-reaction-map.html">反応マップを見る →</a>
-        </div>
-        </div>
+
+  <!-- ===== 次のテーマへ ===== -->
+  <section style="max-width:1100px;margin:40px auto;padding:0 20px;">
+    <div style="background:linear-gradient(135deg,#fdf0eb,#fff7ed);border:1px solid rgba(232,93,43,.15);border-radius:16px;padding:28px 24px;">
+      <h2 style="font-size:18px;font-weight:900;margin:0 0 6px;color:#1a1a1a;font-family:'Noto Sans JP',-apple-system,sans-serif;">🗳️ 他のテーマにも投票しよう</h2>
+      <p style="font-size:13px;color:#888;margin:0 0 16px;">全テーマ投票でコンプリート！あなたの感覚を確かめよう。</p>
+      <div class="sns-next-topics-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
+
+        <a href="ai-copyright-reaction-map.html" style="display:block;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-size:15px;font-weight:900;color:#1a1a1a;margin-bottom:4px;">生成AIと著作権</div>
+          <div style="font-size:12px;color:#e85d2b;font-weight:700;">投票する →</div>
+        </a>
+        <a href="takaichi-reaction-map-standard.html" style="display:block;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-size:15px;font-weight:900;color:#1a1a1a;margin-bottom:4px;">高市文春問題</div>
+          <div style="font-size:12px;color:#e85d2b;font-weight:700;">投票する →</div>
+        </a>
+        <a href="henoko-student-accident-reaction-map.html" style="display:block;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-size:15px;font-weight:900;color:#1a1a1a;margin-bottom:4px;">辺野古事故</div>
+          <div style="font-size:12px;color:#e85d2b;font-weight:700;">投票する →</div>
+        </a>
+        <a href="school-nickname-ban-reaction-map.html" style="display:block;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <div style="font-size:15px;font-weight:900;color:#1a1a1a;margin-bottom:4px;">あだ名禁止</div>
+          <div style="font-size:12px;color:#e85d2b;font-weight:700;">投票する →</div>
+        </a>
+      </div>
     </div>
   </section>
 
-  <footer style="text-align:center;padding:32px 20px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);">
-    <div style="margin-bottom:12px;">
-      <a href="https://buymeacoffee.com/issue.stance.lab" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:12px;background:#ffdd00;color:#0d0d0d;text-decoration:none;font-size:14px;font-weight:800;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .2s;">
-        ☕ このプロジェクトを応援
-      </a>
+  <!-- ===== UNIFIED FOOTER ===== -->
+  <footer style="background:#1a1a1a;color:rgba(255,255,255,.7);padding:48px 20px 32px;margin-top:40px;">
+    <div class="sns-footer-grid" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;font-family:'Noto Sans JP',-apple-system,sans-serif;">
+      <div>
+        <h3 style="font-size:18px;font-weight:900;color:#fff;margin:0 0 8px;">SNS反応まっぷ</h3>
+        <p style="font-size:13px;line-height:1.8;max-width:340px;margin:0;">SNSで意見が割れる話題を、投票参加型×AI自動分類で可視化する独立メディアプロジェクト。</p>
+        <div style="display:flex;gap:10px;margin-top:16px;">
+          <a href="https://x.com/sns_hannou_ma" target="_blank" rel="noopener" aria-label="X" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://buymeacoffee.com/kt100sd" target="_blank" rel="noopener" aria-label="Buy Me a Coffee" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;">☕</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:13px;font-weight:700;color:#fff;margin:0 0 12px;letter-spacing:.04em;">他のテーマ</h4>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li><a href="ai-copyright-reaction-map.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">生成AIと著作権</a></li>
+          <li><a href="takaichi-reaction-map-standard.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">高市文春問題</a></li>
+          <li><a href="henoko-student-accident-reaction-map.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">辺野古事故</a></li>
+          <li><a href="school-nickname-ban-reaction-map.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">あだ名禁止</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:13px;font-weight:700;color:#fff;margin:0 0 12px;letter-spacing:.04em;">サイト情報</h4>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li><a href="index.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">トップページ</a></li>
+          <li><a href="privacy.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">プライバシーポリシー</a></li>
+          <li><a href="disclaimer.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">免責事項</a></li>
+        </ul>
+      </div>
     </div>
-    <a href="index.html" style="color:var(--accent);text-decoration:none;font-weight:700;font-size:13px;">← SNS反応まっぷ トップへ</a>
-    <div style="margin-top:8px;">
-      <a href="privacy.html" style="color:var(--accent);text-decoration:none;font-size:12px;">プライバシーポリシー</a> · <a href="disclaimer.html" style="color:var(--accent);text-decoration:none;font-size:12px;">免責事項</a>
+    <div style="max-width:1100px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:11px;">
+      <span>&copy; 2025-2026 SNS反応まっぷ</span>
+      <span>投票参加型 × AI自動分類</span>
     </div>
-    <div style="margin-top:8px;font-size:11px;">Powered by Yahooリアルタイム検索 + AI分類</div>
   </footer>
+
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script>
 (function(){
