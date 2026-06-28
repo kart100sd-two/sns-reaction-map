@@ -344,7 +344,23 @@
       th:first-child { min-width: 180px; }
       table { min-width: 760px; }
     }
-  </style>
+  
+    .axis-tags span {
+      cursor: pointer;
+      transition: opacity .2s, transform .15s;
+    }
+    .axis-tags span:hover {
+      opacity: .75;
+      transform: translateY(-1px);
+    }
+    .sample-card.highlight-target {
+      animation: sample-highlight 1.5s ease;
+    }
+    @keyframes sample-highlight {
+      0%   { box-shadow: 0 0 0 3px rgba(232,93,43,.5); }
+      100% { box-shadow: none; }
+    }
+</style>
 </head>
 <body>
   <header>
@@ -656,7 +672,7 @@
 })();
 </script>
 </section>
-    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="negative"><div class="axis-kicker">責任追及</div><h3>高市氏側の説明責任を問う</h3><div class="axis-count">147<span>件</span></div><p>陣営・秘書・外部制作者の関与が事実なら、本人にも説明責任があると見る立場。</p><div class="axis-tags"><span>高市氏批判・責任追及</span><span>ネット選挙・透明性問題</span></div></article><article class="axis-card" data-tone="positive"><div class="axis-kicker">報道への疑義</div><h3>本人関与の断定を避ける</h3><div class="axis-count">88<span>件</span></div><p>本人の直接指示が未確認なら、文春報道や追及の仕方を慎重に見るべきという立場。</p><div class="axis-tags"><span>高市氏擁護・報道批判</span></div></article><article class="axis-card" data-tone="derived"><div class="axis-kicker">派生論点</div><h3>松井健氏・玉木氏比較へ広がる</h3><div class="axis-count">17<span>件</span></div><p>松井健氏を軸に、玉木代表や他の政治家との接点まで話題が拡張する反応。</p><div class="axis-tags"><span>松井健氏を軸にした拡張</span><span>玉木氏比較・説明責任</span></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">別論点接続</div><h3>サナエトークンへ接続</h3><div class="axis-count">65<span>件</span></div><p>中傷動画問題から、サナエトークンなど周辺の別論点へ接続する反応。</p><div class="axis-tags"><span>サナエトークン関連</span><span>未確認・陰謀寄り</span></div></article></div></section>
+    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="negative"><div class="axis-kicker">責任追及</div><h3>高市氏側の説明責任を問う</h3><div class="axis-count">147<span>件</span></div><p>陣営・秘書・外部制作者の関与が事実なら、本人にも説明責任があると見る立場。</p><div class="axis-tags"><span><a href="#sample-9fd5d1d8" style="color:inherit;text-decoration:none;">高市氏批判・責任追及</a></span><span><a href="#sample-43f44162" style="color:inherit;text-decoration:none;">ネット選挙・透明性問題</a></span></div></article><article class="axis-card" data-tone="positive"><div class="axis-kicker">報道への疑義</div><h3>本人関与の断定を避ける</h3><div class="axis-count">88<span>件</span></div><p>本人の直接指示が未確認なら、文春報道や追及の仕方を慎重に見るべきという立場。</p><div class="axis-tags"><span><a href="#sample-6fd9101c" style="color:inherit;text-decoration:none;">高市氏擁護・報道批判</a></span></div></article><article class="axis-card" data-tone="derived"><div class="axis-kicker">派生論点</div><h3>松井健氏・玉木氏比較へ広がる</h3><div class="axis-count">17<span>件</span></div><p>松井健氏を軸に、玉木代表や他の政治家との接点まで話題が拡張する反応。</p><div class="axis-tags"><span><a href="#sample-32b0410e" style="color:inherit;text-decoration:none;">松井健氏を軸にした拡張</a></span><span><a href="#sample-c88b8a23" style="color:inherit;text-decoration:none;">玉木氏比較・説明責任</a></span></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">別論点接続</div><h3>サナエトークンへ接続</h3><div class="axis-count">65<span>件</span></div><p>中傷動画問題から、サナエトークンなど周辺の別論点へ接続する反応。</p><div class="axis-tags"><span><a href="#sample-d530a578" style="color:inherit;text-decoration:none;">サナエトークン関連</a></span><span><a href="#sample-d11c12bd" style="color:inherit;text-decoration:none;">未確認・陰謀寄り</a></span></div></article></div></section>
     <section class="panel"><div class="panel-title"><h2>分類別件数</h2><span>論点の量感</span></div>
 <div class="bar-list">
 <div class="bar-row" data-category="高市氏批判・責任追及"><div class="bar-meta"><span>高市氏批判・責任追及</span><strong>139</strong></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
@@ -810,7 +826,7 @@
 </tbody></table></div></section>
     <section class="panel"><h2>代表サンプル</h2>
 <div class="sample-grid">
-<article class="sample-card"><h3>高市氏批判・責任追及</h3>
+<article class="sample-card" id="sample-9fd5d1d8"><h3>高市氏批判・責任追及</h3>
 <div class="sample"><div class="meta">批判 / 信頼度 0.95</div><p>高市の即辞職と逮捕起訴を要求し、野党は徹底的に追及すべき。</p>
 <blockquote>高市の即辞職を求める。 そして逮捕起訴しろ！ 訂正など許されない。 　 野党は徹底的に追及し証人喚問をするべき。 秘書、松井健、溝口、文春側を呼ぶべき。  #証人喚問 #高市の即辞職を求める</blockquote>
 <a href="https://x.com/taii43ii/status/2065779449350758803">投稿URL</a>
@@ -827,7 +843,7 @@
 <div class="reason">理由: 支持者の反応を重視する発言</div>
 </div>
 </article>
-<article class="sample-card"><h3>高市氏擁護・報道批判</h3>
+<article class="sample-card" id="sample-6fd9101c"><h3>高市氏擁護・報道批判</h3>
 <div class="sample"><div class="meta">擁護 / 信頼度 0.90</div><p>文春の捏造記事を指摘し、共同通信も関与したと主張。</p>
 <blockquote>文春はもっと深刻な嘘つき？ 文春報道がきっかけで松井健氏が高市の秘書の木下に頼まれて誹謗中傷動画をネット流してたのが判明。高市はトボケるも、共同通信が松井健氏の証言を報道。高市の嘘がバレている。ちゃんと理解しないと笑われるだけ。https://t.co/iZpRtcsahU</blockquote>
 <a href="https://x.com/ROCKUJAPAN3/status/2065815213568630943">投稿URL</a>
@@ -844,7 +860,7 @@
 <div class="reason">理由: 報道批判または高市氏本人の関与否定を明示しているため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>サナエトークン関連</h3>
+<article class="sample-card" id="sample-d530a578"><h3>サナエトークン関連</h3>
 <div class="sample"><div class="meta">保留 / 信頼度 0.90</div><p>サナエトークンの登録と高市総理の関与について指摘。</p>
 <blockquote>資金決済法「暗号資産交換業は総理の登録が必須」 総理「私も事務所も知らない」 サナエトークンは高市総理が登録するか、認めていないなら処罰が必要。法治国家なら。  松井健「誹謗中傷しました」 動画「無能でネットで炎上！」 公選法刑法「違法行為です」 利害関係者「ネットの声を投稿しただけw」 https://t.co/ohRJV1Sibh https://...</blockquote>
 <a href="https://x.com/otumamidarkside/status/2065743938036859266">投稿URL</a>
@@ -861,7 +877,7 @@
 <div class="reason">理由: 高市擁護の主張</div>
 </div>
 </article>
-<article class="sample-card"><h3>松井健氏を軸にした拡張</h3>
+<article class="sample-card" id="sample-32b0410e"><h3>松井健氏を軸にした拡張</h3>
 <div class="sample"><div class="meta">批判 / 信頼度 0.70</div><p>松井健と高市陣営の関与否定を疑問視。</p>
 <blockquote>サナエトークンや衆院選等における誹謗中傷動画投入において、実行側の松井健氏と依頼側の高市陣営（木下秘書）の間にお互いに関与を否定する対立があるようだ。 松井健陣営と高市早苗陣営にはそれぞれヤメ検の若手弁護士がついていて、 あろうことか、あの黒川弘務氏が両者の調整をしていると言う❗️ https://t.co/dsmyqg19Dg</blockquote>
 <a href="https://x.com/d3qsUVhX0c60620/status/2065683452796797173">投稿URL</a>
@@ -878,7 +894,7 @@
 <div class="reason">理由: 複数チームによる世論工作の可能性が示唆されています。</div>
 </div>
 </article>
-<article class="sample-card"><h3>玉木氏比較・説明責任</h3>
+<article class="sample-card" id="sample-c88b8a23"><h3>玉木氏比較・説明責任</h3>
 <div class="sample"><div class="meta">比較 / 信頼度 0.90</div><p>玉木雄一郎代表が中傷動画について説明責任を果たすべきと主張。</p>
 <blockquote>玉木さん、渦中の松井健氏と食事に行ったそうですね。 👇藤井聡氏に暴露されていましたよ？ https://t.co/zsFF5PavB2  “中傷動画”国民・玉木代表「説明責任を果たすことに尽きる」　立憲・水岡代表「矛盾点を高市総理に追及していく」 #FNNプライムオンライン https://t.co/Aghttnrxe3</blockquote>
 <a href="https://x.com/hirokumach/status/2064144359508037743">投稿URL</a>
@@ -895,7 +911,7 @@
 <div class="reason">理由: 具体的な非難表明。</div>
 </div>
 </article>
-<article class="sample-card"><h3>ネット選挙・透明性問題</h3>
+<article class="sample-card" id="sample-43f44162"><h3>ネット選挙・透明性問題</h3>
 <div class="sample"><div class="meta">保留 / 信頼度 0.80</div><p>自民党や維新が選挙制度を歪めていると批判。</p>
 <blockquote>都知事選での石丸信二現象、国民民主党玉木雄一郎ブーム、斉藤元彦出直し兵庫知事選の立花孝志二馬力応援選挙、自民党総裁選や衆院選での高市事務所による中傷動画拡散  松井健氏などによるAIネット戦略を駆使した情報工作により歪められた民意による選挙制度の破壊が進行  １月万冊佐藤章氏による指摘 https://t.co/cOWojb3IBp</blockquote>
 <a href="https://x.com/isistarou1/status/2065792414628106577">投稿URL</a>
@@ -912,7 +928,7 @@
 <div class="reason">理由: 多岐にわたる内容</div>
 </div>
 </article>
-<article class="sample-card"><h3>未確認・陰謀寄り</h3>
+<article class="sample-card" id="sample-d11c12bd"><h3>未確認・陰謀寄り</h3>
 <div class="sample"><div class="meta">保留 / 信頼度 0.60</div><p>皇位継承の話題から高市総理の中傷動画ネタを避けるよう求めている。</p>
 <blockquote>みんな急に皇位継承の話題になってます(笑 高市総理の中傷動画ネタから離れるなら今かと</blockquote>
 <a href="https://x.com/travelerDreami1/status/2065803286528377015">投稿URL</a>
@@ -929,7 +945,7 @@
 <div class="reason">理由: 直接的分類に該当しないが、陰謀論的な要素があります。</div>
 </div>
 </article>
-<article class="sample-card"><h3>その他・分類保留</h3>
+<article class="sample-card" id="sample-c8f5e792"><h3>その他・分類保留</h3>
 <div class="sample"><div class="meta">その他 / 信頼度 0.70</div><p>松井健氏とサナエトークン問題について述べる。</p>
 <blockquote>【中傷動画よりトークン問題が命運を分かつ】 高市 首相は木下秘書を守り切るのか｜溝口勇児氏と 松井健 氏の関係｜金融庁がサナエトークンを注視するワケ｜&quot;キーマン”松井氏は過去に投資トラブル【今野忍×河野嘉誠】https://t.co/rTmsgrxSCp… 　@YouTube</blockquote>
 <a href="https://x.com/Watashiwakainin/status/2070634723471491125">投稿URL</a>
@@ -964,5 +980,6 @@
       </a>
     </div>
   </footer>
+
 </body>
 </html>

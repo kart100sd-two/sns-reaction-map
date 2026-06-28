@@ -373,6 +373,22 @@
         font-size: 11px !important;
       }
     }
+
+    .axis-tags span {
+      cursor: pointer;
+      transition: opacity .2s, transform .15s;
+    }
+    .axis-tags span:hover {
+      opacity: .75;
+      transform: translateY(-1px);
+    }
+    .sample-card.highlight-target {
+      animation: sample-highlight 1.5s ease;
+    }
+    @keyframes sample-highlight {
+      0%   { box-shadow: 0 0 0 3px rgba(232,93,43,.5); }
+      100% { box-shadow: none; }
+    }
 </style>
 </head>
 <body>
@@ -701,7 +717,7 @@
 })();
 </script>
 </section>
-    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="positive"><div class="axis-kicker">禁止支持</div><h3>あだ名禁止やさん付けを支持する</h3><div class="axis-count">2<span>件</span></div><p>あだ名によるいじめの防止、ジェンダーへの配慮、心理的安全性や教室内の落ち着いた人間関係づくりを評価する立場。</p><div class="axis-tags"><span>いじめ防止・心理的安全</span><span>ジェンダー配慮・さん付け支持</span></div></article><article class="axis-card" data-tone="negative"><div class="axis-kicker">禁止反対</div><h3>一律のあだ名禁止に反対する</h3><div class="axis-count">20<span>件</span></div><p>親しみが薄れて人間関係がギスギスする懸念や、言葉を規制してもいじめの根本的な解決にはならないと指摘する立場。</p><div class="axis-tags"><span>親しさ・呼称文化への懸念</span><span>一律禁止への実効性批判</span></div></article><article class="axis-card" data-tone="derived"><div class="axis-kicker">ルール運用</div><h3>嫌なあだ名のみ規制など柔軟な運用を求める</h3><div class="axis-count">93<span>件</span></div><p>親しみのある良いあだ名まで禁止するのではなく、「本人が嫌がるあだ名のみを指導する」などの弾力的な運用を支持する立場。</p><div class="axis-tags"><span>柔軟運用・本人意思重視</span><span>体験談・現場感覚</span></div></article></div></section>
+    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="positive"><div class="axis-kicker">禁止支持</div><h3>あだ名禁止やさん付けを支持する</h3><div class="axis-count">2<span>件</span></div><p>あだ名によるいじめの防止、ジェンダーへの配慮、心理的安全性や教室内の落ち着いた人間関係づくりを評価する立場。</p><div class="axis-tags"><span><a href="#sample-24c5fa55" style="color:inherit;text-decoration:none;">いじめ防止・心理的安全</a></span><span>ジェンダー配慮・さん付け支持</span></div></article><article class="axis-card" data-tone="negative"><div class="axis-kicker">禁止反対</div><h3>一律のあだ名禁止に反対する</h3><div class="axis-count">20<span>件</span></div><p>親しみが薄れて人間関係がギスギスする懸念や、言葉を規制してもいじめの根本的な解決にはならないと指摘する立場。</p><div class="axis-tags"><span><a href="#sample-5c31cdd6" style="color:inherit;text-decoration:none;">親しさ・呼称文化への懸念</a></span><span><a href="#sample-39ac244d" style="color:inherit;text-decoration:none;">一律禁止への実効性批判</a></span></div></article><article class="axis-card" data-tone="derived"><div class="axis-kicker">ルール運用</div><h3>嫌なあだ名のみ規制など柔軟な運用を求める</h3><div class="axis-count">93<span>件</span></div><p>親しみのある良いあだ名まで禁止するのではなく、「本人が嫌がるあだ名のみを指導する」などの弾力的な運用を支持する立場。</p><div class="axis-tags"><span><a href="#sample-9c7d0d7c" style="color:inherit;text-decoration:none;">柔軟運用・本人意思重視</a></span><span><a href="#sample-209e66a0" style="color:inherit;text-decoration:none;">体験談・現場感覚</a></span></div></article></div></section>
     <section class="panel"><div class="panel-title"><h2>分類別件数</h2><span>論点の量感</span></div>
 <div class="bar-list">
 <div class="bar-row" data-category="いじめ防止・心理的安全"><div class="bar-meta"><span>いじめ防止・心理的安全</span><strong>2</strong></div><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div></div>
@@ -887,7 +903,7 @@
 </tbody></table></div></section>
     <section class="panel"><h2>代表サンプル</h2>
 <div class="sample-grid">
-<article class="sample-card"><h3>いじめ防止・心理的安全</h3>
+<article class="sample-card" id="sample-24c5fa55"><h3>いじめ防止・心理的安全</h3>
 <div class="sample"><div class="meta">支持 / 信頼度 0.90</div><p>学校であだ名禁止が好影響を及ぼしていると感じている。</p>
 <a href="https://x.com/caffemicio/status/2068327357564559401">投稿URL</a>
 <div class="reason">理由: 明確な賛否あり、被害防止や安心感重視の表現あり。</div>
@@ -897,7 +913,7 @@
 <div class="reason">理由: 被害防止や安心を重視する投稿から分類。</div>
 </div>
 </article>
-<article class="sample-card"><h3>親しさ・呼称文化への懸念</h3>
+<article class="sample-card" id="sample-5c31cdd6"><h3>親しさ・呼称文化への懸念</h3>
 <div class="sample"><div class="meta">懸念 / 信頼度 0.90</div><p>親しみを込めた呼び方や愛称まで一律に失われることを懸念する反応。</p>
 <a href="https://x.com/kinakina35/status/2068167994224824357">投稿URL</a>
 <div class="reason">理由: 親しみ・愛称の価値を理由に一律禁止へ懸念を示しているため。</div>
@@ -911,7 +927,7 @@
 <div class="reason">理由: 親しみ・愛称の価値を理由に一律禁止へ懸念を示しているため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>一律禁止への実効性批判</h3>
+<article class="sample-card" id="sample-39ac244d"><h3>一律禁止への実効性批判</h3>
 <div class="sample"><div class="meta">懸念 / 信頼度 0.90</div><p>あだ名禁止やさん付け指導を一律に進めることへ疑問や反対を示す反応。</p>
 <a href="https://x.com/Nira24_/status/2064354053803712950">投稿URL</a>
 <div class="reason">理由: あだ名禁止への明確な反対・疑問表現があるため。</div>
@@ -925,7 +941,7 @@
 <div class="reason">理由: あだ名禁止への明確な反対・疑問表現があるため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>柔軟運用・本人意思重視</h3>
+<article class="sample-card" id="sample-9c7d0d7c"><h3>柔軟運用・本人意思重視</h3>
 <div class="sample"><div class="meta">条件付き / 信頼度 0.86</div><p>本人の嫌悪感や関係性に応じ、呼び方を柔軟に扱うべきだとする反応。</p>
 <a href="https://x.com/Masa0517/status/2064206835788521641">投稿URL</a>
 <div class="reason">理由: 本人意思や悪意の有無を基準にする表現があるため。</div>
@@ -935,7 +951,7 @@
 <div class="reason">理由: 本人意思や悪意の有無を基準にする表現があるため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>体験談・現場感覚</h3>
+<article class="sample-card" id="sample-209e66a0"><h3>体験談・現場感覚</h3>
 <div class="sample"><div class="meta">体験談 / 信頼度 0.90</div><p>学校でのあだ名が禁止されている状況について共有。</p>
 <a href="https://x.com/hokoru_kokuuuuu/status/2068688837719818726">投稿URL</a>
 <div class="reason">理由: 具体的な学校経験あり</div>
@@ -949,7 +965,7 @@
 <div class="reason">理由: 具体的な学校経験に基づく体験談。</div>
 </div>
 </article>
-<article class="sample-card"><h3>情報共有・立場不明</h3>
+<article class="sample-card" id="sample-9bf7f0f8"><h3>情報共有・立場不明</h3>
 <div class="sample"><div class="meta">情報共有 / 信頼度 0.80</div><p>動画投稿にあだ名を使用しようとするとコミュニティーガイドラインの確認に時間がかかったことについて述べている。</p>
 <a href="https://x.com/komechan236/status/2066449529705218552">投稿URL</a>
 <div class="reason">理由: ニュース共有のみで具体的な立場が不明瞭。</div>
@@ -963,7 +979,7 @@
 <div class="reason">理由: ニュース共有のみで具体的な立場が不明瞭。</div>
 </div>
 </article>
-<article class="sample-card"><h3>対象外・分類保留</h3>
+<article class="sample-card" id="sample-c3141638"><h3>対象外・分類保留</h3>
 <div class="sample"><div class="meta">対象外 / 信頼度 0.90</div><p>学校でのあだ名禁止・さん付け指導とは関係しない呼称や敬称の話題。</p>
 <a href="https://x.com/S1_sagao/status/2068947082933919952">投稿URL</a>
 <div class="reason">理由: 学校制度や児童生徒の呼称ルールへの反応ではないため。</div>
@@ -977,7 +993,7 @@
 <div class="reason">理由: 学校制度や児童生徒の呼称ルールへの反応ではないため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>その他・分類保留</h3>
+<article class="sample-card" id="sample-c8f5e792"><h3>その他・分類保留</h3>
 <div class="sample"><div class="meta">判断不能 / 信頼度 0.90</div><p>呼び捨てが不適切と感じている。</p>
 <a href="https://x.com/mmr_V_/status/2070751875427901738">投稿URL</a>
 <div class="reason">理由: 呼び捨てへの強い反対表明。</div>
@@ -1063,6 +1079,7 @@
       <span>投票参加型 × AI自動分類</span>
     </div>
   </footer>
+
 
 </body>
 </html>

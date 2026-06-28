@@ -385,6 +385,22 @@
         font-size: 11px !important;
       }
     }
+
+    .axis-tags span {
+      cursor: pointer;
+      transition: opacity .2s, transform .15s;
+    }
+    .axis-tags span:hover {
+      opacity: .75;
+      transform: translateY(-1px);
+    }
+    .sample-card.highlight-target {
+      animation: sample-highlight 1.5s ease;
+    }
+    @keyframes sample-highlight {
+      0%   { box-shadow: 0 0 0 3px rgba(232,93,43,.5); }
+      100% { box-shadow: none; }
+    }
 </style>
 </head>
 <body>
@@ -713,7 +729,7 @@
 })();
 </script>
 </section>
-    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="safety"><div class="axis-kicker">事故本体</div><h3>安全管理を問う</h3><div class="axis-count">103<span>件</span></div><p>教育内容よりも、未成年を危険な現場に連れて行った引率・安全管理・再発防止を重く見る立場。</p><div class="axis-tags"><span>安全管理・引率責任を問題視</span><span>事故原因・再発防止への関心</span><span>学校・教育委員会批判</span></div></article><article class="axis-card" data-tone="positive"><div class="axis-kicker">文科省判断を評価</div><h3>政治的中立性違反を指摘</h3><div class="axis-count">208<span>件</span></div><p>平和学習や修学旅行の範囲を超え、特定の政治活動に関わらせたのではないかと見る立場。</p><div class="axis-tags"><span>文科省判断支持・政治的中立性違反を指摘</span><span>政治利用・反基地運動批判</span></div></article><article class="axis-card" data-tone="negative"><div class="axis-kicker">文科省判断を疑問視</div><h3>平和教育の萎縮を懸念</h3><div class="axis-count">30<span>件</span></div><p>教育基本法違反認定が行きすぎで、基地問題や平和教育を扱う教育現場が萎縮すると見る立場。</p><div class="axis-tags"><span>文科省判断への反発・平和教育萎縮を懸念</span><span>追悼・慰霊への共感</span></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">ノイズ・注意領域</div><h3>未確認・過激化した反応</h3><div class="axis-count">24<span>件</span></div><p>断定、罵倒、未確認情報が混ざり、記事化には要約・確認が必要な反応。</p><div class="axis-tags"><span>未確認・過激表現</span><span>その他・分類保留</span></div></article></div></section>
+    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="safety"><div class="axis-kicker">事故本体</div><h3>安全管理を問う</h3><div class="axis-count">103<span>件</span></div><p>教育内容よりも、未成年を危険な現場に連れて行った引率・安全管理・再発防止を重く見る立場。</p><div class="axis-tags"><span><a href="#sample-b98b8d9e" style="color:inherit;text-decoration:none;">安全管理・引率責任を問題視</a></span><span><a href="#sample-3f86c0a6" style="color:inherit;text-decoration:none;">事故原因・再発防止への関心</a></span><span><a href="#sample-91d15e81" style="color:inherit;text-decoration:none;">学校・教育委員会批判</a></span></div></article><article class="axis-card" data-tone="positive"><div class="axis-kicker">文科省判断を評価</div><h3>政治的中立性違反を指摘</h3><div class="axis-count">208<span>件</span></div><p>平和学習や修学旅行の範囲を超え、特定の政治活動に関わらせたのではないかと見る立場。</p><div class="axis-tags"><span><a href="#sample-3d32f531" style="color:inherit;text-decoration:none;">文科省判断支持・政治的中立性違反を指摘</a></span><span><a href="#sample-4cab52c6" style="color:inherit;text-decoration:none;">政治利用・反基地運動批判</a></span></div></article><article class="axis-card" data-tone="negative"><div class="axis-kicker">文科省判断を疑問視</div><h3>平和教育の萎縮を懸念</h3><div class="axis-count">30<span>件</span></div><p>教育基本法違反認定が行きすぎで、基地問題や平和教育を扱う教育現場が萎縮すると見る立場。</p><div class="axis-tags"><span><a href="#sample-767f9e9f" style="color:inherit;text-decoration:none;">文科省判断への反発・平和教育萎縮を懸念</a></span><span><a href="#sample-b72cf3e9" style="color:inherit;text-decoration:none;">追悼・慰霊への共感</a></span></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">ノイズ・注意領域</div><h3>未確認・過激化した反応</h3><div class="axis-count">24<span>件</span></div><p>断定、罵倒、未確認情報が混ざり、記事化には要約・確認が必要な反応。</p><div class="axis-tags"><span><a href="#sample-85874698" style="color:inherit;text-decoration:none;">未確認・過激表現</a></span><span><a href="#sample-c8f5e792" style="color:inherit;text-decoration:none;">その他・分類保留</a></span></div></article></div></section>
     <section class="panel"><div class="panel-title"><h2>分類別件数</h2><span>論点の量感</span></div>
 <div class="bar-list">
 <div class="bar-row" data-category="文科省判断への反発・平和教育萎縮を懸念"><div class="bar-meta"><span>文科省判断への反発・平和教育萎縮を懸念</span><strong>10</strong></div><div class="bar-track"><div class="bar-fill" style="width:9%"></div></div></div>
@@ -1027,7 +1043,7 @@
 </tbody></table></div></section>
     <section class="panel"><h2>代表サンプル</h2>
 <div class="sample-grid">
-<article class="sample-card"><h3>文科省判断への反発・平和教育萎縮を懸念</h3>
+<article class="sample-card" id="sample-767f9e9f"><h3>文科省判断への反発・平和教育萎縮を懸念</h3>
 <div class="sample"><div class="meta">評価しない / 信頼度 0.90</div><p>文科省判断が教育現場の萎縮につながると懸念する反応。</p>
 <blockquote>&quot;【長崎】辺野古沖転覆事故への文科省指導に被爆者ら１３団体が「平和活動萎縮させる」と共同抗議&quot; - NCC長崎文化放送   高校生ら２人が死亡した事故  知床遊覧船沈没事故（KAZU I沈没事故）  https://t.co/9i2u0A4Yz9</blockquote>
 <a href="https://x.com/bodyboo5_boo/status/2064492049488117801">投稿URL</a>
@@ -1044,7 +1060,7 @@
 <div class="reason">理由: 文科省判断への疑問や平和教育の萎縮懸念が主眼のため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>文科省判断支持・政治的中立性違反を指摘</h3>
+<article class="sample-card" id="sample-3d32f531"><h3>文科省判断支持・政治的中立性違反を指摘</h3>
 <div class="sample"><div class="meta">評価する / 信頼度 0.90</div><p>文科省判断を支持し、政治的中立性や教育基本法違反を問題視する反応。</p>
 <blockquote>1人の未来ある高校生が亡くなってるのに何が萎縮させる危険やねん！！  寧ろ萎縮しろ！！！  辺野古沖の転覆死亡事故、文部科学省の教育基本法違反認定に抗議声明…被爆者団体など「平和教育活動を萎縮させる危険」(読売新聞オンライン) #Yahooニュース https://t.co/OMnRyMcw4l</blockquote>
 <a href="https://x.com/FwlpAj/status/2064205114018328990">投稿URL</a>
@@ -1061,7 +1077,7 @@
 <div class="reason">理由: 文科省判断への支持、または抗議声明側への反発が明確なため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>安全管理・引率責任を問題視</h3>
+<article class="sample-card" id="sample-b98b8d9e"><h3>安全管理・引率責任を問題視</h3>
 <div class="sample"><div class="meta">問題視 / 信頼度 0.90</div><p>事故の責任や安全管理を問題視する反応。</p>
 <blockquote>志位さん 辺野古の何も罪の無い高校生死亡事故の責任を取って下さい。</blockquote>
 <a href="https://x.com/atu0511/status/2065642890332864888">投稿URL</a>
@@ -1078,7 +1094,7 @@
 <div class="reason">理由: 安全管理、引率、運航責任、再発防止が主眼のため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>政治利用・反基地運動批判</h3>
+<article class="sample-card" id="sample-4cab52c6"><h3>政治利用・反基地運動批判</h3>
 <div class="sample"><div class="meta">批判 / 信頼度 0.95</div><p>事故や教育活動をめぐり、反基地運動や政治利用を批判する反応。</p>
 <blockquote>これが辺野古活動家の平和運動の実態です。  こんな暴力的な人たちが運転する抗議船に修学旅行生が乗せられ、1名の高校生が亡くなり、16名が大怪我をしたのです。  真相が究明され、責任を負うべき人が罰せられるまで、追及を緩めるわけにはいきません！ https://t.co/TBULoDFSq8 https://t.co/MOPUOUnSZM</blockquote>
 <a href="https://x.com/Ys_goroneko/status/2060704766863561030">投稿URL</a>
@@ -1095,7 +1111,7 @@
 <div class="reason">理由: 政治利用や反基地運動側への批判が主眼のため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>追悼・慰霊への共感</h3>
+<article class="sample-card" id="sample-b72cf3e9"><h3>追悼・慰霊への共感</h3>
 <div class="sample"><div class="meta">支持 / 信頼度 0.95</div><p>追悼式で追悼されないことに反癤。</p>
 <blockquote>追悼 式なのに 追悼 もせず、自分のイデオロギー主張の場にしてるんだから排除は当然だろ。 公務執行妨害で逮捕されないだけマシだと思え。 辺野古 で 高校生 死なせたヘリ基地協議会も亡くなった事を自分のイデオロギー主張に利用してるだろ。 これを養護リプしている連中も同じ穴の狢だわ。</blockquote>
 <a href="https://x.com/_yuizousan/status/2070125918211993658">投稿URL</a>
@@ -1112,7 +1128,7 @@
 <div class="reason">理由: 追悼・慰霊・黙祷が主眼のため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>未確認・過激表現</h3>
+<article class="sample-card" id="sample-85874698"><h3>未確認・過激表現</h3>
 <div class="sample"><div class="meta">未確認 / 信頼度 0.80</div><p>報道が遺族を完全に利用していると批判。</p>
 <blockquote>驚きモモノキさんしょの木。  辺野古沖抗議船転覆死亡事故の女子高校生遺族を完全に利用した報道だよ。  有り得ないハナシで桜井も分かってんだろな！  なんだよこういうオチかよ。 リベラルもクソメディアも腹が黒すぎ、情の欠片が無さすぎ！ https://t.co/O8bqBRlHTc</blockquote>
 <a href="https://x.com/KawauchiYoshin1/status/2066795731198054898">投稿URL</a>
@@ -1129,7 +1145,7 @@
 <div class="reason">理由: 未確認情報や過激表現を含むため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>報道・行政対応批判</h3>
+<article class="sample-card" id="sample-089c7e6a"><h3>報道・行政対応批判</h3>
 <div class="sample"><div class="meta">批判 / 信頼度 0.90</div><p>事故をめぐる報道姿勢や行政対応を批判する反応。</p>
 <blockquote>高校生が亡くなった辺野古転覆事故。 なぜメディアは当初、大きく報じなかったのか。 文科省判断で見えてきたのは、安全管理の問題だけではない。 「平和教育」の名の下で、子供の命より理念が優先されていなかったか。 子供は国の宝であり、日本の未来である。 https://t.co/RQC5ZmIaio</blockquote>
 <a href="https://x.com/yutakarlson/status/2062112055046652375">投稿URL</a>
@@ -1146,7 +1162,7 @@
 <div class="reason">理由: 報道・行政対応への批判が中心のため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>基地問題・反基地論への接続</h3>
+<article class="sample-card" id="sample-908a4534"><h3>基地問題・反基地論への接続</h3>
 <div class="sample"><div class="meta">その他 / 信頼度 0.70</div><p>辺野古転覆事故と平和学習の関連性を強調。</p>
 <blockquote>https://t.co/I57gQkhW2x #辺野古転覆事故 #平和学習　#教育基本法 #ひめゆり学徒隊 #戦争動員 #赤旗 「20万遺骨が眠る鎮魂の沖縄に辺野古基地建設を強行した日米軍産・自衛隊沖縄防衛局が辺野古転覆事故の源である、絶対許せない」と、 自衛隊米軍・日米軍事企業に対する全国の高校生の怒りは凄まじい https://t.co/T6G3...</blockquote>
 <a href="https://x.com/shibuyahatiko/status/2061418914396209616">投稿URL</a>
@@ -1158,7 +1174,7 @@
 <div class="reason">理由: 主眼が過去の事件との関連性で、具体的な立場不明。</div>
 </div>
 </article>
-<article class="sample-card"><h3>学校・教育委員会批判</h3>
+<article class="sample-card" id="sample-91d15e81"><h3>学校・教育委員会批判</h3>
 <div class="sample"><div class="meta">批判 / 信頼度 0.90</div><p>学校や引率側の責任・説明を求める反応。</p>
 <blockquote>辺野古転覆女子高校生死亡事故の同志社国際高校高校を運営学校法人が 安全管理が著しく不適切だったと指摘した文部科学省の調査結果を受け 「極めて重大な責任を痛感している」と謝罪 担当教員、校長の責任と処分も公表しろ🤬🤬💢💢💢💢</blockquote>
 <a href="https://x.com/Wahaha11zo/status/2061597702484607045">投稿URL</a>
@@ -1175,7 +1191,7 @@
 <div class="reason">理由: 学校・教員・引率側の責任を問う表現があるため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>事実確認・情報共有</h3>
+<article class="sample-card" id="sample-20724fb8"><h3>事実確認・情報共有</h3>
 <div class="sample"><div class="meta">中立 / 信頼度 0.90</div><p>事故や関連情報を共有する反応。</p>
 <blockquote>此処の校長西田氏は新学期時に「リスタート」という言葉を使っていたのでは？  文科省発表報告書が出て、いきなり偲ぶ会ですか…  これをどう捉える？  辺野古転覆事故　死亡した高校生を偲ぶ会が同志社国際高校で開かれる　事故から2カ月半近く(ABCニュース) #Yahooニュース https://t.co/ZlpyIbmMOs</blockquote>
 <a href="https://x.com/niko3143/status/2059940577328976370">投稿URL</a>
@@ -1192,7 +1208,7 @@
 <div class="reason">理由: 追悼や明確な評価ではなく情報共有に近いため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>事故原因・再発防止への関心</h3>
+<article class="sample-card" id="sample-3f86c0a6"><h3>事故原因・再発防止への関心</h3>
 <div class="sample"><div class="meta">問題視 / 信頼度 0.80</div><p>辺野古の女子高校生死亡事故について、現場での状況を説明。</p>
 <blockquote>辺野古 の女子 高校生死亡事故 、現場で見ていた漁師の方の証言。 高校生 は、浅瀬でひっくり返った船の中に閉じ込められていた。漁師の方が「中に人がいないか確認しろ」と伝えたが、抗議船の関係者に完全に無視された。 その状況を動画で撮影し、証拠として持っておられるとのこと。 https://t.co/YV0AEaxvvo</blockquote>
 <a href="https://x.com/TinychirpXx/status/2070412260280054026">投稿URL</a>
@@ -1204,7 +1220,7 @@
 <div class="reason">理由: 事故原因の比較あり</div>
 </div>
 </article>
-<article class="sample-card"><h3>その他・分類保留</h3>
+<article class="sample-card" id="sample-c8f5e792"><h3>その他・分類保留</h3>
 <div class="sample"><div class="meta">その他 / 信頼度 0.80</div><p>高校生の政治活動の自由と権利を擁護。</p>
 <blockquote>高校生の政治活動の自由と権利は，高校生自身の市民的自由の行使であると同時に，実践に媒介された政治的教養の自己教育の機会であり，かつまた教員の教育の自由と自律性を担保する契機でもある https://t.co/txObfdfroD 辺野古 / 教育基本法</blockquote>
 <a href="https://x.com/koueihei6869/status/2062788367407018083">投稿URL</a>
@@ -1289,6 +1305,7 @@
       <span>投票参加型 × AI自動分類</span>
     </div>
   </footer>
+
 
 </body>
 </html>

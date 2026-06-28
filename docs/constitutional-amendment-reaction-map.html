@@ -1159,6 +1159,22 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
         font-size: 11px !important;
       }
     }
+
+    .axis-tags span {
+      cursor: pointer;
+      transition: opacity .2s, transform .15s;
+    }
+    .axis-tags span:hover {
+      opacity: .75;
+      transform: translateY(-1px);
+    }
+    .sample-card.highlight-target {
+      animation: sample-highlight 1.5s ease;
+    }
+    @keyframes sample-highlight {
+      0%   { box-shadow: 0 0 0 3px rgba(232,93,43,.5); }
+      100% { box-shadow: none; }
+    }
 </style>
   <!-- AdSense: 審査通過後にここにスクリプトを挿入 -->
   <script type="application/ld+json">
@@ -1604,7 +1620,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 })();
 </script>
 </section>
-    <section class="panel conflict-panel"><div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></span> 対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="positive"><div class="axis-kicker">改憲推進</div><h3>憲法を現実に合わせる</h3><div class="axis-count">26<span>件</span></div><p>自衛隊明記、防衛、緊急事態対応などを理由に、憲法改正を進めるべきと見る立場。</p><div class="axis-tags"><span>改憲賛成・推進</span><span>9条・自衛隊明記に賛成</span><span>緊急事態条項に賛成</span></div></article><article class="axis-card" data-tone="negative"><div class="axis-kicker">改憲慎重・反対</div><h3>平和主義と権力制限を守る</h3><div class="axis-count">66<span>件</span></div><p>9条改正や緊急事態条項は平和主義の後退や権限集中につながると見る立場。</p><div class="axis-tags"><span>改憲反対・護憲</span><span>9条・自衛隊明記に反対</span><span>緊急事態条項に反対</span></div></article><article class="axis-card" data-tone="derived"><div class="axis-kicker">手続き重視</div><h3>国民投票の公平性を問う</h3><div class="axis-count">31<span>件</span></div><p>改憲の中身以前に、広告規制、資金、SNS、国民投票法の整備を重視する立場。</p><div class="axis-tags"><span>国民投票法・広告規制を重視</span><span>手続き・発議可能性への関心</span></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">ノイズ・注意領域</div><h3>未確認・過激化した反応</h3><div class="axis-count">69<span>件</span></div><p>政党批判、強い断定、文脈不足など、記事化前に確認が必要な反応。</p><div class="axis-tags"><span>政党・議員批判</span><span>未確認・過激表現</span><span>その他・分類保留</span></div></article></div></section>
+    <section class="panel conflict-panel"><div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></span> 対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="positive"><div class="axis-kicker">改憲推進</div><h3>憲法を現実に合わせる</h3><div class="axis-count">26<span>件</span></div><p>自衛隊明記、防衛、緊急事態対応などを理由に、憲法改正を進めるべきと見る立場。</p><div class="axis-tags"><span><a href="#sample-ad4262fe" style="color:inherit;text-decoration:none;">改憲賛成・推進</a></span><span><a href="#sample-dc83a70c" style="color:inherit;text-decoration:none;">9条・自衛隊明記に賛成</a></span><span><a href="#sample-1ba78d8d" style="color:inherit;text-decoration:none;">緊急事態条項に賛成</a></span></div></article><article class="axis-card" data-tone="negative"><div class="axis-kicker">改憲慎重・反対</div><h3>平和主義と権力制限を守る</h3><div class="axis-count">66<span>件</span></div><p>9条改正や緊急事態条項は平和主義の後退や権限集中につながると見る立場。</p><div class="axis-tags"><span><a href="#sample-1bb7a0be" style="color:inherit;text-decoration:none;">改憲反対・護憲</a></span><span><a href="#sample-f627e803" style="color:inherit;text-decoration:none;">9条・自衛隊明記に反対</a></span><span><a href="#sample-d9b9c302" style="color:inherit;text-decoration:none;">緊急事態条項に反対</a></span></div></article><article class="axis-card" data-tone="derived"><div class="axis-kicker">手続き重視</div><h3>国民投票の公平性を問う</h3><div class="axis-count">31<span>件</span></div><p>改憲の中身以前に、広告規制、資金、SNS、国民投票法の整備を重視する立場。</p><div class="axis-tags"><span><a href="#sample-8783355d" style="color:inherit;text-decoration:none;">国民投票法・広告規制を重視</a></span><span><a href="#sample-8423c0c3" style="color:inherit;text-decoration:none;">手続き・発議可能性への関心</a></span></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">ノイズ・注意領域</div><h3>未確認・過激化した反応</h3><div class="axis-count">69<span>件</span></div><p>政党批判、強い断定、文脈不足など、記事化前に確認が必要な反応。</p><div class="axis-tags"><span><a href="#sample-12f13b76" style="color:inherit;text-decoration:none;">政党・議員批判</a></span><span>未確認・過激表現</span><span><a href="#sample-c8f5e792" style="color:inherit;text-decoration:none;">その他・分類保留</a></span></div></article></div></section>
     <section class="panel"><div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z"/></svg></span> 分類別件数</h2><span>論点の量感</span></div>
 <div class="bar-list">
 <div class="bar-row" data-category="改憲賛成・推進"><div class="bar-meta"><span>改憲賛成・推進</span><strong>21</strong></div><div class="bar-track"><div class="bar-fill" style="width:33%"></div></div></div>
@@ -1820,7 +1836,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 </tbody></table></div></section>
     <section class="panel"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></span> 代表サンプル</h2>
 <div class="sample-grid">
-<article class="sample-card"><h3>改憲賛成・推進</h3>
+<article class="sample-card" id="sample-ad4262fe"><h3>改憲賛成・推進</h3>
 <div class="sample"><div class="meta">改憲支持 / 信頼度 1.00</div><p>台湾独立と憲法改正、自衛隊明記を支持。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/TaYasouKei/status/2067850410900312417"></a></blockquote>
 <div class="reason">理由: 直接的に憲法改正と自衛隊明記を支持する言及あり。</div>
@@ -1834,7 +1850,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <div class="reason">理由: 投稿者が自衛隊明記と2項削除を推進し、維新党の提案を評価。</div>
 </div>
 </article>
-<article class="sample-card"><h3>改憲反対・護憲</h3>
+<article class="sample-card" id="sample-1bb7a0be"><h3>改憲反対・護憲</h3>
 <div class="sample"><div class="meta">改憲反対 / 信頼度 1.00</div><p>投稿者は現政権による憲法改正に反対しています。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/rrrrn_mimo/status/2067909198638424191"></a></blockquote>
 <div class="reason">理由: 明確な立場表明</div>
@@ -1848,19 +1864,19 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <div class="reason">理由: 憲法改悪断固反対の文言が複数回繰り返される。</div>
 </div>
 </article>
-<article class="sample-card"><h3>9条・自衛隊明記に賛成</h3>
+<article class="sample-card" id="sample-dc83a70c"><h3>9条・自衛隊明記に賛成</h3>
 <div class="sample"><div class="meta">改憲支持 / 信頼度 0.72</div><p>投稿者は自衛隊の存在を憲法上明確にすることに賛成している。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/niko3143/status/2067920109520453789"></a></blockquote>
 <div class="reason">理由: 投稿者が自衛隊の地位を明確にする必要性を主張。</div>
 </div>
 </article>
-<article class="sample-card"><h3>9条・自衛隊明記に反対</h3>
+<article class="sample-card" id="sample-f627e803"><h3>9条・自衛隊明記に反対</h3>
 <div class="sample"><div class="meta">項目別反対 / 信頼度 0.72</div><p>投稿者は自衛隊の存在を憲法上認めることには反対している。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/Nullypog/status/2067947902367134004"></a></blockquote>
 <div class="reason">理由: 投稿者が違憲論を指摘し、自衛隊明記に反対。</div>
 </div>
 </article>
-<article class="sample-card"><h3>緊急事態条項に賛成</h3>
+<article class="sample-card" id="sample-1ba78d8d"><h3>緊急事態条項に賛成</h3>
 <div class="sample"><div class="meta">項目別賛成 / 信頼度 0.80</div><p>若者のアンケート結果から、緊急事態条項新設は支持されています。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/CmfYnqbck380794/status/2067622226879504821"></a></blockquote>
 <div class="reason">理由: 皮肉・揶揄で緊急事態条項賛成表明</div>
@@ -1874,7 +1890,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <div class="reason">理由: 過去の反対から現在の賛成表明。</div>
 </div>
 </article>
-<article class="sample-card"><h3>緊急事態条項に反対</h3>
+<article class="sample-card" id="sample-d9b9c302"><h3>緊急事態条項に反対</h3>
 <div class="sample"><div class="meta">改憲反対 / 信頼度 1.00</div><p>緊急事態条項は人権を侵害する危険性がある。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/sk3856ks/status/2067736851008671816"></a></blockquote>
 <div class="reason">理由: 投稿者が緊急事態条項の導入に反対し、批判的である。</div>
@@ -1883,7 +1899,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/l1yphTWMsa45573/status/2067583144287687118"></a></blockquote>
 </div>
 </article>
-<article class="sample-card"><h3>国民投票法・広告規制を重視</h3>
+<article class="sample-card" id="sample-8783355d"><h3>国民投票法・広告規制を重視</h3>
 <div class="sample"><div class="meta">手続き重視 / 信頼度 1.00</div><p>与党が推進する国民投票法改正案は可決された。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/GhettoOrgan/status/2067964907820364085"></a></blockquote>
 <div class="reason">理由: ニュース共有</div>
@@ -1897,12 +1913,12 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <div class="reason">理由: 主要讨论内容集中在国民投票法和广告规制问题上。</div>
 </div>
 </article>
-<article class="sample-card"><h3>手続き・発議可能性への関心</h3>
+<article class="sample-card" id="sample-8423c0c3"><h3>手続き・発議可能性への関心</h3>
 <div class="sample"><div class="meta">中立 / 信頼度 0.72</div><p>国民投票法改正案と広告規制の内容を疑問視。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/8_bee_/status/2067404127437754801"></a></blockquote>
 </div>
 </article>
-<article class="sample-card"><h3>政党・議員批判</h3>
+<article class="sample-card" id="sample-12f13b76"><h3>政党・議員批判</h3>
 <div class="sample"><div class="meta">改憲支持 / 信頼度 1.00</div><p>投稿者は安倍晋三総理の行動を称賛し、中道勢力に批判的。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/mocchiAbeFan758/status/2068064226518663385"></a></blockquote>
 <div class="reason">理由: 人物・政党の行動批判</div>
@@ -1916,7 +1932,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <div class="reason">理由: 人物・政党の行動批判であるため。</div>
 </div>
 </article>
-<article class="sample-card"><h3>その他・分類保留</h3>
+<article class="sample-card" id="sample-c8f5e792"><h3>その他・分類保留</h3>
 <div class="sample"><div class="meta">改憲支持 / 信頼度 1.00</div><p>投稿者は自衛隊明記を支持し、晋三様の国防政策を擁護する。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/ShinzoGuardian4/status/2068114821191516170"></a></blockquote>
 <div class="reason">理由: 自衛隊明記への肯定的な言及あり</div>
@@ -2036,5 +2052,6 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
   if(statsEl) statsObs.observe(statsEl);
 })();
 </script>
+
 </body>
 </html>

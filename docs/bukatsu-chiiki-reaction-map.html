@@ -1120,6 +1120,22 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
         font-size: 11px !important;
       }
     }
+
+    .axis-tags span {
+      cursor: pointer;
+      transition: opacity .2s, transform .15s;
+    }
+    .axis-tags span:hover {
+      opacity: .75;
+      transform: translateY(-1px);
+    }
+    .sample-card.highlight-target {
+      animation: sample-highlight 1.5s ease;
+    }
+    @keyframes sample-highlight {
+      0%   { box-shadow: 0 0 0 3px rgba(232,93,43,.5); }
+      100% { box-shadow: none; }
+    }
 </style>
 <!-- ADSENSE_TAG_START -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2542211932832864" crossorigin="anonymous"></script>
@@ -1656,7 +1672,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 </tbody></table></div></section>
     <section class="panel"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></span> 代表サンプル</h2>
 <div class="sample-grid">
-<article class="sample-card"><h3>教員の長時間労働解消や持続可能性の観点から地域移行に賛成</h3>
+<article class="sample-card" id="sample-13addbd0"><h3>教員の長時間労働解消や持続可能性の観点から地域移行に賛成</h3>
 <div class="sample"><div class="meta">賛成 / 信頼度 1.00</div><p>教員の過重労働や無償の部活指導の問題を指摘し、地域移行の必要性を主張。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/yoshiki20260530/status/2068442038786547725"></a></blockquote>
 <div class="reason">理由: 教員の働き方改革を主張し、地域移行を肯定的に述べている。</div>
@@ -1670,7 +1686,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <div class="reason">理由: 教員の負担軽減を理由に外部委託賛成</div>
 </div>
 </article>
-<article class="sample-card"><h3>少子化による部活動の維持困難を理由に地域移行を支持</h3>
+<article class="sample-card" id="sample-5991ca3e"><h3>少子化による部活動の維持困難を理由に地域移行を支持</h3>
 <div class="sample"><div class="meta">賛成 / 信頼度 1.00</div><p>月額8000円の地域移行は家計に大きな負担。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/TheMirageof0/status/2070621781757726855"></a></blockquote>
 <div class="reason">理由: 高額な費用と少子化への懸念が明確。</div>
@@ -1684,7 +1700,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <div class="reason">理由: 少子化により部活動が維持困難になるため地域移行を推奨</div>
 </div>
 </article>
-<article class="sample-card"><h3>保護者の費用負担増や受け皿不足を懸念し地域移行に反対</h3>
+<article class="sample-card" id="sample-227d11d9"><h3>保護者の費用負担増や受け皿不足を懸念し地域移行に反対</h3>
 <div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>保護者と地域住民の反発が地域移行の主な理由。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/774nyannyan/status/2063204420297617773"></a></blockquote>
 <div class="reason">理由: 投稿者が保護者の費用負担や受け皿の問題を指摘している。</div>
@@ -1698,7 +1714,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <div class="reason">理由: 月謝が高いと保護者への負担が増すため</div>
 </div>
 </article>
-<article class="sample-card"><h3>部活動の教育的価値や学校文化の喪失を理由に地域移行に反対</h3>
+<article class="sample-card" id="sample-5e92219b"><h3>部活動の教育的価値や学校文化の喪失を理由に地域移行に反対</h3>
 <div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>教員採用試験の低倍率問題と部活動地域移行の関連性を述べつつ、反対意見を示す。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/yamako_10/status/2061588627088634365"></a></blockquote>
 <div class="reason">理由: 「部活動地域移行 には 反対」と明言</div>
@@ -1712,13 +1728,13 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <div class="reason">理由: 主観的な意見がないため</div>
 </div>
 </article>
-<article class="sample-card"><h3>段階的導入や条件整備を前提に地域移行を条件付きで支持</h3>
+<article class="sample-card" id="sample-50a18e0d"><h3>段階的導入や条件整備を前提に地域移行を条件付きで支持</h3>
 <div class="sample"><div class="meta">条件付き / 信頼度 0.80</div><p>月会費設定とNPO法人補助案を提案。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/TheMirageof0/status/2070624074506863002"></a></blockquote>
 <div class="reason">理由: 具体的な提案あり、条件付き賛成の意図が読み取れる。</div>
 </div>
 </article>
-<article class="sample-card"><h3>その他・分類保留</h3>
+<article class="sample-card" id="sample-c8f5e792"><h3>その他・分類保留</h3>
 <div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>部活動改革にブレーキをかけているのは過激派だ。</p>
 <blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/JlMqc1bALnVe9gS/status/2063598518305218910"></a></blockquote>
 <div class="reason">理由: 投稿者の言動から明確な反対立場が読み取れる。</div>
@@ -1837,5 +1853,6 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
   if(statsEl) statsObs.observe(statsEl);
 })();
 </script>
+
 </body>
 </html>
