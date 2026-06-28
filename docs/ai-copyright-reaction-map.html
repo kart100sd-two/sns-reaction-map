@@ -3,119 +3,215 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- SEO_META_START -->
-  <meta name="description" content="AI学習による著作物の無断利用をめぐり、クリエイター保護と技術推進の間で意見が対立。">
-  <link rel="canonical" href="https://issue-stance-lab.github.io/sns-reaction-map/ai-copyright-reaction-map.html">
-  <meta property="og:site_name" content="SNS反応まっぷ">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="生成AIと著作権問題 | SNS反応まっぷ">
-  <meta property="og:description" content="AI学習による著作物の無断利用をめぐり、クリエイター保護と技術推進の間で意見が対立。">
-  <meta property="og:url" content="https://issue-stance-lab.github.io/sns-reaction-map/ai-copyright-reaction-map.html">
-  <meta property="og:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="生成AIと著作権問題 | SNS反応まっぷ">
-  <meta name="twitter:description" content="AI学習による著作物の無断利用をめぐり、クリエイター保護と技術推進の間で意見が対立。">
-  <meta name="twitter:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta property="article:section" content="テック・著作権">
-<!-- SEO_META_END -->
   <title>生成AIと著作権問題 SNS反応まっぷ</title>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
-      --bg: #f3f5f8;
+      --bg: #faf8ff;
       --ink: #172033;
       --muted: #667085;
       --line: #d7dce6;
       --panel: #ffffff;
-      --accent: #1769d1;
-      --accent-soft: #e7f1ff;
+      --accent: #7c3aed;
+      --accent-soft: #f5f3ff;
       --shadow: 0 10px 28px rgba(16, 24, 40, .06);
+      --grad-1: #7c3aed;
+      --grad-2: #5b21b6;
+      --section-bg1: #f5f3ff;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
       line-height: 1.65;
     }
-    header {
-      padding: 34px min(5vw, 56px) 22px;
-      border-bottom: 1px solid var(--line);
-      background: #fff;
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/ai-copyright-hero.webp') center/cover no-repeat;
+      opacity: .18;
+      z-index: 0;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 48px min(6vw, 72px) 40px;
+    }
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -.02em;
+      line-height: 1.2;
+    }
+    .hero .lead {
+      color: rgba(255,255,255,.85);
+      font-size: clamp(15px, 2vw, 18px);
+      max-width: 720px;
+      line-height: 1.8;
+    }
+    .wave-divider {
+      display: block;
+      width: 100%;
+      height: 50px;
+      margin-top: -1px;
     }
     .top-nav {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .top-nav a {
       display: inline-flex;
       align-items: center;
       min-height: 32px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(255,255,255,.25);
       border-radius: 8px;
       padding: 5px 10px;
-      background: #fbfcfe;
-      color: var(--accent);
+      background: rgba(255,255,255,.12);
+      color: #fff;
       text-decoration: none;
       font-weight: 800;
+      backdrop-filter: blur(4px);
     }
+    .top-nav a:hover { background: rgba(255,255,255,.2); }
     h1 { margin: 0 0 8px; font-size: clamp(26px, 4vw, 42px); letter-spacing: 0; }
     h2 { margin: 0 0 16px; font-size: 20px; }
     h3 { margin: 0 0 12px; font-size: 16px; }
     .lead { margin: 0; color: var(--muted); max-width: 960px; }
-    main { padding: 22px min(5vw, 56px) 48px; }
+    main { padding: 0; max-width: none; margin: 0; }
     .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-bottom: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      margin: 0;
+      background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+      position: relative;
+    }
+    .stats::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 50%, rgba(255,255,255,.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 30%, rgba(255,255,255,.1) 0%, transparent 40%);
+      pointer-events: none;
     }
     .stat {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px 16px;
-      box-shadow: var(--shadow);
+      position: relative;
+      padding: 28px 24px;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      background: transparent;
+      color: #fff;
+      border-right: 1px solid rgba(255,255,255,.15);
+      transition: background .2s;
     }
-    .stat span { display: block; color: var(--muted); font-size: 13px; }
-    .stat strong { display: block; font-size: 24px; margin-top: 4px; }
+    .stat:last-child { border-right: none; }
+    .stat:hover { background: rgba(255,255,255,.08); }
+    .stat span {
+      display: block;
+      color: rgba(255,255,255,.85);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      margin-bottom: 6px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.3;
+    }
     .panel, .note-panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 18px;
-      margin-top: 18px;
-      box-shadow: var(--shadow);
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 48px min(6vw, 72px);
+      margin: 0;
+      box-shadow: none;
+      position: relative;
+      max-width: none;
+    }
+    .panel:nth-of-type(odd) {
+      background: var(--section-bg1, #f8fafc);
+    }
+    .panel:nth-of-type(even) {
+      background: #fff;
+    }
+    #vote-section {
+      background: #fff !important;
+      border-bottom: 1px solid var(--line);
+    }
+    .panel > *,
+    .note-panel > * {
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .panel-title {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
+      gap: 16px;
+      margin-bottom: 32px;
     }
-    .panel-title h2 { margin: 0; }
+    .panel-title h2 {
+      margin: 0;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .panel-title h2::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 32px;
+      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
     .panel-title span {
       color: var(--muted);
-      font-size: 12px;
+      font-size: 14px;
       white-space: nowrap;
+      background: rgba(0,0,0,.04);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid rgba(0,0,0,.06);
     }
     .table-wrap {
       overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: 8px;
+      border: none;
+      border-radius: 16px;
       background: #fff;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06);
     }
     table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 900px; }
     table.compact { min-width: 420px; max-width: 760px; }
     th, td {
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 10px 12px;
+      border-right: 1px solid rgba(0,0,0,.04);
+      border-bottom: 1px solid rgba(0,0,0,.04);
+      padding: 14px;
       text-align: center;
       vertical-align: middle;
       white-space: nowrap;
@@ -146,31 +242,35 @@
       position: sticky;
       top: 0;
       z-index: 2;
-      background: #eef2f7;
-      color: #344054;
+      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
+      color: #fff;
       font-size: 12px;
       font-weight: 800;
       line-height: 1.35;
       white-space: normal;
       min-width: 112px;
+      padding: 16px 14px;
     }
-    thead th:first-child { z-index: 3; background: #eef2f7; }
+    thead th:first-child { z-index: 3; background: linear-gradient(180deg, var(--grad-1), var(--grad-2)); color: #fff; }
     td { font-weight: 800; font-variant-numeric: tabular-nums; }
+    tbody tr { transition: background .12s; }
+    tbody tr:hover { background: var(--accent-soft); }
     .heat-cell {
       transition: transform .12s ease, box-shadow .12s ease;
     }
     .heat-cell span {
       display: inline-flex;
-      min-width: 28px;
-      height: 28px;
+      min-width: 34px;
+      height: 34px;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .18);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .2);
+      font-size: 14px;
     }
     .heat-cell:hover {
-      transform: scale(1.03);
-      box-shadow: inset 0 0 0 2px rgba(23, 105, 209, .28);
+      transform: scale(1.08);
+      box-shadow: inset 0 0 0 2px rgba(23, 105, 209, .3);
     }
     .heat-cell.zero {
       color: #98a2b3 !important;
@@ -178,19 +278,30 @@
     }
     .heat-cell.zero span { background: transparent; }
     .total {
-      background: #f2f4f7;
-      color: var(--ink);
+      background: rgba(0,0,0,.03);
       font-weight: 900;
       min-width: 72px;
+      font-size: 15px;
     }
     .bar-list {
       display: grid;
-      gap: 10px;
-      max-width: 980px;
+      gap: 4px;
+      max-width: 1000px;
     }
     .bar-row {
       display: grid;
-      gap: 6px;
+      gap: 8px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,.7);
+      border-radius: 14px;
+      transition: all .2s;
+      border: 1px solid rgba(0,0,0,.04);
+      backdrop-filter: blur(4px);
+    }
+    .bar-row:hover {
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      transform: translateX(4px);
     }
     .bar-meta {
       display: flex;
@@ -198,62 +309,73 @@
       gap: 12px;
       font-size: 14px;
     }
-    .bar-meta span { color: #344054; }
-    .bar-meta strong { font-variant-numeric: tabular-nums; }
+    .bar-meta span { color: var(--ink); font-weight: 700; }
+    .bar-meta strong { font-variant-numeric: tabular-nums; font-size: 18px; font-weight: 900; }
     .bar-track {
-      height: 10px;
+      height: 14px;
       border-radius: 999px;
       overflow: hidden;
-      background: #eef2f7;
+      background: rgba(0,0,0,.06);
     }
     .bar-fill {
       height: 100%;
       border-radius: inherit;
-      background: linear-gradient(90deg, #9fd0ff, #1769d1);
+      transition: width .8s cubic-bezier(.22,1,.36,1);
     }
     .axis-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
     }
     .axis-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px;
-      background: linear-gradient(180deg, #ffffff, #fbfcfe);
-      min-height: 220px;
+      border: none;
+      border-radius: 20px;
+      padding: 28px;
+      min-height: 240px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
+      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .axis-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(0,0,0,.12);
     }
     .axis-kicker {
-      color: var(--accent);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--accent);
     }
     .axis-card h3 {
       margin: 0;
       font-size: 20px;
+      font-weight: 900;
       line-height: 1.35;
     }
     .axis-count {
       display: inline-flex;
       align-items: baseline;
       gap: 4px;
-      font-size: 34px;
+      font-size: 44px;
       font-weight: 900;
       font-variant-numeric: tabular-nums;
       color: var(--ink);
     }
     .axis-count span {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
     }
     .axis-card p {
       margin: 0;
       color: var(--muted);
       font-size: 13px;
+      line-height: 1.7;
     }
     .axis-tags {
       display: flex;
@@ -262,12 +384,12 @@
       margin-top: auto;
     }
     .axis-tags span {
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: #0f4e9d;
-      padding: 4px 8px;
+      border-radius: 8px;
+      padding: 5px 12px;
       font-size: 11px;
       font-weight: 700;
+      background: var(--accent-soft);
+      color: var(--accent);
     }
     [data-category="著作権厳格保護・クリエイターの権利回復を最優先"] th { border-left: 5px solid #b54708; }
 [data-category="著作権厳格保護・クリエイターの権利回復を最優先"] .row-dot { background: #b54708; }
@@ -320,58 +442,89 @@
       gap: 8px;
       align-items: center;
       color: var(--muted);
-      font-size: 13px;
-      margin-top: 12px;
+      font-size: 12px;
+      margin-top: 16px;
+      padding: 12px 18px;
+      background: rgba(255,255,255,.6);
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.04);
     }
-    .chip { width: 30px; height: 14px; border-radius: 3px; border: 1px solid rgba(0,0,0,.08); }
+    .chip { width: 28px; height: 14px; border-radius: 4px; border: 1px solid rgba(0,0,0,.06); }
     .sample-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
     .sample-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px;
-      background: #fbfcfe;
+      border: none;
+      border-radius: 20px;
+      padding: 0;
+      background: #fff;
+      overflow: hidden;
+      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    }
+    .sample-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.1);
+    }
+    .sample-card > h3 {
+      margin: 0;
+      padding: 18px 22px 14px;
+      font-size: 15px;
+      font-weight: 800;
+      border-bottom: 1px solid var(--line);
+    }
+    .sample-card > div {
+      padding: 16px 22px 20px;
     }
     .sample { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 10px; }
-    .meta { color: var(--accent); font-size: 12px; font-weight: 700; }
-    blockquote {
-      margin: 8px 0;
-      padding-left: 10px;
-      border-left: 3px solid var(--line);
-      color: #344054;
+    .meta {
+      color: var(--accent);
       font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
     }
-    .reason { color: var(--muted); font-size: 12px; margin-top: 6px; }
+    blockquote {
+      margin: 0 0 10px;
+      padding: 14px 18px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      border-radius: 0 12px 12px 0;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+    .reason { color: var(--ink); font-size: 14px; margin-top: 8px; line-height: 1.6; }
     a { color: var(--accent); font-size: 13px; }
-    .note-panel h2 { font-size: 16px; }
-    .note-panel ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: 13px; }
+    .note-panel {
+      background: linear-gradient(135deg, var(--accent-soft), #fff) !important;
+      border-left: 5px solid var(--accent) !important;
+      padding: 36px min(6vw, 72px) !important;
+    }
+    .note-panel h2 { font-size: 22px; color: var(--accent); }
+    .note-panel ul { margin: 0; padding-left: 20px; }
+    .note-panel li { margin-bottom: 8px; font-size: 15px; line-height: 1.8; }
+    .conflict-panel {
+      border-top: 4px solid transparent !important;
+      border-image: linear-gradient(90deg, var(--grad-1), var(--grad-2)) 1 !important;
+    }
     @media (max-width: 720px) {
-      main { padding-inline: 14px; }
-      header { padding-inline: 14px; }
-      .panel-title { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat { padding: 20px 16px; }
+      .stat strong { font-size: 18px; }
+      .panel, .note-panel { padding: 32px 16px !important; }
+      .axis-card { padding: 20px; min-height: auto; }
+      .axis-count { font-size: 32px; }
+      .sample-grid { grid-template-columns: 1fr; }
+      .bar-row { padding: 12px 14px; }
+      .panel-title { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .panel-title h2 { font-size: 26px; }
+      .hero-inner { padding: 36px 16px 32px; }
       th:first-child { min-width: 180px; }
       table { min-width: 760px; }
     }
-  
-    .axis-tags span {
-      cursor: pointer;
-      transition: opacity .2s, transform .15s;
-    }
-    .axis-tags span:hover {
-      opacity: .75;
-      transform: translateY(-1px);
-    }
-    .sample-card.highlight-target {
-      animation: sample-highlight 1.5s ease;
-    }
-    @keyframes sample-highlight {
-      0%   { box-shadow: 0 0 0 3px rgba(232,93,43,.5); }
-      100% { box-shadow: none; }
-    }
-</style>
+  </style>
 <!-- GA_TAG_START -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K10S4YCZFH"></script>
   <script>
@@ -386,17 +539,23 @@
 <!-- ADSENSE_TAG_END -->
 </head>
 <body>
-  <header>
-    <nav class="top-nav"><a href="index.html">トップ</a><a href="takaichi-reaction-map-standard.html">高市事例</a><a href="henoko-student-accident-reaction-map.html">辺野古事例</a></nav>
-    <h1>生成AIと著作権問題 SNS反応まっぷ</h1>
-    <p class="lead">Yahooリアルタイム検索で取得したSNS投稿を、クリエイター権利保護、AI技術推進、法規制、利用者モラルなどの論点で整理したビューです。世論調査ではありません。</p>
-  </header>
+  <section class="hero">
+    <div class="hero-inner">
+      <nav class="top-nav"><a href="index.html">トップ</a><a href="takaichi-reaction-map-standard.html">高市事例</a><a href="henoko-student-accident-reaction-map.html">辺野古事例</a></nav>
+      <span style="display:inline-block;background:rgba(255,255,255,.2);color:#fff;padding:6px 18px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:.04em;margin-bottom:8px;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);">テック・著作権</span>
+      <h1>生成AIと著作権問題 SNS反応まっぷ</h1>
+      <p class="lead">Yahooリアルタイム検索で取得したSNS投稿を、クリエイター権利保護、AI技術推進、法規制、利用者モラルなどの論点で整理したビューです。世論調査ではありません。</p>
+    </div>
+  </section>
+  <svg class="wave-divider" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="var(--bg)">
+    <path d="M0,0 C360,50 1080,50 1440,0 L1440,50 L0,50 Z"/>
+  </svg>
   <main>
     <section class="stats">
-      <div class="stat"><span>総サンプル</span><strong>904</strong></div>
+      <div class="stat"><span>総サンプル</span><strong>475</strong></div>
       <div class="stat"><span>ソース</span><strong>Yahooリアルタイム検索</strong></div>
-      <div class="stat"><span>最多カテゴリ</span><strong>その他・分類保留 296</strong></div>
-      <div class="stat"><span>最多スタンス</span><strong>保留 344</strong></div>
+      <div class="stat"><span>最多カテゴリ</span><strong>著作権厳格保護・クリエイターの権利回復を最優先 168</strong></div>
+      <div class="stat"><span>最多スタンス</span><strong>規制反対 164</strong></div>
     </section>
     <section class="panel" id="vote-section">
 <div class="panel-title"><h2>この話題、あなたはどう感じる？</h2><span>SNSの声を見る前に</span></div>
@@ -432,8 +591,8 @@
   var TITLE="生成AIと著作権問題 SNS反応まっぷ";
   var KEY="sns_vote_"+TOPIC;
 
-  var supabaseUrl="https://qslrlprzoucrlptnhsmi.supabase.co";
-  var supabaseAnonKey="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzbHJscHJ6b3VjcmxwdG5oc21pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzOTIxNDYsImV4cCI6MjA5Nzk2ODE0Nn0.kKubYfLww_hr2fgL0r7xK6dnuemIOlQIkQpoOV20ybY";
+  var supabaseUrl="";
+  var supabaseAnonKey="";
   var supabaseClient=null;
 
   if(supabaseUrl && supabaseAnonKey && typeof supabase!=="undefined"){
@@ -614,25 +773,25 @@
     <section class="panel">
 <div class="panel-title"><h2>反応の勢力図</h2><span>対立軸ごとの比率</span></div>
 <div style="display:flex;justify-content:space-between;align-items:flex-end;max-width:660px;margin:0 auto 8px;padding:0 10px;">
-  <div style="text-align:center;padding:8px 16px;border-radius:10px;background:#e0704012;border:2px solid #e07040;"><div style="font-size:12px;font-weight:700;color:#e07040">クリエイターの著作権を最優先に守る</div><div style="font-size:32px;font-weight:800;color:#e07040;line-height:1.2">317</div></div>
+  <div style="text-align:center;padding:8px 16px;border-radius:10px;background:#e0704012;border:2px solid #e07040;"><div style="font-size:12px;font-weight:700;color:#e07040">クリエイターの著作権を最優先に守る</div><div style="font-size:32px;font-weight:800;color:#e07040;line-height:1.2">181</div></div>
   <div style="text-align:center;color:var(--muted);font-size:12px;">
     <div style="font-size:11px;">過半数</div>
-    <div style="font-weight:800;font-size:16px;color:var(--ink);">453</div>
+    <div style="font-weight:800;font-size:16px;color:var(--ink);">238</div>
     <div style="font-size:18px;">▼</div>
   </div>
-  <div style="text-align:center;padding:8px 16px;border-radius:10px;background:#4a90d912;border:2px solid #4a90d9;"><div style="font-size:12px;font-weight:700;color:#4a90d9">AI技術の発展と表現の自由を守る</div><div style="font-size:32px;font-weight:800;color:#4a90d9;line-height:1.2">235</div></div>
+  <div style="text-align:center;padding:8px 16px;border-radius:10px;background:#4a90d912;border:2px solid #4a90d9;"><div style="font-size:12px;font-weight:700;color:#4a90d9">AI技術の発展と表現の自由を守る</div><div style="font-size:32px;font-weight:800;color:#4a90d9;line-height:1.2">122</div></div>
 </div>
 <div style="position:relative;max-width:660px;margin:0 auto;">
   <svg viewBox="0 0 660 350" id="semicircle-chart" style="font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans',sans-serif;"></svg>
   <div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);text-align:center;">
-    <div style="font-size:42px;font-weight:800;color:var(--ink);line-height:1;">904</div>
+    <div style="font-size:42px;font-weight:800;color:var(--ink);line-height:1;">475</div>
     <div style="font-size:14px;color:var(--muted);">サンプル</div>
   </div>
 </div>
 <div id="semicircle-legend" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 20px;margin-top:16px;"></div>
 <script>
 (function(){
-  var data=[{"label": "クリエイターの著作権を最優先に守る", "count": 317, "color": "#e07040", "cats": "著作権厳格保護・クリエイターの権利回復を最優先, 法規制強化・ライセンス制度や許諾要件の整備を求める"}, {"label": "条件付きで共存の仕組みを作る", "count": 56, "color": "#0f7490", "cats": "条件付き容認・オプトアウトや対価支払いで共存, 利用者モラル・クレジット表記や配慮の欠如を問題視"}, {"label": "未確認・過激化した反応", "count": 296, "color": "#7a4cc2", "cats": "その他・分類保留"}, {"label": "AI技術の発展と表現の自由を守る", "count": 235, "color": "#4a90d9", "cats": "AI技術推進・過度な規制は競争力を損なう, 実用主義・利便性重視で問題に深入りしない"}];
+  var data=[{"label": "クリエイターの著作権を最優先に守る", "count": 181, "color": "#e07040", "cats": "著作権厳格保護・クリエイターの権利回復を最優先, 法規制強化・ライセンス制度や許諾要件の整備を求める"}, {"label": "条件付きで共存の仕組みを作る", "count": 36, "color": "#0f7490", "cats": "条件付き容認・オプトアウトや対価支払いで共存, 利用者モラル・クレジット表記や配慮の欠如を問題視"}, {"label": "未確認・過激化した反応", "count": 136, "color": "#7a4cc2", "cats": "その他・分類保留"}, {"label": "AI技術の発展と表現の自由を守る", "count": 122, "color": "#4a90d9", "cats": "AI技術推進・過度な規制は競争力を損なう, 実用主義・利便性重視で問題に深入りしない"}];
   var total=data.reduce(function(s,d){return s+d.count},0);
   var cx=330,cy=310,outerR=290,innerR=160,gap=0.008;
   var svg=document.getElementById("semicircle-chart");
@@ -695,51 +854,51 @@
 })();
 </script>
 </section>
-    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="negative"><div class="axis-kicker">権利保護</div><h3>クリエイターの著作権を最優先に守る</h3><div class="axis-count">317<span>件</span></div><p>AI学習による無断利用は著作権侵害であり、クリエイターの権利回復と保護を最優先すべきとする立場。</p><div class="axis-tags"><span><a href="#sample-16e276e5" style="color:inherit;text-decoration:none;">著作権厳格保護・クリエイターの権利回復を最優先</a></span><span><a href="#sample-148127d7" style="color:inherit;text-decoration:none;">法規制強化・ライセンス制度や許諾要件の整備を求める</a></span></div></article><article class="axis-card" data-tone="positive"><div class="axis-kicker">技術推進</div><h3>AI技術の発展と表現の自由を守る</h3><div class="axis-count">235<span>件</span></div><p>過度な規制は日本の国際競争力を損ない、技術革新と表現の自由を制約するとする立場。</p><div class="axis-tags"><span><a href="#sample-4f81a347" style="color:inherit;text-decoration:none;">AI技術推進・過度な規制は競争力を損なう</a></span><span><a href="#sample-f37e755b" style="color:inherit;text-decoration:none;">実用主義・利便性重視で問題に深入りしない</a></span></div></article><article class="axis-card" data-tone="derived"><div class="axis-kicker">共存模索</div><h3>条件付きで共存の仕組みを作る</h3><div class="axis-count">56<span>件</span></div><p>オプトアウト、対価支払い、クレジット表記など、ルール整備で両立を目指す立場。</p><div class="axis-tags"><span><a href="#sample-57d4eafd" style="color:inherit;text-decoration:none;">条件付き容認・オプトアウトや対価支払いで共存</a></span><span><a href="#sample-04ac9e19" style="color:inherit;text-decoration:none;">利用者モラル・クレジット表記や配慮の欠如を問題視</a></span></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">ノイズ・注意領域</div><h3>未確認・過激化した反応</h3><div class="axis-count">296<span>件</span></div><p>断定、罵倒、文脈不足など、そのままでは記事化に注意が必要な反応。</p><div class="axis-tags"><span><a href="#sample-c8f5e792" style="color:inherit;text-decoration:none;">その他・分類保留</a></span></div></article></div></section>
+    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="negative"><div class="axis-kicker">権利保護</div><h3>クリエイターの著作権を最優先に守る</h3><div class="axis-count">181<span>件</span></div><p>AI学習による無断利用は著作権侵害であり、クリエイターの権利回復と保護を最優先すべきとする立場。</p><div class="axis-tags"><span>著作権厳格保護・クリエイターの権利回復を最優先</span><span>法規制強化・ライセンス制度や許諾要件の整備を求める</span></div></article><article class="axis-card" data-tone="positive"><div class="axis-kicker">技術推進</div><h3>AI技術の発展と表現の自由を守る</h3><div class="axis-count">122<span>件</span></div><p>過度な規制は日本の国際競争力を損ない、技術革新と表現の自由を制約するとする立場。</p><div class="axis-tags"><span>AI技術推進・過度な規制は競争力を損なう</span><span>実用主義・利便性重視で問題に深入りしない</span></div></article><article class="axis-card" data-tone="derived"><div class="axis-kicker">共存模索</div><h3>条件付きで共存の仕組みを作る</h3><div class="axis-count">36<span>件</span></div><p>オプトアウト、対価支払い、クレジット表記など、ルール整備で両立を目指す立場。</p><div class="axis-tags"><span>条件付き容認・オプトアウトや対価支払いで共存</span><span>利用者モラル・クレジット表記や配慮の欠如を問題視</span></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">ノイズ・注意領域</div><h3>未確認・過激化した反応</h3><div class="axis-count">136<span>件</span></div><p>断定、罵倒、文脈不足など、そのままでは記事化に注意が必要な反応。</p><div class="axis-tags"><span>その他・分類保留</span></div></article></div></section>
     <section class="panel"><div class="panel-title"><h2>分類別件数</h2><span>論点の量感</span></div>
 <div class="bar-list">
-<div class="bar-row" data-category="著作権厳格保護・クリエイターの権利回復を最優先"><div class="bar-meta"><span>著作権厳格保護・クリエイターの権利回復を最優先</span><strong>295</strong></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
-<div class="bar-row" data-category="AI技術推進・過度な規制は競争力を損なう"><div class="bar-meta"><span>AI技術推進・過度な規制は競争力を損なう</span><strong>55</strong></div><div class="bar-track"><div class="bar-fill" style="width:19%"></div></div></div>
-<div class="bar-row" data-category="法規制強化・ライセンス制度や許諾要件の整備を求める"><div class="bar-meta"><span>法規制強化・ライセンス制度や許諾要件の整備を求める</span><strong>22</strong></div><div class="bar-track"><div class="bar-fill" style="width:7%"></div></div></div>
-<div class="bar-row" data-category="利用者モラル・クレジット表記や配慮の欠如を問題視"><div class="bar-meta"><span>利用者モラル・クレジット表記や配慮の欠如を問題視</span><strong>45</strong></div><div class="bar-track"><div class="bar-fill" style="width:15%"></div></div></div>
-<div class="bar-row" data-category="条件付き容認・オプトアウトや対価支払いで共存"><div class="bar-meta"><span>条件付き容認・オプトアウトや対価支払いで共存</span><strong>11</strong></div><div class="bar-track"><div class="bar-fill" style="width:4%"></div></div></div>
-<div class="bar-row" data-category="実用主義・利便性重視で問題に深入りしない"><div class="bar-meta"><span>実用主義・利便性重視で問題に深入りしない</span><strong>180</strong></div><div class="bar-track"><div class="bar-fill" style="width:61%"></div></div></div>
-<div class="bar-row" data-category="その他・分類保留"><div class="bar-meta"><span>その他・分類保留</span><strong>296</strong></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
+<div class="bar-row" data-category="著作権厳格保護・クリエイターの権利回復を最優先"><div class="bar-meta"><span>著作権厳格保護・クリエイターの権利回復を最優先</span><strong>168</strong></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
+<div class="bar-row" data-category="AI技術推進・過度な規制は競争力を損なう"><div class="bar-meta"><span>AI技術推進・過度な規制は競争力を損なう</span><strong>34</strong></div><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div></div>
+<div class="bar-row" data-category="法規制強化・ライセンス制度や許諾要件の整備を求める"><div class="bar-meta"><span>法規制強化・ライセンス制度や許諾要件の整備を求める</span><strong>13</strong></div><div class="bar-track"><div class="bar-fill" style="width:8%"></div></div></div>
+<div class="bar-row" data-category="利用者モラル・クレジット表記や配慮の欠如を問題視"><div class="bar-meta"><span>利用者モラル・クレジット表記や配慮の欠如を問題視</span><strong>27</strong></div><div class="bar-track"><div class="bar-fill" style="width:16%"></div></div></div>
+<div class="bar-row" data-category="条件付き容認・オプトアウトや対価支払いで共存"><div class="bar-meta"><span>条件付き容認・オプトアウトや対価支払いで共存</span><strong>9</strong></div><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div></div>
+<div class="bar-row" data-category="実用主義・利便性重視で問題に深入りしない"><div class="bar-meta"><span>実用主義・利便性重視で問題に深入りしない</span><strong>88</strong></div><div class="bar-track"><div class="bar-fill" style="width:52%"></div></div></div>
+<div class="bar-row" data-category="その他・分類保留"><div class="bar-meta"><span>その他・分類保留</span><strong>136</strong></div><div class="bar-track"><div class="bar-fill" style="width:81%"></div></div></div>
 </div></section>
     <section class="panel heat-panel"><div class="panel-title"><h2>カテゴリ × 検索クエリ</h2><span>色が濃いほど件数が多い</span></div>
 <div class="table-wrap"><table class="heat-table">
 <thead><tr><th>分類</th><th>AI イラスト 問題</th><th>AI イラスト 良い OR 便利 OR 助かる</th><th>AI 活用 メリット</th><th>AI 著作権侵害</th><th>AI 規制 やりすぎ OR 反対</th><th>AI学習 無断</th><th>AI絵 パクリ</th><th>生成AI クリエイター</th><th>生成AI 便利</th><th>生成AI 反対</th><th>生成AI 著作権</th><th>生成AI 規制</th><th>生成AI 賛成</th><th>合計</th></tr></thead>
 <tbody>
 <tr data-category="著作権厳格保護・クリエイターの権利回復を最優先"><th><span class="row-dot"></span>著作権厳格保護・クリエイターの権利回復を最優先</th>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI イラスト 問題: 12件"><span>12</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI イラスト 良い OR 便利 OR 助かる: 7件"><span>7</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI イラスト 問題: 9件"><span>9</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI イラスト 良い OR 便利 OR 助かる: 6件"><span>6</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI 活用 メリット: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI 著作権侵害: 58件"><span>58</span></td>
+<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI 著作権侵害: 31件"><span>31</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI 規制 やりすぎ OR 反対: 5件"><span>5</span></td>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI学習 無断: 46件"><span>46</span></td>
-<td class="heat-cell" style="background:#4da3ff;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI絵 パクリ: 33件"><span>33</span></td>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI クリエイター: 46件"><span>46</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 便利: 4件"><span>4</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 反対: 21件"><span>21</span></td>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 著作権: 41件"><span>41</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 規制: 13件"><span>13</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 賛成: 9件"><span>9</span></td>
-<td class="total">295</td></tr>
+<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI学習 無断: 27件"><span>27</span></td>
+<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / AI絵 パクリ: 25件"><span>25</span></td>
+<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI クリエイター: 26件"><span>26</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 便利: 3件"><span>3</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 反対: 6件"><span>6</span></td>
+<td class="heat-cell" style="background:#4da3ff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 著作権: 17件"><span>17</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 規制: 4件"><span>4</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 生成AI 賛成: 9件"><span>9</span></td>
+<td class="total">168</td></tr>
 <tr data-category="AI技術推進・過度な規制は競争力を損なう"><th><span class="row-dot"></span>AI技術推進・過度な規制は競争力を損なう</th>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI イラスト 問題: 2件"><span>2</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI イラスト 問題: 1件"><span>1</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI イラスト 良い OR 便利 OR 助かる: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI 活用 メリット: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI 著作権侵害: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI 規制 やりすぎ OR 反対: 16件"><span>16</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI 規制 やりすぎ OR 反対: 10件"><span>10</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI学習 無断: 1件"><span>1</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / AI絵 パクリ: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI クリエイター: 2件"><span>2</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 便利: 1件"><span>1</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI クリエイター: 1件"><span>1</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 便利: 0件"><span>0</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 反対: 3件"><span>3</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 著作権: 6件"><span>6</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 規制: 15件"><span>15</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 賛成: 9件"><span>9</span></td>
-<td class="total">55</td></tr>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 著作権: 5件"><span>5</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 規制: 10件"><span>10</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 生成AI 賛成: 3件"><span>3</span></td>
+<td class="total">34</td></tr>
 <tr data-category="法規制強化・ライセンス制度や許諾要件の整備を求める"><th><span class="row-dot"></span>法規制強化・ライセンス制度や許諾要件の整備を求める</th>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / AI イラスト 問題: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / AI イラスト 良い OR 便利 OR 助かる: 0件"><span>0</span></td>
@@ -751,17 +910,17 @@
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI クリエイター: 1件"><span>1</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI 便利: 1件"><span>1</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI 反対: 2件"><span>2</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI 著作権: 3件"><span>3</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI 規制: 7件"><span>7</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI 賛成: 4件"><span>4</span></td>
-<td class="total">22</td></tr>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI 著作権: 1件"><span>1</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI 規制: 4件"><span>4</span></td>
+<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 生成AI 賛成: 0件"><span>0</span></td>
+<td class="total">13</td></tr>
 <tr data-category="利用者モラル・クレジット表記や配慮の欠如を問題視"><th><span class="row-dot"></span>利用者モラル・クレジット表記や配慮の欠如を問題視</th>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI イラスト 問題: 11件"><span>11</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI イラスト 良い OR 便利 OR 助かる: 11件"><span>11</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI イラスト 問題: 5件"><span>5</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI イラスト 良い OR 便利 OR 助かる: 3件"><span>3</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI 活用 メリット: 1件"><span>1</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI 著作権侵害: 0件"><span>0</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI 規制 やりすぎ OR 反対: 1件"><span>1</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI学習 無断: 5件"><span>5</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI学習 無断: 1件"><span>1</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / AI絵 パクリ: 0件"><span>0</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 生成AI クリエイター: 2件"><span>2</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 生成AI 便利: 5件"><span>5</span></td>
@@ -769,7 +928,7 @@
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 生成AI 著作権: 4件"><span>4</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 生成AI 規制: 2件"><span>2</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 生成AI 賛成: 1件"><span>1</span></td>
-<td class="total">45</td></tr>
+<td class="total">27</td></tr>
 <tr data-category="条件付き容認・オプトアウトや対価支払いで共存"><th><span class="row-dot"></span>条件付き容認・オプトアウトや対価支払いで共存</th>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / AI イラスト 問題: 0件"><span>0</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / AI イラスト 良い OR 便利 OR 助かる: 2件"><span>2</span></td>
@@ -781,40 +940,40 @@
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI クリエイター: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI 便利: 0件"><span>0</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI 反対: 2件"><span>2</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI 著作権: 2件"><span>2</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI 著作権: 1件"><span>1</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI 規制: 1件"><span>1</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI 賛成: 4件"><span>4</span></td>
-<td class="total">11</td></tr>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 生成AI 賛成: 3件"><span>3</span></td>
+<td class="total">9</td></tr>
 <tr data-category="実用主義・利便性重視で問題に深入りしない"><th><span class="row-dot"></span>実用主義・利便性重視で問題に深入りしない</th>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI イラスト 問題: 11件"><span>11</span></td>
-<td class="heat-cell" style="background:#4da3ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI イラスト 良い OR 便利 OR 助かる: 31件"><span>31</span></td>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="実用主義・利便性重視で問題に深入りしない / AI 活用 メリット: 37件"><span>37</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI イラスト 問題: 8件"><span>8</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI イラスト 良い OR 便利 OR 助かる: 11件"><span>11</span></td>
+<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="実用主義・利便性重視で問題に深入りしない / AI 活用 メリット: 23件"><span>23</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI 著作権侵害: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI 規制 やりすぎ OR 反対: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI学習 無断: 3件"><span>3</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI学習 無断: 1件"><span>1</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="実用主義・利便性重視で問題に深入りしない / AI絵 パクリ: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI クリエイター: 11件"><span>11</span></td>
-<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="実用主義・利便性重視で問題に深入りしない / 生成AI 便利: 58件"><span>58</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI クリエイター: 4件"><span>4</span></td>
+<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="実用主義・利便性重視で問題に深入りしない / 生成AI 便利: 22件"><span>22</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI 反対: 3件"><span>3</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI 著作権: 5件"><span>5</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI 規制: 7件"><span>7</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI 賛成: 14件"><span>14</span></td>
-<td class="total">180</td></tr>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI 著作権: 2件"><span>2</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI 規制: 4件"><span>4</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 生成AI 賛成: 10件"><span>10</span></td>
+<td class="total">88</td></tr>
 <tr data-category="その他・分類保留"><th><span class="row-dot"></span>その他・分類保留</th>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / AI イラスト 問題: 38件"><span>38</span></td>
-<td class="heat-cell" style="background:#4da3ff;color:#172033" title="その他・分類保留 / AI イラスト 良い OR 便利 OR 助かる: 25件"><span>25</span></td>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / AI 活用 メリット: 38件"><span>38</span></td>
+<td class="heat-cell" style="background:#4da3ff;color:#172033" title="その他・分類保留 / AI イラスト 問題: 13件"><span>13</span></td>
+<td class="heat-cell" style="background:#4da3ff;color:#172033" title="その他・分類保留 / AI イラスト 良い OR 便利 OR 助かる: 17件"><span>17</span></td>
+<td class="heat-cell" style="background:#4da3ff;color:#172033" title="その他・分類保留 / AI 活用 メリット: 15件"><span>15</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="その他・分類保留 / AI 著作権侵害: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / AI 規制 やりすぎ OR 反対: 37件"><span>37</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / AI学習 無断: 23件"><span>23</span></td>
+<td class="heat-cell" style="background:#4da3ff;color:#ffffff" title="その他・分類保留 / AI 規制 やりすぎ OR 反対: 18件"><span>18</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / AI学習 無断: 9件"><span>9</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="その他・分類保留 / AI絵 パクリ: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 生成AI クリエイター: 14件"><span>14</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / 生成AI 便利: 9件"><span>9</span></td>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / 生成AI 反対: 44件"><span>44</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 生成AI 著作権: 18件"><span>18</span></td>
-<td class="heat-cell" style="background:#4da3ff;color:#ffffff" title="その他・分類保留 / 生成AI 規制: 32件"><span>32</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 生成AI 賛成: 18件"><span>18</span></td>
-<td class="total">296</td></tr>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / 生成AI クリエイター: 6件"><span>6</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 生成AI 便利: 8件"><span>8</span></td>
+<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / 生成AI 反対: 20件"><span>20</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 生成AI 著作権: 9件"><span>9</span></td>
+<td class="heat-cell" style="background:#4da3ff;color:#172033" title="その他・分類保留 / 生成AI 規制: 13件"><span>13</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 生成AI 賛成: 8件"><span>8</span></td>
+<td class="total">136</td></tr>
 </tbody></table></div></section>
     <div class="legend">
       <span>少</span>
@@ -831,51 +990,51 @@
 <thead><tr><th>分類</th><th>規制賛成</th><th>規制反対</th><th>モラル重視</th><th>保留</th><th>合計</th></tr></thead>
 <tbody>
 <tr data-category="著作権厳格保護・クリエイターの権利回復を最優先"><th><span class="row-dot"></span>著作権厳格保護・クリエイターの権利回復を最優先</th>
-<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / 規制賛成: 243件"><span>243</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 規制反対: 52件"><span>52</span></td>
+<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="著作権厳格保護・クリエイターの権利回復を最優先 / 規制賛成: 144件"><span>144</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 規制反対: 24件"><span>24</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / モラル重視: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="著作権厳格保護・クリエイターの権利回復を最優先 / 保留: 0件"><span>0</span></td>
-<td class="total">295</td></tr>
+<td class="total">168</td></tr>
 <tr data-category="AI技術推進・過度な規制は競争力を損なう"><th><span class="row-dot"></span>AI技術推進・過度な規制は競争力を損なう</th>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 規制賛成: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 規制反対: 55件"><span>55</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 規制反対: 34件"><span>34</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / モラル重視: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="AI技術推進・過度な規制は競争力を損なう / 保留: 0件"><span>0</span></td>
-<td class="total">55</td></tr>
+<td class="total">34</td></tr>
 <tr data-category="法規制強化・ライセンス制度や許諾要件の整備を求める"><th><span class="row-dot"></span>法規制強化・ライセンス制度や許諾要件の整備を求める</th>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 規制賛成: 13件"><span>13</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 規制反対: 9件"><span>9</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 規制賛成: 6件"><span>6</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 規制反対: 7件"><span>7</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / モラル重視: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="法規制強化・ライセンス制度や許諾要件の整備を求める / 保留: 0件"><span>0</span></td>
-<td class="total">22</td></tr>
+<td class="total">13</td></tr>
 <tr data-category="利用者モラル・クレジット表記や配慮の欠如を問題視"><th><span class="row-dot"></span>利用者モラル・クレジット表記や配慮の欠如を問題視</th>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 規制賛成: 7件"><span>7</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 規制反対: 31件"><span>31</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / モラル重視: 7件"><span>7</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 規制賛成: 6件"><span>6</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 規制反対: 20件"><span>20</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / モラル重視: 1件"><span>1</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="利用者モラル・クレジット表記や配慮の欠如を問題視 / 保留: 0件"><span>0</span></td>
-<td class="total">45</td></tr>
+<td class="total">27</td></tr>
 <tr data-category="条件付き容認・オプトアウトや対価支払いで共存"><th><span class="row-dot"></span>条件付き容認・オプトアウトや対価支払いで共存</th>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 規制賛成: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 規制反対: 10件"><span>10</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 規制反対: 8件"><span>8</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / モラル重視: 0件"><span>0</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="条件付き容認・オプトアウトや対価支払いで共存 / 保留: 1件"><span>1</span></td>
-<td class="total">11</td></tr>
+<td class="total">9</td></tr>
 <tr data-category="実用主義・利便性重視で問題に深入りしない"><th><span class="row-dot"></span>実用主義・利便性重視で問題に深入りしない</th>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 規制賛成: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 規制反対: 107件"><span>107</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 規制反対: 53件"><span>53</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="実用主義・利便性重視で問題に深入りしない / モラル重視: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 保留: 73件"><span>73</span></td>
-<td class="total">180</td></tr>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="実用主義・利便性重視で問題に深入りしない / 保留: 35件"><span>35</span></td>
+<td class="total">88</td></tr>
 <tr data-category="その他・分類保留"><th><span class="row-dot"></span>その他・分類保留</th>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / 規制賛成: 7件"><span>7</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / 規制反対: 19件"><span>19</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / 規制反対: 18件"><span>18</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="その他・分類保留 / モラル重視: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="その他・分類保留 / 保留: 270件"><span>270</span></td>
-<td class="total">296</td></tr>
+<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / 保留: 111件"><span>111</span></td>
+<td class="total">136</td></tr>
 </tbody></table></div></section>
     <section class="panel"><h2>代表サンプル</h2>
 <div class="sample-grid">
-<article class="sample-card" id="sample-16e276e5"><h3>著作権厳格保護・クリエイターの権利回復を最優先</h3>
+<article class="sample-card"><h3>著作権厳格保護・クリエイターの権利回復を最優先</h3>
 <div class="sample"><div class="meta">規制賛成 / 信頼度 1.00</div><p>生成AIによる著作権侵害を批判し、対策を求めている。</p>
 <blockquote>一通り目を通したんですけど 生成AI による 著作権 侵害の記述なくね？ ひたすらAI AI連呼してて気分悪くなったけどとりあえず読んだ上で 著作権 侵害をなんとかしろとは書いときました https://t.co/4MbHHqmNjJ</blockquote>
 <a href="https://x.com/koshian_2002/status/2069048301702480182">投稿URL</a>
@@ -892,7 +1051,7 @@
 <div class="reason">理由: 直接的に著作権侵害行為を指摘し、クリエイターの権利保護を求める。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-4f81a347"><h3>AI技術推進・過度な規制は競争力を損なう</h3>
+<article class="sample-card"><h3>AI技術推進・過度な規制は競争力を損なう</h3>
 <div class="sample"><div class="meta">規制反対 / 信頼度 1.00</div><p>生成AIの廃止を主張し、著作権問題も含めて批判している。</p>
 <blockquote>生成AI は雇用喪失及びそれによる購買力低下と不況への懸念、データセンターによる電力資源と水資源の浪費（冷却用地下水には防腐剤を入れるので下水として処理しないといけない）及び二酸化炭素増加による地球環境への悪影響があり 著作権 問題も踏み倒しているのでどう言い訳しても廃止が妥当です</blockquote>
 <a href="https://x.com/G32Jk/status/2069047015934464314">投稿URL</a>
@@ -909,24 +1068,24 @@
 <div class="reason">理由: 投稿者が政府による規制を批判的視点から述べている。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-148127d7"><h3>法規制強化・ライセンス制度や許諾要件の整備を求める</h3>
+<article class="sample-card"><h3>法規制強化・ライセンス制度や許諾要件の整備を求める</h3>
 <div class="sample"><div class="meta">規制賛成 / 信頼度 0.90</div><p>権利問題が解決すればAI生成イラストは容認されるべき。</p>
 <blockquote>権利問題きっちり解決した生成 AI なら 問題起こした時に、きっちり処罰できるように法 規制 した上でなら 別にいいんですよ 絵師は金のために 反対 してるんだ、みたいに書いてる人を見かけたけど 新聞社やJASRACなんかが生成 AI を問題としてる理由はどう思ってるんだろ 自分としては、あくまでも権利問題</blockquote>
 <a href="https://x.com/YUGAYUG01511120/status/2069369977229152612">投稿URL</a>
 <div class="reason">理由: 規制支持の明確な意見</div>
 </div>
-<div class="sample"><div class="meta">規制賛成 / 信頼度 0.90</div><p>選挙運動における生成AIコンテンツ表示義務化について述べる。</p>
-<blockquote>【政治とAI・法改正へ】衆院政治改革特別委員会で、選挙運動における「 生成AI コンテンツの表示義務化」を盛り込んだ公選法・情報プラットフォーム法改正案の成立へ向けた審議が進められています。ディープフェイク等による選挙妨害や世論誘導を防ぎ、デジタル時代の健全な民主主義を守るための 規制 骨子</blockquote>
-<a href="https://x.com/naiwanphut/status/2070713308710400143">投稿URL</a>
-<div class="reason">理由: 規制推進表明</div>
+<div class="sample"><div class="meta">規制反対 / 信頼度 0.80</div><p>生成AIの学習データ利用やリバースエンジニアリングは著作権違反と主張。</p>
+<blockquote>ゲームをツクる補助に 生成AI を使うのはその人の勝手だけれど 学習データに利用したり、リバースエンジニアリング目的で使うのは 普通に 著作権 違反だから駄目よ……という事が書かれている様です</blockquote>
+<a href="https://x.com/n0o8BTzbdrUxMSi/status/2069011965599748245">投稿URL</a>
+<div class="reason">理由: 投稿者が生成AIによる学習データ利用やリバースエンジニアリングについて著作権違反であると指摘している。</div>
 </div>
-<div class="sample"><div class="meta">規制賛成 / 信頼度 0.90</div><p>創作配慮が不足していると批判し、法的措置を求めている。</p>
-<blockquote>なんで他の反 生成AI 派は頑なに盗人盗人と叫んでるの？ 文化配慮に欠けた人達が決めた方針に 賛成 してる奴らには無意味 そも訴える人しだいの法律なんで というか言い方おかしいよね 法律的にというより、人道的なことで違法って言いたいんだろうけど、確実に辞めさせたいからこんな言い方になってる？</blockquote>
-<a href="https://x.com/Kirame_towa/status/2070041123549335956">投稿URL</a>
-<div class="reason">理由: 具体的な立場表明があり、規制派であると読み取れる。</div>
+<div class="sample"><div class="meta">規制反対 / 信頼度 0.80</div><p>内閣府の生成AIパブコメに反対し、慎重な取り扱いを求めている。</p>
+<blockquote>内閣府の 生成AI パブコメ募集だよ！明日までは短すぎんか？　「データを扱うんだから慎重にいけ　『まずやってみる』の精神はやめろ」「個人情報提供の本人同意不要案にまず 反対 なんだわ」「そもそも『信頼できるAI』って何」辺りでわーわー言った https://t.co/g5pCoPHAG0</blockquote>
+<a href="https://x.com/yitsuki615/status/2069034793472577540">投稿URL</a>
+<div class="reason">理由: 個人情報提供の本人同意不要案に反対しているため</div>
 </div>
 </article>
-<article class="sample-card" id="sample-04ac9e19"><h3>利用者モラル・クレジット表記や配慮の欠如を問題視</h3>
+<article class="sample-card"><h3>利用者モラル・クレジット表記や配慮の欠如を問題視</h3>
 <div class="sample"><div class="meta">規制反対 / 信頼度 1.00</div><p>AIイラストがクリエイターへの尊重不足であると批判。</p>
 <blockquote>良い とか悪いとかを論じる前の段階として AI イラスト を見ると物凄くげんなりするクリエイターが大勢いるというのはもはや公然の事実なので、我々はクリエイター支援に本気で取り組んでいますよのメッセージを伝えるポスターでアレをやるのは、本当によりによってのやつだよな・・・信じられん。</blockquote>
 <a href="https://x.com/sikyosyounin/status/2069225117599805465">投稿URL</a>
@@ -943,24 +1102,24 @@
 <div class="reason">理由: 投稿者が生成AIの使用時のモラルとクレジット表記について言及</div>
 </div>
 </article>
-<article class="sample-card" id="sample-57d4eafd"><h3>条件付き容認・オプトアウトや対価支払いで共存</h3>
+<article class="sample-card"><h3>条件付き容認・オプトアウトや対価支払いで共存</h3>
 <div class="sample"><div class="meta">規制反対 / 信頼度 0.90</div><p>生成AIは限定分野での活用には賛成だが、一般人への開放には反対。</p>
 <blockquote>自分は工場・医療・翻訳・軍事といった限定分野に特化した従来のAI技術の活用に近い分野には基本的には 賛成 ですが、 生成AI に関しては一般人に解き放った時点で無法地帯になるのは目に見えていたので使わせる事自体が間違いだったと思っています。</blockquote>
 <a href="https://x.com/shigurezuki1008/status/2067850388817002949">投稿URL</a>
 <div class="reason">理由: 反論を促す立場から規制が必要と主張。</div>
-</div>
-<div class="sample"><div class="meta">規制反対 / 信頼度 0.90</div><p>AIイラストの問題について慎重な態度を示し、政策に組み込むことを希望。</p>
-<blockquote>私、底辺中の底辺絵描きだから殆ど世の中に認知されてないけど、どうしても身バレしたくなくて応募した絵は載せられないから、あまり 生成AI 問題部分をRPして分断煽るアンチと思われたらやなんだけど…、でもそこは本当に是非党として考えてほしい。理解出来ないなら政策に組み込まないも、私は 賛成 。</blockquote>
-<a href="https://x.com/shiritaiht/status/2070327541769068691">投稿URL</a>
-<div class="reason">理由: 具体的な立場表明があり、条件付きで容認する立場。</div>
 </div>
 <div class="sample"><div class="meta">規制反対 / 信頼度 0.80</div><p>生成AIの利用は企業版でオプトアウトしている。</p>
 <blockquote>ご飯食べ終わって見たら数字出てたけど想像の斜め上だった… 「 著作権 譲渡されてるからOK」で見切り発車してないよね。2024年以前はそこまで 生成AI イラスト騒がれてなかった（あったけど精度が今より低かった）から契約が心配。 もちろん企業版使ってオプトアウトしてるよね。無料版でやってないよね…</blockquote>
 <a href="https://x.com/nek0n0tem0/status/2068998478592938008">投稿URL</a>
 <div class="reason">理由: 投稿者が企業版を使用しており、個人版での使用を避ける姿勢がある。</div>
 </div>
+<div class="sample"><div class="meta">規制反対 / 信頼度 0.80</div><p>生成AIの利用を容認しつつ、反対派の理解不足を批判。</p>
+<blockquote>そのグーグルのAIモードに「 生成AI ですか？」と聞いたら、「はい」と返してくるんだよなぁ…。 X(GrokでのAIまとめ)容認然り、「 生成AI反対 派」自身、何処から何処までが 生成AI なのか？を理解しないで 反対 を掲げて居そうな気がする。 (そもそも 反対 理由も二転三転してるし) https://t.co/nJfdflXY1D https...</blockquote>
+<a href="https://x.com/Cero_0727/status/2068927271013089563">投稿URL</a>
+<div class="reason">理由: 投稿者が生成AIの利用を容認しながら、反対派の理由が不明瞭であると指摘している。</div>
+</div>
 </article>
-<article class="sample-card" id="sample-f37e755b"><h3>実用主義・利便性重視で問題に深入りしない</h3>
+<article class="sample-card"><h3>実用主義・利便性重視で問題に深入りしない</h3>
 <div class="sample"><div class="meta">規制反対 / 信頼度 0.90</div><p>自分で撮った写真は著作権に問題がないと主張。</p>
 <blockquote>私も同じで自分で撮った写真なら著作権に 問題 がないから、とにかく写真を撮りまくります。実験している時も、各段階でなるべく写真を撮ります。それがプロトコールを書くときにもすごく役に立ちます。 AI に自分で撮った写真をあげて イラスト 化して、フローチャートを作ったりすることもできるし。 https://t.co/f79T84Rq2d</blockquote>
 <a href="https://x.com/Emily146365811/status/2068657242417529218">投稿URL</a>
@@ -977,7 +1136,7 @@
 <div class="reason">理由: 生成AIの利便性を肯定</div>
 </div>
 </article>
-<article class="sample-card" id="sample-c8f5e792"><h3>その他・分類保留</h3>
+<article class="sample-card"><h3>その他・分類保留</h3>
 <div class="sample"><div class="meta">規制賛成 / 信頼度 1.00</div><p>生成AIが無断でデータを使用しているため、クリエイターは困っている。</p>
 <blockquote>その 生成AI は クリエイター の作品を許可もなく盗んだデータでできてますよ😰 https://t.co/SdcQylRBVQ</blockquote>
 <a href="https://x.com/nipponbare0v0/status/2069003711515668492">投稿URL</a>
@@ -1002,9 +1161,13 @@
 <li>代表投稿は公開前に人間が確認する前提です。</li>
 </ul></section>
   </main>
-  <footer style="border-top:1px solid var(--line);padding:20px min(5vw,56px);text-align:center;color:var(--muted);font-size:12px;line-height:1.8;">
+  <footer style="background:linear-gradient(135deg, var(--grad-2), var(--grad-1));border-top:none;padding:48px 24px;text-align:center;color:#fff;font-size:12px;line-height:1.8;">
     <div>Powered by Yahooリアルタイム検索 + AI分類</div>
-    <a href="index.html" style="color:var(--accent);text-decoration:none;font-weight:700;font-size:13px;">← SNS反応まっぷ トップへ</a>
+    <a href="index.html" style="color:rgba(255,255,255,.85);text-decoration:none;font-weight:700;font-size:13px;">← SNS反応まっぷ トップへ</a>
+    <div style="margin-top:8px;color:rgba(255,255,255,.6);">
+      <a href="privacy.html" style="color:rgba(255,255,255,.7);margin-right:16px;">プライバシーポリシー</a>
+      <a href="disclaimer.html" style="color:rgba(255,255,255,.7);">免責事項</a>
+    </div>
     <div style="margin-top:10px;">
       <a href="https://www.buymeacoffee.com/sns_hannou_map" target="_blank" rel="noopener"
          style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:#ffdd00;color:#0d0d0d;text-decoration:none;font-size:13px;font-weight:700;">
@@ -1012,6 +1175,5 @@
       </a>
     </div>
   </footer>
-
 </body>
 </html>

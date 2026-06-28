@@ -3,126 +3,215 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- SEO_META_START -->
-  <meta name="description" content="文科省の教育基本法違反認定、安全管理、政治的中立性、平和教育の萎縮をめぐる反応。">
-  <link rel="canonical" href="https://issue-stance-lab.github.io/sns-reaction-map/henoko-student-accident-reaction-map.html">
-  <meta property="og:site_name" content="SNS反応まっぷ">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="辺野古高校生死亡事故 | SNS反応まっぷ">
-  <meta property="og:description" content="文科省の教育基本法違反認定、安全管理、政治的中立性、平和教育の萎縮をめぐる反応。">
-  <meta property="og:url" content="https://issue-stance-lab.github.io/sns-reaction-map/henoko-student-accident-reaction-map.html">
-  <meta property="og:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="辺野古高校生死亡事故 | SNS反応まっぷ">
-  <meta name="twitter:description" content="文科省の教育基本法違反認定、安全管理、政治的中立性、平和教育の萎縮をめぐる反応。">
-  <meta name="twitter:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta property="article:section" content="教育・事故・基地問題">
-<!-- SEO_META_END -->
   <title>辺野古高校生死亡事故 SNS反応まっぷ</title>
-  <meta property="og:site_name" content="SNS反応まっぷ">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="辺野古高校生死亡事故 | SNS反応まっぷ">
-  <meta property="og:description" content="辺野古高校生死亡事故へのSNS反応をAI分類で可視化。あなたはどっち？">
-  <meta property="og:url" content="https://issue-stance-lab.github.io/sns-reaction-map/henoko-student-accident-reaction-map.html">
-  <meta property="og:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
-      --bg: #f3f5f8;
+      --bg: #f8fdfe;
       --ink: #172033;
       --muted: #667085;
       --line: #d7dce6;
       --panel: #ffffff;
-      --accent: #1769d1;
-      --accent-soft: #e7f1ff;
+      --accent: #0891b2;
+      --accent-soft: #ecfeff;
       --shadow: 0 10px 28px rgba(16, 24, 40, .06);
+      --grad-1: #0891b2;
+      --grad-2: #155e75;
+      --section-bg1: #ecfeff;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
       line-height: 1.65;
     }
-    header {
-      padding: 34px min(5vw, 56px) 22px;
-      border-bottom: 1px solid var(--line);
-      background: #fff;
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/henoko-hero.webp') center/cover no-repeat;
+      opacity: .18;
+      z-index: 0;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 48px min(6vw, 72px) 40px;
+    }
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -.02em;
+      line-height: 1.2;
+    }
+    .hero .lead {
+      color: rgba(255,255,255,.85);
+      font-size: clamp(15px, 2vw, 18px);
+      max-width: 720px;
+      line-height: 1.8;
+    }
+    .wave-divider {
+      display: block;
+      width: 100%;
+      height: 50px;
+      margin-top: -1px;
     }
     .top-nav {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .top-nav a {
       display: inline-flex;
       align-items: center;
       min-height: 32px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(255,255,255,.25);
       border-radius: 8px;
       padding: 5px 10px;
-      background: #fbfcfe;
-      color: var(--accent);
+      background: rgba(255,255,255,.12);
+      color: #fff;
       text-decoration: none;
       font-weight: 800;
+      backdrop-filter: blur(4px);
     }
+    .top-nav a:hover { background: rgba(255,255,255,.2); }
     h1 { margin: 0 0 8px; font-size: clamp(26px, 4vw, 42px); letter-spacing: 0; }
     h2 { margin: 0 0 16px; font-size: 20px; }
     h3 { margin: 0 0 12px; font-size: 16px; }
     .lead { margin: 0; color: var(--muted); max-width: 960px; }
-    main { padding: 22px min(5vw, 56px) 48px; }
+    main { padding: 0; max-width: none; margin: 0; }
     .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-bottom: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      margin: 0;
+      background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+      position: relative;
+    }
+    .stats::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 50%, rgba(255,255,255,.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 30%, rgba(255,255,255,.1) 0%, transparent 40%);
+      pointer-events: none;
     }
     .stat {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px 16px;
-      box-shadow: var(--shadow);
+      position: relative;
+      padding: 28px 24px;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      background: transparent;
+      color: #fff;
+      border-right: 1px solid rgba(255,255,255,.15);
+      transition: background .2s;
     }
-    .stat span { display: block; color: var(--muted); font-size: 13px; }
-    .stat strong { display: block; font-size: 24px; margin-top: 4px; }
+    .stat:last-child { border-right: none; }
+    .stat:hover { background: rgba(255,255,255,.08); }
+    .stat span {
+      display: block;
+      color: rgba(255,255,255,.85);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      margin-bottom: 6px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.3;
+    }
     .panel, .note-panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 18px;
-      margin-top: 18px;
-      box-shadow: var(--shadow);
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 48px min(6vw, 72px);
+      margin: 0;
+      box-shadow: none;
+      position: relative;
+      max-width: none;
+    }
+    .panel:nth-of-type(odd) {
+      background: var(--section-bg1, #f8fafc);
+    }
+    .panel:nth-of-type(even) {
+      background: #fff;
+    }
+    #vote-section {
+      background: #fff !important;
+      border-bottom: 1px solid var(--line);
+    }
+    .panel > *,
+    .note-panel > * {
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .panel-title {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
+      gap: 16px;
+      margin-bottom: 32px;
     }
-    .panel-title h2 { margin: 0; }
+    .panel-title h2 {
+      margin: 0;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .panel-title h2::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 32px;
+      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
     .panel-title span {
       color: var(--muted);
-      font-size: 12px;
+      font-size: 14px;
       white-space: nowrap;
+      background: rgba(0,0,0,.04);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid rgba(0,0,0,.06);
     }
     .table-wrap {
       overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: 8px;
+      border: none;
+      border-radius: 16px;
       background: #fff;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06);
     }
     table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 900px; }
     table.compact { min-width: 420px; max-width: 760px; }
     th, td {
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 10px 12px;
+      border-right: 1px solid rgba(0,0,0,.04);
+      border-bottom: 1px solid rgba(0,0,0,.04);
+      padding: 14px;
       text-align: center;
       vertical-align: middle;
       white-space: nowrap;
@@ -153,31 +242,35 @@
       position: sticky;
       top: 0;
       z-index: 2;
-      background: #eef2f7;
-      color: #344054;
+      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
+      color: #fff;
       font-size: 12px;
       font-weight: 800;
       line-height: 1.35;
       white-space: normal;
       min-width: 112px;
+      padding: 16px 14px;
     }
-    thead th:first-child { z-index: 3; background: #eef2f7; }
+    thead th:first-child { z-index: 3; background: linear-gradient(180deg, var(--grad-1), var(--grad-2)); color: #fff; }
     td { font-weight: 800; font-variant-numeric: tabular-nums; }
+    tbody tr { transition: background .12s; }
+    tbody tr:hover { background: var(--accent-soft); }
     .heat-cell {
       transition: transform .12s ease, box-shadow .12s ease;
     }
     .heat-cell span {
       display: inline-flex;
-      min-width: 28px;
-      height: 28px;
+      min-width: 34px;
+      height: 34px;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .18);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .2);
+      font-size: 14px;
     }
     .heat-cell:hover {
-      transform: scale(1.03);
-      box-shadow: inset 0 0 0 2px rgba(23, 105, 209, .28);
+      transform: scale(1.08);
+      box-shadow: inset 0 0 0 2px rgba(23, 105, 209, .3);
     }
     .heat-cell.zero {
       color: #98a2b3 !important;
@@ -185,19 +278,30 @@
     }
     .heat-cell.zero span { background: transparent; }
     .total {
-      background: #f2f4f7;
-      color: var(--ink);
+      background: rgba(0,0,0,.03);
       font-weight: 900;
       min-width: 72px;
+      font-size: 15px;
     }
     .bar-list {
       display: grid;
-      gap: 10px;
-      max-width: 980px;
+      gap: 4px;
+      max-width: 1000px;
     }
     .bar-row {
       display: grid;
-      gap: 6px;
+      gap: 8px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,.7);
+      border-radius: 14px;
+      transition: all .2s;
+      border: 1px solid rgba(0,0,0,.04);
+      backdrop-filter: blur(4px);
+    }
+    .bar-row:hover {
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      transform: translateX(4px);
     }
     .bar-meta {
       display: flex;
@@ -205,62 +309,73 @@
       gap: 12px;
       font-size: 14px;
     }
-    .bar-meta span { color: #344054; }
-    .bar-meta strong { font-variant-numeric: tabular-nums; }
+    .bar-meta span { color: var(--ink); font-weight: 700; }
+    .bar-meta strong { font-variant-numeric: tabular-nums; font-size: 18px; font-weight: 900; }
     .bar-track {
-      height: 10px;
+      height: 14px;
       border-radius: 999px;
       overflow: hidden;
-      background: #eef2f7;
+      background: rgba(0,0,0,.06);
     }
     .bar-fill {
       height: 100%;
       border-radius: inherit;
-      background: linear-gradient(90deg, #9fd0ff, #1769d1);
+      transition: width .8s cubic-bezier(.22,1,.36,1);
     }
     .axis-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
     }
     .axis-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px;
-      background: linear-gradient(180deg, #ffffff, #fbfcfe);
-      min-height: 220px;
+      border: none;
+      border-radius: 20px;
+      padding: 28px;
+      min-height: 240px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
+      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .axis-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(0,0,0,.12);
     }
     .axis-kicker {
-      color: var(--accent);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--accent);
     }
     .axis-card h3 {
       margin: 0;
       font-size: 20px;
+      font-weight: 900;
       line-height: 1.35;
     }
     .axis-count {
       display: inline-flex;
       align-items: baseline;
       gap: 4px;
-      font-size: 34px;
+      font-size: 44px;
       font-weight: 900;
       font-variant-numeric: tabular-nums;
       color: var(--ink);
     }
     .axis-count span {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
     }
     .axis-card p {
       margin: 0;
       color: var(--muted);
       font-size: 13px;
+      line-height: 1.7;
     }
     .axis-tags {
       display: flex;
@@ -269,12 +384,12 @@
       margin-top: auto;
     }
     .axis-tags span {
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: #0f4e9d;
-      padding: 4px 8px;
+      border-radius: 8px;
+      padding: 5px 12px;
       font-size: 11px;
       font-weight: 700;
+      background: var(--accent-soft);
+      color: var(--accent);
     }
     [data-category="文科省判断支持・政治的中立性違反を指摘"] th { border-left: 5px solid #1769d1; }
 [data-category="文科省判断支持・政治的中立性違反を指摘"] .row-dot { background: #1769d1; }
@@ -347,76 +462,89 @@
       gap: 8px;
       align-items: center;
       color: var(--muted);
-      font-size: 13px;
-      margin-top: 12px;
+      font-size: 12px;
+      margin-top: 16px;
+      padding: 12px 18px;
+      background: rgba(255,255,255,.6);
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.04);
     }
-    .chip { width: 30px; height: 14px; border-radius: 3px; border: 1px solid rgba(0,0,0,.08); }
+    .chip { width: 28px; height: 14px; border-radius: 4px; border: 1px solid rgba(0,0,0,.06); }
     .sample-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
     .sample-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px;
-      background: #fbfcfe;
+      border: none;
+      border-radius: 20px;
+      padding: 0;
+      background: #fff;
+      overflow: hidden;
+      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    }
+    .sample-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.1);
+    }
+    .sample-card > h3 {
+      margin: 0;
+      padding: 18px 22px 14px;
+      font-size: 15px;
+      font-weight: 800;
+      border-bottom: 1px solid var(--line);
+    }
+    .sample-card > div {
+      padding: 16px 22px 20px;
     }
     .sample { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 10px; }
-    .meta { color: var(--accent); font-size: 12px; font-weight: 700; }
-    blockquote {
-      margin: 8px 0;
-      padding-left: 10px;
-      border-left: 3px solid var(--line);
-      color: #344054;
+    .meta {
+      color: var(--accent);
       font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
     }
-    .reason { color: var(--muted); font-size: 12px; margin-top: 6px; }
+    blockquote {
+      margin: 0 0 10px;
+      padding: 14px 18px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      border-radius: 0 12px 12px 0;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+    .reason { color: var(--ink); font-size: 14px; margin-top: 8px; line-height: 1.6; }
     a { color: var(--accent); font-size: 13px; }
-    .note-panel h2 { font-size: 16px; }
-    .note-panel ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: 13px; }
+    .note-panel {
+      background: linear-gradient(135deg, var(--accent-soft), #fff) !important;
+      border-left: 5px solid var(--accent) !important;
+      padding: 36px min(6vw, 72px) !important;
+    }
+    .note-panel h2 { font-size: 22px; color: var(--accent); }
+    .note-panel ul { margin: 0; padding-left: 20px; }
+    .note-panel li { margin-bottom: 8px; font-size: 15px; line-height: 1.8; }
+    .conflict-panel {
+      border-top: 4px solid transparent !important;
+      border-image: linear-gradient(90deg, var(--grad-1), var(--grad-2)) 1 !important;
+    }
     @media (max-width: 720px) {
-      main { padding-inline: 14px; }
-      header { padding-inline: 14px; }
-      .panel-title { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat { padding: 20px 16px; }
+      .stat strong { font-size: 18px; }
+      .panel, .note-panel { padding: 32px 16px !important; }
+      .axis-card { padding: 20px; min-height: auto; }
+      .axis-count { font-size: 32px; }
+      .sample-grid { grid-template-columns: 1fr; }
+      .bar-row { padding: 12px 14px; }
+      .panel-title { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .panel-title h2 { font-size: 26px; }
+      .hero-inner { padding: 36px 16px 32px; }
       th:first-child { min-width: 180px; }
       table { min-width: 760px; }
     }
-  
-    /* ===== SHARED RESPONSIVE (header/footer/next-topics) ===== */
-    @media (max-width: 768px) {
-      .sns-footer-grid {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-      }
-      .sns-next-topics-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .sns-site-header-inner {
-        height: 48px !important;
-      }
-      .sns-site-header-inner .sns-x-btn {
-        padding: 4px 10px !important;
-        font-size: 11px !important;
-      }
-    }
-
-    .axis-tags span {
-      cursor: pointer;
-      transition: opacity .2s, transform .15s;
-    }
-    .axis-tags span:hover {
-      opacity: .75;
-      transform: translateY(-1px);
-    }
-    .sample-card.highlight-target {
-      animation: sample-highlight 1.5s ease;
-    }
-    @keyframes sample-highlight {
-      0%   { box-shadow: 0 0 0 3px rgba(232,93,43,.5); }
-      100% { box-shadow: none; }
-    }
-</style>
+  </style>
 <!-- GA_TAG_START -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K10S4YCZFH"></script>
   <script>
@@ -431,27 +559,17 @@
 <!-- ADSENSE_TAG_END -->
 </head>
 <body>
-<!-- ===== SITE HEADER ===== -->
-  <header style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.08);padding:0 20px;">
-    <div class="sns-site-header-inner" style="max-width:1100px;margin:0 auto;height:52px;display:flex;align-items:center;justify-content:space-between;">
-      <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1a1a1a;">
-        <div style="width:28px;height:28px;background:linear-gradient(135deg,#e85d2b,#f59e0b);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;">
-          <svg width="15" height="15" fill="none" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/></svg>
-        </div>
-        <span style="font-size:14px;font-weight:900;letter-spacing:-0.02em;font-family:'Noto Sans JP',-apple-system,sans-serif;">SNS反応まっぷ</span>
-      </a>
-      <a href="https://x.com/sns_hannou_ma" target="_blank" rel="noopener" class="sns-x-btn" style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:#1a1a1a;color:#fff;text-decoration:none;font-size:12px;font-weight:700;font-family:'Noto Sans JP',-apple-system,sans-serif;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        @sns_hannou_ma
-      </a>
+  <section class="hero">
+    <div class="hero-inner">
+      <nav class="top-nav"><a href="index.html">トップ</a><a href="henoko-summary.html">まとめUI</a><a href="takaichi-reaction-heatmap.html">高市事例</a></nav>
+      <span style="display:inline-block;background:rgba(255,255,255,.2);color:#fff;padding:6px 18px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:.04em;margin-bottom:8px;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);">教育・事故・基地問題</span>
+      <h1>辺野古高校生死亡事故 SNS反応まっぷ</h1>
+      <p class="lead">Yahooリアルタイム検索で取得した投稿サンプルを、教育基本法違反認定、追悼・慰霊、政治利用批判、事故原因、安全管理などの論点で整理した編集用ビューです。世論調査ではありません。</p>
     </div>
-  </header>
-
-  <header>
-    <nav class="top-nav"><a href="index.html">トップ</a><a href="henoko-summary.html">まとめUI</a><a href="takaichi-reaction-heatmap.html">高市事例</a></nav>
-    <h1>辺野古高校生死亡事故 SNS反応まっぷ</h1>
-    <p class="lead">Yahooリアルタイム検索で取得した投稿サンプルを、教育基本法違反認定、追悼・慰霊、政治利用批判、事故原因、安全管理などの論点で整理した編集用ビューです。世論調査ではありません。</p>
-  </header>
+  </section>
+  <svg class="wave-divider" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="var(--bg)">
+    <path d="M0,0 C360,50 1080,50 1440,0 L1440,50 L0,50 Z"/>
+  </svg>
   <main>
     <section class="stats">
       <div class="stat"><span>総サンプル</span><strong>403</strong></div>
@@ -493,8 +611,8 @@
   var TITLE="辺野古高校生死亡事故 SNS反応まっぷ";
   var KEY="sns_vote_"+TOPIC;
 
-  var supabaseUrl="https://qslrlprzoucrlptnhsmi.supabase.co";
-  var supabaseAnonKey="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzbHJscHJ6b3VjcmxwdG5oc21pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzOTIxNDYsImV4cCI6MjA5Nzk2ODE0Nn0.kKubYfLww_hr2fgL0r7xK6dnuemIOlQIkQpoOV20ybY";
+  var supabaseUrl="";
+  var supabaseAnonKey="";
   var supabaseClient=null;
 
   if(supabaseUrl && supabaseAnonKey && typeof supabase!=="undefined"){
@@ -756,7 +874,7 @@
 })();
 </script>
 </section>
-    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="safety"><div class="axis-kicker">事故本体</div><h3>安全管理を問う</h3><div class="axis-count">103<span>件</span></div><p>教育内容よりも、未成年を危険な現場に連れて行った引率・安全管理・再発防止を重く見る立場。</p><div class="axis-tags"><span><a href="#sample-b98b8d9e" style="color:inherit;text-decoration:none;">安全管理・引率責任を問題視</a></span><span><a href="#sample-3f86c0a6" style="color:inherit;text-decoration:none;">事故原因・再発防止への関心</a></span><span><a href="#sample-91d15e81" style="color:inherit;text-decoration:none;">学校・教育委員会批判</a></span></div></article><article class="axis-card" data-tone="positive"><div class="axis-kicker">文科省判断を評価</div><h3>政治的中立性違反を指摘</h3><div class="axis-count">208<span>件</span></div><p>平和学習や修学旅行の範囲を超え、特定の政治活動に関わらせたのではないかと見る立場。</p><div class="axis-tags"><span><a href="#sample-3d32f531" style="color:inherit;text-decoration:none;">文科省判断支持・政治的中立性違反を指摘</a></span><span><a href="#sample-4cab52c6" style="color:inherit;text-decoration:none;">政治利用・反基地運動批判</a></span></div></article><article class="axis-card" data-tone="negative"><div class="axis-kicker">文科省判断を疑問視</div><h3>平和教育の萎縮を懸念</h3><div class="axis-count">30<span>件</span></div><p>教育基本法違反認定が行きすぎで、基地問題や平和教育を扱う教育現場が萎縮すると見る立場。</p><div class="axis-tags"><span><a href="#sample-767f9e9f" style="color:inherit;text-decoration:none;">文科省判断への反発・平和教育萎縮を懸念</a></span><span><a href="#sample-b72cf3e9" style="color:inherit;text-decoration:none;">追悼・慰霊への共感</a></span></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">ノイズ・注意領域</div><h3>未確認・過激化した反応</h3><div class="axis-count">24<span>件</span></div><p>断定、罵倒、未確認情報が混ざり、記事化には要約・確認が必要な反応。</p><div class="axis-tags"><span><a href="#sample-85874698" style="color:inherit;text-decoration:none;">未確認・過激表現</a></span><span><a href="#sample-c8f5e792" style="color:inherit;text-decoration:none;">その他・分類保留</a></span></div></article></div></section>
+    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="safety"><div class="axis-kicker">事故本体</div><h3>安全管理を問う</h3><div class="axis-count">103<span>件</span></div><p>教育内容よりも、未成年を危険な現場に連れて行った引率・安全管理・再発防止を重く見る立場。</p><div class="axis-tags"><span>安全管理・引率責任を問題視</span><span>事故原因・再発防止への関心</span><span>学校・教育委員会批判</span></div></article><article class="axis-card" data-tone="positive"><div class="axis-kicker">文科省判断を評価</div><h3>政治的中立性違反を指摘</h3><div class="axis-count">208<span>件</span></div><p>平和学習や修学旅行の範囲を超え、特定の政治活動に関わらせたのではないかと見る立場。</p><div class="axis-tags"><span>文科省判断支持・政治的中立性違反を指摘</span><span>政治利用・反基地運動批判</span></div></article><article class="axis-card" data-tone="negative"><div class="axis-kicker">文科省判断を疑問視</div><h3>平和教育の萎縮を懸念</h3><div class="axis-count">30<span>件</span></div><p>教育基本法違反認定が行きすぎで、基地問題や平和教育を扱う教育現場が萎縮すると見る立場。</p><div class="axis-tags"><span>文科省判断への反発・平和教育萎縮を懸念</span><span>追悼・慰霊への共感</span></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">ノイズ・注意領域</div><h3>未確認・過激化した反応</h3><div class="axis-count">24<span>件</span></div><p>断定、罵倒、未確認情報が混ざり、記事化には要約・確認が必要な反応。</p><div class="axis-tags"><span>未確認・過激表現</span><span>その他・分類保留</span></div></article></div></section>
     <section class="panel"><div class="panel-title"><h2>分類別件数</h2><span>論点の量感</span></div>
 <div class="bar-list">
 <div class="bar-row" data-category="文科省判断への反発・平和教育萎縮を懸念"><div class="bar-meta"><span>文科省判断への反発・平和教育萎縮を懸念</span><strong>10</strong></div><div class="bar-track"><div class="bar-fill" style="width:9%"></div></div></div>
@@ -1070,7 +1188,7 @@
 </tbody></table></div></section>
     <section class="panel"><h2>代表サンプル</h2>
 <div class="sample-grid">
-<article class="sample-card" id="sample-767f9e9f"><h3>文科省判断への反発・平和教育萎縮を懸念</h3>
+<article class="sample-card"><h3>文科省判断への反発・平和教育萎縮を懸念</h3>
 <div class="sample"><div class="meta">評価しない / 信頼度 0.90</div><p>文科省判断が教育現場の萎縮につながると懸念する反応。</p>
 <blockquote>&quot;【長崎】辺野古沖転覆事故への文科省指導に被爆者ら１３団体が「平和活動萎縮させる」と共同抗議&quot; - NCC長崎文化放送   高校生ら２人が死亡した事故  知床遊覧船沈没事故（KAZU I沈没事故）  https://t.co/9i2u0A4Yz9</blockquote>
 <a href="https://x.com/bodyboo5_boo/status/2064492049488117801">投稿URL</a>
@@ -1087,7 +1205,7 @@
 <div class="reason">理由: 文科省判断への疑問や平和教育の萎縮懸念が主眼のため。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-3d32f531"><h3>文科省判断支持・政治的中立性違反を指摘</h3>
+<article class="sample-card"><h3>文科省判断支持・政治的中立性違反を指摘</h3>
 <div class="sample"><div class="meta">評価する / 信頼度 0.90</div><p>文科省判断を支持し、政治的中立性や教育基本法違反を問題視する反応。</p>
 <blockquote>1人の未来ある高校生が亡くなってるのに何が萎縮させる危険やねん！！  寧ろ萎縮しろ！！！  辺野古沖の転覆死亡事故、文部科学省の教育基本法違反認定に抗議声明…被爆者団体など「平和教育活動を萎縮させる危険」(読売新聞オンライン) #Yahooニュース https://t.co/OMnRyMcw4l</blockquote>
 <a href="https://x.com/FwlpAj/status/2064205114018328990">投稿URL</a>
@@ -1104,7 +1222,7 @@
 <div class="reason">理由: 文科省判断への支持、または抗議声明側への反発が明確なため。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-b98b8d9e"><h3>安全管理・引率責任を問題視</h3>
+<article class="sample-card"><h3>安全管理・引率責任を問題視</h3>
 <div class="sample"><div class="meta">問題視 / 信頼度 0.90</div><p>事故の責任や安全管理を問題視する反応。</p>
 <blockquote>志位さん 辺野古の何も罪の無い高校生死亡事故の責任を取って下さい。</blockquote>
 <a href="https://x.com/atu0511/status/2065642890332864888">投稿URL</a>
@@ -1121,7 +1239,7 @@
 <div class="reason">理由: 安全管理、引率、運航責任、再発防止が主眼のため。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-4cab52c6"><h3>政治利用・反基地運動批判</h3>
+<article class="sample-card"><h3>政治利用・反基地運動批判</h3>
 <div class="sample"><div class="meta">批判 / 信頼度 0.95</div><p>事故や教育活動をめぐり、反基地運動や政治利用を批判する反応。</p>
 <blockquote>これが辺野古活動家の平和運動の実態です。  こんな暴力的な人たちが運転する抗議船に修学旅行生が乗せられ、1名の高校生が亡くなり、16名が大怪我をしたのです。  真相が究明され、責任を負うべき人が罰せられるまで、追及を緩めるわけにはいきません！ https://t.co/TBULoDFSq8 https://t.co/MOPUOUnSZM</blockquote>
 <a href="https://x.com/Ys_goroneko/status/2060704766863561030">投稿URL</a>
@@ -1138,7 +1256,7 @@
 <div class="reason">理由: 政治利用や反基地運動側への批判が主眼のため。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-b72cf3e9"><h3>追悼・慰霊への共感</h3>
+<article class="sample-card"><h3>追悼・慰霊への共感</h3>
 <div class="sample"><div class="meta">支持 / 信頼度 0.95</div><p>追悼式で追悼されないことに反癤。</p>
 <blockquote>追悼 式なのに 追悼 もせず、自分のイデオロギー主張の場にしてるんだから排除は当然だろ。 公務執行妨害で逮捕されないだけマシだと思え。 辺野古 で 高校生 死なせたヘリ基地協議会も亡くなった事を自分のイデオロギー主張に利用してるだろ。 これを養護リプしている連中も同じ穴の狢だわ。</blockquote>
 <a href="https://x.com/_yuizousan/status/2070125918211993658">投稿URL</a>
@@ -1155,7 +1273,7 @@
 <div class="reason">理由: 追悼・慰霊・黙祷が主眼のため。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-85874698"><h3>未確認・過激表現</h3>
+<article class="sample-card"><h3>未確認・過激表現</h3>
 <div class="sample"><div class="meta">未確認 / 信頼度 0.80</div><p>報道が遺族を完全に利用していると批判。</p>
 <blockquote>驚きモモノキさんしょの木。  辺野古沖抗議船転覆死亡事故の女子高校生遺族を完全に利用した報道だよ。  有り得ないハナシで桜井も分かってんだろな！  なんだよこういうオチかよ。 リベラルもクソメディアも腹が黒すぎ、情の欠片が無さすぎ！ https://t.co/O8bqBRlHTc</blockquote>
 <a href="https://x.com/KawauchiYoshin1/status/2066795731198054898">投稿URL</a>
@@ -1172,7 +1290,7 @@
 <div class="reason">理由: 未確認情報や過激表現を含むため。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-089c7e6a"><h3>報道・行政対応批判</h3>
+<article class="sample-card"><h3>報道・行政対応批判</h3>
 <div class="sample"><div class="meta">批判 / 信頼度 0.90</div><p>事故をめぐる報道姿勢や行政対応を批判する反応。</p>
 <blockquote>高校生が亡くなった辺野古転覆事故。 なぜメディアは当初、大きく報じなかったのか。 文科省判断で見えてきたのは、安全管理の問題だけではない。 「平和教育」の名の下で、子供の命より理念が優先されていなかったか。 子供は国の宝であり、日本の未来である。 https://t.co/RQC5ZmIaio</blockquote>
 <a href="https://x.com/yutakarlson/status/2062112055046652375">投稿URL</a>
@@ -1189,7 +1307,7 @@
 <div class="reason">理由: 報道・行政対応への批判が中心のため。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-908a4534"><h3>基地問題・反基地論への接続</h3>
+<article class="sample-card"><h3>基地問題・反基地論への接続</h3>
 <div class="sample"><div class="meta">その他 / 信頼度 0.70</div><p>辺野古転覆事故と平和学習の関連性を強調。</p>
 <blockquote>https://t.co/I57gQkhW2x #辺野古転覆事故 #平和学習　#教育基本法 #ひめゆり学徒隊 #戦争動員 #赤旗 「20万遺骨が眠る鎮魂の沖縄に辺野古基地建設を強行した日米軍産・自衛隊沖縄防衛局が辺野古転覆事故の源である、絶対許せない」と、 自衛隊米軍・日米軍事企業に対する全国の高校生の怒りは凄まじい https://t.co/T6G3...</blockquote>
 <a href="https://x.com/shibuyahatiko/status/2061418914396209616">投稿URL</a>
@@ -1201,7 +1319,7 @@
 <div class="reason">理由: 主眼が過去の事件との関連性で、具体的な立場不明。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-91d15e81"><h3>学校・教育委員会批判</h3>
+<article class="sample-card"><h3>学校・教育委員会批判</h3>
 <div class="sample"><div class="meta">批判 / 信頼度 0.90</div><p>学校や引率側の責任・説明を求める反応。</p>
 <blockquote>辺野古転覆女子高校生死亡事故の同志社国際高校高校を運営学校法人が 安全管理が著しく不適切だったと指摘した文部科学省の調査結果を受け 「極めて重大な責任を痛感している」と謝罪 担当教員、校長の責任と処分も公表しろ🤬🤬💢💢💢💢</blockquote>
 <a href="https://x.com/Wahaha11zo/status/2061597702484607045">投稿URL</a>
@@ -1218,7 +1336,7 @@
 <div class="reason">理由: 学校・教員・引率側の責任を問う表現があるため。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-20724fb8"><h3>事実確認・情報共有</h3>
+<article class="sample-card"><h3>事実確認・情報共有</h3>
 <div class="sample"><div class="meta">中立 / 信頼度 0.90</div><p>事故や関連情報を共有する反応。</p>
 <blockquote>此処の校長西田氏は新学期時に「リスタート」という言葉を使っていたのでは？  文科省発表報告書が出て、いきなり偲ぶ会ですか…  これをどう捉える？  辺野古転覆事故　死亡した高校生を偲ぶ会が同志社国際高校で開かれる　事故から2カ月半近く(ABCニュース) #Yahooニュース https://t.co/ZlpyIbmMOs</blockquote>
 <a href="https://x.com/niko3143/status/2059940577328976370">投稿URL</a>
@@ -1235,7 +1353,7 @@
 <div class="reason">理由: 追悼や明確な評価ではなく情報共有に近いため。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-3f86c0a6"><h3>事故原因・再発防止への関心</h3>
+<article class="sample-card"><h3>事故原因・再発防止への関心</h3>
 <div class="sample"><div class="meta">問題視 / 信頼度 0.80</div><p>辺野古の女子高校生死亡事故について、現場での状況を説明。</p>
 <blockquote>辺野古 の女子 高校生死亡事故 、現場で見ていた漁師の方の証言。 高校生 は、浅瀬でひっくり返った船の中に閉じ込められていた。漁師の方が「中に人がいないか確認しろ」と伝えたが、抗議船の関係者に完全に無視された。 その状況を動画で撮影し、証拠として持っておられるとのこと。 https://t.co/YV0AEaxvvo</blockquote>
 <a href="https://x.com/TinychirpXx/status/2070412260280054026">投稿URL</a>
@@ -1247,7 +1365,7 @@
 <div class="reason">理由: 事故原因の比較あり</div>
 </div>
 </article>
-<article class="sample-card" id="sample-c8f5e792"><h3>その他・分類保留</h3>
+<article class="sample-card"><h3>その他・分類保留</h3>
 <div class="sample"><div class="meta">その他 / 信頼度 0.80</div><p>高校生の政治活動の自由と権利を擁護。</p>
 <blockquote>高校生の政治活動の自由と権利は，高校生自身の市民的自由の行使であると同時に，実践に媒介された政治的教養の自己教育の機会であり，かつまた教員の教育の自由と自律性を担保する契機でもある https://t.co/txObfdfroD 辺野古 / 教育基本法</blockquote>
 <a href="https://x.com/koueihei6869/status/2062788367407018083">投稿URL</a>
@@ -1268,71 +1386,19 @@
 <li>代表投稿は公開前に人間が確認する前提です。</li>
 </ul></section>
   </main>
-
-  <!-- ===== 次のテーマへ ===== -->
-  <section style="max-width:1100px;margin:40px auto;padding:0 20px;">
-    <div style="background:linear-gradient(135deg,#fdf0eb,#fff7ed);border:1px solid rgba(232,93,43,.15);border-radius:16px;padding:28px 24px;">
-      <h2 style="font-size:18px;font-weight:900;margin:0 0 6px;color:#1a1a1a;font-family:'Noto Sans JP',-apple-system,sans-serif;">🗳️ 他のテーマにも投票しよう</h2>
-      <p style="font-size:13px;color:#888;margin:0 0 16px;">全テーマ投票でコンプリート！あなたの感覚を確かめよう。</p>
-      <div class="sns-next-topics-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
-
-        <a href="ai-copyright-reaction-map.html" style="display:block;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-          <div style="font-size:15px;font-weight:900;color:#1a1a1a;margin-bottom:4px;">生成AIと著作権</div>
-          <div style="font-size:12px;color:#e85d2b;font-weight:700;">投票する →</div>
-        </a>
-        <a href="takaichi-reaction-map-standard.html" style="display:block;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-          <div style="font-size:15px;font-weight:900;color:#1a1a1a;margin-bottom:4px;">高市文春問題</div>
-          <div style="font-size:12px;color:#e85d2b;font-weight:700;">投票する →</div>
-        </a>
-        <a href="school-nickname-ban-reaction-map.html" style="display:block;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-          <div style="font-size:15px;font-weight:900;color:#1a1a1a;margin-bottom:4px;">あだ名禁止</div>
-          <div style="font-size:12px;color:#e85d2b;font-weight:700;">投票する →</div>
-        </a>
-        <a href="constitutional-amendment-reaction-map.html" style="display:block;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-          <div style="font-size:15px;font-weight:900;color:#1a1a1a;margin-bottom:4px;">憲法改正</div>
-          <div style="font-size:12px;color:#e85d2b;font-weight:700;">投票する →</div>
-        </a>
-      </div>
+  <footer style="background:linear-gradient(135deg, var(--grad-2), var(--grad-1));border-top:none;padding:48px 24px;text-align:center;color:#fff;font-size:12px;line-height:1.8;">
+    <div>Powered by Yahooリアルタイム検索 + AI分類</div>
+    <a href="index.html" style="color:rgba(255,255,255,.85);text-decoration:none;font-weight:700;font-size:13px;">← SNS反応まっぷ トップへ</a>
+    <div style="margin-top:8px;color:rgba(255,255,255,.6);">
+      <a href="privacy.html" style="color:rgba(255,255,255,.7);margin-right:16px;">プライバシーポリシー</a>
+      <a href="disclaimer.html" style="color:rgba(255,255,255,.7);">免責事項</a>
     </div>
-  </section>
-
-  <!-- ===== UNIFIED FOOTER ===== -->
-  <footer style="background:#1a1a1a;color:rgba(255,255,255,.7);padding:48px 20px 32px;margin-top:40px;">
-    <div class="sns-footer-grid" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;font-family:'Noto Sans JP',-apple-system,sans-serif;">
-      <div>
-        <h3 style="font-size:18px;font-weight:900;color:#fff;margin:0 0 8px;">SNS反応まっぷ</h3>
-        <p style="font-size:13px;line-height:1.8;max-width:340px;margin:0;">SNSで意見が割れる話題を、投票参加型×AI自動分類で可視化する独立メディアプロジェクト。</p>
-        <div style="display:flex;gap:10px;margin-top:16px;">
-          <a href="https://x.com/sns_hannou_ma" target="_blank" rel="noopener" aria-label="X" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://buymeacoffee.com/kt100sd" target="_blank" rel="noopener" aria-label="Buy Me a Coffee" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;">☕</a>
-        </div>
-      </div>
-      <div>
-        <h4 style="font-size:13px;font-weight:700;color:#fff;margin:0 0 12px;letter-spacing:.04em;">他のテーマ</h4>
-        <ul style="list-style:none;padding:0;margin:0;">
-          <li><a href="ai-copyright-reaction-map.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">生成AIと著作権</a></li>
-          <li><a href="takaichi-reaction-map-standard.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">高市文春問題</a></li>
-          <li><a href="school-nickname-ban-reaction-map.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">あだ名禁止</a></li>
-          <li><a href="constitutional-amendment-reaction-map.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">憲法改正</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 style="font-size:13px;font-weight:700;color:#fff;margin:0 0 12px;letter-spacing:.04em;">サイト情報</h4>
-        <ul style="list-style:none;padding:0;margin:0;">
-          <li><a href="index.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">トップページ</a></li>
-          <li><a href="privacy.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">プライバシーポリシー</a></li>
-          <li><a href="disclaimer.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">免責事項</a></li>
-        </ul>
-      </div>
-    </div>
-    <div style="max-width:1100px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:11px;">
-      <span>&copy; 2025-2026 SNS反応まっぷ</span>
-      <span>投票参加型 × AI自動分類</span>
+    <div style="margin-top:10px;">
+      <a href="https://www.buymeacoffee.com/sns_hannou_map" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:#ffdd00;color:#0d0d0d;text-decoration:none;font-size:13px;font-weight:700;">
+        ☕ このプロジェクトを応援
+      </a>
     </div>
   </footer>
-
-
 </body>
 </html>

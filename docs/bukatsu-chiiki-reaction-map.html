@@ -3,149 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- SEO_META_START -->
-  <meta name="description" content="教員の働き方改革と子どもの活動機会の確保をめぐり、地域移行の賛否や受け皿の課題が交錯するSNS反応。">
-  <link rel="canonical" href="https://issue-stance-lab.github.io/sns-reaction-map/bukatsu-chiiki-reaction-map.html">
-  <meta property="og:site_name" content="SNS反応まっぷ">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="部活動の地域移行の是非 | SNS反応まっぷ">
-  <meta property="og:description" content="教員の働き方改革と子どもの活動機会の確保をめぐり、地域移行の賛否や受け皿の課題が交錯するSNS反応。">
-  <meta property="og:url" content="https://issue-stance-lab.github.io/sns-reaction-map/bukatsu-chiiki-reaction-map.html">
-  <meta property="og:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="部活動の地域移行の是非 | SNS反応まっぷ">
-  <meta name="twitter:description" content="教員の働き方改革と子どもの活動機会の確保をめぐり、地域移行の賛否や受け皿の課題が交錯するSNS反応。">
-  <meta name="twitter:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta property="article:section" content="教育・部活動改革">
-<!-- SEO_META_END -->
   <title>部活動の地域移行の是非 SNS反応まっぷ</title>
-  <meta property="og:site_name" content="SNS反応まっぷ">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="部活動の地域移行の是非 | SNS反応まっぷ">
-  <meta property="og:description" content="部活動の地域移行についてのSNS反応をAI分類で可視化。あなたはどっち？">
-  <meta property="og:url" content="https://issue-stance-lab.github.io/sns-reaction-map/bukatsu-chiiki-reaction-map.html">
-  <meta property="og:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
-
     :root {
       color-scheme: light;
-      --bg: #fffbeb;
-      --ink: #1c1917;
-      --muted: #374151;
-      --line: #e2e8f0;
+      --bg: #f8fdfe;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d7dce6;
       --panel: #ffffff;
-      --accent: #d97706;
-      --accent-soft: #fffbeb;
-      --grad-1: #d97706;
-      --grad-2: #92400e;
-      --shadow: 0 4px 20px rgba(0,0,0,.08);
-      --section-bg1: #fffbeb;
-      --section-bg2: #fef2f2;
-      --section-bg3: #ecfdf5;
+      --accent: #0891b2;
+      --accent-soft: #ecfeff;
+      --shadow: 0 10px 28px rgba(16, 24, 40, .06);
+      --grad-1: #0891b2;
+      --grad-2: #155e75;
+      --section-bg1: #ecfeff;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 16px;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
+      font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.65;
     }
-
     .hero {
       position: relative;
+      background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
       overflow: hidden;
-      background: linear-gradient(135deg, var(--grad-1) 0%, var(--grad-2) 100%);
-      padding: 0;
-      min-height: 320px;
-      display: flex;
-      align-items: center;
     }
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 20% 50%, rgba(255,255,255,.12) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(255,255,255,.08) 0%, transparent 40%);
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url('images/bukatsu-hero.webp');
-      background-size: cover;
-      background-position: center;
-      opacity: .28;
-      mix-blend-mode: luminosity;
+      background: url('images/bukatsu-hero.webp') center/cover no-repeat;
+      opacity: .18;
       z-index: 0;
     }
     .hero-inner {
-      z-index: 2;
-    }
-
-    .hero-inner {
       position: relative;
-      z-index: 2;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 48px 24px 40px;
-      color: #fff;
-    }
-    .hero .top-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-    .hero .top-nav a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 32px;
-      border: 1px solid rgba(255,255,255,.3);
-      border-radius: 8px;
-      padding: 5px 12px;
-      background: rgba(255,255,255,.15);
-      backdrop-filter: blur(8px);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 13px;
-      transition: background .2s;
-    }
-    .hero .top-nav a:hover { background: rgba(255,255,255,.25); }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,.18);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,.25);
-      border-radius: 999px;
-      padding: 5px 14px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 16px;
+      z-index: 1;
+      padding: 48px min(6vw, 72px) 40px;
     }
     .hero h1 {
       margin: 0 0 12px;
-      font-size: clamp(28px, 5vw, 44px);
+      font-size: clamp(28px, 5vw, 48px);
       font-weight: 900;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      text-shadow: 0 2px 16px rgba(0,0,0,.15);
+      color: #fff;
+      letter-spacing: -.02em;
+      line-height: 1.2;
     }
     .hero .lead {
-      margin: 0;
-      font-size: clamp(14px, 2vw, 16px);
-      opacity: .9;
-      max-width: 700px;
+      color: rgba(255,255,255,.85);
+      font-size: clamp(15px, 2vw, 18px);
+      max-width: 720px;
       line-height: 1.8;
-      color: #fff;
     }
     .wave-divider {
       display: block;
@@ -153,53 +68,168 @@
       height: 50px;
       margin-top: -1px;
     }
-
-.top-nav a {
+    .top-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .top-nav a {
       display: inline-flex;
       align-items: center;
       min-height: 32px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(255,255,255,.25);
       border-radius: 8px;
       padding: 5px 10px;
-      background: #fbfcfe;
-      color: var(--accent);
+      background: rgba(255,255,255,.12);
+      color: #fff;
       text-decoration: none;
       font-weight: 800;
+      backdrop-filter: blur(4px);
     }
-h3 { margin: 0 0 12px; font-size: 20px; }
-main { padding: 22px min(5vw, 56px) 48px; max-width: 1100px; margin: 0 auto; }
-.stat {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px 16px;
-      box-shadow: var(--shadow);
+    .top-nav a:hover { background: rgba(255,255,255,.2); }
+    h1 { margin: 0 0 8px; font-size: clamp(26px, 4vw, 42px); letter-spacing: 0; }
+    h2 { margin: 0 0 16px; font-size: 20px; }
+    h3 { margin: 0 0 12px; font-size: 16px; }
+    .lead { margin: 0; color: var(--muted); max-width: 960px; }
+    main { padding: 0; max-width: none; margin: 0; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      margin: 0;
+      background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+      position: relative;
     }
-.stat strong { display: block; font-size: 24px; margin-top: 4px; }
-.panel-title {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
+    .stats::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 50%, rgba(255,255,255,.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 30%, rgba(255,255,255,.1) 0%, transparent 40%);
+      pointer-events: none;
     }
-.panel-title span:not(.section-icon) {
-      color: var(--muted);
-      font-size: 12px;
-      white-space: nowrap;
+    .stat {
+      position: relative;
+      padding: 28px 24px;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      background: transparent;
+      color: #fff;
+      border-right: 1px solid rgba(255,255,255,.15);
+      transition: background .2s;
     }
-table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 900px; }
-th, td {
-      border-right: 1px solid var(--line);
+    .stat:last-child { border-right: none; }
+    .stat:hover { background: rgba(255,255,255,.08); }
+    .stat span {
+      display: block;
+      color: rgba(255,255,255,.85);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      margin-bottom: 6px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.3;
+    }
+    .panel, .note-panel {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 48px min(6vw, 72px);
+      margin: 0;
+      box-shadow: none;
+      position: relative;
+      max-width: none;
+    }
+    .panel:nth-of-type(odd) {
+      background: var(--section-bg1, #f8fafc);
+    }
+    .panel:nth-of-type(even) {
+      background: #fff;
+    }
+    #vote-section {
+      background: #fff !important;
       border-bottom: 1px solid var(--line);
-      padding: 12px 14px;
+    }
+    .panel > *,
+    .note-panel > * {
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .panel-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .panel-title h2 {
+      margin: 0;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .panel-title h2::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 32px;
+      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .panel-title span {
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+      background: rgba(0,0,0,.04);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid rgba(0,0,0,.06);
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border: none;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06);
+    }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 900px; }
+    table.compact { min-width: 420px; max-width: 760px; }
+    th, td {
+      border-right: 1px solid rgba(0,0,0,.04);
+      border-bottom: 1px solid rgba(0,0,0,.04);
+      padding: 14px;
       text-align: center;
       vertical-align: middle;
       white-space: nowrap;
-      font-size: 15px;
     }
-th:last-child, td:last-child { border-right: 0; }
-.row-dot {
+    tr:last-child th, tr:last-child td { border-bottom: 0; }
+    th:last-child, td:last-child { border-right: 0; }
+    th:first-child {
+      text-align: left;
+      position: sticky;
+      left: 0;
+      background: #fff;
+      z-index: 1;
+      min-width: 240px;
+      max-width: 340px;
+      white-space: normal;
+      line-height: 1.45;
+    }
+    .row-dot {
       display: inline-block;
       width: 9px;
       height: 9px;
@@ -208,63 +238,160 @@ th:last-child, td:last-child { border-right: 0; }
       background: #98a2b3;
       vertical-align: 1px;
     }
-thead th:first-child { z-index: 3; background: #eef2f7; }
-.heat-cell {
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.35;
+      white-space: normal;
+      min-width: 112px;
+      padding: 16px 14px;
+    }
+    thead th:first-child { z-index: 3; background: linear-gradient(180deg, var(--grad-1), var(--grad-2)); color: #fff; }
+    td { font-weight: 800; font-variant-numeric: tabular-nums; }
+    tbody tr { transition: background .12s; }
+    tbody tr:hover { background: var(--accent-soft); }
+    .heat-cell {
       transition: transform .12s ease, box-shadow .12s ease;
     }
-.heat-cell:hover {
-      transform: scale(1.03);
-      box-shadow: inset 0 0 0 2px rgba(23, 105, 209, .28);
+    .heat-cell span {
+      display: inline-flex;
+      min-width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .2);
+      font-size: 14px;
+    }
+    .heat-cell:hover {
+      transform: scale(1.08);
+      box-shadow: inset 0 0 0 2px rgba(23, 105, 209, .3);
     }
     .heat-cell.zero {
       color: #98a2b3 !important;
       font-weight: 600;
     }
     .heat-cell.zero span { background: transparent; }
-.bar-list {
-      display: grid;
-      gap: 10px;
-      max-width: 980px;
+    .total {
+      background: rgba(0,0,0,.03);
+      font-weight: 900;
+      min-width: 72px;
+      font-size: 15px;
     }
-.bar-meta {
+    .bar-list {
+      display: grid;
+      gap: 4px;
+      max-width: 1000px;
+    }
+    .bar-row {
+      display: grid;
+      gap: 8px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,.7);
+      border-radius: 14px;
+      transition: all .2s;
+      border: 1px solid rgba(0,0,0,.04);
+      backdrop-filter: blur(4px);
+    }
+    .bar-row:hover {
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      transform: translateX(4px);
+    }
+    .bar-meta {
       display: flex;
       justify-content: space-between;
       gap: 12px;
-      font-size: 16px;
+      font-size: 14px;
     }
-.bar-meta strong { font-variant-numeric: tabular-nums; }
-.bar-fill {
+    .bar-meta span { color: var(--ink); font-weight: 700; }
+    .bar-meta strong { font-variant-numeric: tabular-nums; font-size: 18px; font-weight: 900; }
+    .bar-track {
+      height: 14px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(0,0,0,.06);
+    }
+    .bar-fill {
       height: 100%;
       border-radius: inherit;
-      background: linear-gradient(90deg, #9fd0ff, #1769d1);
+      transition: width .8s cubic-bezier(.22,1,.36,1);
     }
-.axis-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px;
-      background: linear-gradient(180deg, #ffffff, #fbfcfe);
-      min-height: 220px;
+    .axis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .axis-card {
+      border: none;
+      border-radius: 20px;
+      padding: 28px;
+      min-height: 240px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
+      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      position: relative;
+      overflow: hidden;
     }
-.axis-card h3 {
+    .axis-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(0,0,0,.12);
+    }
+    .axis-kicker {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--accent);
+    }
+    .axis-card h3 {
       margin: 0;
-      font-size: 22px;
+      font-size: 20px;
+      font-weight: 900;
       line-height: 1.35;
     }
-.axis-count span {
+    .axis-count {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+      font-size: 44px;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
+    .axis-count span {
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
     }
-.axis-tags {
+    .axis-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .axis-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
       margin-top: auto;
     }
-[data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"] th { border-left: 5px solid #1769d1; }
+    .axis-tags span {
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    [data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"] th { border-left: 5px solid #1769d1; }
 [data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"] .row-dot { background: #1769d1; }
 [data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"] .bar-fill { background: linear-gradient(90deg, #e7f1ff, #1769d1); }
 [data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"] .bar-meta span { color: #0f4e9d; font-weight: 700; }
@@ -306,442 +433,6 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 .axis-card[data-tone="derived"] { border-top: 5px solid #0f7490; background: linear-gradient(180deg, #fff, #e5f7fb); }
 .axis-card[data-tone="derived"] .axis-kicker { color: #0b586d; }
 .axis-card[data-tone="derived"] .axis-tags span { background: #e5f7fb; color: #0b586d; }
-.chip { width: 30px; height: 14px; border-radius: 3px; border: 1px solid rgba(0,0,0,.08); }
-.sample-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px;
-      background: #fbfcfe;
-    }
-.meta { color: var(--accent); font-size: 12px; font-weight: 700; }
-.reason { color: var(--muted); font-size: 12px; margin-top: 6px; }
-.note-panel h2 { font-size: 16px; }
-/* === UI/UX改善 2026-06-26 === */
-    /* Sticky Header */
-
-    /* フェードインアニメーション */
-    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-    /* 投票ボタンリップルエフェクト */
-    .vote-option { position: relative; overflow: hidden; }
-    .vote-option .ripple {
-      position: absolute; border-radius: 50%; background: rgba(255,255,255,.35);
-      transform: scale(0); animation: ripple-anim .55s linear; pointer-events: none;
-    }
-    @keyframes ripple-anim { to { transform: scale(4); opacity: 0; } }
-
-    /* 結果バースライドイン */
-    .result-bar-fill { transform: translateX(-101%); transition: transform .9s cubic-bezier(.22,1,.36,1); }
-    .result-bar-fill.visible { transform: translateX(0); }
-
-    /* 投票完了チェックマーク */
-    @keyframes check-pop {
-      0% { transform: scale(0); opacity: 0; }
-      60% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    .vote-check { display: none; margin-left: 8px; animation: check-pop .4s ease; }
-    .vote-check.show { display: inline-block; }
-
-    /* 半円チャートセグメント描画 */
-    @keyframes chart-segment {
-      from { stroke-dashoffset: var(--dash); }
-      to   { stroke-dashoffset: 0; }
-    }
-
-    /* 巡回導線カード */
-.topic-card:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(16,24,40,.08); }
-.topic-card .tc-desc { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
-.topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
-
-    /* 投票進捗 */
-.progress-bar > div { height: 100%; background: var(--accent); border-radius: 999px; transition: width .6s ease; }
-    .voted-badge {
-      display: inline-flex; align-items: center; gap: 4px;
-      background: #e8f7ef; color: #16885a; font-size: 11px; font-weight: 800;
-      padding: 2px 8px; border-radius: 999px;
-    }
-
-    /* X埋め込みフォールバック */
-    .tweet-embed-fallback {
-      background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
-      padding: 12px; margin-top: 8px; font-size: 13px; color: #344054;
-    }
-    .tweet-embed-fallback a { color: var(--accent); font-weight: 700; }
-
-    /* 接続セクション */
-.cross-vote-section h2 { font-size: 24px; margin: 0 0 18px; }
-
-    /* reduced-motion */
-    @media (prefers-reduced-motion: reduce) {
-      .fade-in, .result-bar-fill, .vote-check { transition: none !important; animation: none !important; }
-      .topic-card { transition: none !important; }
-    }
-
-    @media (max-width: 720px) {
-      main { padding-inline: 14px; }
-      .hero-inner { padding: 36px 16px 32px; }
-      .panel-title { align-items: flex-start; flex-direction: column; gap: 2px; }
-      th:first-child { min-width: 180px; }
-      table { min-width: 760px; }
-    }
-
-    
-    /* ===== MAGAZINE REDESIGN v2 ===== */
-
-    /* --- Page rhythm: alternating colored sections --- */
-    main {
-      padding: 0 !important;
-      max-width: none !important;
-      margin: 0 !important;
-    }
-
-    /* --- Stats section: full-width colored band --- */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0;
-      margin: 0;
-      background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
-      position: relative;
-    }
-    .stat {
-      position: relative;
-      padding: 28px 24px;
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
-      background: transparent;
-      color: #fff;
-      border-right: 1px solid rgba(255,255,255,.15);
-      transition: background .2s;
-      overflow: visible;
-    }
-    .stat:last-child { border-right: none; }
-    .stat:hover { background: rgba(255,255,255,.08); }
-    .stat::before { display: none; }
-    .stat span {
-      display: block;
-      color: rgba(255,255,255,.85);
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin-bottom: 6px;
-    }
-    .stat strong {
-      display: block;
-      font-size: 28px;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.3;
-    }
-
-    /* --- Section panels → full-width magazine sections --- */
-    .panel, .note-panel {
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      padding: 48px min(6vw, 72px);
-      margin: 0;
-      box-shadow: none;
-      position: relative;
-      max-width: none;
-    }
-
-    /* Alternating backgrounds via nth-child */
-    .panel:nth-of-type(odd) {
-      background: var(--section-bg1, #f8fafc);
-    }
-    .panel:nth-of-type(even) {
-      background: #fff;
-    }
-
-    /* Vote section special treatment */
-    #vote-section {
-      background: #fff !important;
-      border-bottom: 1px solid var(--line);
-    }
-
-    /* Content container inside panels */
-    .panel > *,
-    .note-panel > * {
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .panel > .panel-title,
-    .panel > .axis-grid,
-    .panel > .bar-list,
-    .panel > .table-wrap,
-    .panel > .sample-grid,
-    .panel > h2,
-    .panel > ul,
-    .panel > p,
-    .panel > div,
-    .panel > script,
-    .note-panel > h2,
-    .note-panel > ul {
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* --- Section title redesign --- */
-    .panel-title {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 32px;
-      padding-bottom: 0;
-      border-bottom: none;
-      position: relative;
-    }
-    .panel-title::after { display: none; }
-    .panel-title h2 {
-      margin: 0;
-      font-size: 30px;
-      font-weight: 900;
-      letter-spacing: -.02em;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .panel-title h2::before {
-      content: '';
-      display: inline-block;
-      width: 5px;
-      height: 32px;
-      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
-      border-radius: 3px;
-      flex-shrink: 0;
-    }
-    .panel-title span:not(.section-icon) {
-      color: var(--muted);
-      font-size: 14px;
-      white-space: nowrap;
-      background: rgba(0,0,0,.04);
-      padding: 6px 16px;
-      border-radius: 999px;
-      font-weight: 700;
-      border: 1px solid rgba(0,0,0,.06);
-    }
-
-    /* --- Section divider waves --- */
-    .section-wave {
-      display: block;
-      width: 100%;
-      height: 40px;
-      position: relative;
-      z-index: 1;
-      margin: -1px 0;
-    }
-
-    /* --- h2 general --- */
-    h2 {
-      margin: 0 0 24px;
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: -.02em;
-    }
-
-    /* --- Axis cards: larger, more dramatic --- */
-    .axis-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-    .axis-card {
-      border: none;
-      border-radius: 20px;
-      padding: 28px;
-      min-height: 240px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
-      border-top: none;
-      box-shadow: 0 4px 20px rgba(0,0,0,.06);
-      position: relative;
-      overflow: hidden;
-    }
-    .axis-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
-      border-radius: 20px 20px 0 0;
-    }
-    .axis-card:hover {
-      transform: translateY(-6px) scale(1.01);
-      box-shadow: 0 20px 50px rgba(0,0,0,.12);
-    }
-    .axis-kicker {
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-    }
-    .axis-card h3 {
-      margin: 0;
-      font-size: 20px;
-      font-weight: 900;
-      line-height: 1.35;
-    }
-    .axis-count {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 4px;
-      font-size: 44px;
-      font-weight: 900;
-      font-variant-numeric: tabular-nums;
-    }
-    .axis-count span { font-size: 14px; font-weight: 700; }
-    .axis-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
-    }
-    .axis-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: auto;
-    }
-    .axis-tags span {
-      border-radius: 8px;
-      padding: 5px 12px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    /* --- Bar chart: magazine infographic style --- */
-    .bar-list {
-      display: grid;
-      gap: 4px;
-      max-width: 1000px;
-    }
-    .bar-row {
-      display: grid;
-      gap: 8px;
-      padding: 16px 20px;
-      background: rgba(255,255,255,.7);
-      border-radius: 14px;
-      transition: all .2s;
-      border: 1px solid rgba(0,0,0,.04);
-      backdrop-filter: blur(4px);
-    }
-    .bar-row:hover {
-      background: #fff;
-      box-shadow: 0 8px 24px rgba(0,0,0,.06);
-      transform: translateX(4px);
-    }
-    .bar-meta {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      font-size: 14px;
-    }
-    .bar-meta span { color: var(--ink); font-weight: 700; }
-    .bar-meta strong {
-      font-variant-numeric: tabular-nums;
-      font-size: 18px;
-      font-weight: 900;
-    }
-    .bar-track {
-      height: 14px;
-      border-radius: 999px;
-      overflow: hidden;
-      background: rgba(0,0,0,.06);
-    }
-    .bar-fill {
-      height: 100%;
-      border-radius: inherit;
-      transition: width .8s cubic-bezier(.22,1,.36,1);
-    }
-
-    /* --- Tables: cleaner with accent header --- */
-    .table-wrap {
-      overflow-x: auto;
-      border: none;
-      border-radius: 16px;
-      background: #fff;
-      box-shadow: 0 4px 24px rgba(0,0,0,.06);
-    }
-    table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 900px; }
-    table.compact { min-width: 420px; max-width: 760px; }
-    th, td {
-      border-right: 1px solid rgba(0,0,0,.04);
-      border-bottom: 1px solid rgba(0,0,0,.04);
-      padding: 14px 14px;
-      text-align: center;
-      vertical-align: middle;
-      white-space: nowrap;
-    }
-    tr:last-child th, tr:last-child td { border-bottom: 0; }
-    th:last-child, td:last-child { border-right: 0; }
-    th:first-child {
-      text-align: left;
-      position: sticky;
-      left: 0;
-      background: #fff;
-      z-index: 1;
-      min-width: 240px;
-      max-width: 340px;
-      white-space: normal;
-      line-height: 1.45;
-    }
-    thead th {
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
-      color: #fff;
-      font-size: 12px;
-      font-weight: 800;
-      line-height: 1.35;
-      white-space: normal;
-      min-width: 112px;
-      padding: 16px 14px;
-    }
-    thead th:first-child {
-      z-index: 3;
-      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
-      color: #fff;
-    }
-    td { font-weight: 800; font-variant-numeric: tabular-nums; }
-    tbody tr { transition: background .12s; }
-    tbody tr:hover { background: var(--accent-soft); }
-    .heat-cell {
-      transition: transform .12s ease, box-shadow .12s ease;
-    }
-    .heat-cell span {
-      display: inline-flex;
-      min-width: 34px;
-      height: 34px;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, .2);
-      font-size: 14px;
-    }
-    .heat-cell:hover {
-      transform: scale(1.08);
-      box-shadow: inset 0 0 0 2px rgba(23, 105, 209, .3);
-    }
-    .total {
-      background: rgba(0,0,0,.03);
-      font-weight: 900;
-      min-width: 72px;
-      font-size: 15px;
-    }
-
-    /* --- Legend --- */
     .legend {
       display: flex;
       gap: 8px;
@@ -754,14 +445,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
       border-radius: 12px;
       border: 1px solid rgba(0,0,0,.04);
     }
-    .chip {
-      width: 28px;
-      height: 14px;
-      border-radius: 4px;
-      border: 1px solid rgba(0,0,0,.06);
-    }
-
-    /* --- Sample cards: editorial magazine style --- */
+    .chip { width: 28px; height: 14px; border-radius: 4px; border: 1px solid rgba(0,0,0,.06); }
     .sample-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -785,22 +469,19 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
       padding: 18px 22px 14px;
       font-size: 15px;
       font-weight: 800;
-      border-bottom: none;
-      position: relative;
-    }
-    .sample-card > h3::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 22px;
-      right: 22px;
-      height: 1px;
-      background: linear-gradient(90deg, var(--line), transparent);
+      border-bottom: 1px solid var(--line);
     }
     .sample-card > div {
       padding: 16px 22px 20px;
     }
-    .sample-card blockquote {
+    .sample { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 10px; }
+    .meta {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+    blockquote {
       margin: 0 0 10px;
       padding: 14px 18px;
       border-left: 4px solid var(--accent);
@@ -810,198 +491,20 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
       line-height: 1.75;
       color: var(--ink);
     }
-    .meta {
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-    .reason {
-      color: var(--ink);
-      font-size: 14px;
-      margin-top: 8px;
-      line-height: 1.6;
-    }
-
-    /* --- Note panel: callout style --- */
+    .reason { color: var(--ink); font-size: 14px; margin-top: 8px; line-height: 1.6; }
+    a { color: var(--accent); font-size: 13px; }
     .note-panel {
       background: linear-gradient(135deg, var(--accent-soft), #fff) !important;
       border-left: 5px solid var(--accent) !important;
       padding: 36px min(6vw, 72px) !important;
     }
-    .note-panel h2 {
-      font-size: 22px;
-      color: var(--accent);
+    .note-panel h2 { font-size: 22px; color: var(--accent); }
+    .note-panel ul { margin: 0; padding-left: 20px; }
+    .note-panel li { margin-bottom: 8px; font-size: 15px; line-height: 1.8; }
+    .conflict-panel {
+      border-top: 4px solid transparent !important;
+      border-image: linear-gradient(90deg, var(--grad-1), var(--grad-2)) 1 !important;
     }
-    .note-panel ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-    .note-panel li {
-      margin-bottom: 8px;
-      font-size: 15px;
-      line-height: 1.8;
-    }
-
-    /* --- Topic cards (次に読む / Cross-vote) --- */
-    .topic-card {
-      background: #fff;
-      border: none;
-      border-radius: 16px;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      transition: all .25s cubic-bezier(.22,1,.36,1);
-      box-shadow: 0 2px 12px rgba(0,0,0,.05);
-      position: relative;
-      overflow: hidden;
-    }
-    .topic-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--grad-1), var(--grad-2));
-      opacity: 0;
-      transition: opacity .25s;
-    }
-    .topic-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,.1);
-    }
-    .topic-card:hover::before { opacity: 1; }
-    .topic-card .tc-title {
-      font-weight: 900;
-      font-size: 15px;
-      color: var(--ink);
-    }
-    .topic-card .tc-desc {
-      color: var(--muted);
-      font-size: 12px;
-      margin: 0 0 10px;
-      line-height: 1.6;
-    }
-    .topic-card .tc-link {
-      color: var(--accent);
-      font-weight: 800;
-      font-size: 13px;
-      text-decoration: none;
-      transition: transform .2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .topic-card .tc-link:hover {
-      transform: translateX(4px);
-    }
-    .topic-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
-
-    /* --- Cross-vote section --- */
-    .cross-vote-section {
-      background: linear-gradient(135deg, var(--section-bg2, var(--accent-soft)), #fff);
-      border: none;
-      border-radius: 0;
-      padding: 48px min(6vw, 72px);
-      margin: 0;
-      box-shadow: none;
-      max-width: none !important;
-    }
-    .cross-vote-section h2 {
-      font-size: 22px;
-      font-weight: 900;
-      margin: 0 0 16px;
-      max-width: 1000px;
-    }
-    .cross-vote-section p,
-    .cross-vote-section .progress-bar,
-    .cross-vote-section .topic-grid {
-      max-width: 1000px;
-    }
-
-    /* --- Progress bar --- */
-    .progress-bar {
-      height: 10px;
-      border-radius: 999px;
-      background: rgba(0,0,0,.08);
-      overflow: hidden;
-    }
-    .progress-bar > div {
-      height: 100%;
-      background: linear-gradient(90deg, var(--grad-1), var(--grad-2));
-      border-radius: 999px;
-      transition: width .6s ease;
-    }
-
-    /* --- Vote buttons: more dramatic --- */
-    .vote-option {
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px !important;
-      transition: all .25s cubic-bezier(.22,1,.36,1) !important;
-      box-shadow: 0 2px 12px rgba(0,0,0,.06);
-    }
-    .vote-option:hover {
-      box-shadow: 0 12px 32px rgba(0,0,0,.14) !important;
-      transform: translateY(-3px) !important;
-    }
-
-    /* --- 次に読む wrapper --- */
-    section[style*="max-width:980px"] {
-      max-width: none !important;
-      padding: 0 !important;
-    }
-    section[style*="max-width:980px"] > div[style*="background:var(--panel)"] {
-      border-radius: 0 !important;
-      box-shadow: none !important;
-      padding: 48px min(6vw, 72px) !important;
-      max-width: none !important;
-      background: var(--section-bg3, #f8fafc) !important;
-    }
-
-    /* --- Footer: gradient band --- */
-    footer {
-      background: linear-gradient(135deg, var(--grad-2), var(--grad-1)) !important;
-      border-top: none !important;
-      padding: 48px 24px !important;
-      color: #fff !important;
-    }
-    footer a { color: rgba(255,255,255,.85) !important; }
-    footer a:hover { color: #fff !important; }
-    footer div[style*="margin-top:8px"] { color: rgba(255,255,255,.6) !important; }
-
-    /* --- Smooth scrollbar --- */
-    html { scroll-behavior: smooth; }
-
-    /* --- Selection color --- */
-    ::selection { background: var(--accent); color: #fff; }
-
-    /* --- Decorative background pattern for odd sections --- */
-    .panel:nth-of-type(odd)::before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-      opacity: .03;
-      pointer-events: none;
-    }
-    .panel:nth-of-type(even)::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, var(--grad-2) 0%, transparent 70%);
-      opacity: .02;
-      pointer-events: none;
-    }
-
-    /* --- Mobile enhancements --- */
     @media (max-width: 720px) {
       .stats { grid-template-columns: repeat(2, 1fr); }
       .stat { padding: 20px 16px; }
@@ -1010,151 +513,14 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
       .axis-card { padding: 20px; min-height: auto; }
       .axis-count { font-size: 32px; }
       .sample-grid { grid-template-columns: 1fr; }
-      .topic-grid { grid-template-columns: 1fr; }
       .bar-row { padding: 12px 14px; }
       .panel-title { flex-direction: column; align-items: flex-start; gap: 8px; }
       .panel-title h2 { font-size: 26px; }
-      .cross-vote-section { padding: 32px 16px; }
+      .hero-inner { padding: 36px 16px 32px; }
+      th:first-child { min-width: 180px; }
+      table { min-width: 760px; }
     }
-
-
-
-    /* ===== DECORATIVE ELEMENTS ===== */
-    .deco-wave {
-      display: block;
-      width: 100%;
-      height: 60px;
-      margin: 0;
-      position: relative;
-      z-index: 0;
-    }
-
-    /* Floating decorative circles */
-    .deco-circles {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .deco-circles .c {
-      position: absolute;
-      border-radius: 50%;
-      opacity: .04;
-    }
-    .deco-circles .c1 { width: 300px; height: 300px; background: var(--grad-1); top: -80px; right: -60px; }
-    .deco-circles .c2 { width: 200px; height: 200px; background: var(--grad-2); bottom: -40px; left: -40px; }
-    .deco-circles .c3 { width: 150px; height: 150px; background: var(--accent); top: 40%; left: 60%; }
-
-    /* Section header SVG icons */
-    .section-icon {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: 52px !important;
-      height: 52px !important;
-      border-radius: 14px !important;
-      background: linear-gradient(135deg, var(--grad-1), var(--grad-2)) !important;
-      flex-shrink: 0 !important;
-      margin-right: 8px !important;
-      padding: 0 !important;
-      border: none !important;
-      white-space: normal !important;
-      color: #fff !important;
-      box-shadow: 0 6px 18px rgba(0,0,0,.18);
-    }
-    .section-icon svg {
-      width: 28px;
-      height: 28px;
-      fill: #fff;
-    }
-
-    /* Accent stripe */
-    .accent-stripe {
-      height: 4px;
-      background: linear-gradient(90deg, var(--grad-1), var(--grad-2), var(--grad-1));
-      opacity: .3;
-      border-radius: 2px;
-    }
-
-    /* Stats decorative background pattern */
-    .stats::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background:
-        radial-gradient(circle at 10% 50%, rgba(255,255,255,.15) 0%, transparent 50%),
-        radial-gradient(circle at 90% 30%, rgba(255,255,255,.1) 0%, transparent 40%),
-        radial-gradient(circle at 50% 80%, rgba(255,255,255,.08) 0%, transparent 30%);
-      pointer-events: none;
-    }
-
-    /* Dotted pattern for odd sections */
-    .panel:nth-of-type(odd) {
-      background-image: radial-gradient(circle, var(--accent) .5px, transparent .5px) !important;
-      background-size: 24px 24px !important;
-      background-position: 12px 12px !important;
-    }
-
-    /* Sample section special bg */
-    .panel:has(.sample-grid) {
-      background: linear-gradient(180deg, var(--section-bg1) 0%, #fff 100%) !important;
-      background-image: none !important;
-    }
-
-    /* Conflict panel decorative top border */
-    .conflict-panel {
-      border-top: 4px solid transparent !important;
-      border-image: linear-gradient(90deg, var(--grad-1), var(--grad-2)) 1 !important;
-      border-image-slice: 1 !important;
-    }
-
-    /* Note panel icon */
-    .note-icon-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-  
-    /* ===== SHARED RESPONSIVE (header/footer/next-topics) ===== */
-    @media (max-width: 768px) {
-      .sns-footer-grid {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-      }
-      .sns-next-topics-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .sns-site-header-inner {
-        height: 48px !important;
-      }
-      .sns-site-header-inner .sns-x-btn {
-        padding: 4px 10px !important;
-        font-size: 11px !important;
-      }
-    }
-
-    .axis-tags span {
-      cursor: pointer;
-      transition: opacity .2s, transform .15s;
-    }
-    .axis-tags span:hover {
-      opacity: .75;
-      transform: translateY(-1px);
-    }
-    .sample-card.highlight-target {
-      animation: sample-highlight 1.5s ease;
-    }
-    @keyframes sample-highlight {
-      0%   { box-shadow: 0 0 0 3px rgba(232,93,43,.5); }
-      100% { box-shadow: none; }
-    }
-</style>
-<!-- ADSENSE_TAG_START -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2542211932832864" crossorigin="anonymous"></script>
-<!-- ADSENSE_TAG_END -->
+  </style>
 <!-- GA_TAG_START -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K10S4YCZFH"></script>
   <script>
@@ -1164,28 +530,15 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
     gtag('config', 'G-K10S4YCZFH');
   </script>
 <!-- GA_TAG_END -->
+<!-- ADSENSE_TAG_START -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2542211932832864" crossorigin="anonymous"></script>
+<!-- ADSENSE_TAG_END -->
 </head>
 <body>
-<!-- ===== SITE HEADER ===== -->
-  <header style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.08);padding:0 20px;">
-    <div class="sns-site-header-inner" style="max-width:1100px;margin:0 auto;height:52px;display:flex;align-items:center;justify-content:space-between;">
-      <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1a1a1a;">
-        <div style="width:28px;height:28px;background:linear-gradient(135deg,#e85d2b,#f59e0b);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;">
-          <svg width="15" height="15" fill="none" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/></svg>
-        </div>
-        <span style="font-size:14px;font-weight:900;letter-spacing:-0.02em;font-family:'Noto Sans JP',-apple-system,sans-serif;">SNS反応まっぷ</span>
-      </a>
-      <a href="https://x.com/sns_hannou_ma" target="_blank" rel="noopener" class="sns-x-btn" style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:#1a1a1a;color:#fff;text-decoration:none;font-size:12px;font-weight:700;font-family:'Noto Sans JP',-apple-system,sans-serif;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        @sns_hannou_ma
-      </a>
-    </div>
-  </header>
-
   <section class="hero">
     <div class="hero-inner">
-      <nav class="top-nav"><a href="index.html">← トップへ戻る</a></nav>
-      <div class="hero-badge">教育・スポーツ</div>
+      <nav class="top-nav"><a href="index.html">トップ</a></nav>
+      <span style="display:inline-block;background:rgba(255,255,255,.2);color:#fff;padding:6px 18px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:.04em;margin-bottom:8px;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);">教育・部活動改革</span>
       <h1>部活動の地域移行の是非 SNS反応まっぷ</h1>
       <p class="lead">中学校の部活動を地域団体・民間クラブに移行する政策について、SNS上の賛否を可視化したビューです。世論調査ではありません。</p>
     </div>
@@ -1197,12 +550,12 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
     <section class="stats">
       <div class="stat"><span>総サンプル</span><strong>180</strong></div>
       <div class="stat"><span>ソース</span><strong>Yahooリアルタイム検索</strong></div>
-      <div class="stat"><span>最多カテゴリ</span><strong>その他・分類保留 119</strong></div>
-      <div class="stat"><span>最多スタンス</span><strong>保留 110</strong></div>
+      <div class="stat"><span>最多カテゴリ</span><strong>その他・分類保留 113</strong></div>
+      <div class="stat"><span>最多スタンス</span><strong>保留 105</strong></div>
     </section>
-    <section class="panel" id="vote-section" style="background:#fff;">
-<div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span> この話題、あなたはどう感じる？</h2><span>SNSの声を見る前に</span></div>
-<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">教員の過酷な労働を減らすべきか、親の負担増を防ぐべきか？岐路に立つ部活動、子供たちの放課後はどうあるべき？</p>
+    <section class="panel" id="vote-section">
+<div class="panel-title"><h2>この話題、あなたはどう感じる？</h2><span>SNSの声を見る前に</span></div>
+<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">文部科学省が推進する「部活動の地域移行」。教員の働き方改革や少子化対策として期待される一方、費用負担や指導者不足、部活文化の喪失を懸念する声もあります。</p>
 <div style="font-size:12px;color:var(--muted);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:0 0 16px;line-height:1.65;"><span style="font-weight:700;">データの集め方:</span> Yahooリアルタイム検索からSNS投稿を取得し、AIが自動分類しました。</div>
 <p style="font-size:13px;color:var(--ink);font-weight:700;margin:0 0 14px;">結果を見る前に — あなたの感覚に近いのは？</p>
 <div id="vote-buttons" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;"></div>
@@ -1230,7 +583,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <script>
 (function(){
   var TOPIC="部活動の地域移行の是非_SNS反応まっぷ";
-  var axes=[{"kicker": "移行賛成", "label": "先生の負担を減らすために地域へ移そう", "origLabel": "地域移行に賛成", "tone": "positive", "color": "#4a90d9"}, {"kicker": "移行反対", "label": "親の金銭・送迎負担が増えるなら反対だ", "origLabel": "地域移行に反対", "tone": "negative", "color": "#e07040"}, {"kicker": "柔軟運用", "label": "指導員の質や安全が確保できるなら良い", "origLabel": "条件付きで賛成", "tone": "derived", "color": "#0f7490"}, {"kicker": "判断保留", "label": "当事者（学校や親）でなく判断に迷う", "origLabel": "まだ判断できない", "tone": "warning", "color": "#7a4cc2"}];
+  var axes=[{"kicker": "", "label": "地域移行に賛成", "origLabel": "", "tone": "neutral", "color": "#94a3b8"}, {"kicker": "", "label": "地域移行に反対", "origLabel": "", "tone": "neutral", "color": "#94a3b8"}];
   var TITLE="部活動の地域移行の是非 SNS反応まっぷ";
   var KEY="sns_vote_"+TOPIC;
 
@@ -1300,25 +653,13 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
   var btnWrap=document.getElementById("vote-buttons");
   axes.forEach(function(a,i){
     var btn=document.createElement("button");
-    btn.className="vote-option";
-    btn.style.cssText="flex:1;min-width:140px;padding:14px 12px;border-radius:12px;border:2px solid "+a.color+";background:"+a.color+"10;cursor:pointer;transition:all .15s;text-align:center;position:relative;overflow:hidden;";
+    btn.style.cssText="flex:1;min-width:140px;padding:14px 12px;border-radius:12px;border:2px solid "+a.color+";background:"+a.color+"10;cursor:pointer;transition:all .15s;text-align:center;";
     btn.innerHTML='<div style="font-size:13px;font-weight:700;color:var(--ink);line-height:1.4;">'+a.label+'</div>';
     btn.onmouseenter=function(){btn.style.background=a.color+"22";btn.style.transform="translateY(-2px)"};
     btn.onmouseleave=function(){btn.style.background=a.color+"10";btn.style.transform="none"};
-    btn.onclick=function(e){createRipple(e,btn);castVote(i)};
+    btn.onclick=function(){castVote(i)};
     btnWrap.appendChild(btn);
   });
-
-  function createRipple(e,btn){
-    var r=document.createElement("span");r.className="ripple";
-    var rect=btn.getBoundingClientRect();
-    var size=Math.max(rect.width,rect.height);
-    r.style.width=r.style.height=size+"px";
-    r.style.left=(e.clientX-rect.left-size/2)+"px";
-    r.style.top=(e.clientY-rect.top-size/2)+"px";
-    btn.appendChild(r);
-    setTimeout(function(){r.remove()},550);
-  }
 
   document.getElementById("vote-redo-btn").onclick=function(){
     localStorage.removeItem(KEY+"_my");
@@ -1353,7 +694,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
         console.error("Error casting vote to Supabase:", err);
         var msg=err.message||"";
         var details=err.details||"";
-        if(msg.indexOf("already voted")!==-1 || details.indexOf("already voted")!==-1 || (err.code==="23505")){
+        if(msg.indexOf("already voted")!==-1 || details.indexOf("already voted")!==-1){
           alert("24時間以内に同一IPアドレスからすでに投票されています。集計結果のみ表示します。");
           success=true;
         }else{
@@ -1400,10 +741,10 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
       row.style.cssText="margin-bottom:8px;";
       row.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">'
         +'<span style="font-size:12px;font-weight:'+(isMine?'800':'600')+';color:'+(isMine?a.color:'var(--ink)')+';">'
-        +(isMine?'<span class="vote-check show">✓</span> ':'')+a.label+'</span>'
+        +(isMine?'✓ ':'')+a.label+'</span>'
         +'<span style="font-size:14px;font-weight:800;color:'+a.color+'">'+pct+'% ('+c+'票)</span></div>'
         +'<div style="height:8px;border-radius:4px;background:var(--line);overflow:hidden;">'
-        +'<div class="result-bar-fill" style="height:100%;width:'+pct+'%;background:'+a.color+';border-radius:4px;"></div></div>';
+        +'<div style="height:100%;width:'+pct+'%;background:'+a.color+';border-radius:4px;transition:width .4s ease;"></div></div>';
       barsEl.appendChild(row);
     });
 
@@ -1422,49 +763,11 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 
     document.getElementById("vote-result").style.display="block";
     document.getElementById("vote-result").scrollIntoView({behavior:"smooth",block:"nearest"});
-    setTimeout(function(){
-      barsEl.querySelectorAll(".result-bar-fill").forEach(function(bar){bar.classList.add("visible");});
-    },80);
-    showCrossVote();
-  }
-
-  function showCrossVote(){
-    var topics=[
-      {slug:"ai-copyright-reaction-map.html",title:"生成AIと著作権問題",desc:"AI学習による著作物の無断利用をめぐる話題",key:"生成AIと著作権問題_SNS反応まっぷ"},
-      {slug:"school-nickname-ban-reaction-map.html",title:"学校でのあだ名禁止の是非",desc:"いじめ防止・ジェンダー配慮のための指導の是非",key:"学校でのあだ名禁止の是非_SNS反応まっぷ"},
-      {slug:"takaichi-reaction-map-standard.html",title:"高市文春・中傷動画問題",desc:"文春報道、ネット選挙の透明性をめぐる話題",key:"高市文春・中傷動画問題_SNS反応まっぷ"},
-      {slug:"henoko-student-accident-reaction-map.html",title:"辺野古高校生死亡事故",desc:"安全管理・和平教育をめぐる話題",key:"辺野古高校生死亡事故_SNS反応まっぷ"},
-      {slug:"constitutional-amendment-reaction-map.html",title:"憲法改正論議",desc:"緊急事態条項・9条などをめぐる話題",key:"憲法改正論議_SNS反応まっぷ"}
-    ];
-    var currentKey=KEY;
-    var unvoted=topics.filter(function(t){return t.key!==currentKey && !localStorage.getItem("sns_vote_"+t.key+"_my");});
-    var allCount=topics.length;
-    var votedCount=allCount-unvoted.length-(localStorage.getItem(currentKey+"_my")?0:1);
-    var section=document.getElementById("cross-vote-section");
-    if(!section) return;
-    section.style.display="block";
-    var html='<h2>📊 他のトピックにも投票しよう！</h2>';
-    if(unvoted.length===0){
-      html+='<p style="color:var(--muted);margin:0 0 12px;">🎉 全トピックの投票をコンプリートしました！</p>';
-    }else{
-      html+='<p style="color:var(--muted);margin:0 0 12px;">まだ投票していないトピックが <strong>'+unvoted.length+'件</strong> あります。</p>';
-      html+='<div class="progress-bar" style="margin-bottom:16px;max-width:320px;"><div style="width:'+(votedCount/allCount*100)+'%"></div></div>';
-      html+='<div class="topic-grid">';
-      unvoted.slice(0,3).forEach(function(t){
-        html+='<div class="topic-card">'
-          +'<div class="tc-title">'+t.title+'</div>'
-          +'<div class="tc-desc">'+t.desc+'</div>'
-          +'<a class="tc-link" href="'+t.slug+'">反応マップを見る →</a>'
-          +'</div>';
-      });
-      html+='</div>';
-    }
-    section.innerHTML=html;
   }
 })();
 </script>
     <section class="panel">
-<div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M11 2v20c-5.07-.5-9-4.79-9-10s3.93-9.5 9-10zm2 0v9h9c-.47-4.68-4.32-8.53-9-9zm0 11v9c4.68-.47 8.53-4.32 9-9h-9z"/></svg></span> 反応の勢力図</h2><span>対立軸ごとの比率</span></div>
+<div class="panel-title"><h2>反応の勢力図</h2><span>対立軸ごとの比率</span></div>
 <div style="display:flex;justify-content:space-between;align-items:flex-end;max-width:660px;margin:0 auto 8px;padding:0 10px;">
   <div style="text-align:center;padding:8px 16px;border-radius:10px;background:#cbd5e112;border:2px solid #cbd5e1;"><div style="font-size:12px;font-weight:700;color:#cbd5e1">その他</div><div style="font-size:32px;font-weight:800;color:#cbd5e1;line-height:1.2">180</div></div>
   <div style="text-align:center;color:var(--muted);font-size:12px;">
@@ -1484,7 +787,7 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <div id="semicircle-legend" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 20px;margin-top:16px;"></div>
 <script>
 (function(){
-  var data=[{"label": "その他", "count": 180, "color": "#cbd5e1", "cats": "段階的導入や条件整備を前提に地域移行を条件付きで支持, 保護者の費用負担増や受け皿不足を懸念し地域移行に反対, 少子化による部活動の維持困難を理由に地域移行を支持, 部活動の教育的価値や学校文化の喪失を理由に地域移行に反対, その他・分類保留, 教員の長時間労働解消や持続可能性の観点から地域移行に賛成"}];
+  var data=[{"label": "その他", "count": 180, "color": "#cbd5e1", "cats": "保護者の費用負担増や受け皿不足を懸念し地域移行に反対, 教員の長時間労働解消や持続可能性の観点から地域移行に賛成, その他・分類保留, 部活動の教育的価値や学校文化の喪失を理由に地域移行に反対, 段階的導入や条件整備を前提に地域移行を条件付きで支持, 少子化による部活動の維持困難を理由に地域移行を支持"}];
   var total=data.reduce(function(s,d){return s+d.count},0);
   var cx=330,cy=310,outerR=290,innerR=160,gap=0.008;
   var svg=document.getElementById("semicircle-chart");
@@ -1546,42 +849,30 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
   });
 })();
 </script>
-<script>
-/* フェードインアニメーション */
-(function(){
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){ entry.target.classList.add('visible'); obs.unobserve(entry.target); }
-    });
-  },{threshold:0.1});
-  document.querySelectorAll('.panel, .sample-card, .axis-card, .bar-row, .note-panel, .topic-card').forEach(function(el){el.classList.add('fade-in');obs.observe(el);});
-})();
-</script>
 </section>
-    <section class="panel conflict-panel"><div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></span> 対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="neutral"><div class="axis-kicker">対立軸</div><h3></h3><div class="axis-count">0<span>件</span></div><p></p><div class="axis-tags"></div></article><article class="axis-card" data-tone="neutral"><div class="axis-kicker">対立軸</div><h3></h3><div class="axis-count">0<span>件</span></div><p></p><div class="axis-tags"></div></article></div></section>
-    <section class="panel"><div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z"/></svg></span> 分類別件数</h2><span>論点の量感</span></div>
+    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="neutral"><div class="axis-kicker">対立軸</div><h3></h3><div class="axis-count">0<span>件</span></div><p></p><div class="axis-tags"></div></article><article class="axis-card" data-tone="neutral"><div class="axis-kicker">対立軸</div><h3></h3><div class="axis-count">0<span>件</span></div><p></p><div class="axis-tags"></div></article></div></section>
+    <section class="panel"><div class="panel-title"><h2>分類別件数</h2><span>論点の量感</span></div>
 <div class="bar-list">
-<div class="bar-row" data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"><div class="bar-meta"><span>教員の長時間労働解消や持続可能性の観点から地域移行に賛成</span><strong>34</strong></div><div class="bar-track"><div class="bar-fill" style="width:29%"></div></div></div>
-<div class="bar-row" data-category="少子化による部活動の維持困難を理由に地域移行を支持"><div class="bar-meta"><span>少子化による部活動の維持困難を理由に地域移行を支持</span><strong>4</strong></div><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div></div>
-<div class="bar-row" data-category="保護者の費用負担増や受け皿不足を懸念し地域移行に反対"><div class="bar-meta"><span>保護者の費用負担増や受け皿不足を懸念し地域移行に反対</span><strong>17</strong></div><div class="bar-track"><div class="bar-fill" style="width:14%"></div></div></div>
-<div class="bar-row" data-category="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対"><div class="bar-meta"><span>部活動の教育的価値や学校文化の喪失を理由に地域移行に反対</span><strong>5</strong></div><div class="bar-track"><div class="bar-fill" style="width:4%"></div></div></div>
+<div class="bar-row" data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"><div class="bar-meta"><span>教員の長時間労働解消や持続可能性の観点から地域移行に賛成</span><strong>35</strong></div><div class="bar-track"><div class="bar-fill" style="width:31%"></div></div></div>
+<div class="bar-row" data-category="少子化による部活動の維持困難を理由に地域移行を支持"><div class="bar-meta"><span>少子化による部活動の維持困難を理由に地域移行を支持</span><strong>4</strong></div><div class="bar-track"><div class="bar-fill" style="width:4%"></div></div></div>
+<div class="bar-row" data-category="保護者の費用負担増や受け皿不足を懸念し地域移行に反対"><div class="bar-meta"><span>保護者の費用負担増や受け皿不足を懸念し地域移行に反対</span><strong>20</strong></div><div class="bar-track"><div class="bar-fill" style="width:18%"></div></div></div>
+<div class="bar-row" data-category="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対"><div class="bar-meta"><span>部活動の教育的価値や学校文化の喪失を理由に地域移行に反対</span><strong>7</strong></div><div class="bar-track"><div class="bar-fill" style="width:6%"></div></div></div>
 <div class="bar-row" data-category="段階的導入や条件整備を前提に地域移行を条件付きで支持"><div class="bar-meta"><span>段階的導入や条件整備を前提に地域移行を条件付きで支持</span><strong>1</strong></div><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div></div>
-<div class="bar-row" data-category="その他・分類保留"><div class="bar-meta"><span>その他・分類保留</span><strong>119</strong></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
+<div class="bar-row" data-category="その他・分類保留"><div class="bar-meta"><span>その他・分類保留</span><strong>113</strong></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
 </div></section>
-    <section class="panel heat-panel"><div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg></span> カテゴリ × 検索クエリ</h2><span>色が濃いほど件数が多い</span></div>
+    <section class="panel heat-panel"><div class="panel-title"><h2>カテゴリ × 検索クエリ</h2><span>色が濃いほど件数が多い</span></div>
 <div class="table-wrap"><table class="heat-table">
 <thead><tr><th>分類</th><th>部活 外部委託</th><th>部活 廃止</th><th>部活動 地域移行</th><th>部活動 地域移行 反対</th><th>部活動 地域移行 問題</th><th>部活動 地域移行 賛成</th><th>部活動 教員 負担</th><th>合計</th></tr></thead>
 <tbody>
 <tr data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"><th><span class="row-dot"></span>教員の長時間労働解消や持続可能性の観点から地域移行に賛成</th>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活 外部委託: 6件"><span>6</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活 廃止: 6件"><span>6</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活 外部委託: 7件"><span>7</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活 廃止: 7件"><span>7</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活動 地域移行: 2件"><span>2</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活動 地域移行 反対: 3件"><span>3</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活動 地域移行 問題: 2件"><span>2</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活動 地域移行 賛成: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#4da3ff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活動 教員 負担: 15件"><span>15</span></td>
-<td class="total">34</td></tr>
+<td class="heat-cell" style="background:#4da3ff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 部活動 教員 負担: 14件"><span>14</span></td>
+<td class="total">35</td></tr>
 <tr data-category="少子化による部活動の維持困難を理由に地域移行を支持"><th><span class="row-dot"></span>少子化による部活動の維持困難を理由に地域移行を支持</th>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 部活 外部委託: 0件"><span>0</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 部活 廃止: 1件"><span>1</span></td>
@@ -1593,22 +884,22 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <td class="total">4</td></tr>
 <tr data-category="保護者の費用負担増や受け皿不足を懸念し地域移行に反対"><th><span class="row-dot"></span>保護者の費用負担増や受け皿不足を懸念し地域移行に反対</th>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活 外部委託: 2件"><span>2</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活 廃止: 1件"><span>1</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活動 地域移行: 4件"><span>4</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活 廃止: 3件"><span>3</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活動 地域移行: 5件"><span>5</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活動 地域移行 反対: 3件"><span>3</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活動 地域移行 問題: 2件"><span>2</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活動 地域移行 賛成: 1件"><span>1</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 部活動 教員 負担: 4件"><span>4</span></td>
-<td class="total">17</td></tr>
+<td class="total">20</td></tr>
 <tr data-category="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対"><th><span class="row-dot"></span>部活動の教育的価値や学校文化の喪失を理由に地域移行に反対</th>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活 外部委託: 0件"><span>0</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活 廃止: 1件"><span>1</span></td>
-<td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活動 地域移行: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活動 地域移行 反対: 1件"><span>1</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活動 地域移行: 1件"><span>1</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活動 地域移行 反対: 2件"><span>2</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活動 地域移行 問題: 0件"><span>0</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活動 地域移行 賛成: 1件"><span>1</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 部活動 教員 負担: 2件"><span>2</span></td>
-<td class="total">5</td></tr>
+<td class="total">7</td></tr>
 <tr data-category="段階的導入や条件整備を前提に地域移行を条件付きで支持"><th><span class="row-dot"></span>段階的導入や条件整備を前提に地域移行を条件付きで支持</th>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 部活 外部委託: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 部活 廃止: 0件"><span>0</span></td>
@@ -1619,14 +910,14 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 部活動 教員 負担: 0件"><span>0</span></td>
 <td class="total">1</td></tr>
 <tr data-category="その他・分類保留"><th><span class="row-dot"></span>その他・分類保留</th>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / 部活 外部委託: 22件"><span>22</span></td>
-<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="その他・分類保留 / 部活 廃止: 30件"><span>30</span></td>
-<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="その他・分類保留 / 部活動 地域移行: 29件"><span>29</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 部活動 地域移行 反対: 7件"><span>7</span></td>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 部活動 地域移行 問題: 11件"><span>11</span></td>
+<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / 部活 外部委託: 21件"><span>21</span></td>
+<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="その他・分類保留 / 部活 廃止: 27件"><span>27</span></td>
+<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="その他・分類保留 / 部活動 地域移行: 27件"><span>27</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="その他・分類保留 / 部活動 地域移行 反対: 6件"><span>6</span></td>
+<td class="heat-cell" style="background:#4da3ff;color:#172033" title="その他・分類保留 / 部活動 地域移行 問題: 11件"><span>11</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / 部活動 地域移行 賛成: 2件"><span>2</span></td>
-<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / 部活動 教員 負担: 18件"><span>18</span></td>
-<td class="total">119</td></tr>
+<td class="heat-cell" style="background:#1769d1;color:#ffffff" title="その他・分類保留 / 部活動 教員 負担: 19件"><span>19</span></td>
+<td class="total">113</td></tr>
 </tbody></table></div></section>
     <div class="legend">
       <span>少</span>
@@ -1638,17 +929,17 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
       <span class="chip" style="background:#0a3d91"></span>
       <span>多</span>
     </div>
-    <section class="panel heat-panel"><div class="panel-title"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M10 10.02h5V21h-5zM17 21h3c1.1 0 2-.9 2-2v-9h-5v11zm3-18H5c-1.1 0-2 .9-2 2v3h19V5c0-1.1-.9-2-2-2zM3 19c0 1.1.9 2 2 2h3V10H3v9z"/></svg></span> カテゴリ × スタンス</h2><span>色が濃いほど件数が多い</span></div>
+    <section class="panel heat-panel"><div class="panel-title"><h2>カテゴリ × スタンス</h2><span>色が濃いほど件数が多い</span></div>
 <div class="table-wrap"><table class="heat-table">
 <thead><tr><th>分類</th><th>賛成</th><th>反対</th><th>条件付き</th><th>保留</th><th>その他</th><th>合計</th></tr></thead>
 <tbody>
 <tr data-category="教員の長時間労働解消や持続可能性の観点から地域移行に賛成"><th><span class="row-dot"></span>教員の長時間労働解消や持続可能性の観点から地域移行に賛成</th>
-<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 賛成: 34件"><span>34</span></td>
+<td class="heat-cell" style="background:#9fd0ff;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 賛成: 35件"><span>35</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 反対: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 条件付き: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / 保留: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="教員の長時間労働解消や持続可能性の観点から地域移行に賛成 / その他: 0件"><span>0</span></td>
-<td class="total">34</td></tr>
+<td class="total">35</td></tr>
 <tr data-category="少子化による部活動の維持困難を理由に地域移行を支持"><th><span class="row-dot"></span>少子化による部活動の維持困難を理由に地域移行を支持</th>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 賛成: 4件"><span>4</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="少子化による部活動の維持困難を理由に地域移行を支持 / 反対: 0件"><span>0</span></td>
@@ -1658,18 +949,18 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <td class="total">4</td></tr>
 <tr data-category="保護者の費用負担増や受け皿不足を懸念し地域移行に反対"><th><span class="row-dot"></span>保護者の費用負担増や受け皿不足を懸念し地域移行に反対</th>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 賛成: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 反対: 17件"><span>17</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 反対: 20件"><span>20</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 条件付き: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / 保留: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="保護者の費用負担増や受け皿不足を懸念し地域移行に反対 / その他: 0件"><span>0</span></td>
-<td class="total">17</td></tr>
+<td class="total">20</td></tr>
 <tr data-category="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対"><th><span class="row-dot"></span>部活動の教育的価値や学校文化の喪失を理由に地域移行に反対</th>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 賛成: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 反対: 5件"><span>5</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 反対: 7件"><span>7</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 条件付き: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / 保留: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="部活動の教育的価値や学校文化の喪失を理由に地域移行に反対 / その他: 0件"><span>0</span></td>
-<td class="total">5</td></tr>
+<td class="total">7</td></tr>
 <tr data-category="段階的導入や条件整備を前提に地域移行を条件付きで支持"><th><span class="row-dot"></span>段階的導入や条件整備を前提に地域移行を条件付きで支持</th>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 賛成: 0件"><span>0</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="段階的導入や条件整備を前提に地域移行を条件付きで支持 / 反対: 0件"><span>0</span></td>
@@ -1681,193 +972,124 @@ thead th:first-child { z-index: 3; background: #eef2f7; }
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="その他・分類保留 / 賛成: 0件"><span>0</span></td>
 <td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / 反対: 5件"><span>5</span></td>
 <td class="heat-cell zero" style="background:#f5f6f8;color:#172033" title="その他・分類保留 / 条件付き: 0件"><span>0</span></td>
-<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="その他・分類保留 / 保留: 110件"><span>110</span></td>
-<td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / その他: 4件"><span>4</span></td>
-<td class="total">119</td></tr>
+<td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="その他・分類保留 / 保留: 105件"><span>105</span></td>
+<td class="heat-cell" style="background:#dceeff;color:#172033" title="その他・分類保留 / その他: 3件"><span>3</span></td>
+<td class="total">113</td></tr>
 </tbody></table></div></section>
-    <section class="panel"><h2><span class="section-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></span> 代表サンプル</h2>
+    <section class="panel"><h2>代表サンプル</h2>
 <div class="sample-grid">
-<article class="sample-card" id="sample-13addbd0"><h3>教員の長時間労働解消や持続可能性の観点から地域移行に賛成</h3>
-<div class="sample"><div class="meta">賛成 / 信頼度 1.00</div><p>教員の過重労働や無償の部活指導の問題を指摘し、地域移行の必要性を主張。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/yoshiki20260530/status/2068442038786547725"></a></blockquote>
-<div class="reason">理由: 教員の働き方改革を主張し、地域移行を肯定的に述べている。</div>
+<article class="sample-card"><h3>教員の長時間労働解消や持続可能性の観点から地域移行に賛成</h3>
+<div class="sample"><div class="meta">賛成 / 信頼度 1.00</div><p>部活の外部委託化を支持する立場。</p>
+<blockquote>ほんとそう！ 部活 の 外部委託 は良いアイデアだと思います。</blockquote>
+<a href="https://x.com/LIU83414453/status/2067750890862493830">投稿URL</a>
+<div class="reason">理由: 明確な賛成表明がある。</div>
 </div>
 <div class="sample"><div class="meta">賛成 / 信頼度 0.90</div><p>教員の過重労働や無償の部活指導の問題を指摘し、地域移行の必要性を主張。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/shirassh/status/2069006288777052163"></a></blockquote>
+<blockquote>部活 の 外部委託 は既定路線で、行政も学校現場も基本その方向で構えている。 あとは報道と保護者だろう。 部活 の意義や理想をどんなに力説したところで、違法な時間外無償労働を強要する権利は誰にもない。 行政はそれがわかってるから黙ってる。</blockquote>
+<a href="https://x.com/shirassh/status/2069006288777052163">投稿URL</a>
 <div class="reason">理由: 教員の長時間労働解消を理由に賛成</div>
 </div>
-<div class="sample"><div class="meta">賛成 / 信頼度 0.90</div><p>教員の過重労働や無償の部活指導の問題を指摘し、地域移行の必要性を主張。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/mathmathsan/status/1888223251400438207"></a></blockquote>
-<div class="reason">理由: 教員の負担軽減を理由に外部委託賛成</div>
+<div class="sample"><div class="meta">賛成 / 信頼度 0.90</div><p>学校管理職が教員の過重労働を放置していると批判し、外部委託による休暇取得を希望。</p>
+<blockquote>部活 はいつ 外部委託 ⁉️ それがもとで1ヶ月以上休めないなんて、県のみならず学校の管理職もこの先生を見殺しにしてる。</blockquote>
+<a href="https://x.com/dEqvhKmVgTxhlY2/status/2062544124428066947">投稿URL</a>
+<div class="reason">理由: 文脈から教員の長時間労働解消に賛同</div>
 </div>
 </article>
-<article class="sample-card" id="sample-5991ca3e"><h3>少子化による部活動の維持困難を理由に地域移行を支持</h3>
+<article class="sample-card"><h3>少子化による部活動の維持困難を理由に地域移行を支持</h3>
 <div class="sample"><div class="meta">賛成 / 信頼度 1.00</div><p>月額8000円の地域移行は家計に大きな負担。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/TheMirageof0/status/2070621781757726855"></a></blockquote>
-<div class="reason">理由: 高額な費用と少子化への懸念が明確。</div>
+<blockquote>そんなもんはいらんから、 部活動 の 地域移行 の月額8000円を減らしてくれ。うちは中学生3人いて毎月24000円。年額288000円だよ。家計はヒィヒィだよ。こんなんじゃ掛川市も少子化になるわな。NPO法人の収入がそんなに大事かね？</blockquote>
+<a href="https://x.com/TheMirageof0/status/2070621781757726855">投稿URL</a>
+<div class="reason">理由: 高額な費用と受け皿不足への懸念。</div>
 </div>
-<div class="sample"><div class="meta">賛成 / 信頼度 0.85</div><p>中体連の大会へのクラブチーム参加が増えることから、部活動の活躍場所が減ると予想。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/Miyabi14_Miyabi/status/2070276591167639853"></a></blockquote>
-<div class="reason">理由: 少子化による部活動の維持困難を理由に支持</div>
+<div class="sample"><div class="meta">賛成 / 信頼度 0.85</div><p>中体連の大会でのクラブチーム参加が増える可能性について考えている。</p>
+<blockquote>中体連の大会に、クラブチームの参加が認められてきているので、 部活動 の活躍出来る場は減っていくのでは？と思っています。 少子化や 地域移行 を見据えての判断をしているとは思います。 クラブチームが強すぎて、保護者さんは憤っていますが…。 この流れは止まらないのでは？と、自分は思います。 https://t.co/WITHZoKMOM</blockquote>
+<a href="https://x.com/Miyabi14_Miyabi/status/2070276591167639853">投稿URL</a>
+<div class="reason">理由: 少子化や地域移行を考慮した賛成</div>
 </div>
 <div class="sample"><div class="meta">賛成 / 信頼度 0.85</div><p>少子化で学校単位の部活維持が困難になっている現実を踏まえ、地域移行を支持する主張。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/774nyannyan/status/2070058879938084997"></a></blockquote>
-<div class="reason">理由: 少子化により部活動が維持困難になるため地域移行を推奨</div>
+<blockquote>少子化が今のまま進めば学校 部活動 が破綻するのは自明です。そうなる前に課外活動の機会を存続させよう……これが 部活動 の 地域移行 では？</blockquote>
+<a href="https://x.com/774nyannyan/status/2070058879938084997">投稿URL</a>
+<div class="reason">理由: 少子化により部活動が存続困難。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-227d11d9"><h3>保護者の費用負担増や受け皿不足を懸念し地域移行に反対</h3>
-<div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>保護者と地域住民の反発が地域移行の主な理由。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/774nyannyan/status/2063204420297617773"></a></blockquote>
-<div class="reason">理由: 投稿者が保護者の費用負担や受け皿の問題を指摘している。</div>
+<article class="sample-card"><h3>保護者の費用負担増や受け皿不足を懸念し地域移行に反対</h3>
+<div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>部活廃止は良いことだと述べている。</p>
+<blockquote>おっしゃる通りです。まず、勉強ありきです。 部活 はほんと 廃止 で良いと思います。</blockquote>
+<a href="https://x.com/hiroa11011/status/2068702457820246445">投稿URL</a>
+<div class="reason">理由: 勉強優先の立場から部活廃止を推奨しているため</div>
 </div>
-<div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>スクールバス利用による通学時間の問題から部活動の地域移行が頓挫する可能性について述べている。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/774nyannyan/status/2060890475503157752"></a></blockquote>
-<div class="reason">理由: 文中で「部活動 の 地域移行 は 反対」と明記されているため。</div>
+<div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>中学以降の勉強と部活のバランスについて述べている。</p>
+<blockquote>ですよね 特に中学以降の勉強はたくさん暗記しないといけないので、それに 部活 なんてやってたら身が持たないしパンクしますよ。 だから 部活 は 廃止 すべき 勉強の方が大事</blockquote>
+<a href="https://x.com/weTdqo0isa11532/status/2068700099845509484">投稿URL</a>
+<div class="reason">理由: 勉強優先の立場から部活廃止を推奨しているため</div>
 </div>
 <div class="sample"><div class="meta">反対 / 信頼度 0.90</div><p>地域移行に伴う保護者の費用負担増や受け皿不足を懸念し、反対する主張。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/crypticsa/status/2070077324008341725"></a></blockquote>
-<div class="reason">理由: 月謝が高いと保護者への負担が増すため</div>
+<blockquote>その通りだと思います。地域の指導者は、まだ「クラブチームにまあまあの月謝を払って活動するほどのモチベーションのない中学生やその保護者を相手にするということとはどういうことか。」ということを知りません。 これを肌身で知った時に、 部活動 の 地域移行 というものの本質が見えるでしょうね。</blockquote>
+<a href="https://x.com/crypticsa/status/2070077324008341725">投稿URL</a>
+<div class="reason">理由: 月謝が高いと保護者への負担が増すため。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-5e92219b"><h3>部活動の教育的価値や学校文化の喪失を理由に地域移行に反対</h3>
-<div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>教員採用試験の低倍率問題と部活動地域移行の関連性を述べつつ、反対意見を示す。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/yamako_10/status/2061588627088634365"></a></blockquote>
+<article class="sample-card"><h3>部活動の教育的価値や学校文化の喪失を理由に地域移行に反対</h3>
+<div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>教員採用試験の低倍率問題と部活動地域移行の関連性を述べつつ、反対意見を表明。</p>
+<blockquote>教員採用試験の低倍率を止めないと、このような教員が増え続けます。 私は教員を目指す理由を狭める 部活動地域移行 には 反対 です。 #山本こういち #日本自由党 # 部活動地域移行反対 https://t.co/Sd5YkYOquf</blockquote>
+<a href="https://x.com/yamako_10/status/2061588627088634365">投稿URL</a>
 <div class="reason">理由: 「部活動地域移行 には 反対」と明言</div>
 </div>
-<div class="sample"><div class="meta">反対 / 信頼度 0.85</div><p>甲子園の存続が懸念され、地域移行に反対。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/lumIFSHUWs6GO2n/status/2063976964898332701"></a></blockquote>
-<div class="reason">理由: 甲子園の存在意義から反対。</div>
+<div class="sample"><div class="meta">反対 / 信頼度 0.85</div><p>部活動の存続と甲子園制度が危ぶまれている。</p>
+<blockquote>部活動 の 地域移行 と高校野球は絶望的に食い合わせが悪いのでは？とふと思いました｡ 部活動 廃止派「 地域移行 したら甲子園に行くチームの名称は何になるのかって？知らないよ｡野球部続けたい人が考える事でしょ？」 部活動賛成 派「 部活動 廃止なんてあり得ないし許さない→ https://t.co/vLaKvPhxjo</blockquote>
+<a href="https://x.com/lumIFSHUWs6GO2n/status/2063976964898332701">投稿URL</a>
+<div class="reason">理由: 甲子園制度への懸念から反対</div>
 </div>
-<div class="sample"><div class="meta">反対 / 信頼度 0.85</div><p>教員の負担について述べているが、明確な立場は示されていない。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/1007_nagi/status/2068954974714052941"></a></blockquote>
-<div class="reason">理由: 主観的な意見がないため</div>
+<div class="sample"><div class="meta">反対 / 信頼度 0.85</div><p>教員の負担についての懸念が述べられている。</p>
+<blockquote>その高校によって 部活動 への取り組み方が異なる。 教員 への過度の 負担 はNGですが、それを鑑みても、あまりにも生徒たちが理不尽に丸め込まれている印象。教育の一環と謳っているものの 教員 にとってはお荷物で邪魔な存在と側から見ていて感じております。 もっと 部活動 指導員の活用してくれないものか。</blockquote>
+<a href="https://x.com/1007_nagi/status/2068954974714052941">投稿URL</a>
+<div class="reason">理由: 主観的な意見は明確でないため、保留。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-50a18e0d"><h3>段階的導入や条件整備を前提に地域移行を条件付きで支持</h3>
+<article class="sample-card"><h3>段階的導入や条件整備を前提に地域移行を条件付きで支持</h3>
 <div class="sample"><div class="meta">条件付き / 信頼度 0.80</div><p>月会費設定とNPO法人補助案を提案。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/TheMirageof0/status/2070624074506863002"></a></blockquote>
-<div class="reason">理由: 具体的な提案あり、条件付き賛成の意図が読み取れる。</div>
+<blockquote>部活動 の 地域移行 による月会費は一律2000円とする。 NPO法人に対する不足金は掛川市在住の中学生への支援金として市税で補助する。 俺が市長だったら間違いなくやる！</blockquote>
+<a href="https://x.com/TheMirageof0/status/2070624074506863002">投稿URL</a>
+<div class="reason">理由: 市長として実施する意向あり、但し条件あり。</div>
 </div>
 </article>
-<article class="sample-card" id="sample-c8f5e792"><h3>その他・分類保留</h3>
-<div class="sample"><div class="meta">反対 / 信頼度 1.00</div><p>部活動改革にブレーキをかけているのは過激派だ。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/JlMqc1bALnVe9gS/status/2063598518305218910"></a></blockquote>
-<div class="reason">理由: 投稿者の言動から明確な反対立場が読み取れる。</div>
+<article class="sample-card"><h3>その他・分類保留</h3>
+<div class="sample"><div class="meta">反対 / 信頼度 0.95</div><p>部活動改革にブレーキをかけているのは過激派だ。</p>
+<blockquote>具体的なことは「 地域移行 」で、 部活動 を学校から切り離すこと これは国も各自治体もやり始めてるじゃん だいたいなんで 反対 派(やりたくない人)が、やりたい人のために案ださなあかんねん 国会でもあるまいし 部活動 改革にブレーキをかけているのはあなたのような過激派です</blockquote>
+<a href="https://x.com/JlMqc1bALnVe9gS/status/2063598518305218910">投稿URL</a>
+<div class="reason">理由: 明確な反対の表明</div>
 </div>
 <div class="sample"><div class="meta">反対 / 信頼度 0.90</div><p>部活動の地域移行に反対している。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/774nyannyan/status/2067883582647849464"></a></blockquote>
+<blockquote>文科省は、行動しようとしたと思いますけどね。『 部活動 の 地域移行 』をやろうとした。 私はどちらかというと、それに 反対 した人達の問題だと思っています。</blockquote>
+<a href="https://x.com/774nyannyan/status/2067883582647849464">投稿URL</a>
 <div class="reason">理由: 明確な反対表明あり</div>
 </div>
-<div class="sample"><div class="meta">反対 / 信頼度 0.80</div><p>部活動の地域移行に反対する理由として、子供たちのために残すべきだという意見がある。</p>
-<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true" data-theme="light" data-width="100%"><a href="https://x.com/774nyannyan/status/2070117159511130290"></a></blockquote>
-<div class="reason">理由: 反対立場を示唆</div>
+<div class="sample"><div class="meta">反対 / 信頼度 0.90</div><p>部活動の地域移行に反対している。</p>
+<blockquote>部活動 の 地域移行 ってのは、「このままでは持続不可能な 部活動 を、後世に残す手段」のはずなのに、「 部活動 を残したい」と強く主張する人達が 地域移行 に 反対 してるというのが、不思議すぎる。</blockquote>
+<a href="https://x.com/774nyannyan/status/2067880712943059272">投稿URL</a>
+<div class="reason">理由: 明確な反対表明あり</div>
 </div>
 </article>
 </div></section>
-    <section class="note-panel"><h2><span class="section-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706);"><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg></span> 意</h2><ul>
+    <section class="note-panel"><h2>注意</h2><ul>
 <li>これは世論調査ではなく、Yahooリアルタイム検索で取得した投稿サンプルの反応整理です。</li>
 <li>投稿本文の転載は最小限にし、要約中心にしてください。</li>
 <li>代表投稿は公開前に人間が確認する前提です。</li>
 </ul></section>
   </main>
-
-  <!-- 巡回導線: 投票後に表示 -->
-  <div id="cross-vote-section" class="cross-vote-section" style="display:none;"></div>
-
-
-  <!-- ===== 次のテーマへ ===== -->
-  <section style="max-width:1100px;margin:40px auto;padding:0 20px;">
-    <div style="background:linear-gradient(135deg,#fdf0eb,#fff7ed);border:1px solid rgba(232,93,43,.15);border-radius:16px;padding:28px 24px;">
-      <h2 style="font-size:18px;font-weight:900;margin:0 0 6px;color:#1a1a1a;font-family:'Noto Sans JP',-apple-system,sans-serif;">🗳️ 他のテーマにも投票しよう</h2>
-      <p style="font-size:13px;color:#888;margin:0 0 16px;">全テーマ投票でコンプリート！あなたの感覚を確かめよう。</p>
-      <div class="sns-next-topics-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
-
-        <a href="ai-copyright-reaction-map.html" style="display:block;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-          <div style="font-size:15px;font-weight:900;color:#1a1a1a;margin-bottom:4px;">生成AIと著作権</div>
-          <div style="font-size:12px;color:#e85d2b;font-weight:700;">投票する →</div>
-        </a>
-        <a href="takaichi-reaction-map-standard.html" style="display:block;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-          <div style="font-size:15px;font-weight:900;color:#1a1a1a;margin-bottom:4px;">高市文春問題</div>
-          <div style="font-size:12px;color:#e85d2b;font-weight:700;">投票する →</div>
-        </a>
-        <a href="henoko-student-accident-reaction-map.html" style="display:block;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-          <div style="font-size:15px;font-weight:900;color:#1a1a1a;margin-bottom:4px;">辺野古事故</div>
-          <div style="font-size:12px;color:#e85d2b;font-weight:700;">投票する →</div>
-        </a>
-        <a href="school-nickname-ban-reaction-map.html" style="display:block;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-          <div style="font-size:15px;font-weight:900;color:#1a1a1a;margin-bottom:4px;">あだ名禁止</div>
-          <div style="font-size:12px;color:#e85d2b;font-weight:700;">投票する →</div>
-        </a>
-      </div>
+  <footer style="background:linear-gradient(135deg, var(--grad-2), var(--grad-1));border-top:none;padding:48px 24px;text-align:center;color:#fff;font-size:12px;line-height:1.8;">
+    <div>Powered by Yahooリアルタイム検索 + AI分類</div>
+    <a href="index.html" style="color:rgba(255,255,255,.85);text-decoration:none;font-weight:700;font-size:13px;">← SNS反応まっぷ トップへ</a>
+    <div style="margin-top:8px;color:rgba(255,255,255,.6);">
+      <a href="privacy.html" style="color:rgba(255,255,255,.7);margin-right:16px;">プライバシーポリシー</a>
+      <a href="disclaimer.html" style="color:rgba(255,255,255,.7);">免責事項</a>
     </div>
-  </section>
-
-  <!-- ===== UNIFIED FOOTER ===== -->
-  <footer style="background:#1a1a1a;color:rgba(255,255,255,.7);padding:48px 20px 32px;margin-top:40px;">
-    <div class="sns-footer-grid" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;font-family:'Noto Sans JP',-apple-system,sans-serif;">
-      <div>
-        <h3 style="font-size:18px;font-weight:900;color:#fff;margin:0 0 8px;">SNS反応まっぷ</h3>
-        <p style="font-size:13px;line-height:1.8;max-width:340px;margin:0;">SNSで意見が割れる話題を、投票参加型×AI自動分類で可視化する独立メディアプロジェクト。</p>
-        <div style="display:flex;gap:10px;margin-top:16px;">
-          <a href="https://x.com/sns_hannou_ma" target="_blank" rel="noopener" aria-label="X" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://buymeacoffee.com/kt100sd" target="_blank" rel="noopener" aria-label="Buy Me a Coffee" style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;">☕</a>
-        </div>
-      </div>
-      <div>
-        <h4 style="font-size:13px;font-weight:700;color:#fff;margin:0 0 12px;letter-spacing:.04em;">他のテーマ</h4>
-        <ul style="list-style:none;padding:0;margin:0;">
-          <li><a href="ai-copyright-reaction-map.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">生成AIと著作権</a></li>
-          <li><a href="takaichi-reaction-map-standard.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">高市文春問題</a></li>
-          <li><a href="henoko-student-accident-reaction-map.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">辺野古事故</a></li>
-          <li><a href="school-nickname-ban-reaction-map.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">あだ名禁止</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 style="font-size:13px;font-weight:700;color:#fff;margin:0 0 12px;letter-spacing:.04em;">サイト情報</h4>
-        <ul style="list-style:none;padding:0;margin:0;">
-          <li><a href="index.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">トップページ</a></li>
-          <li><a href="privacy.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">プライバシーポリシー</a></li>
-          <li><a href="disclaimer.html" style="font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">免責事項</a></li>
-        </ul>
-      </div>
-    </div>
-    <div style="max-width:1100px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:11px;">
-      <span>&copy; 2025-2026 SNS反応まっぷ</span>
-      <span>投票参加型 × AI自動分類</span>
+    <div style="margin-top:10px;">
+      <a href="https://www.buymeacoffee.com/sns_hannou_map" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:#ffdd00;color:#0d0d0d;text-decoration:none;font-size:13px;font-weight:700;">
+        ☕ このプロジェクトを応援
+      </a>
     </div>
   </footer>
-
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<script>
-(function(){
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var statsObs = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.querySelectorAll('strong').forEach(function(el){
-          var txt = el.textContent;
-          var num = parseInt(txt);
-          if(!isNaN(num) && num > 0 && num < 10000){
-            var target = num;
-            var current = 0;
-            var step = Math.max(1, Math.floor(target / 30));
-            var timer = setInterval(function(){
-              current += step;
-              if(current >= target){ current = target; clearInterval(timer); }
-              el.textContent = current;
-            }, 25);
-          }
-        });
-        statsObs.disconnect();
-      }
-    });
-  }, {threshold: 0.3});
-  var statsEl = document.querySelector('.stats');
-  if(statsEl) statsObs.observe(statsEl);
-})();
-</script>
-
 </body>
 </html>
