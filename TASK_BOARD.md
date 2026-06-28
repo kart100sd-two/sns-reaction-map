@@ -181,11 +181,13 @@
 - `takaichi`: 183件 → 324件
 - `henoko`: 311件 → 403件
 - `constitutional`: 192件 → 422件（既存構造化v2は残し、`constitutional_amendment_classified_refreshed.json` を作成）
+- `bike-blue-ticket`: 新規テーマとして177件を収集・分類済み。`social-samples/bike-blue-ticket_classified.json` を正式採用データとして使用。
 **分類品質監査**:
 - 監査メモ: `reviews/classification-quality-audit-2026-06-27.md`
 - 比較的良好: `takaichi`, `constitutional`
 - 再分類・設計見直し優先: `school-nickname-ban`, `henoko`
 - `ai-copyright` は `category` と `stance` の矛盾があり改善余地あり
+- `bike-blue-ticket` は代表投稿候補を監査済み。監査メモ: `reviews/bike-blue-ticket-article-usable-audit-2026-06-28.md`
 
 ### 課題9: テーマ別分類設計の再構築
 **担当**: Claude Code（最終テーマ作成担当）
@@ -203,21 +205,24 @@
 **実装結果（2026-06-28）**:
 - `school-nickname-ban`: 論点分類v2を作成し、344件を `social-samples/school-nickname-ban_classified_v2_final.json` として再整理。代表投稿候補は `article_usable: true` 34件まで厳格化。
 - `henoko`: 構造化分類スキーマを見直し、403件を `social-samples/henoko/henoko_structured_redesign_final.json` として再整理。`actor_target` / `criticized_target` / `reaction_type` / `review_required` を追加。
+- `bike-blue-ticket`: 制度移行・公共ルール型として分類設計済み。177件を `social-samples/bike-blue-ticket_classified.json` に分類し、代表投稿候補を `article_usable: true` 149件から97件へ絞り込み。
 - HTML反応マップと `configs/site-cases.json` は最終ファイル参照へ更新済み。
-- 監査メモ: `reviews/school-nickname-ban-v2-final-audit-2026-06-28.md`, `reviews/henoko-classification-design-review-2026-06-28.md`
+- 監査メモ: `reviews/school-nickname-ban-v2-final-audit-2026-06-28.md`, `reviews/henoko-classification-design-review-2026-06-28.md`, `reviews/bike-blue-ticket-article-usable-audit-2026-06-28.md`
 **最終採用ファイル（2026-06-28）**:
 - `school-nickname-ban`: `social-samples/school-nickname-ban_classified_v2_final.json`（344件、`article_usable: true` 34件）
 - `henoko`: `social-samples/henoko/henoko_structured_redesign_final.json`（403件）
+- `bike-blue-ticket`: `social-samples/bike-blue-ticket_classified.json`（177件、`article_usable: true` 97件）
 - `configs/site-cases.json` は上記2ファイルを正式参照済み。
-- `docs/school-nickname-ban-reaction-map.html` / `docs/henoko-student-accident-reaction-map.html` は正式ファイルで再生成済み。
+- `docs/school-nickname-ban-reaction-map.html` / `docs/henoko-student-accident-reaction-map.html` / `docs/bike-blue-ticket-reaction-map.html` は正式ファイルで再生成済み。
 **検証結果**:
 - JSON/YAML構文チェックOK。
-- HTML内の件数表示OK（`school-nickname-ban` 344件、`henoko` 403件）。
-- Supabase URL/APIキーがHTMLに維持されていることを確認済み。
+- HTML内の件数表示OK（`school-nickname-ban` 344件、`henoko` 403件、`bike-blue-ticket` 177件）。
+- Supabase URL/APIキーがHTMLに維持されていることを確認済み。`bike-blue-ticket` はGA4（`G-K10S4YCZFH`）とAdSense（`ca-pub-2542211932832864`）も再適用済み。
 - `scripts/classify_unified.py` / `scripts/classify_henoko_structured_ollama_batch.py` の構文チェックOK。
 **コミット前の整理注意**:
 - `*_added.*`, `*_redesign*.json`, `*_redesign*.md` などの中間ファイルは、採用/除外を確認してからコミット対象を選ぶ。
-- 正式採用は `*_final.*` と監査メモを中心に扱う。
+- 正式採用は `*_final.*` と監査メモを中心に扱う。ただし `bike-blue-ticket` はファイル名に `_final` を付けず、`social-samples/bike-blue-ticket_classified.json` が正式採用。
+- 青切符テーマの注意: `article_usable` は代表候補の粗選別であり、記事本文に引用する前は人間確認が必要。署名テンプレ共有・ニュース見出し引用だけの投稿は代表候補から除外済み。
 **参照**:
 - `classification-design-v2.md`
 - `configs/prompts/hermes/20260627_classification-design-v2-review.md`

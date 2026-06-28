@@ -14,14 +14,6 @@
     {
       "label": "トップ",
       "url": "index.html"
-    },
-    {
-      "label": "高市事例",
-      "url": "takaichi-reaction-map-standard.html"
-    },
-    {
-      "label": "辺野古事例",
-      "url": "henoko-student-accident-reaction-map.html"
     }
   ],
   "category_order": [
@@ -111,5 +103,7 @@
     "制度が不十分・青切符に留まらず自転車も免許制にすべき": "positive",
     "ルールが曖昧・現場の混乱や取り締まりへの不審で反対": "negative",
     "その他・分類保留": "neutral"
-  }
+  },
+  "topic_type": "交通ルール・日常論争",
+  "hero_image": "images/bike-blue-ticket-hero.webp"
 }

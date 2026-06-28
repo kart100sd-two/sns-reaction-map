@@ -14,18 +14,6 @@
     {
       "label": "トップ",
       "url": "index.html"
-    },
-    {
-      "label": "まとめUI",
-      "url": "constitutional-amendment-summary.html"
-    },
-    {
-      "label": "論点ダッシュボード",
-      "url": "constitutional-amendment-dashboard.html"
-    },
-    {
-      "label": "辺野古事例",
-      "url": "henoko-student-accident-reaction-map.html"
     }
   ],
   "category_order": [
@@ -117,5 +105,7 @@
     "未確認・過激表現": "warning",
     "事実確認・情報共有": "neutral",
     "その他・分類保留": "neutral"
-  }
+  },
+  "topic_type": "政策・国会",
+  "hero_image": "images/constitutional-hero.webp"
 }

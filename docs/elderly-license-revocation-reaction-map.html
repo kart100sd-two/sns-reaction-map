@@ -3,119 +3,215 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- SEO_META_START -->
-  <meta name="description" content="事故防止のため義務化を支持する声と、地方の移動手段不足やインフラ未整備を訴える反対の対立。">
-  <link rel="canonical" href="https://issue-stance-lab.github.io/sns-reaction-map/elderly-license-revocation-reaction-map.html">
-  <meta property="og:site_name" content="SNS反応まっぷ">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="高齢者の運転免許返納義務化の是非 | SNS反応まっぷ">
-  <meta property="og:description" content="事故防止のため義務化を支持する声と、地方の移動手段不足やインフラ未整備を訴える反対の対立。">
-  <meta property="og:url" content="https://issue-stance-lab.github.io/sns-reaction-map/elderly-license-revocation-reaction-map.html">
-  <meta property="og:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="高齢者の運転免許返納義務化の是非 | SNS反応まっぷ">
-  <meta name="twitter:description" content="事故防止のため義務化を支持する声と、地方の移動手段不足やインフラ未整備を訴える反対の対立。">
-  <meta name="twitter:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta property="article:section" content="交通ルール・日常論争">
-<!-- SEO_META_END -->
   <title>高齢者の運転免許返納義務化の是非 SNS反応まっぷ</title>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
-      --bg: #f3f5f8;
+      --bg: #f8fffe;
       --ink: #172033;
       --muted: #667085;
       --line: #d7dce6;
       --panel: #ffffff;
-      --accent: #1769d1;
-      --accent-soft: #e7f1ff;
+      --accent: #0d9488;
+      --accent-soft: #f0fdfa;
       --shadow: 0 10px 28px rgba(16, 24, 40, .06);
+      --grad-1: #0d9488;
+      --grad-2: #115e59;
+      --section-bg1: #f0fdfa;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
       line-height: 1.65;
     }
-    header {
-      padding: 34px min(5vw, 56px) 22px;
-      border-bottom: 1px solid var(--line);
-      background: #fff;
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/elderly-license-revocation-hero.webp') center/cover no-repeat;
+      opacity: .18;
+      z-index: 0;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 48px min(6vw, 72px) 40px;
+    }
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -.02em;
+      line-height: 1.2;
+    }
+    .hero .lead {
+      color: rgba(255,255,255,.85);
+      font-size: clamp(15px, 2vw, 18px);
+      max-width: 720px;
+      line-height: 1.8;
+    }
+    .wave-divider {
+      display: block;
+      width: 100%;
+      height: 50px;
+      margin-top: -1px;
     }
     .top-nav {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .top-nav a {
       display: inline-flex;
       align-items: center;
       min-height: 32px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(255,255,255,.25);
       border-radius: 8px;
       padding: 5px 10px;
-      background: #fbfcfe;
-      color: var(--accent);
+      background: rgba(255,255,255,.12);
+      color: #fff;
       text-decoration: none;
       font-weight: 800;
+      backdrop-filter: blur(4px);
     }
+    .top-nav a:hover { background: rgba(255,255,255,.2); }
     h1 { margin: 0 0 8px; font-size: clamp(26px, 4vw, 42px); letter-spacing: 0; }
     h2 { margin: 0 0 16px; font-size: 20px; }
     h3 { margin: 0 0 12px; font-size: 16px; }
     .lead { margin: 0; color: var(--muted); max-width: 960px; }
-    main { padding: 22px min(5vw, 56px) 48px; }
+    main { padding: 0; max-width: none; margin: 0; }
     .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-bottom: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      margin: 0;
+      background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+      position: relative;
+    }
+    .stats::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 50%, rgba(255,255,255,.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 30%, rgba(255,255,255,.1) 0%, transparent 40%);
+      pointer-events: none;
     }
     .stat {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px 16px;
-      box-shadow: var(--shadow);
+      position: relative;
+      padding: 28px 24px;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      background: transparent;
+      color: #fff;
+      border-right: 1px solid rgba(255,255,255,.15);
+      transition: background .2s;
     }
-    .stat span { display: block; color: var(--muted); font-size: 13px; }
-    .stat strong { display: block; font-size: 24px; margin-top: 4px; }
+    .stat:last-child { border-right: none; }
+    .stat:hover { background: rgba(255,255,255,.08); }
+    .stat span {
+      display: block;
+      color: rgba(255,255,255,.85);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      margin-bottom: 6px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.3;
+    }
     .panel, .note-panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 18px;
-      margin-top: 18px;
-      box-shadow: var(--shadow);
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 48px min(6vw, 72px);
+      margin: 0;
+      box-shadow: none;
+      position: relative;
+      max-width: none;
+    }
+    .panel:nth-of-type(odd) {
+      background: var(--section-bg1, #f8fafc);
+    }
+    .panel:nth-of-type(even) {
+      background: #fff;
+    }
+    #vote-section {
+      background: #fff !important;
+      border-bottom: 1px solid var(--line);
+    }
+    .panel > *,
+    .note-panel > * {
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .panel-title {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
+      gap: 16px;
+      margin-bottom: 32px;
     }
-    .panel-title h2 { margin: 0; }
+    .panel-title h2 {
+      margin: 0;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .panel-title h2::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 32px;
+      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
     .panel-title span {
       color: var(--muted);
-      font-size: 12px;
+      font-size: 14px;
       white-space: nowrap;
+      background: rgba(0,0,0,.04);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid rgba(0,0,0,.06);
     }
     .table-wrap {
       overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: 8px;
+      border: none;
+      border-radius: 16px;
       background: #fff;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06);
     }
     table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 900px; }
     table.compact { min-width: 420px; max-width: 760px; }
     th, td {
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 10px 12px;
+      border-right: 1px solid rgba(0,0,0,.04);
+      border-bottom: 1px solid rgba(0,0,0,.04);
+      padding: 14px;
       text-align: center;
       vertical-align: middle;
       white-space: nowrap;
@@ -146,31 +242,35 @@
       position: sticky;
       top: 0;
       z-index: 2;
-      background: #eef2f7;
-      color: #344054;
+      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
+      color: #fff;
       font-size: 12px;
       font-weight: 800;
       line-height: 1.35;
       white-space: normal;
       min-width: 112px;
+      padding: 16px 14px;
     }
-    thead th:first-child { z-index: 3; background: #eef2f7; }
+    thead th:first-child { z-index: 3; background: linear-gradient(180deg, var(--grad-1), var(--grad-2)); color: #fff; }
     td { font-weight: 800; font-variant-numeric: tabular-nums; }
+    tbody tr { transition: background .12s; }
+    tbody tr:hover { background: var(--accent-soft); }
     .heat-cell {
       transition: transform .12s ease, box-shadow .12s ease;
     }
     .heat-cell span {
       display: inline-flex;
-      min-width: 28px;
-      height: 28px;
+      min-width: 34px;
+      height: 34px;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .18);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .2);
+      font-size: 14px;
     }
     .heat-cell:hover {
-      transform: scale(1.03);
-      box-shadow: inset 0 0 0 2px rgba(23, 105, 209, .28);
+      transform: scale(1.08);
+      box-shadow: inset 0 0 0 2px rgba(23, 105, 209, .3);
     }
     .heat-cell.zero {
       color: #98a2b3 !important;
@@ -178,19 +278,30 @@
     }
     .heat-cell.zero span { background: transparent; }
     .total {
-      background: #f2f4f7;
-      color: var(--ink);
+      background: rgba(0,0,0,.03);
       font-weight: 900;
       min-width: 72px;
+      font-size: 15px;
     }
     .bar-list {
       display: grid;
-      gap: 10px;
-      max-width: 980px;
+      gap: 4px;
+      max-width: 1000px;
     }
     .bar-row {
       display: grid;
-      gap: 6px;
+      gap: 8px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,.7);
+      border-radius: 14px;
+      transition: all .2s;
+      border: 1px solid rgba(0,0,0,.04);
+      backdrop-filter: blur(4px);
+    }
+    .bar-row:hover {
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      transform: translateX(4px);
     }
     .bar-meta {
       display: flex;
@@ -198,62 +309,73 @@
       gap: 12px;
       font-size: 14px;
     }
-    .bar-meta span { color: #344054; }
-    .bar-meta strong { font-variant-numeric: tabular-nums; }
+    .bar-meta span { color: var(--ink); font-weight: 700; }
+    .bar-meta strong { font-variant-numeric: tabular-nums; font-size: 18px; font-weight: 900; }
     .bar-track {
-      height: 10px;
+      height: 14px;
       border-radius: 999px;
       overflow: hidden;
-      background: #eef2f7;
+      background: rgba(0,0,0,.06);
     }
     .bar-fill {
       height: 100%;
       border-radius: inherit;
-      background: linear-gradient(90deg, #9fd0ff, #1769d1);
+      transition: width .8s cubic-bezier(.22,1,.36,1);
     }
     .axis-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
     }
     .axis-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px;
-      background: linear-gradient(180deg, #ffffff, #fbfcfe);
-      min-height: 220px;
+      border: none;
+      border-radius: 20px;
+      padding: 28px;
+      min-height: 240px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
+      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .axis-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(0,0,0,.12);
     }
     .axis-kicker {
-      color: var(--accent);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--accent);
     }
     .axis-card h3 {
       margin: 0;
       font-size: 20px;
+      font-weight: 900;
       line-height: 1.35;
     }
     .axis-count {
       display: inline-flex;
       align-items: baseline;
       gap: 4px;
-      font-size: 34px;
+      font-size: 44px;
       font-weight: 900;
       font-variant-numeric: tabular-nums;
       color: var(--ink);
     }
     .axis-count span {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
     }
     .axis-card p {
       margin: 0;
       color: var(--muted);
       font-size: 13px;
+      line-height: 1.7;
     }
     .axis-tags {
       display: flex;
@@ -262,12 +384,12 @@
       margin-top: auto;
     }
     .axis-tags span {
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: #0f4e9d;
-      padding: 4px 8px;
+      border-radius: 8px;
+      padding: 5px 12px;
       font-size: 11px;
       font-weight: 700;
+      background: var(--accent-soft);
+      color: var(--accent);
     }
     [data-category="免許返納義務化に賛成（高齢運転手の事故防止を最優先）"] th { border-left: 5px solid #b54708; }
 [data-category="免許返納義務化に賛成（高齢運転手の事故防止を最優先）"] .row-dot { background: #b54708; }
@@ -316,38 +438,85 @@
       gap: 8px;
       align-items: center;
       color: var(--muted);
-      font-size: 13px;
-      margin-top: 12px;
+      font-size: 12px;
+      margin-top: 16px;
+      padding: 12px 18px;
+      background: rgba(255,255,255,.6);
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.04);
     }
-    .chip { width: 30px; height: 14px; border-radius: 3px; border: 1px solid rgba(0,0,0,.08); }
+    .chip { width: 28px; height: 14px; border-radius: 4px; border: 1px solid rgba(0,0,0,.06); }
     .sample-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
     .sample-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px;
-      background: #fbfcfe;
+      border: none;
+      border-radius: 20px;
+      padding: 0;
+      background: #fff;
+      overflow: hidden;
+      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    }
+    .sample-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.1);
+    }
+    .sample-card > h3 {
+      margin: 0;
+      padding: 18px 22px 14px;
+      font-size: 15px;
+      font-weight: 800;
+      border-bottom: 1px solid var(--line);
+    }
+    .sample-card > div {
+      padding: 16px 22px 20px;
     }
     .sample { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 10px; }
-    .meta { color: var(--accent); font-size: 12px; font-weight: 700; }
-    blockquote {
-      margin: 8px 0;
-      padding-left: 10px;
-      border-left: 3px solid var(--line);
-      color: #344054;
+    .meta {
+      color: var(--accent);
       font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
     }
-    .reason { color: var(--muted); font-size: 12px; margin-top: 6px; }
+    blockquote {
+      margin: 0 0 10px;
+      padding: 14px 18px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      border-radius: 0 12px 12px 0;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+    .reason { color: var(--ink); font-size: 14px; margin-top: 8px; line-height: 1.6; }
     a { color: var(--accent); font-size: 13px; }
-    .note-panel h2 { font-size: 16px; }
-    .note-panel ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: 13px; }
+    .note-panel {
+      background: linear-gradient(135deg, var(--accent-soft), #fff) !important;
+      border-left: 5px solid var(--accent) !important;
+      padding: 36px min(6vw, 72px) !important;
+    }
+    .note-panel h2 { font-size: 22px; color: var(--accent); }
+    .note-panel ul { margin: 0; padding-left: 20px; }
+    .note-panel li { margin-bottom: 8px; font-size: 15px; line-height: 1.8; }
+    .conflict-panel {
+      border-top: 4px solid transparent !important;
+      border-image: linear-gradient(90deg, var(--grad-1), var(--grad-2)) 1 !important;
+    }
     @media (max-width: 720px) {
-      main { padding-inline: 14px; }
-      header { padding-inline: 14px; }
-      .panel-title { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat { padding: 20px 16px; }
+      .stat strong { font-size: 18px; }
+      .panel, .note-panel { padding: 32px 16px !important; }
+      .axis-card { padding: 20px; min-height: auto; }
+      .axis-count { font-size: 32px; }
+      .sample-grid { grid-template-columns: 1fr; }
+      .bar-row { padding: 12px 14px; }
+      .panel-title { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .panel-title h2 { font-size: 26px; }
+      .hero-inner { padding: 36px 16px 32px; }
       th:first-child { min-width: 180px; }
       table { min-width: 760px; }
     }
@@ -366,11 +535,17 @@
 <!-- ADSENSE_TAG_END -->
 </head>
 <body>
-  <header>
-    <nav class="top-nav"><a href="index.html">トップ</a></nav>
-    <h1>高齢者の運転免許返納義務化の是非 SNS反応まっぷ</h1>
-    <p class="lead">Yahooリアルタイム検索で取得したSNS投稿を、事故防止優先（義務化賛成）、地方の足確保（義務化反対）、適性検査強化、インフラ整備などの論点で整理したビューです。世論調査ではありません。</p>
-  </header>
+  <section class="hero">
+    <div class="hero-inner">
+      <nav class="top-nav"><a href="index.html">トップ</a></nav>
+      <span style="display:inline-block;background:rgba(255,255,255,.2);color:#fff;padding:6px 18px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:.04em;margin-bottom:8px;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);">交通ルール・日常論争</span>
+      <h1>高齢者の運転免許返納義務化の是非 SNS反応まっぷ</h1>
+      <p class="lead">Yahooリアルタイム検索で取得したSNS投稿を、事故防止優先（義務化賛成）、地方の足確保（義務化反対）、適性検査強化、インフラ整備などの論点で整理したビューです。世論調査ではありません。</p>
+    </div>
+  </section>
+  <svg class="wave-divider" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="var(--bg)">
+    <path d="M0,0 C360,50 1080,50 1440,0 L1440,50 L0,50 Z"/>
+  </svg>
   <main>
     <section class="stats">
       <div class="stat"><span>総サンプル</span><strong>183</strong></div>
@@ -412,8 +587,8 @@
   var TITLE="高齢者の運転免許返納義務化の是非 SNS反応まっぷ";
   var KEY="sns_vote_"+TOPIC;
 
-  var supabaseUrl="https://qslrlprzoucrlptnhsmi.supabase.co";
-  var supabaseAnonKey="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzbHJscHJ6b3VjcmxwdG5oc21pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzOTIxNDYsImV4cCI6MjA5Nzk2ODE0Nn0.kKubYfLww_hr2fgL0r7xK6dnuemIOlQIkQpoOV20ybY";
+  var supabaseUrl="";
+  var supabaseAnonKey="";
   var supabaseClient=null;
 
   if(supabaseUrl && supabaseAnonKey && typeof supabase!=="undefined"){
@@ -675,7 +850,7 @@
 })();
 </script>
 </section>
-    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="negative"><div class="axis-kicker">安全優先</div><h3>事故防止のため義務化すべき</h3><div class="axis-count">68<span>件</span></div><p>相次ぐ高齢ドライバーの事故から「未来ある命を守るため」、一律の年齢（75〜85歳など）で返納義務化に踏み切るべきとする立場。</p><div class="axis-tags"><span>免許返納義務化に賛成（高齢運転手の事故防止を最優先）</span></div></article><article class="axis-card" data-tone="positive"><div class="axis-kicker">地方・生活重視</div><h3>一律義務化には反対・地方の死活問題</h3><div class="axis-count">19<span>件</span></div><p>都会とは異なり、車がなければ買い物や通院ができない地方での生活環境を考慮し、一律義務化に強く反対する立場。</p><div class="axis-tags"><span>免許返納義務化に反対（地方の生活維持や移動手段確保を重視）</span></div></article><article class="axis-card" data-tone="derived"><div class="axis-kicker">代替・支援</div><h3>適性検査や技術、インフラでカバーすべき</h3><div class="axis-count">33<span>件</span></div><p>実車試験の厳格化や代替交通機関の整備、自主返納を促す特典支援など、他のアプローチを求める立場。</p><div class="axis-tags"><span>適性検査や技術的制限の強化で対応（年齢一律の義務化は避けるべき）</span><span>代替移動手段や公共交通機関の整備を優先すべき</span><span>自主返納のインセンティブ強化（特典や支援）を進めるべき</span></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">注意領域</div><h3>未確認・過激化した反応</h3><div class="axis-count">63<span>件</span></div><p>断定、罵倒、文脈不足など、そのままでは記事化に注意が必要な反応。</p><div class="axis-tags"><span>その他・分類保留</span></div></article></div></section>
+    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="negative"><div class="axis-kicker">安全優先</div><h3>事故防止のため義務化すべき</h3><div class="axis-count">68<span>件</span></div><p>相次ぐ高齢ドライバーの事故から「未来ある命を守るため」、一律の年齢（75〜85歳など）で返納義務化に踏み切るべきとする立場。</p><div class="axis-tags"><a href="#sample-免許返納義務化に賛成-高齢運転手の事故防止を最優先" style="text-decoration:none;color:inherit;"><span>免許返納義務化に賛成（高齢運転手の事故防止を最優先）</span></a></div></article><article class="axis-card" data-tone="positive"><div class="axis-kicker">地方・生活重視</div><h3>一律義務化には反対・地方の死活問題</h3><div class="axis-count">19<span>件</span></div><p>都会とは異なり、車がなければ買い物や通院ができない地方での生活環境を考慮し、一律義務化に強く反対する立場。</p><div class="axis-tags"><a href="#sample-免許返納義務化に反対-地方の生活維持や移動手段確保を重視" style="text-decoration:none;color:inherit;"><span>免許返納義務化に反対（地方の生活維持や移動手段確保を重視）</span></a></div></article><article class="axis-card" data-tone="derived"><div class="axis-kicker">代替・支援</div><h3>適性検査や技術、インフラでカバーすべき</h3><div class="axis-count">33<span>件</span></div><p>実車試験の厳格化や代替交通機関の整備、自主返納を促す特典支援など、他のアプローチを求める立場。</p><div class="axis-tags"><a href="#sample-適性検査や技術的制限の強化で対応-年齢一律の義務化は避けるべき" style="text-decoration:none;color:inherit;"><span>適性検査や技術的制限の強化で対応（年齢一律の義務化は避けるべき）</span></a><a href="#sample-代替移動手段や公共交通機関の整備を優先すべき" style="text-decoration:none;color:inherit;"><span>代替移動手段や公共交通機関の整備を優先すべき</span></a><a href="#sample-自主返納のインセンティブ強化-特典や支援-を進めるべき" style="text-decoration:none;color:inherit;"><span>自主返納のインセンティブ強化（特典や支援）を進めるべき</span></a></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">注意領域</div><h3>未確認・過激化した反応</h3><div class="axis-count">63<span>件</span></div><p>断定、罵倒、文脈不足など、そのままでは記事化に注意が必要な反応。</p><div class="axis-tags"><a href="#sample-その他-分類保留" style="text-decoration:none;color:inherit;"><span>その他・分類保留</span></a></div></article></div></section>
     <section class="panel"><div class="panel-title"><h2>分類別件数</h2><span>論点の量感</span></div>
 <div class="bar-list">
 <div class="bar-row" data-category="免許返納義務化に賛成（高齢運転手の事故防止を最優先）"><div class="bar-meta"><span>免許返納義務化に賛成（高齢運転手の事故防止を最優先）</span><strong>68</strong></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
@@ -825,119 +1000,106 @@
 <td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="その他・分類保留 / その他: 60件"><span>60</span></td>
 <td class="total">63</td></tr>
 </tbody></table></div></section>
-    <section class="panel"><h2>代表サンプル</h2>
+    <section class="panel"><div class="panel-title"><h2>代表サンプル</h2></div>
 <div class="sample-grid">
-<article class="sample-card"><h3>免許返納義務化に賛成（高齢運転手の事故防止を最優先）</h3>
+<article class="sample-card" id="sample-免許返納義務化に賛成-高齢運転手の事故防止を最優先"><h3>免許返納義務化に賛成（高齢運転手の事故防止を最優先）</h3><div>
 <div class="sample"><div class="meta">義務化賛成 / 信頼度 1.00</div><p>介護従事者が免許返納義務化を支持。</p>
-<blockquote>介護に長年従事してるけど高齢者の 免許返納 は 義務化 するべき https://t.co/PhKDBGDoXg</blockquote>
-<a href="https://x.com/pGyPV4ZWUcdozJ1/status/2067239970751037498">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/pGyPV4ZWUcdozJ1/status/2067239970751037498"></a></blockquote>
 <div class="reason">理由: 直接「免許返納義務化」を肯定する言及あり。</div>
 </div>
 <div class="sample"><div class="meta">義務化賛成 / 信頼度 1.00</div><p>年齢や運動機能に合わせて免許返納を義務化すべき。</p>
-<blockquote>免許返納 も年齢や運動機能に合わせて 義務化 するべき！！！！ さすがにふつうに歩けない人ダメでしょ</blockquote>
-<a href="https://x.com/nish_i1106/status/2066740456185340235">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/nish_i1106/status/2066740456185340235"></a></blockquote>
 <div class="reason">理由: 明確に免許返納義務化を推奨しており、高齢運転手の事故防止を最優先としている。</div>
 </div>
 <div class="sample"><div class="meta">義務化賛成 / 信頼度 1.00</div><p>85歳以上の高齢者も厳罰化して免許返納を義務化すべき。</p>
-<blockquote>2人の命が奪われているのに、85歳だからと刑事責任能力を疑うの？高齢運転手の事故が多すぎる。もっと厳罰化して、 免許返納 を 義務化 すべき。被害者が可哀想すぎる。</blockquote>
-<a href="https://x.com/thinvn1/status/2064889145395384511">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/thinvn1/status/2064889145395384511"></a></blockquote>
 <div class="reason">理由: 明確に免許返納義務化を推奨しており、高齢運転手の事故防止を最優先としている。</div>
 </div>
-</article>
-<article class="sample-card"><h3>免許返納義務化に反対（地方の生活維持や移動手段確保を重視）</h3>
+</div></article>
+<article class="sample-card" id="sample-免許返納義務化に反対-地方の生活維持や移動手段確保を重視"><h3>免許返納義務化に反対（地方の生活維持や移動手段確保を重視）</h3><div>
 <div class="sample"><div class="meta">義務化反対 / 信頼度 1.00</div><p>地方での移動手段としての車の重要性と免許返納による生活不能を強調。</p>
-<blockquote>車を利用しないと不便な 地方 に住んでいます。運転免許証の返納は 生活 不能＝死です。買物にも病院にも散髪にすら行けません。公共交通機関のバスでは満足な移動はできません。市内移動はできてもそれ以上には行けないのです。 免許返納 時には安楽死尊厳死を希望します。 #国は安楽死を認めてください</blockquote>
-<a href="https://x.com/new_yamanjy_thd/status/2068281057674399848">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/new_yamanjy_thd/status/2068281057674399848"></a></blockquote>
 <div class="reason">理由: 地方での移動手段としての車の必要性強調</div>
 </div>
 <div class="sample"><div class="meta">義務化反対 / 信頼度 0.90</div><p>田舎で免許返納はできない。</p>
-<blockquote>「田舎で足がなくなると生活できなくなるから、 高齢者免許返納 できない」 これに 賛成 できないが一歩譲って認めるとしても、近所の買い物と病院に通うだけ、すなわち同じ経路のみの利用にしてください けっこう遊びに行ったり大型買い物施設に行ったりで事故起こしている 高齢者 が見受けられます</blockquote>
-<a href="https://x.com/NRVYC5XYAkTDIHD/status/2060768487430373720">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/NRVYC5XYAkTDIHD/status/2060768487430373720"></a></blockquote>
 <div class="reason">理由: 地方での移動手段確保を主張している。</div>
 </div>
 <div class="sample"><div class="meta">義務化反対 / 信頼度 0.90</div><p>地方での移動手段が不足しているため、免許返納は生活不能。</p>
-<blockquote>車を利用しないと不便な 地方 に住んでいます。運転免許証の返納は 生活 不能＝死です。買物にも病院にも散髪にすら行けません。公共交通機関のバスでは満足な移動はできません。市内移動はできてもそれ以上には行けないのです。 免許返納 時には安楽死尊厳死を希望します。 #国は安楽死を認めてください</blockquote>
-<a href="https://x.com/new_yamanjy_thd/status/2070818858425020700">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/new_yamanjy_thd/status/2070818858425020700"></a></blockquote>
 <div class="reason">理由: 地方での移動手段の欠如と免許返納の不可避性を指摘</div>
 </div>
-</article>
-<article class="sample-card"><h3>適性検査や技術的制限の強化で対応（年齢一律の義務化は避けるべき）</h3>
+</div></article>
+<article class="sample-card" id="sample-適性検査や技術的制限の強化で対応-年齢一律の義務化は避けるべき"><h3>適性検査や技術的制限の強化で対応（年齢一律の義務化は避けるべき）</h3><div>
 <div class="sample"><div class="meta">適性検査強化 / 信頼度 1.00</div><p>高齢者はガソリン車運転禁止、EV自動運転に舵を切るべき。</p>
-<blockquote>悲惨な高齢者ドライバーの事故から子供たちを守るために。 ​自動運転と一番相性が良いのは、制御が精密なEV。 『高齢者は 免許返納 』ではなく、『高齢者はガソリン車運転しちゃダメ、EVの自動運転しか乗っちゃダメ』という 義務化 に舵を切ってほしい。技術はあるんだから、あとは政治と仕組みの問題。</blockquote>
-<a href="https://x.com/minto_kun0617/status/2064654467111559494">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/minto_kun0617/status/2064654467111559494"></a></blockquote>
 <div class="reason">理由: 免許返納義務化ではなく、技術的制限の強化を推奨しており、年齢一律の義務化は避けるべきとしている。</div>
 </div>
 <div class="sample"><div class="meta">適性検査強化 / 信頼度 1.00</div><p>一律の年齢制限ではなく、認知機能検査を厳格化すべき。</p>
-<blockquote>一律での 免許返納 とかは難しい面もあると思うけど、業として運転をすることに関しては 年齢制限 を設けるべきなんでは？ https://t.co/4w837M5SlP</blockquote>
-<a href="https://x.com/Cu_the_3rd/status/2061589539723137076">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/Cu_the_3rd/status/2061589539723137076"></a></blockquote>
 <div class="reason">理由: 投稿者が年齢一律の免許返納義務化に反対し、代替案として適性検査や技術的制限の強化を推奨している。</div>
 </div>
 <div class="sample"><div class="meta">適性検査強化 / 信頼度 0.90</div><p>実車試験の見直しを急ぐ必要があると主張。</p>
-<blockquote>高齢ドライバー の安全 対策 はとても重要ですね。 事故 率が2倍以上というのは深刻です。 実車試験の見直しを早急に進めて、 皆が安心して道路を使える環境になることを願っています。</blockquote>
-<a href="https://x.com/Salamison/status/2070116967902593367">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/Salamison/status/2070116967902593367"></a></blockquote>
 <div class="reason">理由: 事故率が高いため、実車試験を見直すべきと主張</div>
 </div>
-</article>
-<article class="sample-card"><h3>代替移動手段や公共交通機関の整備を優先すべき</h3>
+</div></article>
+<article class="sample-card" id="sample-代替移動手段や公共交通機関の整備を優先すべき"><h3>代替移動手段や公共交通機関の整備を優先すべき</h3><div>
 <div class="sample"><div class="meta">インフラ優先 / 信頼度 1.00</div><p>高齢者の免許自主返納促進に伴う公共交通機関の整備が必要。</p>
-<blockquote>名古屋市では、高齢者の交通事故抑止のため、加齢に伴う身体機能の変化について自覚を促し、必要に応じて 運転免許 を 自主返納 して頂くことを促進しています。 運転免許 を 自主返納 された方に対して、公共交通機関等で利用できるマナカチャージ券（5,000円分）を交付します。 https://t.co/a4vpS2ZXsT https://t.co/0L5...</blockquote>
-<a href="https://x.com/ISHIHARA_Osamu/status/2070855015057756393">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/ISHIHARA_Osamu/status/2070855015057756393"></a></blockquote>
 <div class="reason">理由: 投稿者が公共交通機関の整備を推奨している。</div>
 </div>
 <div class="sample"><div class="meta">インフラ優先 / 信頼度 1.00</div><p>高齢ドライバーの運転技能検査見直しについて批判、移動施策整備を主張</p>
-<blockquote>高齢ドライバー の「運転技能検査」見直しへ　合格者の 事故 率高く(毎日新聞) #Yahooニュース https://t.co/dwwUKIqfAn 対策 は必要だけど高齢者が多い地域ほど車社会なんだよね。車が無いと生活できないんだ。取り締まりを強める前に移動をカバーする施策を整備するべきなんだよ。</blockquote>
-<a href="https://x.com/hoho_desu/status/2070273120079138901">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/hoho_desu/status/2070273120079138901"></a></blockquote>
 <div class="reason">理由: 代替移動手段や公共交通機関の必要性</div>
 </div>
 <div class="sample"><div class="meta">義務化反対 / 信頼度 0.90</div><p>地方で高齢者が免許返納できない理由は、生活に支障が生じるため。</p>
-<blockquote>地方 で高齢者が 免許返納 出来ない理由... 生活 に支障をきたす　🏥や買い物が困るからかな、タクシー🚕使って🙏って思ってたけど、なんとゴミ捨て場が減っていて特に資源ゴミの回収が若い人だって歩きたくない距離の所に変更されてた　自治体、政府！こういう所に目を向けてそういう事に税金使って❗️</blockquote>
-<a href="https://x.com/angelsnow04/status/2062736909122884008">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/angelsnow04/status/2062736909122884008"></a></blockquote>
 <div class="reason">理由: 投稿者は代替移動手段の不足を指摘し、その整備が必要であると主張している。</div>
 </div>
-</article>
-<article class="sample-card"><h3>自主返納のインセンティブ強化（特典や支援）を進めるべき</h3>
+</div></article>
+<article class="sample-card" id="sample-自主返納のインセンティブ強化-特典や支援-を進めるべき"><h3>自主返納のインセンティブ強化（特典や支援）を進めるべき</h3><div>
 <div class="sample"><div class="meta">自主返納促進 / 信頼度 1.00</div><p>高齢ドライバーの判断に基づく免許自主返納を推奨。</p>
-<blockquote>運転免許 の 自主返納 、高齢ドライバーの判断として注目されます。安全への意識をどう評価すべきでしょうか。 https://t.co/IGulHVmk1i</blockquote>
-<a href="https://x.com/News2057533/status/2070970271620853841">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/News2057533/status/2070970271620853841"></a></blockquote>
 <div class="reason">理由: 投稿者が自主返納制度とそのインセンティブ強化を主張している。</div>
 </div>
 <div class="sample"><div class="meta">自主返納促進 / 信頼度 1.00</div><p>80歳の誕生日に自動車運転免許を自主返納し、愛車を譲渡した</p>
-<blockquote>復活したマツダ「RX-7」 世界が称賛したスポーティなシルエットと気持ち昂る走りを、今一度全身で味わってみた https://t.co/OcwNWRP5wW 長崎県に住む女性オーナーが25年間乗り続けた愛車であり、80歳の誕生日を迎えるにあたって、自動車 運転免許 の 自主返納 と合わせて、マツダへと譲渡された個体だ。 https://t.co/c0f...</blockquote>
-<a href="https://x.com/TunedCarsJapan/status/2060934296001773884">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/TunedCarsJapan/status/2060934296001773884"></a></blockquote>
 <div class="reason">理由: 自主返納と特典に関する一例</div>
 </div>
 <div class="sample"><div class="meta">自主返納促進 / 信頼度 0.90</div><p>宇和島バスでは、運転免許証を自主返納した後に運賃半額になる運転経歴証明書がもらえます。</p>
-<blockquote>調べると、宇和島バスも 運転免許 返納割引制度があります、 運転免許自主返納 後に貰える運転経歴証明書を降車時にみせれば運賃半額になります</blockquote>
-<a href="https://x.com/balancepower46/status/2068972385005703261">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/balancepower46/status/2068972385005703261"></a></blockquote>
 <div class="reason">理由: 特典や支援に関する情報提供。</div>
 </div>
-</article>
-<article class="sample-card"><h3>その他・分類保留</h3>
+</div></article>
+<article class="sample-card" id="sample-その他-分類保留"><h3>その他・分類保留</h3><div>
 <div class="sample"><div class="meta">義務化賛成 / 信頼度 1.00</div><p>事故被害者視点から免許返納義務化を支持。</p>
-<blockquote>どんな衝撃だっただろうか……事故した瞬間は本当に怖かっただろうな。高齢者に大事な未来ある命を奪われなくて本当に良かった。高齢者の 免許返納義務化 してほしい。 https://t.co/DJrKXH9LAB</blockquote>
-<a href="https://x.com/ebifry_away/status/2067182907178000531">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/ebifry_away/status/2067182907178000531"></a></blockquote>
 <div class="reason">理由: 事故防止と命の重要性を強調。</div>
 </div>
 <div class="sample"><div class="meta">義務化賛成 / 信頼度 1.00</div><p>能力が衰えたため、免許返納を義務化すべき。</p>
-<blockquote>逆走したり、人を巻き込んだり、能力が衰えてるんだから 免許返納 を 義務化 すべきだろう。</blockquote>
-<a href="https://x.com/mu_xia31408/status/2062792816590459200">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/mu_xia31408/status/2062792816590459200"></a></blockquote>
 <div class="reason">理由: 能力低下による事故防止を目的として推奨</div>
 </div>
 <div class="sample"><div class="meta">義務化賛成 / 信頼度 1.00</div><p>免許返納の義務化が必要。</p>
-<blockquote>免許返納 の 義務化 をしないとダメですね</blockquote>
-<a href="https://x.com/ZuoChuan90857/status/2062746738272927757">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/ZuoChuan90857/status/2062746738272927757"></a></blockquote>
 <div class="reason">理由: 明確な意見表明</div>
 </div>
-</article>
+</div></article>
 </div></section>
     <section class="note-panel"><h2>注意</h2><ul>
 <li>これは世論調査ではなく、Yahooリアルタイム検索で取得した投稿サンプルの反応整理です。</li>
 <li>代表投稿は公開前に人間が確認する前提です。</li>
 </ul></section>
   </main>
-  <footer style="border-top:1px solid var(--line);padding:20px min(5vw,56px);text-align:center;color:var(--muted);font-size:12px;line-height:1.8;">
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <footer style="background:linear-gradient(135deg, var(--grad-2), var(--grad-1));border-top:none;padding:48px 24px;text-align:center;color:#fff;font-size:12px;line-height:1.8;">
     <div>Powered by Yahooリアルタイム検索 + AI分類</div>
-    <a href="index.html" style="color:var(--accent);text-decoration:none;font-weight:700;font-size:13px;">← SNS反応まっぷ トップへ</a>
+    <a href="index.html" style="color:rgba(255,255,255,.85);text-decoration:none;font-weight:700;font-size:13px;">← SNS反応まっぷ トップへ</a>
+    <div style="margin-top:8px;color:rgba(255,255,255,.6);">
+      <a href="privacy.html" style="color:rgba(255,255,255,.7);margin-right:16px;">プライバシーポリシー</a>
+      <a href="disclaimer.html" style="color:rgba(255,255,255,.7);">免責事項</a>
+    </div>
     <div style="margin-top:10px;">
       <a href="https://www.buymeacoffee.com/sns_hannou_map" target="_blank" rel="noopener"
          style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:#ffdd00;color:#0d0d0d;text-decoration:none;font-size:13px;font-weight:700;">

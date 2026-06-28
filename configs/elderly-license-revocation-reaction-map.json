@@ -85,5 +85,7 @@
     "代替移動手段や公共交通機関の整備を優先すべき": "derived",
     "自主返納のインセンティブ強化（特典や支援）を進めるべき": "derived",
     "その他・分類保留": "neutral"
-  }
+  },
+  "topic_type": "交通ルール・日常論争",
+  "hero_image": "images/elderly-license-revocation-hero.webp"
 }

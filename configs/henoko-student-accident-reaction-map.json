@@ -14,14 +14,6 @@
     {
       "label": "トップ",
       "url": "index.html"
-    },
-    {
-      "label": "まとめUI",
-      "url": "henoko-summary.html"
-    },
-    {
-      "label": "高市事例",
-      "url": "takaichi-reaction-heatmap.html"
     }
   ],
   "category_order": [
@@ -114,5 +106,7 @@
     "報道・行政対応批判": "neutral",
     "基地問題・反基地論への接続": "derived",
     "事実確認・情報共有": "neutral"
-  }
+  },
+  "topic_type": "教育・事故・基地問題",
+  "hero_image": "images/henoko-hero.webp"
 }

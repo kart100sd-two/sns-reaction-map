@@ -332,6 +332,23 @@ for k,v in cats.most_common(): print(f'  {v:3d}  {k}')
 | 10-29% | △ クエリ設計を見直すか、Few-shot例を追加 |
 | 10%未満 | ✗ トピックかクエリを根本的に変更 |
 
+### Step 5.5: 代表投稿候補の監査
+
+HTMLに出す代表投稿は `classification.article_usable` を使う。これは分類モデルが緩めに true を付けることがあるため、公開前に必ず監査する。
+
+**除外するもの:**
+- `その他・分類保留`
+- `confidence < 0.75`
+- 署名文・ニュース見出し・「SNSでは...」引用だけの定型共有
+- 分類理由に「主観的な意見がない」「ニュースリンクのみ」等がある投稿
+- トピック外文脈が強い投稿
+- カテゴリ名と本文主張が矛盾している投稿
+
+**実例: `bike-blue-ticket`**
+- 177件分類済み。
+- `article_usable: true` は149件から97件へ絞り込み済み。
+- 監査メモ: `reviews/bike-blue-ticket-article-usable-audit-2026-06-28.md`
+
 ### Step 6: HTML生成
 
 ```bash
@@ -390,6 +407,43 @@ X投稿テンプレートで告知。
 | 辺野古高校生死亡事故 | `docs/henoko-student-accident-reaction-map.html` | 社会 | 311件 | 分析中 |
 | 学校でのあだ名禁止の是非 | `docs/school-nickname-ban-reaction-map.html` | 教育・日常論争 | 201件（賛成13/反対20） | 分析済み |
 | 生成AIと著作権問題 | `docs/ai-copyright-reaction-map.html` | テック・著作権 | 475件（分類率71%） | 分析済み ✅ |
+| 自転車の青切符導入の是非 | `docs/bike-blue-ticket-reaction-map.html` | 公共ルール・制度移行 | 177件（代表候補97件） | 分析済み ✅ |
+
+### 自転車の青切符トピック引き継ぎメモ
+
+- ブランチ: `task/7-9-bike-blue-ticket-recheck`
+- 正式採用データ: `social-samples/bike-blue-ticket_classified.json`
+- 元サンプル: `social-samples/bike-blue-ticket_samples.json`
+- 分類設計: `configs/topics/bike-blue-ticket.yaml`
+- HTML設定: `configs/bike-blue-ticket-reaction-map.json`
+- 公開HTML: `docs/bike-blue-ticket-reaction-map.html`
+- 監査メモ: `reviews/bike-blue-ticket-article-usable-audit-2026-06-28.md`
+
+**分類内訳（177件）**
+- その他・分類保留: 45
+- 制度が不十分・青切符に留まらず自転車も免許制にすべき: 41
+- 取締り強化賛成・マナーや危険運転の改善を期待: 34
+- インフラ未整備への不満・専用レーンの設置が先決: 31
+- 車道走行への不安・原則車道は事故を増やすと反対: 14
+- ルールが曖昧・現場の混乱や取り締まりへの不審で反対: 12
+
+**代表候補（97件）**
+- 制度が不十分・青切符に留まらず自転車も免許制にすべき: 29
+- インフラ未整備への不満・専用レーンの設置が先決: 26
+- 取締り強化賛成・マナーや危険運転の改善を期待: 22
+- 車道走行への不安・原則車道は事故を増やすと反対: 11
+- ルールが曖昧・現場の混乱や取り締まりへの不審で反対: 9
+
+**検証済み**
+- JSON/YAML構文OK。
+- HTML件数表示OK。
+- 投票ラベルは6つの対立軸と対応済み。
+- GA4 `G-K10S4YCZFH`、AdSense `ca-pub-2542211932832864`、Supabase参照はHTML内に維持済み。
+
+**注意**
+- `social-samples/bike-blue-ticket_classified.md` は未追跡の中間Markdown。正式採用はJSON。
+- `article_usable` は記事掲載候補の粗選別。実際に引用・転載する場合は人間が最終確認する。
+- 再生成後は `scripts/seo/apply_ga_tags.py` と `scripts/seo/apply_adsense_tags.py` でタグを戻すこと。
 
 ### あだ名禁止トピックの分類設計メモ
 

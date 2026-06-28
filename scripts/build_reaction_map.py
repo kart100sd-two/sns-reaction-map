@@ -7,6 +7,7 @@ import argparse
 import html
 import json
 import os
+import re
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
@@ -15,6 +16,15 @@ from typing import Any
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 DEFAULT_STANCE_ORDER = ["批判", "擁護", "賛成", "反対", "比較", "未確認", "保留", "その他"]
+
+TOPIC_THEME_COLORS: dict[str, dict[str, str]] = {
+    "政治": {"grad_1": "#dc2626", "grad_2": "#991b1b", "accent": "#dc2626", "accent_soft": "#fef2f2", "bg": "#fffbfb", "section_bg1": "#fef2f2"},
+    "教育": {"grad_1": "#0891b2", "grad_2": "#155e75", "accent": "#0891b2", "accent_soft": "#ecfeff", "bg": "#f8fdfe", "section_bg1": "#ecfeff"},
+    "テック": {"grad_1": "#7c3aed", "grad_2": "#5b21b6", "accent": "#7c3aed", "accent_soft": "#f5f3ff", "bg": "#faf8ff", "section_bg1": "#f5f3ff"},
+    "交通": {"grad_1": "#0d9488", "grad_2": "#115e59", "accent": "#0d9488", "accent_soft": "#f0fdfa", "bg": "#f8fffe", "section_bg1": "#f0fdfa"},
+    "スポーツ": {"grad_1": "#ea580c", "grad_2": "#9a3412", "accent": "#ea580c", "accent_soft": "#fff7ed", "bg": "#fffcf8", "section_bg1": "#fff7ed"},
+    "default": {"grad_1": "#1769d1", "grad_2": "#0a3d91", "accent": "#1769d1", "accent_soft": "#e7f1ff", "bg": "#f3f5f8", "section_bg1": "#eff6ff"},
+}
 
 DEFAULT_CONFIG = {
     "title": "SNS反応まっぷ",
@@ -32,6 +42,11 @@ DEFAULT_CONFIG = {
     "conflict_axes": [],
     "category_tones": {},
     "nav_links": [],
+    "grad_1": "",
+    "grad_2": "",
+    "hero_badge": "",
+    "hero_image": "",
+    "topic_type": "",
 }
 
 
@@ -50,6 +65,14 @@ def merge_config(config_path: str | None) -> dict[str, Any]:
         user_config = read_json(config_path)
         config.update(user_config)
     return config
+
+
+def resolve_theme(config: dict[str, Any]) -> dict[str, str]:
+    topic_type = str(config.get("topic_type") or "")
+    for keyword, colors in TOPIC_THEME_COLORS.items():
+        if keyword != "default" and keyword in topic_type:
+            return colors
+    return TOPIC_THEME_COLORS["default"]
 
 
 def pct(value: int, max_value: int) -> float:
@@ -150,6 +173,14 @@ def category_counts_html(categories: list[str], counts: Counter[str]) -> str:
     return "\n".join(out)
 
 
+def _is_x_url(url: str) -> bool:
+    return bool(re.match(r"https?://(twitter\.com|x\.com)/\w+/status/\d+", url))
+
+
+def _slug(text: str) -> str:
+    return re.sub(r"[^\w]", "-", text).strip("-")[:60]
+
+
 def representative_html(rows: list[dict[str, Any]], categories: list[str], config: dict[str, Any]) -> str:
     sample_limit = int(config.get("sample_limit_per_category") or 3)
     show_raw_text = bool(config.get("show_raw_text", True))
@@ -166,32 +197,40 @@ def representative_html(rows: list[dict[str, Any]], categories: list[str], confi
         if len(buckets[category]) < sample_limit:
             buckets[category].append(row)
 
-    out = ["<section class=\"panel\"><h2>代表サンプル</h2>", "<div class=\"sample-grid\">"]
+    out = ['<section class="panel"><div class="panel-title"><h2>代表サンプル</h2></div>', '<div class="sample-grid">']
     for category in categories:
         items = buckets.get(category, [])
         if not items:
             continue
-        out.append(f"<article class=\"sample-card\"><h3>{html.escape(category)}</h3>")
+        cat_id = _slug(category)
+        out.append(f'<article class="sample-card" id="sample-{cat_id}"><h3>{html.escape(category)}</h3><div>')
         for row in items:
             c = classification(row)
             text = str(row.get("text", "")).replace("\n", " ")
             if len(text) > 180:
                 text = text[:177] + "..."
             out.append(
-                "<div class=\"sample\">"
-                f"<div class=\"meta\">{html.escape(stance_of(row))} / 信頼度 {confidence_of(row):.2f}</div>"
-                f"<p>{html.escape(summary_of(row) or text)}</p>"
+                '<div class="sample">'
+                f'<div class="meta">{html.escape(stance_of(row))} / 信頼度 {confidence_of(row):.2f}</div>'
+                f'<p>{html.escape(summary_of(row) or text)}</p>'
             )
-            if show_raw_text:
-                out.append(f"<blockquote>{html.escape(text)}</blockquote>")
             url = str(row.get("url", "")).strip()
-            if url:
-                out.append(f"<a href=\"{html.escape(url)}\">投稿URL</a>")
+            if url and _is_x_url(url):
+                out.append(
+                    f'<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true">'
+                    f'<a href="{html.escape(url)}"></a></blockquote>'
+                )
+            elif show_raw_text:
+                out.append(f"<blockquote>{html.escape(text)}</blockquote>")
+                if url:
+                    out.append(f'<a href="{html.escape(url)}">投稿URL</a>')
+            elif url:
+                out.append(f'<a href="{html.escape(url)}">投稿URL</a>')
             reason = str(c.get("reason") or "").strip()
             if reason:
-                out.append(f"<div class=\"reason\">理由: {html.escape(reason)}</div>")
+                out.append(f'<div class="reason">理由: {html.escape(reason)}</div>')
             out.append("</div>")
-        out.append("</article>")
+        out.append("</div></article>")
     out.append("</div></section>")
     return "\n".join(out)
 
@@ -272,7 +311,7 @@ def conflict_axes_html(rows: list[dict[str, Any]], config: dict[str, Any]) -> st
             f"<h3>{html.escape(str(axis.get('label') or ''))}</h3>"
             f"<div class=\"axis-count\">{count}<span>件</span></div>"
             f"<p>{html.escape(str(axis.get('description') or ''))}</p>"
-            f"<div class=\"axis-tags\">{''.join(f'<span>{html.escape(category)}</span>' for category in categories)}</div>"
+            f"<div class=\"axis-tags\">{''.join(f'<a href=\"#sample-{_slug(category)}\" style=\"text-decoration:none;color:inherit;\"><span>{html.escape(category)}</span></a>' for category in categories)}</div>"
             "</article>"
         )
     return (
@@ -733,6 +772,32 @@ def build(rows: list[dict[str, Any]], config: dict[str, Any]) -> str:
     source_label = str(config.get("source_label") or "SNSサンプル")
     tone_css = build_tone_css(config)
 
+    theme = resolve_theme(config)
+    cfg_grad1 = config.get("grad_1") or theme["grad_1"]
+    cfg_grad2 = config.get("grad_2") or theme["grad_2"]
+    cfg_accent = theme["accent"]
+    cfg_accent_soft = theme["accent_soft"]
+    cfg_bg = theme["bg"]
+    cfg_section_bg1 = theme["section_bg1"]
+
+    hero_image = str(config.get("hero_image") or "")
+    hero_image_css = ""
+    if hero_image:
+        hero_image_css = f"""
+    .hero::before {{
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('{hero_image}') center/cover no-repeat;
+      opacity: .18;
+      z-index: 0;
+    }}"""
+
+    hero_badge = str(config.get("hero_badge") or config.get("topic_type") or "")
+    hero_badge_html = ""
+    if hero_badge:
+        hero_badge_html = f'<span style="display:inline-block;background:rgba(255,255,255,.2);color:#fff;padding:6px 18px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:.04em;margin-bottom:8px;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);">{html.escape(hero_badge)}</span>'
+
     supabase_script = ""
     if config.get("supabase_url") and config.get("supabase_anon_key"):
         supabase_script = '  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>\n'
@@ -743,102 +808,206 @@ def build(rows: list[dict[str, Any]], config: dict[str, Any]) -> str:
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{html.escape(title)}</title>
-{supabase_script}  <style>
+{supabase_script}  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
     :root {{
       color-scheme: light;
-      --bg: #f3f5f8;
+      --bg: {cfg_bg};
       --ink: #172033;
       --muted: #667085;
       --line: #d7dce6;
       --panel: #ffffff;
-      --accent: #1769d1;
-      --accent-soft: #e7f1ff;
+      --accent: {cfg_accent};
+      --accent-soft: {cfg_accent_soft};
       --shadow: 0 10px 28px rgba(16, 24, 40, .06);
+      --grad-1: {cfg_grad1};
+      --grad-2: {cfg_grad2};
+      --section-bg1: {cfg_section_bg1};
     }}
     * {{ box-sizing: border-box; }}
     body {{
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
       line-height: 1.65;
     }}
-    header {{
-      padding: 34px min(5vw, 56px) 22px;
-      border-bottom: 1px solid var(--line);
-      background: #fff;
+    .hero {{
+      position: relative;
+      background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+      overflow: hidden;
+    }}{hero_image_css}
+    .hero-inner {{
+      position: relative;
+      z-index: 1;
+      padding: 48px min(6vw, 72px) 40px;
+    }}
+    .hero h1 {{
+      margin: 0 0 12px;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -.02em;
+      line-height: 1.2;
+    }}
+    .hero .lead {{
+      color: rgba(255,255,255,.85);
+      font-size: clamp(15px, 2vw, 18px);
+      max-width: 720px;
+      line-height: 1.8;
+    }}
+    .wave-divider {{
+      display: block;
+      width: 100%;
+      height: 50px;
+      margin-top: -1px;
     }}
     .top-nav {{
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }}
     .top-nav a {{
       display: inline-flex;
       align-items: center;
       min-height: 32px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(255,255,255,.25);
       border-radius: 8px;
       padding: 5px 10px;
-      background: #fbfcfe;
-      color: var(--accent);
+      background: rgba(255,255,255,.12);
+      color: #fff;
       text-decoration: none;
       font-weight: 800;
+      backdrop-filter: blur(4px);
     }}
+    .top-nav a:hover {{ background: rgba(255,255,255,.2); }}
     h1 {{ margin: 0 0 8px; font-size: clamp(26px, 4vw, 42px); letter-spacing: 0; }}
     h2 {{ margin: 0 0 16px; font-size: 20px; }}
     h3 {{ margin: 0 0 12px; font-size: 16px; }}
     .lead {{ margin: 0; color: var(--muted); max-width: 960px; }}
-    main {{ padding: 22px min(5vw, 56px) 48px; }}
+    main {{ padding: 0; max-width: none; margin: 0; }}
     .stats {{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-bottom: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      margin: 0;
+      background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+      position: relative;
+    }}
+    .stats::before {{
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 50%, rgba(255,255,255,.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 30%, rgba(255,255,255,.1) 0%, transparent 40%);
+      pointer-events: none;
     }}
     .stat {{
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px 16px;
-      box-shadow: var(--shadow);
+      position: relative;
+      padding: 28px 24px;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      background: transparent;
+      color: #fff;
+      border-right: 1px solid rgba(255,255,255,.15);
+      transition: background .2s;
     }}
-    .stat span {{ display: block; color: var(--muted); font-size: 13px; }}
-    .stat strong {{ display: block; font-size: 24px; margin-top: 4px; }}
+    .stat:last-child {{ border-right: none; }}
+    .stat:hover {{ background: rgba(255,255,255,.08); }}
+    .stat span {{
+      display: block;
+      color: rgba(255,255,255,.85);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      margin-bottom: 6px;
+    }}
+    .stat strong {{
+      display: block;
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.3;
+    }}
     .panel, .note-panel {{
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 18px;
-      margin-top: 18px;
-      box-shadow: var(--shadow);
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 48px min(6vw, 72px);
+      margin: 0;
+      box-shadow: none;
+      position: relative;
+      max-width: none;
+    }}
+    .panel:nth-of-type(odd) {{
+      background: var(--section-bg1, #f8fafc);
+    }}
+    .panel:nth-of-type(even) {{
+      background: #fff;
+    }}
+    #vote-section {{
+      background: #fff !important;
+      border-bottom: 1px solid var(--line);
+    }}
+    .panel > *,
+    .note-panel > * {{
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }}
     .panel-title {{
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
+      gap: 16px;
+      margin-bottom: 32px;
     }}
-    .panel-title h2 {{ margin: 0; }}
+    .panel-title h2 {{
+      margin: 0;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }}
+    .panel-title h2::before {{
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 32px;
+      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
+      border-radius: 3px;
+      flex-shrink: 0;
+    }}
     .panel-title span {{
       color: var(--muted);
-      font-size: 12px;
+      font-size: 14px;
       white-space: nowrap;
+      background: rgba(0,0,0,.04);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid rgba(0,0,0,.06);
     }}
     .table-wrap {{
       overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: 8px;
+      border: none;
+      border-radius: 16px;
       background: #fff;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06);
     }}
     table {{ width: 100%; border-collapse: separate; border-spacing: 0; min-width: 900px; }}
     table.compact {{ min-width: 420px; max-width: 760px; }}
     th, td {{
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 10px 12px;
+      border-right: 1px solid rgba(0,0,0,.04);
+      border-bottom: 1px solid rgba(0,0,0,.04);
+      padding: 14px;
       text-align: center;
       vertical-align: middle;
       white-space: nowrap;
@@ -869,31 +1038,35 @@ def build(rows: list[dict[str, Any]], config: dict[str, Any]) -> str:
       position: sticky;
       top: 0;
       z-index: 2;
-      background: #eef2f7;
-      color: #344054;
+      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
+      color: #fff;
       font-size: 12px;
       font-weight: 800;
       line-height: 1.35;
       white-space: normal;
       min-width: 112px;
+      padding: 16px 14px;
     }}
-    thead th:first-child {{ z-index: 3; background: #eef2f7; }}
+    thead th:first-child {{ z-index: 3; background: linear-gradient(180deg, var(--grad-1), var(--grad-2)); color: #fff; }}
     td {{ font-weight: 800; font-variant-numeric: tabular-nums; }}
+    tbody tr {{ transition: background .12s; }}
+    tbody tr:hover {{ background: var(--accent-soft); }}
     .heat-cell {{
       transition: transform .12s ease, box-shadow .12s ease;
     }}
     .heat-cell span {{
       display: inline-flex;
-      min-width: 28px;
-      height: 28px;
+      min-width: 34px;
+      height: 34px;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .18);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .2);
+      font-size: 14px;
     }}
     .heat-cell:hover {{
-      transform: scale(1.03);
-      box-shadow: inset 0 0 0 2px rgba(23, 105, 209, .28);
+      transform: scale(1.08);
+      box-shadow: inset 0 0 0 2px rgba(23, 105, 209, .3);
     }}
     .heat-cell.zero {{
       color: #98a2b3 !important;
@@ -901,19 +1074,30 @@ def build(rows: list[dict[str, Any]], config: dict[str, Any]) -> str:
     }}
     .heat-cell.zero span {{ background: transparent; }}
     .total {{
-      background: #f2f4f7;
-      color: var(--ink);
+      background: rgba(0,0,0,.03);
       font-weight: 900;
       min-width: 72px;
+      font-size: 15px;
     }}
     .bar-list {{
       display: grid;
-      gap: 10px;
-      max-width: 980px;
+      gap: 4px;
+      max-width: 1000px;
     }}
     .bar-row {{
       display: grid;
-      gap: 6px;
+      gap: 8px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,.7);
+      border-radius: 14px;
+      transition: all .2s;
+      border: 1px solid rgba(0,0,0,.04);
+      backdrop-filter: blur(4px);
+    }}
+    .bar-row:hover {{
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      transform: translateX(4px);
     }}
     .bar-meta {{
       display: flex;
@@ -921,62 +1105,73 @@ def build(rows: list[dict[str, Any]], config: dict[str, Any]) -> str:
       gap: 12px;
       font-size: 14px;
     }}
-    .bar-meta span {{ color: #344054; }}
-    .bar-meta strong {{ font-variant-numeric: tabular-nums; }}
+    .bar-meta span {{ color: var(--ink); font-weight: 700; }}
+    .bar-meta strong {{ font-variant-numeric: tabular-nums; font-size: 18px; font-weight: 900; }}
     .bar-track {{
-      height: 10px;
+      height: 14px;
       border-radius: 999px;
       overflow: hidden;
-      background: #eef2f7;
+      background: rgba(0,0,0,.06);
     }}
     .bar-fill {{
       height: 100%;
       border-radius: inherit;
-      background: linear-gradient(90deg, #9fd0ff, #1769d1);
+      transition: width .8s cubic-bezier(.22,1,.36,1);
     }}
     .axis-grid {{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
     }}
     .axis-card {{
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px;
-      background: linear-gradient(180deg, #ffffff, #fbfcfe);
-      min-height: 220px;
+      border: none;
+      border-radius: 20px;
+      padding: 28px;
+      min-height: 240px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
+      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      position: relative;
+      overflow: hidden;
+    }}
+    .axis-card:hover {{
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(0,0,0,.12);
     }}
     .axis-kicker {{
-      color: var(--accent);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--accent);
     }}
     .axis-card h3 {{
       margin: 0;
       font-size: 20px;
+      font-weight: 900;
       line-height: 1.35;
     }}
     .axis-count {{
       display: inline-flex;
       align-items: baseline;
       gap: 4px;
-      font-size: 34px;
+      font-size: 44px;
       font-weight: 900;
       font-variant-numeric: tabular-nums;
       color: var(--ink);
     }}
     .axis-count span {{
       color: var(--muted);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
     }}
     .axis-card p {{
       margin: 0;
       color: var(--muted);
       font-size: 13px;
+      line-height: 1.7;
     }}
     .axis-tags {{
       display: flex;
@@ -985,12 +1180,12 @@ def build(rows: list[dict[str, Any]], config: dict[str, Any]) -> str:
       margin-top: auto;
     }}
     .axis-tags span {{
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: #0f4e9d;
-      padding: 4px 8px;
+      border-radius: 8px;
+      padding: 5px 12px;
       font-size: 11px;
       font-weight: 700;
+      background: var(--accent-soft);
+      color: var(--accent);
     }}
     {tone_css}
     .legend {{
@@ -998,49 +1193,102 @@ def build(rows: list[dict[str, Any]], config: dict[str, Any]) -> str:
       gap: 8px;
       align-items: center;
       color: var(--muted);
-      font-size: 13px;
-      margin-top: 12px;
+      font-size: 12px;
+      margin-top: 16px;
+      padding: 12px 18px;
+      background: rgba(255,255,255,.6);
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.04);
     }}
-    .chip {{ width: 30px; height: 14px; border-radius: 3px; border: 1px solid rgba(0,0,0,.08); }}
+    .chip {{ width: 28px; height: 14px; border-radius: 4px; border: 1px solid rgba(0,0,0,.06); }}
     .sample-grid {{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }}
     .sample-card {{
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px;
-      background: #fbfcfe;
+      border: none;
+      border-radius: 20px;
+      padding: 0;
+      background: #fff;
+      overflow: hidden;
+      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    }}
+    .sample-card:hover {{
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.1);
+    }}
+    .sample-card > h3 {{
+      margin: 0;
+      padding: 18px 22px 14px;
+      font-size: 15px;
+      font-weight: 800;
+      border-bottom: 1px solid var(--line);
+    }}
+    .sample-card > div {{
+      padding: 16px 22px 20px;
     }}
     .sample {{ border-top: 1px solid var(--line); padding-top: 10px; margin-top: 10px; }}
-    .meta {{ color: var(--accent); font-size: 12px; font-weight: 700; }}
-    blockquote {{
-      margin: 8px 0;
-      padding-left: 10px;
-      border-left: 3px solid var(--line);
-      color: #344054;
+    .meta {{
+      color: var(--accent);
       font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
     }}
-    .reason {{ color: var(--muted); font-size: 12px; margin-top: 6px; }}
+    blockquote {{
+      margin: 0 0 10px;
+      padding: 14px 18px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      border-radius: 0 12px 12px 0;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink);
+    }}
+    .reason {{ color: var(--ink); font-size: 14px; margin-top: 8px; line-height: 1.6; }}
     a {{ color: var(--accent); font-size: 13px; }}
-    .note-panel h2 {{ font-size: 16px; }}
-    .note-panel ul {{ margin: 0; padding-left: 20px; color: var(--muted); font-size: 13px; }}
+    .note-panel {{
+      background: linear-gradient(135deg, var(--accent-soft), #fff) !important;
+      border-left: 5px solid var(--accent) !important;
+      padding: 36px min(6vw, 72px) !important;
+    }}
+    .note-panel h2 {{ font-size: 22px; color: var(--accent); }}
+    .note-panel ul {{ margin: 0; padding-left: 20px; }}
+    .note-panel li {{ margin-bottom: 8px; font-size: 15px; line-height: 1.8; }}
+    .conflict-panel {{
+      border-top: 4px solid transparent !important;
+      border-image: linear-gradient(90deg, var(--grad-1), var(--grad-2)) 1 !important;
+    }}
     @media (max-width: 720px) {{
-      main {{ padding-inline: 14px; }}
-      header {{ padding-inline: 14px; }}
-      .panel-title {{ align-items: flex-start; flex-direction: column; gap: 2px; }}
+      .stats {{ grid-template-columns: repeat(2, 1fr); }}
+      .stat {{ padding: 20px 16px; }}
+      .stat strong {{ font-size: 18px; }}
+      .panel, .note-panel {{ padding: 32px 16px !important; }}
+      .axis-card {{ padding: 20px; min-height: auto; }}
+      .axis-count {{ font-size: 32px; }}
+      .sample-grid {{ grid-template-columns: 1fr; }}
+      .bar-row {{ padding: 12px 14px; }}
+      .panel-title {{ flex-direction: column; align-items: flex-start; gap: 8px; }}
+      .panel-title h2 {{ font-size: 26px; }}
+      .hero-inner {{ padding: 36px 16px 32px; }}
       th:first-child {{ min-width: 180px; }}
       table {{ min-width: 760px; }}
     }}
   </style>
 </head>
 <body>
-  <header>
-    {nav_html(config)}
-    <h1>{html.escape(title)}</h1>
-    <p class="lead">{html.escape(subtitle)}</p>
-  </header>
+  <section class="hero">
+    <div class="hero-inner">
+      {nav_html(config)}
+      {hero_badge_html}
+      <h1>{html.escape(title)}</h1>
+      <p class="lead">{html.escape(subtitle)}</p>
+    </div>
+  </section>
+  <svg class="wave-divider" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="var(--bg)">
+    <path d="M0,0 C360,50 1080,50 1440,0 L1440,50 L0,50 Z"/>
+  </svg>
   <main>
     <section class="stats">
       <div class="stat"><span>総サンプル</span><strong>{total}</strong></div>
@@ -1067,9 +1315,14 @@ def build(rows: list[dict[str, Any]], config: dict[str, Any]) -> str:
     {representative_html(rows, categories, config)}
     {notes_html(config)}
   </main>
-  <footer style="border-top:1px solid var(--line);padding:20px min(5vw,56px);text-align:center;color:var(--muted);font-size:12px;line-height:1.8;">
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <footer style="background:linear-gradient(135deg, var(--grad-2), var(--grad-1));border-top:none;padding:48px 24px;text-align:center;color:#fff;font-size:12px;line-height:1.8;">
     <div>Powered by Yahooリアルタイム検索 + AI分類</div>
-    <a href="index.html" style="color:var(--accent);text-decoration:none;font-weight:700;font-size:13px;">← SNS反応まっぷ トップへ</a>
+    <a href="index.html" style="color:rgba(255,255,255,.85);text-decoration:none;font-weight:700;font-size:13px;">← SNS反応まっぷ トップへ</a>
+    <div style="margin-top:8px;color:rgba(255,255,255,.6);">
+      <a href="privacy.html" style="color:rgba(255,255,255,.7);margin-right:16px;">プライバシーポリシー</a>
+      <a href="disclaimer.html" style="color:rgba(255,255,255,.7);">免責事項</a>
+    </div>
     <div style="margin-top:10px;">
       <a href="https://www.buymeacoffee.com/sns_hannou_map" target="_blank" rel="noopener"
          style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:#ffdd00;color:#0d0d0d;text-decoration:none;font-size:13px;font-weight:700;">

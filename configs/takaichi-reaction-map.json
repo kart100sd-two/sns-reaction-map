@@ -14,14 +14,6 @@
     {
       "label": "トップ",
       "url": "index.html"
-    },
-    {
-      "label": "まとめUI",
-      "url": "takaichi-summary.html"
-    },
-    {
-      "label": "辺野古事例",
-      "url": "henoko-student-accident-reaction-map.html"
     }
   ],
   "category_order": [
@@ -100,5 +92,7 @@
     "サナエトークン関連": "warning",
     "未確認・陰謀寄り": "warning",
     "その他・分類保留": "neutral"
-  }
+  },
+  "topic_type": "政治・ネット選挙",
+  "hero_image": "images/takaichi-hero.webp"
 }

@@ -55,5 +55,7 @@
     "部活動の教育的価値や学校文化の喪失を理由に地域移行に反対": "negative",
     "段階的導入や条件整備を前提に地域移行を条件付きで支持": "neutral",
     "その他・分類保留": "neutral"
-  }
+  },
+  "topic_type": "教育・部活動改革",
+  "hero_image": "images/bukatsu-hero.webp"
 }

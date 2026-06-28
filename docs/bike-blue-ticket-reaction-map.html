@@ -3,118 +3,215 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- SEO_META_START -->
-  <meta name="description" content="事故防止やマナー改善のため取締りを支持する声と、車道走行の恐怖やインフラ未整備を訴える反対の対立。">
-  <link rel="canonical" href="https://issue-stance-lab.github.io/sns-reaction-map/bike-blue-ticket-reaction-map.html">
-  <meta property="og:site_name" content="SNS反応まっぷ">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="自転車の青切符導入の是非 | SNS反応まっぷ">
-  <meta property="og:description" content="事故防止やマナー改善のため取締りを支持する声と、車道走行の恐怖やインフラ未整備を訴える反対の対立。">
-  <meta property="og:url" content="https://issue-stance-lab.github.io/sns-reaction-map/bike-blue-ticket-reaction-map.html">
-  <meta property="og:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="自転車の青切符導入の是非 | SNS反応まっぷ">
-  <meta name="twitter:description" content="事故防止やマナー改善のため取締りを支持する声と、車道走行の恐怖やインフラ未整備を訴える反対の対立。">
-  <meta name="twitter:image" content="https://issue-stance-lab.github.io/sns-reaction-map/ogp/default.png">
-  <meta property="article:section" content="交通ルール・日常論争">
-<!-- SEO_META_END -->
   <title>自転車の青切符（反則金）導入の是非 SNS反応まっぷ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
-      --bg: #f3f5f8;
+      --bg: #f8fffe;
       --ink: #172033;
       --muted: #667085;
       --line: #d7dce6;
       --panel: #ffffff;
-      --accent: #1769d1;
-      --accent-soft: #e7f1ff;
+      --accent: #0d9488;
+      --accent-soft: #f0fdfa;
       --shadow: 0 10px 28px rgba(16, 24, 40, .06);
+      --grad-1: #0d9488;
+      --grad-2: #115e59;
+      --section-bg1: #f0fdfa;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
       line-height: 1.65;
     }
-    header {
-      padding: 34px min(5vw, 56px) 22px;
-      border-bottom: 1px solid var(--line);
-      background: #fff;
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('images/bike-blue-ticket-hero.webp') center/cover no-repeat;
+      opacity: .18;
+      z-index: 0;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 48px min(6vw, 72px) 40px;
+    }
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -.02em;
+      line-height: 1.2;
+    }
+    .hero .lead {
+      color: rgba(255,255,255,.85);
+      font-size: clamp(15px, 2vw, 18px);
+      max-width: 720px;
+      line-height: 1.8;
+    }
+    .wave-divider {
+      display: block;
+      width: 100%;
+      height: 50px;
+      margin-top: -1px;
     }
     .top-nav {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .top-nav a {
       display: inline-flex;
       align-items: center;
       min-height: 32px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(255,255,255,.25);
       border-radius: 8px;
       padding: 5px 10px;
-      background: #fbfcfe;
-      color: var(--accent);
+      background: rgba(255,255,255,.12);
+      color: #fff;
       text-decoration: none;
       font-weight: 800;
+      backdrop-filter: blur(4px);
     }
+    .top-nav a:hover { background: rgba(255,255,255,.2); }
     h1 { margin: 0 0 8px; font-size: clamp(26px, 4vw, 42px); letter-spacing: 0; }
     h2 { margin: 0 0 16px; font-size: 20px; }
     h3 { margin: 0 0 12px; font-size: 16px; }
     .lead { margin: 0; color: var(--muted); max-width: 960px; }
-    main { padding: 22px min(5vw, 56px) 48px; }
+    main { padding: 0; max-width: none; margin: 0; }
     .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-bottom: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      margin: 0;
+      background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+      position: relative;
+    }
+    .stats::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 50%, rgba(255,255,255,.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 30%, rgba(255,255,255,.1) 0%, transparent 40%);
+      pointer-events: none;
     }
     .stat {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px 16px;
-      box-shadow: var(--shadow);
+      position: relative;
+      padding: 28px 24px;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      background: transparent;
+      color: #fff;
+      border-right: 1px solid rgba(255,255,255,.15);
+      transition: background .2s;
     }
-    .stat span { display: block; color: var(--muted); font-size: 13px; }
-    .stat strong { display: block; font-size: 24px; margin-top: 4px; }
+    .stat:last-child { border-right: none; }
+    .stat:hover { background: rgba(255,255,255,.08); }
+    .stat span {
+      display: block;
+      color: rgba(255,255,255,.85);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      margin-bottom: 6px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.3;
+    }
     .panel, .note-panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 18px;
-      margin-top: 18px;
-      box-shadow: var(--shadow);
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 48px min(6vw, 72px);
+      margin: 0;
+      box-shadow: none;
+      position: relative;
+      max-width: none;
+    }
+    .panel:nth-of-type(odd) {
+      background: var(--section-bg1, #f8fafc);
+    }
+    .panel:nth-of-type(even) {
+      background: #fff;
+    }
+    #vote-section {
+      background: #fff !important;
+      border-bottom: 1px solid var(--line);
+    }
+    .panel > *,
+    .note-panel > * {
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .panel-title {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
+      gap: 16px;
+      margin-bottom: 32px;
     }
-    .panel-title h2 { margin: 0; }
+    .panel-title h2 {
+      margin: 0;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .panel-title h2::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 32px;
+      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
     .panel-title span {
       color: var(--muted);
-      font-size: 12px;
+      font-size: 14px;
       white-space: nowrap;
+      background: rgba(0,0,0,.04);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid rgba(0,0,0,.06);
     }
     .table-wrap {
       overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: 8px;
+      border: none;
+      border-radius: 16px;
       background: #fff;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06);
     }
     table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 900px; }
     table.compact { min-width: 420px; max-width: 760px; }
     th, td {
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 10px 12px;
+      border-right: 1px solid rgba(0,0,0,.04);
+      border-bottom: 1px solid rgba(0,0,0,.04);
+      padding: 14px;
       text-align: center;
       vertical-align: middle;
       white-space: nowrap;
@@ -145,31 +242,35 @@
       position: sticky;
       top: 0;
       z-index: 2;
-      background: #eef2f7;
-      color: #344054;
+      background: linear-gradient(180deg, var(--grad-1), var(--grad-2));
+      color: #fff;
       font-size: 12px;
       font-weight: 800;
       line-height: 1.35;
       white-space: normal;
       min-width: 112px;
+      padding: 16px 14px;
     }
-    thead th:first-child { z-index: 3; background: #eef2f7; }
+    thead th:first-child { z-index: 3; background: linear-gradient(180deg, var(--grad-1), var(--grad-2)); color: #fff; }
     td { font-weight: 800; font-variant-numeric: tabular-nums; }
+    tbody tr { transition: background .12s; }
+    tbody tr:hover { background: var(--accent-soft); }
     .heat-cell {
       transition: transform .12s ease, box-shadow .12s ease;
     }
     .heat-cell span {
       display: inline-flex;
-      min-width: 28px;
-      height: 28px;
+      min-width: 34px;
+      height: 34px;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .18);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .2);
+      font-size: 14px;
     }
     .heat-cell:hover {
-      transform: scale(1.03);
-      box-shadow: inset 0 0 0 2px rgba(23, 105, 209, .28);
+      transform: scale(1.08);
+      box-shadow: inset 0 0 0 2px rgba(23, 105, 209, .3);
     }
     .heat-cell.zero {
       color: #98a2b3 !important;
@@ -177,19 +278,30 @@
     }
     .heat-cell.zero span { background: transparent; }
     .total {
-      background: #f2f4f7;
-      color: var(--ink);
+      background: rgba(0,0,0,.03);
       font-weight: 900;
       min-width: 72px;
+      font-size: 15px;
     }
     .bar-list {
       display: grid;
-      gap: 10px;
-      max-width: 980px;
+      gap: 4px;
+      max-width: 1000px;
     }
     .bar-row {
       display: grid;
-      gap: 6px;
+      gap: 8px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,.7);
+      border-radius: 14px;
+      transition: all .2s;
+      border: 1px solid rgba(0,0,0,.04);
+      backdrop-filter: blur(4px);
+    }
+    .bar-row:hover {
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      transform: translateX(4px);
     }
     .bar-meta {
       display: flex;
@@ -197,62 +309,73 @@
       gap: 12px;
       font-size: 14px;
     }
-    .bar-meta span { color: #344054; }
-    .bar-meta strong { font-variant-numeric: tabular-nums; }
+    .bar-meta span { color: var(--ink); font-weight: 700; }
+    .bar-meta strong { font-variant-numeric: tabular-nums; font-size: 18px; font-weight: 900; }
     .bar-track {
-      height: 10px;
+      height: 14px;
       border-radius: 999px;
       overflow: hidden;
-      background: #eef2f7;
+      background: rgba(0,0,0,.06);
     }
     .bar-fill {
       height: 100%;
       border-radius: inherit;
-      background: linear-gradient(90deg, #9fd0ff, #1769d1);
+      transition: width .8s cubic-bezier(.22,1,.36,1);
     }
     .axis-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
     }
     .axis-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px;
-      background: linear-gradient(180deg, #ffffff, #fbfcfe);
-      min-height: 220px;
+      border: none;
+      border-radius: 20px;
+      padding: 28px;
+      min-height: 240px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
+      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .axis-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(0,0,0,.12);
     }
     .axis-kicker {
-      color: var(--accent);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--accent);
     }
     .axis-card h3 {
       margin: 0;
       font-size: 20px;
+      font-weight: 900;
       line-height: 1.35;
     }
     .axis-count {
       display: inline-flex;
       align-items: baseline;
       gap: 4px;
-      font-size: 34px;
+      font-size: 44px;
       font-weight: 900;
       font-variant-numeric: tabular-nums;
       color: var(--ink);
     }
     .axis-count span {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
     }
     .axis-card p {
       margin: 0;
       color: var(--muted);
       font-size: 13px;
+      line-height: 1.7;
     }
     .axis-tags {
       display: flex;
@@ -261,12 +384,12 @@
       margin-top: auto;
     }
     .axis-tags span {
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: #0f4e9d;
-      padding: 4px 8px;
+      border-radius: 8px;
+      padding: 5px 12px;
       font-size: 11px;
       font-weight: 700;
+      background: var(--accent-soft);
+      color: var(--accent);
     }
     [data-category="取締り強化賛成・マナーや危険運転の改善を期待"] th { border-left: 5px solid #1769d1; }
 [data-category="取締り強化賛成・マナーや危険運転の改善を期待"] .row-dot { background: #1769d1; }
@@ -315,45 +438,89 @@
       gap: 8px;
       align-items: center;
       color: var(--muted);
-      font-size: 13px;
-      margin-top: 12px;
+      font-size: 12px;
+      margin-top: 16px;
+      padding: 12px 18px;
+      background: rgba(255,255,255,.6);
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.04);
     }
-    .chip { width: 30px; height: 14px; border-radius: 3px; border: 1px solid rgba(0,0,0,.08); }
+    .chip { width: 28px; height: 14px; border-radius: 4px; border: 1px solid rgba(0,0,0,.06); }
     .sample-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
     .sample-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px;
-      background: #fbfcfe;
+      border: none;
+      border-radius: 20px;
+      padding: 0;
+      background: #fff;
+      overflow: hidden;
+      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    }
+    .sample-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.1);
+    }
+    .sample-card > h3 {
+      margin: 0;
+      padding: 18px 22px 14px;
+      font-size: 15px;
+      font-weight: 800;
+      border-bottom: 1px solid var(--line);
+    }
+    .sample-card > div {
+      padding: 16px 22px 20px;
     }
     .sample { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 10px; }
-    .meta { color: var(--accent); font-size: 12px; font-weight: 700; }
-    blockquote {
-      margin: 8px 0;
-      padding-left: 10px;
-      border-left: 3px solid var(--line);
-      color: #344054;
+    .meta {
+      color: var(--accent);
       font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
     }
-    .reason { color: var(--muted); font-size: 12px; margin-top: 6px; }
+    blockquote {
+      margin: 0 0 10px;
+      padding: 14px 18px;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      border-radius: 0 12px 12px 0;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+    .reason { color: var(--ink); font-size: 14px; margin-top: 8px; line-height: 1.6; }
     a { color: var(--accent); font-size: 13px; }
-    .note-panel h2 { font-size: 16px; }
-    .note-panel ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: 13px; }
+    .note-panel {
+      background: linear-gradient(135deg, var(--accent-soft), #fff) !important;
+      border-left: 5px solid var(--accent) !important;
+      padding: 36px min(6vw, 72px) !important;
+    }
+    .note-panel h2 { font-size: 22px; color: var(--accent); }
+    .note-panel ul { margin: 0; padding-left: 20px; }
+    .note-panel li { margin-bottom: 8px; font-size: 15px; line-height: 1.8; }
+    .conflict-panel {
+      border-top: 4px solid transparent !important;
+      border-image: linear-gradient(90deg, var(--grad-1), var(--grad-2)) 1 !important;
+    }
     @media (max-width: 720px) {
-      main { padding-inline: 14px; }
-      header { padding-inline: 14px; }
-      .panel-title { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat { padding: 20px 16px; }
+      .stat strong { font-size: 18px; }
+      .panel, .note-panel { padding: 32px 16px !important; }
+      .axis-card { padding: 20px; min-height: auto; }
+      .axis-count { font-size: 32px; }
+      .sample-grid { grid-template-columns: 1fr; }
+      .bar-row { padding: 12px 14px; }
+      .panel-title { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .panel-title h2 { font-size: 26px; }
+      .hero-inner { padding: 36px 16px 32px; }
       th:first-child { min-width: 180px; }
       table { min-width: 760px; }
     }
   </style>
-<!-- ADSENSE_TAG_START -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2542211932832864" crossorigin="anonymous"></script>
-<!-- ADSENSE_TAG_END -->
 <!-- GA_TAG_START -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K10S4YCZFH"></script>
   <script>
@@ -363,13 +530,22 @@
     gtag('config', 'G-K10S4YCZFH');
   </script>
 <!-- GA_TAG_END -->
+<!-- ADSENSE_TAG_START -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2542211932832864" crossorigin="anonymous"></script>
+<!-- ADSENSE_TAG_END -->
 </head>
 <body>
-  <header>
-    <nav class="top-nav"><a href="index.html">トップ</a><a href="takaichi-reaction-map-standard.html">高市事例</a><a href="henoko-student-accident-reaction-map.html">辺野古事例</a></nav>
-    <h1>自転車の青切符（反則金）導入の是非 SNS反応まっぷ</h1>
-    <p class="lead">Yahooリアルタイム検索で取得したSNS投稿を、取締り強化賛成、インフラ優先、車道走行への不安、免許制要求などの論点で整理したビューです。世論調査ではありません。</p>
-  </header>
+  <section class="hero">
+    <div class="hero-inner">
+      <nav class="top-nav"><a href="index.html">トップ</a></nav>
+      <span style="display:inline-block;background:rgba(255,255,255,.2);color:#fff;padding:6px 18px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:.04em;margin-bottom:8px;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.15);">交通ルール・日常論争</span>
+      <h1>自転車の青切符（反則金）導入の是非 SNS反応まっぷ</h1>
+      <p class="lead">Yahooリアルタイム検索で取得したSNS投稿を、取締り強化賛成、インフラ優先、車道走行への不安、免許制要求などの論点で整理したビューです。世論調査ではありません。</p>
+    </div>
+  </section>
+  <svg class="wave-divider" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="var(--bg)">
+    <path d="M0,0 C360,50 1080,50 1440,0 L1440,50 L0,50 Z"/>
+  </svg>
   <main>
     <section class="stats">
       <div class="stat"><span>総サンプル</span><strong>177</strong></div>
@@ -674,7 +850,7 @@
 })();
 </script>
 </section>
-    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="positive"><div class="axis-kicker">取締り強化</div><h3>危険運転対策として取締りを支持</h3><div class="axis-count">34<span>件</span></div><p>危険な走行やマナー違反を取り締まり、歩行者や周囲の安全を確保するために必要であるとする立場。</p><div class="axis-tags"><span>取締り強化賛成・マナーや危険運転の改善を期待</span></div></article><article class="axis-card" data-tone="derived"><div class="axis-kicker">インフラ優先</div><h3>専用道路の整備が先決であると主張</h3><div class="axis-count">31<span>件</span></div><p>安全に走れるインフラ（自転車レーンなど）が十分にない中で、取り締まりだけを先行させることに納得がいかない立場。</p><div class="axis-tags"><span>インフラ未整備への不満・専用レーンの設置が先決</span></div></article><article class="axis-card" data-tone="negative"><div class="axis-kicker">車道走行の不安</div><h3>車道走行の強要による事故増加を懸念</h3><div class="axis-count">14<span>件</span></div><p>車道の狭さや車の至近走行の危険から車道原則に恐怖を感じ、結果として歩道通行も狭められることに反対する立場。</p><div class="axis-tags"><span>車道走行への不安・原則車道は事故を増やすと反対</span></div></article><article class="axis-card" data-tone="positive"><div class="axis-kicker">免許制要求</div><h3>ルール周知のために免許制の導入を要求</h3><div class="axis-count">41<span>件</span></div><p>標識を理解しない運転手が多いため、反則金のみならず原付のような免許制度や事前講習を導入すべきとする立場。</p><div class="axis-tags"><span>制度が不十分・青切符に留まらず自転車も免許制にすべき</span></div></article><article class="axis-card" data-tone="negative"><div class="axis-kicker">ルールの曖昧さ</div><h3>基準の曖昧さや警察への不信感から反対</h3><div class="axis-count">12<span>件</span></div><p>違反の成立基準が現場で分かりにくいことや、警察の点数・反則金集め目的ではないかという不信感による反対。</p><div class="axis-tags"><span>ルールが曖昧・現場の混乱や取り締まりへの不審で反対</span></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">注意領域</div><h3>未確認・過激化した反応</h3><div class="axis-count">45<span>件</span></div><p>罵倒、単なる怒り、事実誤認など、そのままでは記事化に注意が必要な反応。</p><div class="axis-tags"><span>その他・分類保留</span></div></article></div></section>
+    <section class="panel conflict-panel"><div class="panel-title"><h2>対立軸</h2><span>何を評価し、何を問題視しているか</span></div><div class="axis-grid"><article class="axis-card" data-tone="positive"><div class="axis-kicker">取締り強化</div><h3>危険運転対策として取締りを支持</h3><div class="axis-count">34<span>件</span></div><p>危険な走行やマナー違反を取り締まり、歩行者や周囲の安全を確保するために必要であるとする立場。</p><div class="axis-tags"><a href="#sample-取締り強化賛成-マナーや危険運転の改善を期待" style="text-decoration:none;color:inherit;"><span>取締り強化賛成・マナーや危険運転の改善を期待</span></a></div></article><article class="axis-card" data-tone="derived"><div class="axis-kicker">インフラ優先</div><h3>専用道路の整備が先決であると主張</h3><div class="axis-count">31<span>件</span></div><p>安全に走れるインフラ（自転車レーンなど）が十分にない中で、取り締まりだけを先行させることに納得がいかない立場。</p><div class="axis-tags"><a href="#sample-インフラ未整備への不満-専用レーンの設置が先決" style="text-decoration:none;color:inherit;"><span>インフラ未整備への不満・専用レーンの設置が先決</span></a></div></article><article class="axis-card" data-tone="negative"><div class="axis-kicker">車道走行の不安</div><h3>車道走行の強要による事故増加を懸念</h3><div class="axis-count">14<span>件</span></div><p>車道の狭さや車の至近走行の危険から車道原則に恐怖を感じ、結果として歩道通行も狭められることに反対する立場。</p><div class="axis-tags"><a href="#sample-車道走行への不安-原則車道は事故を増やすと反対" style="text-decoration:none;color:inherit;"><span>車道走行への不安・原則車道は事故を増やすと反対</span></a></div></article><article class="axis-card" data-tone="positive"><div class="axis-kicker">免許制要求</div><h3>ルール周知のために免許制の導入を要求</h3><div class="axis-count">41<span>件</span></div><p>標識を理解しない運転手が多いため、反則金のみならず原付のような免許制度や事前講習を導入すべきとする立場。</p><div class="axis-tags"><a href="#sample-制度が不十分-青切符に留まらず自転車も免許制にすべき" style="text-decoration:none;color:inherit;"><span>制度が不十分・青切符に留まらず自転車も免許制にすべき</span></a></div></article><article class="axis-card" data-tone="negative"><div class="axis-kicker">ルールの曖昧さ</div><h3>基準の曖昧さや警察への不信感から反対</h3><div class="axis-count">12<span>件</span></div><p>違反の成立基準が現場で分かりにくいことや、警察の点数・反則金集め目的ではないかという不信感による反対。</p><div class="axis-tags"><a href="#sample-ルールが曖昧-現場の混乱や取り締まりへの不審で反対" style="text-decoration:none;color:inherit;"><span>ルールが曖昧・現場の混乱や取り締まりへの不審で反対</span></a></div></article><article class="axis-card" data-tone="warning"><div class="axis-kicker">注意領域</div><h3>未確認・過激化した反応</h3><div class="axis-count">45<span>件</span></div><p>罵倒、単なる怒り、事実誤認など、そのままでは記事化に注意が必要な反応。</p><div class="axis-tags"><a href="#sample-その他-分類保留" style="text-decoration:none;color:inherit;"><span>その他・分類保留</span></a></div></article></div></section>
     <section class="panel"><div class="panel-title"><h2>分類別件数</h2><span>論点の量感</span></div>
 <div class="bar-list">
 <div class="bar-row" data-category="取締り強化賛成・マナーや危険運転の改善を期待"><div class="bar-meta"><span>取締り強化賛成・マナーや危険運転の改善を期待</span><strong>34</strong></div><div class="bar-track"><div class="bar-fill" style="width:76%"></div></div></div>
@@ -824,110 +1000,92 @@
 <td class="heat-cell" style="background:#0a3d91;color:#ffffff" title="その他・分類保留 / その他: 41件"><span>41</span></td>
 <td class="total">45</td></tr>
 </tbody></table></div></section>
-    <section class="panel"><h2>代表サンプル</h2>
+    <section class="panel"><div class="panel-title"><h2>代表サンプル</h2></div>
 <div class="sample-grid">
-<article class="sample-card"><h3>取締り強化賛成・マナーや危険運転の改善を期待</h3>
+<article class="sample-card" id="sample-取締り強化賛成-マナーや危険運転の改善を期待"><h3>取締り強化賛成・マナーや危険運転の改善を期待</h3><div>
 <div class="sample"><div class="meta">賛成（取締り強化） / 信頼度 1.00</div><p>青切符は予防的で良い。</p>
-<blockquote>&quot;最悪の場合”ジャックナイフ”も!? 自転車 のハンドルに荷物をかけたら 青切符 の対象に!? SNSでは「怪我してからじゃ遅いんだし、むしろ 賛成 ！」「近所に買い物行くときもダメなの？ すごい不便」と意見対立&quot; https://t.co/QeG23OsRGZ</blockquote>
-<a href="https://x.com/neutrum_idea/status/2065075926472548556">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/neutrum_idea/status/2065075926472548556"></a></blockquote>
 <div class="reason">理由: 「むしろ 賛成」と明確に表明している。</div>
 </div>
 <div class="sample"><div class="meta">賛成（取締り強化） / 信頼度 1.00</div><p>青切符は予防的で良い。</p>
-<blockquote>最悪の場合”ジャックナイフ”も!? 自転車 のハンドルに荷物をかけたら 青切符 の対象に!? SNSでは「怪我してからじゃ遅いんだし、むしろ 賛成 ！」「近所に買い物行くときもダメなの？ すごい不便」と意見対立｜Infoseekニュース https://t.co/fDuirig2VH</blockquote>
-<a href="https://x.com/fitenao/status/2065006550432059463">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/fitenao/status/2065006550432059463"></a></blockquote>
 <div class="reason">理由: 「むしろ 賛成」と明確に表明している。</div>
 </div>
 <div class="sample"><div class="meta">賛成（取締り強化） / 信頼度 1.00</div><p>青切符は予防的で良い。</p>
-<blockquote>最悪の場合”ジャックナイフ”も!? 自転車 のハンドルに荷物をかけたら 青切符 の対象に!? SNSでは「怪我してからじゃ遅いんだし、むしろ 賛成 ！」「近所に買い物行くときもダメなの？ すごい不便」と意見対立 https://t.co/258LpjFN8F</blockquote>
-<a href="https://x.com/kuruma_newsjp/status/2064555848068722869">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/kuruma_newsjp/status/2064555848068722869"></a></blockquote>
 <div class="reason">理由: 「むしろ 賛成」と明確に表明している。</div>
 </div>
-</article>
-<article class="sample-card"><h3>インフラ未整備への不満・専用レーンの設置が先決</h3>
+</div></article>
+<article class="sample-card" id="sample-インフラ未整備への不満-専用レーンの設置が先決"><h3>インフラ未整備への不満・専用レーンの設置が先決</h3><div>
 <div class="sample"><div class="meta">その他 / 信頼度 1.00</div><p>自転車専用道路がないため、歩道に自転車が集まると危険。</p>
-<blockquote>仙台市荒町には 青切符反対 派大喜びの「（概ね） 自転車 用道路」があるのだが、残念なことに路上駐車が多く、 自転車 が歩道に集まってくる。 歩道に来るのはいいけど降りて押せよ。 自転車 道があるぶん歩道が狭いんだから余計に危ないんだよ。 https://t.co/OUX8yVYuX0</blockquote>
-<a href="https://x.com/umakurage/status/2068167003215647051">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/umakurage/status/2068167003215647051"></a></blockquote>
 <div class="reason">理由: 自転車専用レーンの欠如を批判。</div>
 </div>
 <div class="sample"><div class="meta">インフラ優先 / 信頼度 1.00</div><p>自転車専用道路や免許制よりも、まずは道路整備が必要。</p>
-<blockquote>これ最近多くない？ 自転車 の 青切符 とか始める前に 自転車 専用道路作ったり、 自転車 にも 免許 とか導入したらいいのに https://t.co/Db8fU6A2N4</blockquote>
-<a href="https://x.com/fukumen_V/status/2063454860377485795">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/fukumen_V/status/2063454860377485795"></a></blockquote>
 <div class="reason">理由: 投稿者が専用レーンの設置を先にすべきと主張している。</div>
 </div>
 <div class="sample"><div class="meta">インフラ優先 / 信頼度 0.90</div><p>自転車道路の整備と擦り合わせが不足している。</p>
-<blockquote>青切符 がダメな訳じゃねぇんだよなぁダメなのはろくに 道路 の整備も車側のルールとの擦り合わせせずに強行した事何だよ……しばらくと言うか 自転車道路 を敷いて車側のルールと 自転車 側のルールの擦り合わせをしない限り恐らく 青切符 始めた頃より死亡率は上がると思う……</blockquote>
-<a href="https://x.com/suzuking408/status/2069735857695891855">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/suzuking408/status/2069735857695891855"></a></blockquote>
 <div class="reason">理由: 投稿者は道路整備や擦り合わせの欠如を批判し、青切符導入の前に専用レーンが必要であると主張しています。</div>
 </div>
-</article>
-<article class="sample-card"><h3>車道走行への不安・原則車道は事故を増やすと反対</h3>
+</div></article>
+<article class="sample-card" id="sample-車道走行への不安-原則車道は事故を増やすと反対"><h3>車道走行への不安・原則車道は事故を増やすと反対</h3><div>
 <div class="sample"><div class="meta">車道走行懸念 / 信頼度 1.00</div><p>歩きスマホの取り締まりを自転車罰金よりも強化したいと主張。</p>
-<blockquote>雨の日、傘さしてスマホ見て歩く人多いけど…晴れの時より視界悪いから危険なのにやめないの何故？ 自転車 の罰金よりも歩きスマホの 取締り を 強化 して欲しい</blockquote>
-<a href="https://x.com/1029yurie/status/2070153036568371223">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/1029yurie/status/2070153036568371223"></a></blockquote>
 <div class="reason">理由: 明確に取締り強化を支持する意見あり。</div>
 </div>
 <div class="sample"><div class="meta">車道走行懸念 / 信頼度 1.00</div><p>踏切内での自転車通行に対する取締り強化を望む。</p>
-<blockquote>小山駅から最初にある水戸線の踏切内に立ち止まり 自転車 を通行させる車が多いですが踏切内に停車は危険だと思います。本来側道から広い道路に出る時には一時停止し左右確認してから走り出すルールだと思いますが、大人になるほど守ってる方が少ないです。もっと 取締り強化 して欲しい。　#小山警察署</blockquote>
-<a href="https://x.com/kazu491223/status/2069062750035472509">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/kazu491223/status/2069062750035472509"></a></blockquote>
 <div class="reason">理由: 投稿者が取締り強化を希望している。</div>
 </div>
 <div class="sample"><div class="meta">車道走行懸念 / 信頼度 0.90</div><p>自転車の歩道走行禁止について支持し、車道での安全性に懸念を持っている。</p>
-<blockquote>違反が減ったんじゃなくて 自転車 に乗る人が減ったんだよ。子供に車道横を 自転車 で通らせるとか、頭 おかしい だろ。 ＃ 青切符 ＃ 自転車 自転車 「歩道走行」摘発はどうなった？ 青切符 「違反種別ランキング」の驚きの結果 https://t.co/ys2He8wmuX</blockquote>
-<a href="https://x.com/isaiah8_1/status/2067988251760345275">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/isaiah8_1/status/2067988251760345275"></a></blockquote>
 <div class="reason">理由: 「頭おかしいだろ」から車道走行に対する危険性を指摘している。</div>
 </div>
-</article>
-<article class="sample-card"><h3>制度が不十分・青切符に留まらず自転車も免許制にすべき</h3>
+</div></article>
+<article class="sample-card" id="sample-制度が不十分-青切符に留まらず自転車も免許制にすべき"><h3>制度が不十分・青切符に留まらず自転車も免許制にすべき</h3><div>
 <div class="sample"><div class="meta">免許制要求 / 信頼度 1.00</div><p>青切符制度は不十分で、自転車にも免許制が必要。</p>
-<blockquote>このオンライン署名に賛同をお願いします！「 自転車 に対する 青切符 制度（罰金制度）の導入に強く 反対 します」 https://t.co/yWnahBkeQf @change_jpから</blockquote>
-<a href="https://x.com/KaMama777307/status/2062717203263431053">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/KaMama777307/status/2062717203263431053"></a></blockquote>
 <div class="reason">理由: 青切符以外の更なる厳格化を求める意見</div>
 </div>
 <div class="sample"><div class="meta">免許制要求 / 信頼度 1.00</div><p>青切符だけでなく、自転車にも免許制が必要と主張。</p>
-<blockquote>このオンライン署名に賛同をお願いします！「 自転車 に対する 青切符 制度（罰金制度）の導入に強く 反対 します」 https://t.co/QrLUi8LNXr @change_jpから</blockquote>
-<a href="https://x.com/smd5963/status/2031237042987049316">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/smd5963/status/2031237042987049316"></a></blockquote>
 <div class="reason">理由: 投稿者が青切符に反対し、更なる厳格化を求めている。</div>
 </div>
 <div class="sample"><div class="meta">免許制要求 / 信頼度 1.00</div><p>自転車にも免許が必要で、青切符だけでは改善されない。</p>
-<blockquote>自転車 にも、 免許 が必要！ 青切符 だけでは、改善されない！ 自転車 購入前に、道路交通法を、講習で、受講させるべき！</blockquote>
-<a href="https://x.com/r70OylZbSZeiIIz/status/2070149487566418240">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/r70OylZbSZeiIIz/status/2070149487566418240"></a></blockquote>
 <div class="reason">理由: 投稿者が自転車の免許制導入を推奨している。</div>
 </div>
-</article>
-<article class="sample-card"><h3>ルールが曖昧・現場の混乱や取り締まりへの不審で反対</h3>
+</div></article>
+<article class="sample-card" id="sample-ルールが曖昧-現場の混乱や取り締まりへの不審で反対"><h3>ルールが曖昧・現場の混乱や取り締まりへの不審で反対</h3><div>
 <div class="sample"><div class="meta">混乱懸念 / 信頼度 1.00</div><p>自転車は危険で、青切符制度が理解できず不安。</p>
-<blockquote>このオンライン署名に賛同をお願いします！「 自転車 に対する 青切符 制度（罰金制度）の導入に強く 反対 します」 https://t.co/RxGBDqfqD6 via @change_jp 私は車が隣で普通に走ってるところで、 自転車 は乗れない 命大事に。</blockquote>
-<a href="https://x.com/j52flx/status/2061443794344747198">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/j52flx/status/2061443794344747198"></a></blockquote>
 <div class="reason">理由: 青切符制度の理解不能と混乱を理由に反対</div>
 </div>
 <div class="sample"><div class="meta">混乱懸念 / 信頼度 0.80</div><p>自転車青切符制度に反対する。</p>
-<blockquote>① 自転車 罰則強化＝移動の自由制限 ②コロナ＝外出制限で行動制限 2つは似てるし目的は同じ？🤔 (デジタル監視社会の流布？) 4月からの 自転車青切符 、もう決まった事だから、ではなく 反対 の声をあげた方がいい‼️ 黙っていたらどんどん行動制限強化されます｡ﾟ(´っωｃ`)ﾟ｡ # 自転車青切符反対 https://t.co/FvDUM0ouup</blockquote>
-<a href="https://x.com/kress813/status/2032672767527760350">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/kress813/status/2032672767527760350"></a></blockquote>
 <div class="reason">理由: 行動制限と似ている点から、規則性に対する不信感が感じられる。</div>
 </div>
 <div class="sample"><div class="meta">混乱懸念 / 信頼度 0.80</div><p>自転車青切符制度に反対する。</p>
-<blockquote>@NPA_KOHO 自転車青切符 に 反対 です！ 表向きは、安全の為て言いながら 本当はデジタル監視社会の流布ですよね😠😠 コロナの行動制限とそっくりです、移動の自由を奪わないでください # 自転車青切符反対 #デジタル監視社会 #ムーンショット #行動制限 #チームみらいに騙されるな # 自転車 罰則 https://t.co/8Y1QjObWkA</blockquote>
-<a href="https://x.com/kress813/status/2032229649317814760">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/kress813/status/2032229649317814760"></a></blockquote>
 <div class="reason">理由: デジタル監視社会との類似性から、規則性に対する不信感が感じられる。</div>
 </div>
-</article>
-<article class="sample-card"><h3>その他・分類保留</h3>
+</div></article>
+<article class="sample-card" id="sample-その他-分類保留"><h3>その他・分類保留</h3><div>
 <div class="sample"><div class="meta">その他 / 信頼度 1.00</div><p>青切符制度の導入に反対している。</p>
-<blockquote>このオンライン署名に賛同をお願いします！ 「 自転車 に対する 青切符 制度（罰金制度）の導入に強く 反対 します」 https://t.co/ClmNsVfECe @change_jpより</blockquote>
-<a href="https://x.com/ibarakinoumi/status/2060612879012008160">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/ibarakinoumi/status/2060612879012008160"></a></blockquote>
 <div class="reason">理由: 明確に反対の立場を示している。</div>
 </div>
 <div class="sample"><div class="meta">その他 / 信頼度 1.00</div><p>青切符制度の導入に反対している。</p>
-<blockquote>このオンライン署名に賛同をお願いします！「 自転車 に対する 青切符 制度（罰金制度）の導入に強く 反対 します」 https://t.co/lXZ4pJmUyQ @change_jpより</blockquote>
-<a href="https://x.com/1vMQEYXYkunbQPM/status/2060569178411843921">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/1vMQEYXYkunbQPM/status/2060569178411843921"></a></blockquote>
 <div class="reason">理由: 明確に反対の立場を示している。</div>
 </div>
 <div class="sample"><div class="meta">混乱懸念 / 信頼度 0.80</div><p>自転車の不適切な行動が問題視されている。</p>
-<blockquote>自転車 の 青切符 がスタートしても平気で信号無視や逆走、斜め横断してる。LOOPも進行方向が赤信号だと横断歩道を走り 反対 車線の歩道を我が物顔で走ってて無法地帯でカオス！</blockquote>
-<a href="https://x.com/shocker108/status/2061387437340045705">投稿URL</a>
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><a href="https://x.com/shocker108/status/2061387437340045705"></a></blockquote>
 <div class="reason">理由: 無法地帯と表現しているため、規制が必要との立場。</div>
 </div>
-</article>
+</div></article>
 </div></section>
     <section class="note-panel"><h2>注意</h2><ul>
 <li>これは世論調査ではなく、Yahooリアルタイム検索で取得した投稿サンプルの反応整理です。</li>
@@ -936,9 +1094,14 @@
 <li>代表投稿は公開前に人間が確認する前提です。</li>
 </ul></section>
   </main>
-  <footer style="border-top:1px solid var(--line);padding:20px min(5vw,56px);text-align:center;color:var(--muted);font-size:12px;line-height:1.8;">
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <footer style="background:linear-gradient(135deg, var(--grad-2), var(--grad-1));border-top:none;padding:48px 24px;text-align:center;color:#fff;font-size:12px;line-height:1.8;">
     <div>Powered by Yahooリアルタイム検索 + AI分類</div>
-    <a href="index.html" style="color:var(--accent);text-decoration:none;font-weight:700;font-size:13px;">← SNS反応まっぷ トップへ</a>
+    <a href="index.html" style="color:rgba(255,255,255,.85);text-decoration:none;font-weight:700;font-size:13px;">← SNS反応まっぷ トップへ</a>
+    <div style="margin-top:8px;color:rgba(255,255,255,.6);">
+      <a href="privacy.html" style="color:rgba(255,255,255,.7);margin-right:16px;">プライバシーポリシー</a>
+      <a href="disclaimer.html" style="color:rgba(255,255,255,.7);">免責事項</a>
+    </div>
     <div style="margin-top:10px;">
       <a href="https://www.buymeacoffee.com/sns_hannou_map" target="_blank" rel="noopener"
          style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:#ffdd00;color:#0d0d0d;text-decoration:none;font-size:13px;font-weight:700;">

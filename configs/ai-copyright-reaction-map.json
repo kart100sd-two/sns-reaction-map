@@ -14,14 +14,6 @@
     {
       "label": "トップ",
       "url": "index.html"
-    },
-    {
-      "label": "高市事例",
-      "url": "takaichi-reaction-map-standard.html"
-    },
-    {
-      "label": "辺野古事例",
-      "url": "henoko-student-accident-reaction-map.html"
     }
   ],
   "category_order": [
@@ -98,5 +90,7 @@
     "条件付き容認・オプトアウトや対価支払いで共存": "derived",
     "実用主義・利便性重視で問題に深入りしない": "positive",
     "その他・分類保留": "neutral"
-  }
+  },
+  "topic_type": "テック・著作権",
+  "hero_image": "images/ai-copyright-hero.webp"
 }
