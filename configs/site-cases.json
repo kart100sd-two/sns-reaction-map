@@ -15,7 +15,7 @@
       "topic_type": "政治・ネット選挙",
       "source_label": "Yahooリアルタイム検索",
       "data_path": "social-samples/takaichi_realtime_ollama_final_reclassified_editorial.json",
-      "reaction_map_url": "takaichi-reaction-heatmap.html",
+      "reaction_map_url": "takaichi-reaction-map-standard.html",
       "standard_map_url": "takaichi-reaction-map-standard.html",
       "summary_url": "takaichi-summary.html",
       "article_urls": [
