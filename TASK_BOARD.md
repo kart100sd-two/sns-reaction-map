@@ -10,6 +10,17 @@
 - 競合防止: 担当課題に関係するファイルのみ変更する
 - 他AIの担当領域のファイルを変更する必要がある場合は、TASK_BOARD.md にメモを残して人間に相談する
 
+### ブランチ運用ルール
+- **mainブランチに直接コミットしない**。作業は必ず `task/{課題番号}-{説明}` ブランチで行う
+  - 例: `task/13-bike-blue-ticket`, `task/7-data-refresh`, `task/18-design-improvement`
+- 作業完了後、PRを作成してClaude Code（ハブ）がレビュー・マージする
+- **複数AIが同時作業する場合**: 各AIが別ブランチで作業し、mainへのマージはClaude Codeが順番に行う
+- マージ時にコンフリクトが発生した場合はClaude Codeが解決する
+
+### 保護ファイル（スクリプトによる再生成禁止）
+- **`docs/index.html`** — 手動管理のポータルページ。`build_site_portal.py` 等で上書きしないこと。新規トピックのカード追加はClaude Codeが手動で行う
+- **既存の `docs/*-reaction-map.html`** — GA4/AdSense/Supabaseタグが組み込まれているため、再生成する場合はこれらのタグが維持されることを確認すること
+
 ## プロジェクト概要
 - サービス名: SNS反応まっぷ
 - 形態: 静的HTMLサイト（GitHub Pages）未公開
@@ -262,7 +273,14 @@
 4. Step 3: Ollama分類（`--avoid-hold`付き）
 5. Step 4: 分類結果チェック（分類率30%以上で公開可）
 6. Step 5: HTML生成 + ポータル更新
-7. Step 6: コミット・デプロイ
+7. Step 6: **ヒーロー背景画像の作成**（AI生成、WebP形式、`docs/images/{slug}-hero.webp` に配置。ポータルのトピックカードとトピックページのヘッダーに使用）
+   - 画像生成プロンプトテンプレート（テイスト統一用）:
+     ```
+     An abstract [トピックを象徴するモチーフ・構図の描写], [テーマに合った色味の説明] with subtle [アクセント色] accents. Illustration style: soft watercolor-meets-digital art, muted pastel palette with one dominant accent color, gentle grain texture overlay, minimal detail, dreamy and editorial feel like a Japanese magazine cover. No text, no people's faces. 16:9 aspect ratio, 1792x1024px.
+     ```
+   - 例（生成AI著作権）: `An abstract bird's-eye view of intersecting speech bubbles and conversation threads flowing across a city map, soft glowing connections between nodes, warm neutral tones with subtle blue and orange accents.`
+   - **ルール**: 人の顔を描かない、テキストを入れない、パステル調で統一、1792x1024px
+8. Step 7: コミット・デプロイ
 **依存**: 課題4（パイプライン完了）、課題9（分類設計フレームワーク実装済み）
 
 ### 課題14: ページ表示速度の最適化
@@ -323,6 +341,23 @@
 - 全体の配色・フォント・余白の統一（デザインガイドライン策定）
 - モバイルファーストで確認
 
+### 課題19: パイプラインでのステータス自動更新
+**担当**: Claude Code
+**状態**: 未着手
+**概要**: `run_pipeline.py` の各Step完了時に `configs/site-cases.json` の `status` を自動更新し、ステータス変更忘れを防止する
+**ステータス定義**:
+- `企画中`: `site-cases.json` にエントリ追加時（手動）
+- `収集中`: Yahoo検索でデータ収集完了時
+- `分析中`: Ollama分類結果が出て品質チェック中
+- `分析済み`: HTML生成完了・投票可能な状態
+**実装方針**:
+- `run_pipeline.py` の各Step完了時に `site-cases.json` の該当エントリの `status` を書き換える
+  - `fetch` Step完了 → `収集中`
+  - `classify` Step完了 → `分析中`
+  - `build` Step完了 → `分析済み`
+- `site-cases.json` にエントリが存在しない場合は警告のみ（`--scaffold` で作る前提）
+**依存**: 課題4（パイプライン完了済み）、課題13（新規トピック追加時にこの仕組みが活きる）
+
 ### 課題16: トピック別OGP画像の作成
 **担当**: 未定（Hermes / Claude Code）
 **状態**: 未着手
@@ -369,6 +404,7 @@
 | 課題16: トピック別OGP画像 | 未定 | 2026-06-27 | 未着手 | X共有時のCTR向上。必須ではないが集客効果高い |
 | 課題17: Googleアカウント統一 | オーケストレータ / 人間 | 2026-06-27 | 未着手 | 個人→プロジェクトアドレスに統一（AdSense・Search Console・GA・GitHub） |
 | 課題18: サイトデザイン・体験改善 | Hermes / Claude Code | 2026-06-28 | 未着手 | 事務的デザイン脱却・X/サイトのトーン統一・投票後回遊導線強化 |
+| 課題19: ステータス自動更新 | Claude Code | 2026-06-28 | 未着手 | run_pipeline.pyの各Step完了時にsite-cases.jsonのstatusを自動更新 |
 
 ---
 

@@ -140,13 +140,18 @@
     {
       "id": "bukatsu-chiiki",
       "title": "部活動の地域移行の是非",
-      "subtitle": "TODO: 部活動の地域移行の是非に関するSNS反応の概要",
+      "subtitle": "教員の働き方改革と子どもの活動機会の確保をめぐり、地域移行の賛否や受け皿の課題が交錯するSNS反応。",
       "status": "分析済み",
-      "topic_type": "TODO: ジャンル",
+      "topic_type": "教育・部活動改革",
       "source_label": "Yahooリアルタイム検索",
       "data_path": "social-samples/bukatsu-chiiki_classified.json",
       "reaction_map_url": "bukatsu-chiiki-reaction-map.html",
-      "primary_axes": []
+      "primary_axes": [
+        "地域移行賛成",
+        "地域移行反対",
+        "教員負担軽減",
+        "受け皿・費用の課題"
+      ]
     },
     {
       "id": "bike-blue-ticket",
