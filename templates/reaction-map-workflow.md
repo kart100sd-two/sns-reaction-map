@@ -91,6 +91,36 @@ python3 scripts/build_reaction_map.py \
   --output docs/<topic>-reaction-map.html
 ```
 
+## 3.5. 漫画コンテンツを生成
+
+分類データの対立軸が確定した後、ショートコミック（4コマ）のデータを生成する。
+
+### 手順
+
+1. `configs/<topic>-reaction-map.json` の `conflict_axes` と分類済みデータから対立構造を把握
+2. 対立する2名の当事者キャラクターを設定
+3. キャラクターシート生成用プロンプト（Step 1）を作成
+4. Gptimage2でキャラクターシートを生成（手動）
+5. 4コマの構成・セリフ・画像生成プロンプト（Step 2）を作成
+6. Gptimage2でコマ画像を生成（手動、キャラクターシートを参照画像として添付）
+7. 生成画像をWebP形式に変換・圧縮（1枚100KB以下）
+8. `configs/<topic>-reaction-map.json` の `manga` フィールドにデータを格納
+
+### 出力先
+
+- 画像: `docs/images/<topic>-manga-panel-{1-4}.webp`
+- データ: `configs/<topic>-reaction-map.json` の `manga` フィールド
+
+### スキーマ
+
+`templates/manga-content.schema.md` を参照。
+
+### 注意
+
+- 画像生成（Step 1, 2）は手動操作。それ以外は自動化可能。
+- 漫画セクションには「※ この漫画はSNS上の代表的な意見をもとに構成したフィクションです」の注記を必ず含める。
+- 実在の個人が特定できるキャラクター設定は禁止。
+
 ## 4. Substack用PNGを生成
 
 Playwrightが入ったPython環境で実行する。

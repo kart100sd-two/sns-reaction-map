@@ -523,6 +523,7 @@
       .hero-inner { padding: 36px 16px 32px; }
       th:first-child { min-width: 180px; }
       table { min-width: 760px; }
+      #vote-buttons button span { font-size: 12px !important; padding: 8px 4px !important; }
     }
   </style>
 <!-- GA_TAG_START -->
@@ -557,12 +558,61 @@
       <div class="stat"><span>最多カテゴリ</span><strong>著作権厳格保護・クリエイターの権利回復を最優先 168</strong></div>
       <div class="stat"><span>最多スタンス</span><strong>規制反対 164</strong></div>
     </section>
+    <section class="panel" id="manga-section">
+<div class="panel-title"><h2>3分でわかる この対立</h2><span>ショートコミック</span></div>
+<p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 16px;">クリエイターとAIエンジニア——立場の違う二人がカフェで出会い、「創作の未来」をめぐって本音をぶつけ合います。</p>
+<div id="manga-viewer" style="position:relative;">
+  <div id="manga-pages" style="display:flex;flex-direction:column;align-items:center;gap:20px;">
+    <div class="manga-page" style="position:relative;max-width:600px;width:100%;">
+      <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:6px;">Page 1 / 3 ── 私の10年が、一瞬で……</div>
+      <img src="images/ai-copyright-manga-page-1.webp" alt="漫画ページ1: イラストレーター澪がカフェで自分の画風そっくりのAI生成画像を発見し衝撃を受ける" loading="lazy" style="width:100%;border-radius:10px;box-shadow:var(--shadow);cursor:pointer;" onclick="openMangaModal(0)">
+    </div>
+    <div class="manga-page" style="position:relative;max-width:600px;width:100%;">
+      <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:6px;">Page 2 / 3 ── 二つの正義</div>
+      <img src="images/ai-copyright-manga-page-2.webp" alt="漫画ページ2: AIエンジニア颯太が技術の可能性を語り、澪と対立する" loading="lazy" style="width:100%;border-radius:10px;box-shadow:var(--shadow);cursor:pointer;" onclick="openMangaModal(1)">
+    </div>
+    <div class="manga-page" style="position:relative;max-width:600px;width:100%;">
+      <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:6px;">Page 3 / 3 ── 答えのない問い</div>
+      <img src="images/ai-copyright-manga-page-3.webp" alt="漫画ページ3: 二人が歩み寄りの兆しを見せ、夕焼け空の下で読者に問いかける" loading="lazy" style="width:100%;border-radius:10px;box-shadow:var(--shadow);cursor:pointer;" onclick="openMangaModal(2)">
+    </div>
+  </div>
+</div>
+<p style="font-size:11px;color:var(--muted);margin:16px 0 0;">※ この漫画はSNS上の代表的な意見をもとに構成したフィクションです</p>
+</section>
+<div id="manga-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);justify-content:center;align-items:center;cursor:pointer;" onclick="closeMangaModal()">
+  <button onclick="event.stopPropagation();changeMangaPage(-1)" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:none;color:#fff;font-size:28px;width:44px;height:44px;border-radius:50%;cursor:pointer;backdrop-filter:blur(4px);">‹</button>
+  <img id="manga-modal-img" src="" alt="" style="max-width:92vw;max-height:92vh;border-radius:8px;object-fit:contain;" onclick="event.stopPropagation()">
+  <button onclick="event.stopPropagation();changeMangaPage(1)" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:none;color:#fff;font-size:28px;width:44px;height:44px;border-radius:50%;cursor:pointer;backdrop-filter:blur(4px);">›</button>
+  <div style="position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:#fff;font-size:13px;opacity:.7;" id="manga-modal-counter"></div>
+  <button onclick="closeMangaModal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:22px;width:40px;height:40px;border-radius:50%;cursor:pointer;backdrop-filter:blur(4px);">✕</button>
+</div>
+<script>
+(function(){
+  var pages=["images/ai-copyright-manga-page-1.webp","images/ai-copyright-manga-page-2.webp","images/ai-copyright-manga-page-3.webp"];
+  var titles=["私の10年が、一瞬で……","二つの正義","答えのない問い"];
+  var idx=0;
+  window.openMangaModal=function(i){idx=i;showPage();document.getElementById("manga-modal").style.display="flex";document.body.style.overflow="hidden";};
+  window.closeMangaModal=function(){document.getElementById("manga-modal").style.display="none";document.body.style.overflow="";};
+  window.changeMangaPage=function(d){idx=(idx+d+pages.length)%pages.length;showPage();};
+  function showPage(){
+    document.getElementById("manga-modal-img").src=pages[idx];
+    document.getElementById("manga-modal-img").alt=titles[idx];
+    document.getElementById("manga-modal-counter").textContent=(idx+1)+" / "+pages.length+" — "+titles[idx];
+  }
+  document.addEventListener("keydown",function(e){
+    if(document.getElementById("manga-modal").style.display!=="flex")return;
+    if(e.key==="Escape")closeMangaModal();
+    if(e.key==="ArrowLeft")changeMangaPage(-1);
+    if(e.key==="ArrowRight")changeMangaPage(1);
+  });
+})();
+</script>
     <section class="panel" id="vote-section">
 <div class="panel-title"><h2>この話題、あなたはどう感じる？</h2><span>SNSの声を見る前に</span></div>
 <p style="font-size:14px;color:var(--ink);line-height:1.75;margin:0 0 12px;">生成AIの急速な普及により、著作物を無断で学習・模倣する仕組みへの賛否がSNSで激しく対立しています。クリエイターの生活基盤を脅かすツールなのか、表現の未来を拓く技術なのか。</p>
 <div style="font-size:12px;color:var(--muted);background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:0 0 16px;line-height:1.65;"><span style="font-weight:700;">データの集め方:</span> Yahooリアルタイム検索から「AI著作権侵害」「生成AI 反対」「生成AI 便利」「AI 規制」など両側のキーワードでSNS投稿904件を取得し、AIが自動分類しました。</div>
 <p style="font-size:13px;color:var(--ink);font-weight:700;margin:0 0 14px;">結果を見る前に — あなたの感覚に近いのは？</p>
-<div id="vote-buttons" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;"></div>
+<div id="vote-buttons" style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:8px;max-width:560px;"></div>
 <p style="font-size:11px;color:var(--muted);margin:0;">※ 世論調査ではありません。投票は集計されサーバーに保存されます。</p>
 <div id="vote-result" style="display:none;margin-top:20px;">
   <div style="background:var(--accent-soft);border-radius:10px;padding:16px;margin-bottom:16px;">
@@ -654,13 +704,15 @@
     setTimeout(function(){ applyBlur(); fetchVotes(); },0);
   }
 
+  var voteImages=["images/ai-copyright-vote-1-regulate.webp","images/ai-copyright-vote-2-innovate.webp","images/ai-copyright-vote-3-coexist.webp","images/ai-copyright-vote-4-unsure.webp"];
   var btnWrap=document.getElementById("vote-buttons");
   axes.forEach(function(a,i){
     var btn=document.createElement("button");
-    btn.style.cssText="flex:1;min-width:140px;padding:14px 12px;border-radius:12px;border:2px solid "+a.color+";background:"+a.color+"10;cursor:pointer;transition:all .15s;text-align:center;";
-    btn.innerHTML='<div style="font-size:13px;font-weight:700;color:var(--ink);line-height:1.4;">'+a.label+'</div>';
-    btn.onmouseenter=function(){btn.style.background=a.color+"22";btn.style.transform="translateY(-2px)"};
-    btn.onmouseleave=function(){btn.style.background=a.color+"10";btn.style.transform="none"};
+    btn.style.cssText="position:relative;aspect-ratio:1;border-radius:16px;border:2px solid "+a.color+";background:url('"+voteImages[i]+"') center/cover no-repeat;cursor:pointer;transition:all .2s;overflow:hidden;padding:0;";
+    var shortLabels=["規制すべき","自由に進めるべき","条件付き共存","まだわからない"];
+    btn.innerHTML='<span style="position:absolute;bottom:0;left:0;right:0;padding:12px 8px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:18px;font-weight:800;line-height:1.2;text-align:center;text-shadow:0 1px 4px rgba(0,0,0,.6);">'+shortLabels[i]+'</span>';
+    btn.onmouseenter=function(){btn.style.transform="translateY(-3px)";btn.style.boxShadow="0 6px 20px "+a.color+"44"};
+    btn.onmouseleave=function(){btn.style.transform="none";btn.style.boxShadow="none"};
     btn.onclick=function(){castVote(i)};
     btnWrap.appendChild(btn);
   });
