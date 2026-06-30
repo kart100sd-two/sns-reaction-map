@@ -105,5 +105,122 @@
     "その他・分類保留": "neutral"
   },
   "topic_type": "交通ルール・日常論争",
-  "hero_image": "images/bike-blue-ticket-hero.webp"
+  "hero_image": "images/bike-blue-ticket-hero.webp",
+  "manga": {
+    "synopsis": "自転車の青切符導入をめぐり、歩道で危険な自転車に怖い思いをしてきた商店主と、狭い車道を通勤で走る会社員が交差点で出会う物語。取締りによる安全確保と、走行空間が整わないまま罰則だけが増える不安の両方を描き、読者に「ルールと道路環境、どちらを先に整えるべきか」を問いかける。",
+    "disclaimer": "※ この漫画はSNS上の代表的な意見をもとに構成したフィクションです",
+    "characters": [
+      {
+        "id": "haruo",
+        "name": "森田 春夫（もりた はるお）",
+        "role": "駅前商店街の文具店主",
+        "age": 58,
+        "stance": "取締り強化賛成",
+        "emotion_base": {
+          "fear": "歩道を飛ばす自転車で子どもや高齢者がけがをし、地域の生活道路が危険な場所になること",
+          "desire": "反則金によって危険運転が減り、歩行者も自転車も安心して通れる街になること"
+        },
+        "appearance": "白髪混じりの短髪、細い銀縁眼鏡、深緑の作業エプロン、チェックシャツ、穏やかだが怒ると眉間にしわが寄る。中肉中背で、店先の掃き掃除用ほうきを持っている。",
+        "character_sheet_prompt": "Character design reference sheet, white background, multiple expressions (gentle, angry, worried, determined, surprised), full body and close-up face views. Japanese male stationery shop owner, age 58, short salt-and-pepper hair, thin silver glasses, green work apron over a checked shirt, holding a small broom for cleaning the storefront. Average build, kind neighborhood elder but stern when concerned about safety. Anime-inspired semi-realistic manga style, clean line art, natural color palette."
+      },
+      {
+        "id": "natsuki",
+        "name": "相原 夏希（あいはら なつき）",
+        "role": "自転車通勤の会社員",
+        "age": 34,
+        "stance": "インフラ優先・車道走行懸念",
+        "emotion_base": {
+          "fear": "自転車レーンがない狭い車道を大型車の横で走らされ、違反か安全かを毎朝選ばされること",
+          "desire": "罰則だけでなく、誰でも迷わず安全に走れる自転車レーンと分かりやすいルールが整うこと"
+        },
+        "appearance": "肩までの黒髪を低いポニーテールにまとめ、通勤用ヘルメット、薄いブルーのウインドブレーカー、黒いリュック、クロスバイクを押している。小柄で機敏、普段は冷静だが交通量の多い道では緊張した表情になる。",
+        "character_sheet_prompt": "Character design reference sheet, white background, multiple expressions (calm, anxious, frustrated, relieved, thoughtful), full body and close-up face views. Japanese female office worker bicycle commuter, age 34, shoulder-length black hair tied in a low ponytail, wearing a commuter bicycle helmet, light blue windbreaker, dark slacks, black backpack, standing with a cross bike. Petite agile build, usually composed but tense around traffic. Anime-inspired semi-realistic manga style, clean line art, natural city color palette."
+      }
+    ],
+    "pages": [
+      {
+        "page_number": 1,
+        "title": "青切符の朝",
+        "description": "【導入】商店街の歩道で危ない自転車を見た春夫が、青切符導入に期待を寄せる。",
+        "layout": "上段1コマ大 + 下段2コマ",
+        "panels": [
+          {
+            "position": "上段・大コマ",
+            "direction": "朝の駅前商店街。春夫が店先を掃除している横を、スマホを見ながら走る自転車が歩行者すれすれに通り抜ける。買い物袋を持った高齢女性が驚いてよろける。",
+            "dialogue": "うわっ、危ない！",
+            "speaker": "haruo"
+          },
+          {
+            "position": "下段・左コマ",
+            "direction": "春夫が店の小さなテレビニュースを見る。画面には「自転車にも青切符へ」というテロップ。春夫の表情に安堵と期待が混じる。",
+            "dialogue": "やっと本気で取り締まるんだな。",
+            "speaker": "haruo"
+          },
+          {
+            "position": "下段・右コマ",
+            "direction": "春夫が横断歩道の前に立ち、子どもと高齢者が安心して歩く様子を想像している。背景に薄く安全な街のイメージ。",
+            "dialogue": "反則金があれば、無茶な運転も減るはずだ。",
+            "speaker": "haruo"
+          }
+        ],
+        "image_prompt": "A manga page with 3 panels layout (one large panel on top, two smaller panels on the bottom row). Anime-inspired semi-realistic manga style, clean line art, realistic Japanese shopping street atmosphere.\n\n[TOP LARGE PANEL] Morning in a Japanese station-front shopping street. An older Japanese male shop owner (short salt-and-pepper hair, thin silver glasses, green work apron, checked shirt) is sweeping in front of his stationery shop. A reckless cyclist looking at a smartphone rushes past pedestrians on the sidewalk, almost hitting an elderly woman carrying shopping bags. The shop owner looks shocked. A speech bubble containing the Japanese text \"うわっ、危ない！\"\n\n[BOTTOM LEFT PANEL] Inside the small shop, the shop owner watches a TV news report. The TV screen shows a headline in Japanese: \"自転車にも青切符へ\". His expression mixes relief and expectation. A speech bubble containing the Japanese text \"やっと本気で取り締まるんだな。\"\n\n[BOTTOM RIGHT PANEL] The shop owner stands near a crosswalk, imagining a safer street where children and elderly people can walk calmly. Soft hopeful light, faint overlay of an orderly shopping street. A speech bubble containing the Japanese text \"反則金があれば、無茶な運転も減るはずだ。\""
+      },
+      {
+        "page_number": 2,
+        "title": "走る場所はどこにある？",
+        "description": "【対立】夏希が登場し、車道走行の現実とインフラ未整備への不安をぶつける。",
+        "layout": "上段2コマ + 下段1コマ大",
+        "panels": [
+          {
+            "position": "上段・左コマ",
+            "direction": "交差点で夏希がクロスバイクを押して立ち止まる。すぐ横をトラックが通り、狭い車道には自転車レーンがない。標識が多く、どこを走るべきか迷う雰囲気。",
+            "dialogue": "でも、この道で車道を走れって言われても……。",
+            "speaker": "natsuki"
+          },
+          {
+            "position": "上段・右コマ",
+            "direction": "春夫が夏希に向き直る。歩道を指さしながら、危険運転への怒りを抑えて話す。",
+            "dialogue": "歩道を飛ばす人がいるから、みんな怖い思いをしてるんだよ。",
+            "speaker": "haruo"
+          },
+          {
+            "position": "下段・大コマ",
+            "direction": "春夫と夏希が交差点で向かい合う。春夫側には歩道の危険、夏希側には狭い車道と大型車の恐怖が重なるように描かれる。中央に青い反則切符のイメージが浮かび、二人の視線がぶつかる。",
+            "dialogue_haruo": "ルールを守らせる仕組みは必要だ。",
+            "dialogue_natsuki": "でも、走る場所がないまま罰則だけ増えたら、毎朝が怖いです。",
+            "speaker": "both"
+          }
+        ],
+        "image_prompt": "A manga page with 3 panels layout (two smaller panels on top row, one large panel on the bottom). Anime-inspired semi-realistic manga style, clean line art, tense city traffic lighting.\n\n[TOP LEFT PANEL] At a busy Japanese intersection, a Japanese female office worker bicycle commuter (low black ponytail, commuter helmet, light blue windbreaker, black backpack) stands with her cross bike. A large truck passes very close on a narrow road with no bicycle lane. Many road signs and lane markings create confusion. She looks tense and uncertain. A speech bubble containing the Japanese text \"でも、この道で車道を走れって言われても……。\"\n\n[TOP RIGHT PANEL] The older male shop owner turns toward her, pointing toward the sidewalk while trying to control his anger and worry. Behind him, pedestrians look nervous. A speech bubble containing the Japanese text \"歩道を飛ばす人がいるから、みんな怖い思いをしてるんだよ。\"\n\n[BOTTOM LARGE PANEL] The two characters face each other at the intersection. On the shop owner's side, show the danger of reckless bicycles on a sidewalk; on the commuter's side, show a narrow roadway and intimidating trucks. A symbolic blue traffic violation ticket floats between them. Strong diagonal composition, emotional conflict. Two speech bubbles: one from the man containing the Japanese text \"ルールを守らせる仕組みは必要だ。\" and one from the woman containing the Japanese text \"でも、走る場所がないまま罰則だけ増えたら、毎朝が怖いです。\""
+      },
+      {
+        "page_number": 3,
+        "title": "同じ道の上で",
+        "description": "【余韻】二人が互いの不安を理解し始める。結論を出さず、読者に問いを残すオープンエンド。",
+        "layout": "上段2コマ + 下段1コマ大（ワイド）",
+        "panels": [
+          {
+            "position": "上段・左コマ",
+            "direction": "夏希がヘルメットを持ち直し、少し落ち着いた表情で話す。背後には途切れた自転車レーンの表示が見える。",
+            "dialogue": "危ない運転を減らしたい気持ちは、私も同じです。",
+            "speaker": "natsuki"
+          },
+          {
+            "position": "上段・右コマ",
+            "direction": "春夫が視線を落とし、狭い車道を走る自転車と車の近さに気づく。眉間のしわが少し緩む。",
+            "dialogue": "たしかに、この道を毎日走れと言われたら怖いな……。",
+            "speaker": "haruo"
+          },
+          {
+            "position": "下段・ワイドコマ",
+            "direction": "夕方の交差点。春夫と夏希が同じ横断歩道の前に並び、歩道、車道、未完成の自転車レーンを見つめている。遠くに青い標識と工事中の道路が見える。ナレーションが上下に入る。",
+            "narration_top": "取締りが先か、走れる道が先か——",
+            "narration_bottom": "同じ道を使う私たちは、どんなルールなら納得できるのでしょうか？",
+            "speaker": "narrator"
+          }
+        ],
+        "image_prompt": "A manga page with 3 panels layout (two smaller panels on top row, one wide cinematic panel on the bottom). Anime-inspired semi-realistic manga style, clean line art, reflective urban atmosphere.\n\n[TOP LEFT PANEL] The female bicycle commuter adjusts her helmet with a calmer, sincere expression. Behind her, a bicycle lane marking abruptly ends on the road, showing incomplete infrastructure. A speech bubble containing the Japanese text \"危ない運転を減らしたい気持ちは、私も同じです。\"\n\n[TOP RIGHT PANEL] The older shop owner looks down the narrow road and notices how close cars pass to bicycles. His stern expression softens slightly. A speech bubble containing the Japanese text \"たしかに、この道を毎日走れと言われたら怖いな……。\"\n\n[BOTTOM WIDE PANEL] Evening at the same intersection. The shop owner and the bicycle commuter stand side by side in front of a crosswalk, looking at the sidewalk, roadway, and an unfinished bicycle lane. In the distance, blue road signs and a small road construction area suggest future infrastructure. Soft sunset light, thoughtful open-ended mood. A narrative text box at the top containing the Japanese text \"取締りが先か、走れる道が先か——\" and a larger narrative text box at the bottom containing the Japanese text \"同じ道を使う私たちは、どんなルールなら納得できるのでしょうか？\""
+      }
+    ]
+  }
 }
