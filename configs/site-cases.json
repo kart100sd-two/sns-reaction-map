@@ -144,7 +144,7 @@
       "status": "分析済み",
       "topic_type": "教育・部活動改革",
       "source_label": "Yahooリアルタイム検索",
-      "data_path": "social-samples/bukatsu-chiiki_classified.json",
+      "data_path": "social-samples/bukatsu-chiiki_classified_v2.json",
       "reaction_map_url": "bukatsu-chiiki-reaction-map.html",
       "primary_axes": [
         "地域移行賛成",
