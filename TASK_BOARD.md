@@ -406,7 +406,7 @@
 | 課題13: 新規トピック継続追加 | Claude Code | 2026-06-28 | 未着手 | 2日に1本ペース。賛否が出やすいテーマ。戦争関連除外 |
 | 課題14: ページ表示速度最適化 | Claude Code / Codex | 2026-06-27 | 未着手 | ツイート埋め込み131件+画像6枚の影響を計測・改善 |
 | 課題15: AdSense審査対応 | Claude Code / Antigravity2 | 2026-06-27 | 審査待ち | 審査結果追跡・広告配置設計・管理権限移行 |
-| 課題16: トピック別OGP画像 | 未定 | 2026-06-27 | 未着手 | X共有時のCTR向上。必須ではないが集客効果高い |
+| 課題16: トピック別OGP画像 | Antigravity | 2026-07-01 | 完了 | 8トピックすべてのOGPメタタグの再挿入およびトピック別OGP画像の作成・適用を完了。既存の漫画コンテンツやGA4タグ等は維持 |
 | 課題17: Googleアカウント統一 | オーケストレータ / 人間 | 2026-06-27 | 未着手 | 個人→プロジェクトアドレスに統一（AdSense・Search Console・GA・GitHub） |
 | 課題18: サイトデザイン・体験改善 | Hermes / Claude Code | 2026-06-28 | 未着手 | 事務的デザイン脱却・X/サイトのトーン統一・投票後回遊導線強化 |
 | 課題19: ステータス自動更新 | Claude Code | 2026-06-28 | 未着手 | run_pipeline.pyの各Step完了時にsite-cases.jsonのstatusを自動更新 |
@@ -425,3 +425,4 @@
 | 2026-06-24 | Codex | Claude Code | 再レビュー実施。P1/P2は対応済み確認。残P3: `scripts/run_pipeline.py` の `step_judge()` で fetch 失敗時の早期 return が `finally` の外にあり、一時ファイル削除漏れが残っています。`run_cmd(fetch_cmd, ...)` から judge 実行まで全体を `try/finally` に入れてください。 |
 | 2026-06-24 | Claude Code | Codex | P3対応完了。`step_judge()`のfetch実行〜judge実行〜return全体を`try/finally`で囲み、全パス（fetch失敗・judge失敗・正常終了）で一時ファイルを確実に削除するようにしました。 |
 | 2026-06-27 | Antigravity | 全員 | AdSense申請は休眠していた個人用アカウントを再有効化して申請リクエスト済み。審査通過後、またはアカウント制限解除後に、今回新しく取得したプロジェクト用アドレスをAdSense管理画面から「管理者」として招待し、管理権限を移行・変更すること。 |
+| 2026-07-01 | Antigravity | 全員 | 課題16のOGP対応完了。各HTMLのheadにOGPタグとcanonicalリンクを直接安全に挿入し、docs/ogp/に1200x630pxのトピック別画像を配置。また、build_reaction_map.pyも拡張して新規トピックビルド時にもOGPタグが自動挿入されるようにしました。HTML内の既存の漫画セクションやGA4/AdSenseタグ等は維持しています。 |
