@@ -385,7 +385,12 @@
 - 移行完了後、個人アドレスの権限を適切に縮小または削除
 **備考**: ブラウザ操作が必要な作業が多い。人間またはブラウザ操作可能なAI（Antigravity2等）が担当
 
-### 課題20: Buy Me a Coffee URLの統一修正
+### 課題20: テーマ別問題提起LP
+**担当**: 未定
+**状態**: 未着手
+**概要**: 各テーマの問題提起に特化したランディングページを作成する
+
+### 課題21: Buy Me a Coffee URLの統一修正
 **担当**: Claude Code
 **状態**: 完了（2026-07-02）
 **概要**: 全ページおよびビルドスクリプトのBuy Me a CoffeeリンクURLが古い（404になる）URLを参照していたため、正しいURLに統一修正した
@@ -419,7 +424,8 @@
 | 課題17: Googleアカウント統一 | オーケストレータ / 人間 | 2026-06-27 | 未着手 | 個人→プロジェクトアドレスに統一（AdSense・Search Console・GA・GitHub） |
 | 課題18: サイトデザイン・体験改善 | Hermes / Claude Code | 2026-06-28 | 未着手 | 事務的デザイン脱却・X/サイトのトーン統一・投票後回遊導線強化 |
 | 課題19: ステータス自動更新 | Claude Code | 2026-06-28 | 未着手 | run_pipeline.pyの各Step完了時にsite-cases.jsonのstatusを自動更新 |
-| 課題20: Buy Me a Coffee URL修正 | Claude Code | 2026-07-02 | 完了 | 全ページ+ビルドスクリプトのURLをissue.stance.labに統一 |
+| 課題20: テーマ別問題提起LP | 未定 | - | 未着手 | 各テーマの問題提起に特化したLP |
+| 課題21: Buy Me a Coffee URL修正 | Claude Code | 2026-07-02 | 完了 | 全ページ+ビルドスクリプトのURLをissue.stance.labに統一 |
 
 ---
 
