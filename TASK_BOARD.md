@@ -390,25 +390,23 @@
 **状態**: 未着手
 **概要**: 各テーマの問題提起に特化したランディングページを作成する
 
-### 課題21: Buy Me a Coffee URLの統一修正
+### 課題21: あだ名禁止・高齢者免許返納 データ再分類 & HTML修正
+**担当**: Hermes (Kimi K2.7-code)
+**状態**: 完了（2026-07-02）
+**概要**: 保留率が高い2テーマのデータを再分類し、HTMLの半円チャート・バーチャート・ヒートマップを修正する
+**スコープ**:
+- `school-nickname-ban`: 保留320件を再分類し、有効72件に絞りHTML再構成
+- `elderly-license-revocation`: 「その他・分類保留」63件を再分類し、45件（24%）に縮小。HTML再生成済み。
+- GA4/AdSenseタグ（`G-K10S4YCZFH` / `ca-pub-2542211932832864`）を維持
+
+### 課題22: Buy Me a Coffee URLの統一修正
 **担当**: Claude Code
 **状態**: 完了（2026-07-02）
-**概要**: 全ページおよびビルドスクリプトのBuy Me a CoffeeリンクURLが古い（404になる）URLを参照していたため、正しいURLに統一修正した
+**概要**: 全ページおよびビルドスクリプトのBuy Me a CoffeeリンクURLが古い（404になる）URLを正しいURLに統一修正
 **修正内容**:
 - `docs/index.html`: `buymeacoffee.com/kt100sd` → `buymeacoffee.com/issue.stance.lab`
 - `docs/*-reaction-map.html`（8ファイル）: `buymeacoffee.com/sns_hannou_map` → `buymeacoffee.com/issue.stance.lab`
 - `scripts/build_reaction_map.py`: 同様に修正（今後の新規テーマ生成にも反映）
-
----
-
-### 課題21: あだ名禁止・高齢者免許返納 データ再分類 & HTML修正
-**担当**: Hermes (Kimi K2.7-code)
-**状態**: テーマ2完了（テーマ1はユーザー確認・stash済み）
-**概要**: 保留率が高い2テーマのデータを再分類し、HTMLの半円チャート・バーチャート・ヒートマップを修正する
-**スコープ**:
-- `school-nickname-ban`: 保留320件を再分類し、有効72件に絞りHTML再構成（ユーザー確認・stash済み）
-- `elderly-license-revocation`: 「その他・分類保留」63件を再分類し、45件（24%）に縮小。HTML再生成済み。
-- GA4/AdSenseタグ（`G-K10S4YCZFH` / `ca-pub-2542211932832864`）を維持
 
 ---
 
